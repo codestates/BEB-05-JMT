@@ -1,2 +1,2 @@
-# BEB-05-final-06
-BEB-05-final-06
+# BEB-05-JMT
+BEB-05-final-Jolly Maplestory NFT
