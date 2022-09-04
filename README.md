@@ -1,9 +1,6 @@
 # BEB-05-Joyful Maplestory NFT
-* * *
 
 ## 프로젝트 소개
-
-* * *
 
 메이플스토리 에셋을 활용한 수집형 NFT 웹 게임
 
