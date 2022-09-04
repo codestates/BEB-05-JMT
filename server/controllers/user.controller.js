@@ -27,7 +27,7 @@ const signup = async(req, res, next) => {
 const check = async(req, res, next) => {
     const user = await User.findOne({
         where: {
-            address: req.params.address
+            address: req.params.userAddr
         }
     });
 
