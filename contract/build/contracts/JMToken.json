@@ -11633,7 +11633,7 @@
     "absolutePath": "project:/contracts/JMToken.sol",
     "exportedSymbols": {
       "ERC20Interface": [
-        3466
+        3474
       ],
       "JMToken": [
         2507
@@ -11661,7 +11661,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 2508,
-        "sourceUnit": 3467,
+        "sourceUnit": 3475,
         "src": "61:41:13",
         "symbolAliases": [],
         "unitAlias": ""
@@ -11677,7 +11677,7 @@
                 "125:14:13"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3466,
+              "referencedDeclaration": 3474,
               "src": "125:14:13"
             },
             "id": 2167,
@@ -11692,7 +11692,7 @@
         "id": 2507,
         "linearizedBaseContracts": [
           2507,
-          3466
+          3474
         ],
         "name": "JMToken",
         "nameLocation": "114:7:13",
@@ -12515,7 +12515,7 @@
           },
           {
             "baseFunctions": [
-              3392
+              3400
             ],
             "body": {
               "id": 2248,
@@ -12604,7 +12604,7 @@
           },
           {
             "baseFunctions": [
-              3399
+              3407
             ],
             "body": {
               "id": 2261,
@@ -12747,7 +12747,7 @@
           },
           {
             "baseFunctions": [
-              3408
+              3416
             ],
             "body": {
               "id": 2288,
@@ -12929,10 +12929,10 @@
                       "name": "Transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        3445,
-                        3455
+                        3453,
+                        3463
                       ],
-                      "referencedDeclaration": 3445,
+                      "referencedDeclaration": 3453,
                       "src": "1403:8:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -13101,7 +13101,7 @@
           },
           {
             "baseFunctions": [
-              3426
+              3434
             ],
             "body": {
               "id": 2305,
@@ -13297,7 +13297,7 @@
           },
           {
             "baseFunctions": [
-              3417
+              3425
             ],
             "body": {
               "id": 2335,
@@ -13677,7 +13677,7 @@
           },
           {
             "baseFunctions": [
-              3437
+              3445
             ],
             "body": {
               "id": 2390,
@@ -13860,10 +13860,10 @@
                       "name": "Transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        3445,
-                        3455
+                        3453,
+                        3463
                       ],
-                      "referencedDeclaration": 3455,
+                      "referencedDeclaration": 3463,
                       "src": "2502:8:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -15845,7 +15845,7 @@
                       "name": "Approval",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3465,
+                      "referencedDeclaration": 3473,
                       "src": "3737:8:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
@@ -16022,16 +16022,9 @@
     "name": "solc",
     "version": "0.8.16+commit.07a7930e.Emscripten.clang"
   },
-  "networks": {
-    "5777": {
-      "events": {},
-      "links": {},
-      "address": "0x075f9130d4dAe16B8252beA01D2522d1623d2F4D",
-      "transactionHash": "0xf5be910adbd073a7226ac8c6d97cf0bda0ea5bdfd9f9d9f7111b06a192f6c050"
-    }
-  },
+  "networks": {},
   "schemaVersion": "3.4.8",
-  "updatedAt": "2022-09-04T21:14:07.626Z",
+  "updatedAt": "2022-09-04T21:22:16.018Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

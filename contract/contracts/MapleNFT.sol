@@ -36,6 +36,7 @@ contract MapleNFT is Ownable, ERC721Enumerable {
 
     function mintMapleNFT() public returns (uint256) {
         require(token.balanceOf(msg.sender) >= mintPrice, "ERC721: recipient lack of erc20 balance");
+        require(maxTokenNum >= totalSupply(), "ERC721: all nfts are minted");
 
         token.transferFrom(msg.sender, address(this), mintPrice);
 
