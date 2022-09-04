@@ -1,0 +1,12 @@
+.login-container .login-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    min-width: calc(100vw * 110/620);
+    height: calc(100vw * 55/620);
+    margin-top: calc(100vw * 215/620);
+    background-color: #FE7427;
+    cursor: pointer;
+}

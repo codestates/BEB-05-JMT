@@ -1,0 +1,5 @@
+export { default as Home } from './Home'
+export { default as Inventory } from './Inventory'
+export { default as Ranking } from './Ranking'
+export { default as Store } from './Store'
+export { default as Login } from './Login'

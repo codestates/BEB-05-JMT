@@ -1,0 +1,45 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #fff;
+  height: calc(100vw * 9/16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.logged-in {
+  background-image: url('https://s3-alpha-sig.figma.com/img/269d/a8cc/54df84cd6814c220dce6f2be57e9b6c6?Expires=1662940800&Signature=Rr-K0cYthjjicmEzbS5SVfVsFRSOgP17AavcxBpgEIi33niJO75n8ugmb6ZPPF6-6g8UmEF1v00~GMpztHGoHoTjE9H~DoA1JHbvSpibrZ2Z9LYBT5z9arVo2MU5XmdbU1OtvJJxBv-gfoQfPnHRQnf9riXYx93xnMWvYCyyP20zcOviiPV8f8fMhUvEzsgYylnNVZUpQdijLdsJvslzgTHidGVIaUZWnYAfYdzlzaim6g00yH~9g2LK~KcqcnIdaGzf8g8PYb2oYY3ql06HHzxlRXMur0ReKaZ3XR0IHpozn1eSqq4rLpvaCkOUX-FwdflWZnQ4HUxaouxe3ebu1g__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: -40vw;
+  background-position-y: -72vw;
+  background-size: 350vw auto;
+}
+
+.not-logged-in {
+  background-image: url('./assets/login.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100vw auto;
+}
+
+.App-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  flex-grow: 1;
+  background-color: #333;
+  width: 100%;
+}
+
+.App-footer-text {
+  color: #fff;
+}

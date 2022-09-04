@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: 'Maplestory OTF';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Maplestory OTF',
+    monospace;
+}
