@@ -72,29 +72,23 @@ contract MapleNFT is Ownable, ERC721Enumerable {
         address from,
         address to,
         uint256 tokenId
-    ) internal
-      override(ERC721, ERC721Enumerable) {
+    ) internal override {
         super._beforeTokenTransfer(from, to, tokenId);
     }
 
     function _burn(
         uint256 _tokenId
-    ) internal override(ERC721, ERC721URIStorage) {
+    ) internal override {
         super._burn(_tokenId);
     }
 
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        override(ERC721, ERC721Enumerable)
-        returns (bool)
-    {
+    function supportsInterface(bytes4 interfaceId) public view override returns (bool) {
         return super.supportsInterface(interfaceId);
     }
 
     function tokenURI(
         uint256 _tokenId
-    ) public view override(ERC721, ERC721URIStorage) returns (string memory) {
+    ) public view override returns (string memory) {
         return super.tokenURI(_tokenId);
     }
 
