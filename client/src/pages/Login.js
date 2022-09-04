@@ -21,7 +21,7 @@ const Login = () => {
     console.log(check.message);
     if(check.message==="false"){
       setAccount({address: address});
-      navigate(`/mint`);
+      navigate('/mint');
     }else{
       setAccount({address: address, username: check.username});
       navigate('/home');

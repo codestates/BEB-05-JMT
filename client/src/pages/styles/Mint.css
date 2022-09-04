@@ -1,0 +1,16 @@
+.mint-container .mint-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    min-width: calc(100vw * 110/620);
+    height: calc(100vw * 45/620);
+    margin-top: calc(100vw * 25/620);
+    background-color: #FE7427;
+    cursor: pointer;
+}
+
+.mint-container {
+    margin-top: calc(100vw * 25/620);
+}

@@ -25,9 +25,8 @@
     height: 100%;
     overflow: hidden;
     flex-grow: 1;
-    margin-right: calc(100vw * 32/620);
+    margin-right: calc(100vw * 22/620);
 }
-
 .nav-item-container-end {
     display: flex;
     flex-direction: column;
@@ -38,7 +37,25 @@
     height: 100%;
     overflow: hidden;
     flex-grow: 1;
-    padding: 0;
+    margin-right: calc(100vw * 32/620);
+}
+
+.nav-item-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    max-width: calc(100vw * 30/620);
+    height: 100%;
+    overflow: hidden;
+    flex-grow: 1;
+    margin-right: calc(100vw * 32/620);
+}
+
+.nav-item-logout {
+    width: 5%;
+    cursor: pointer;
 }
 
 .nav-item {
