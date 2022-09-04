@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRecoilValue } from "recoil"
 import { accountAtom } from "./recoil/account/atom"
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import { Home, Inventory, Store, Ranking, Login } from './pages';
+import { Home, Inventory, Store, Ranking, Login, Mint, Swap} from './pages';
 import { Navbar, NotFound } from './components';
 
 const App = () => {
@@ -17,8 +17,10 @@ const App = () => {
           <Route exact path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/home" element={<Home/>} />
+          <Route path="/mint" element={<Mint/>} />
           <Route path="/inventory" element={<Inventory/>} />
           <Route path="/store" element={<Store/>} />
+          <Route path="/swap" element={<Swap/>} />
           <Route path="/ranking" element={<Ranking/>} />
           <Route component={<NotFound/>} />
         </Routes>

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { useRecoilState } from "recoil"
+import { useSetRecoilState } from "recoil"
 import { accountAtom } from "../recoil/account/atom"
 import './styles/Login.css';
 import { useNavigate } from 'react-router-dom'
 import accountAPI from '../api/account';
 
 const Login = () => {
-  const [account, setAccount] = useRecoilState(accountAtom)
+  const setAccount = useSetRecoilState(accountAtom)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,9 +15,17 @@ const Login = () => {
 
   const connectWallet = async () => {
     const address = await accountAPI.fetchAccount();
+    const check = await accountAPI.fetchUsername(address);
+
     console.log(address);
-    setAccount({address: address});
-    navigate('/home');
+    console.log(check.message);
+    if(check.message==="false"){
+      setAccount({address: address});
+      navigate(`/mint`);
+    }else{
+      setAccount({address: address, username: check.username});
+      navigate('/home');
+    }
   }
 
 	return (

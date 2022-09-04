@@ -2,20 +2,20 @@ const {User} = require('../models');
 
 const signup = async(req, res, next) => {
     try {
-        const { nickname, address } = req.body;
+        const { username, address } = req.body;
 
         await User.findOrCreate({
             where: { address: address },
             defaults: {
-                nickname: nickname,
+                username: username,
             }
         }).then(async ([user, created])=>{
             if(!created){
-                res.status(409).send("이미 가입된 회원입니다.");
+                res.status(409).send("이미 가입된 유저 이름입니다.");
             } else{
                 res.status(201).json({
                     message: "회원가입이 완료되었습니다.",
-                    data: { nickname: nickname, address: address},
+                    data: { username: username, address: address},
                 })                
             }
         });
@@ -24,7 +24,27 @@ const signup = async(req, res, next) => {
     }
 };
 
+const check = async(req, res, next) => {
+    const user = await User.findOne({
+        where: {
+            address: req.params.address
+        }
+    });
+
+    if(user){
+        res.status(200).json({
+            message: "true",
+            username: user.username,
+            address: user.address
+        })
+    }else{
+        res.status(200).json({
+            message: "false"
+        })
+    }
+}
 
 module.exports = {
     signup,
+    check
 };

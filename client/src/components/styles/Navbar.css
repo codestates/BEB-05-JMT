@@ -15,39 +15,26 @@
     width: calc(100vw - 2*45/620*100vw);
 }
 
-.nav-item-container_a {
+.nav-item-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    max-width: calc(100vw * 140/620);
+    max-width: calc(100vw * 100/620);
     height: 100%;
     overflow: hidden;
     flex-grow: 1;
-    margin-right: calc(100vw * 55/620);
+    margin-right: calc(100vw * 32/620);
 }
 
-.nav-item-container_b {
+.nav-item-container-end {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    max-width: calc(100vw * 140/620);
-    height: 100%;
-    overflow: hidden;
-    flex-grow: 1;
-    margin-right: calc(100vw * 55/620);
-}
-
-.nav-item-container_c {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    max-width: calc(100vw * 140/620);
+    max-width: calc(100vw * 100/620);
     height: 100%;
     overflow: hidden;
     flex-grow: 1;

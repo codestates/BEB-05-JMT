@@ -4,20 +4,20 @@ import { useRecoilValue } from "recoil"
 import { accountAtom } from "../recoil/account/atom"
 
 const Mint = () => {
-  const account = useRecoilValue(accountAtom)
-  const navigate = useNavigate();
+    const account = useRecoilValue(accountAtom)
+    const navigate = useNavigate();
 
-  useEffect(() => {
+    useEffect(() => {
     if (!account.address) {
-      navigate('/login');
+        navigate('/login');
     }
-  }, []);
+    }, []);
 
-	return (
-		<div className='home-container'>
-      홈
-		</div>
-	);
+    return (
+        <div className='mint-container'>
+        민트
+        </div>
+    );
 }
 
 export default Mint;
