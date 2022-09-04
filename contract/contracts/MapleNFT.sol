@@ -18,6 +18,8 @@ contract MapleNFT is Ownable, ERC721Enumerable {
     uint256 private maxTokenNum;
     string private baseURIextended;
 
+    event Minted(address addr, uint256 tokenId, string tokenURI);
+
     constructor(address _marketAddress, address _tokenContractAddress, string memory _MapleBaseURI) ERC721("MapleNFT", "NFT") {
         marketContractAddress = _marketAddress;
 
@@ -46,6 +48,8 @@ contract MapleNFT is Ownable, ERC721Enumerable {
 
         _safeMint(msg.sender, minted);
         setApprovalForAll(marketContractAddress, true); // grant transaction permission to market
+
+        emit Minted(msg.sender, minted, tokenURI(minted));
 
         return minted;
     }
