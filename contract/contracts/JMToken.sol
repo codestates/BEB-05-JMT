@@ -31,25 +31,30 @@ contract JMToken is ERC20Interface {
     function decimals() public view returns (uint8) {
         return _decimals;
     }
+
     // ERC20 총 발행량 확인
     function totalSupply() external view virtual override returns (uint256) {
         return _totalSupply;
     }
+
     // Owner의 토큰 보유량 확인
     function balanceOf(address account) external view virtual override returns (uint256) {
         return _balances[account];
     }
+
     // ERC20 직접전송
     function transfer(address recipient, uint amount) public virtual override returns (bool) {
         _transfer(msg.sender, recipient, amount);
         emit Transfer(msg.sender, recipient, amount);
         return true;
     }
+
     // 
     // owner가 spender에게 양도 설정한 토큰의 양을 확인
     function allowance(address owner, address spender) external view override returns (uint256) {
         return _allowances[owner][spender];
     }
+
     // spender 에게 value 만큼의 토큰을 인출할 권리를 부여. 
     // 이용시 반드시 Approval 이벤트 함수를 호출해야 함.
     function approve(address spender, uint amount) external virtual override returns (bool) {
@@ -59,6 +64,7 @@ contract JMToken is ERC20Interface {
         _approve(msg.sender, spender, currentAllownace, amount);
         return true;
     }
+
     // spender가 거래 가능하도록 양도 받은 토큰을 전송
     function transferFrom(address sender, address recipient, uint256 amount) external virtual override returns (bool) {
         _transfer(sender, recipient, amount);
