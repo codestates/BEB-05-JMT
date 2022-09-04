@@ -1,5 +1,5 @@
 const express = require('express');
-const assetController = require('../controller/asset.controller');
+const assetController = require('../controllers/asset.controller');
 const router = express.Router();
 
 router.get('/dummy', assetController.dummy);
