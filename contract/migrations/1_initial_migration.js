@@ -10,7 +10,7 @@ module.exports = function (deployer) {
       MapleNFT,
       MapleMarket.address,
       JMToken.address,
-      "https://ipfs.io/ipfs/QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/" // 예시
+      "https://ipfs.io/ipfs/QmSw939aq99z9xAri2KfkaLUhj37TdevYzxTMyP9DYVpWb/" // 예시
     );
   })
 };
