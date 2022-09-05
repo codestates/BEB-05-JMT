@@ -28,16 +28,16 @@ const Home = () => {
       NFT_CONTRACT_ABI,
       NFT_CONTRACT_ADDR,
     );
-    console.log(account.address);
+    // console.log(account.address);
     const myNFTId = await NFTContract.methods.tokenOfOwnerByIndex(account.address, 0).call();
     console.log(myNFTId);
     const tokenURI = await NFTContract.methods
     .tokenURI(myNFTId)
     .call();
-    console.log(tokenURI);
+    // console.log(tokenURI);
 
     const response = await axios.get(tokenURI);
-    console.log(response);
+    // console.log(response);
     const tokenMetadata = response.data;
     console.log(tokenMetadata);
     tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
@@ -56,7 +56,7 @@ const Home = () => {
 
 	return (
 		<div className='home-container'>
-      <div>
+      <div className='username'>
         {account.username}
       </div>
       <img className="my-character" src={image} />

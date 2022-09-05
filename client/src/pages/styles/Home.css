@@ -1,3 +1,9 @@
 .my-character {
-    width: 30%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: calc(100vw * 110/620);
+    margin-top: calc(100vw * 10/620);
+}
+.username {
+    padding-top: calc(100vw * 25/350);
 }
