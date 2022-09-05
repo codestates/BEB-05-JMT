@@ -1,9 +1,136 @@
 {
-    "skin": ["2015", "2011"],
-    "face": ["54528", "51126", "25050", "26154"],
-    "hair": ["48640", "61151"],
-    "clothes": ["1050537", "1050523", "1050542"],
-    "shoes": ["1072758", "1072259", "1072758"],
     "version": "367",
-    "region": "KMS"
+    "region": "KMS",
+    "traits": {
+        "skin": [
+            {
+                "itemId": "2015",
+                "rarity": 70
+            },
+            {
+                "itemId": "2011",
+                "rarity": 20
+            },
+            {
+                "itemId": "2004",
+                "rarity": 10
+            }
+        ],
+        "face": [
+            {
+                "itemId": "54528",
+                "rarity": 30
+            },
+            {
+                "itemId": "51126",
+                "rarity": 10
+            },
+            {
+                "itemId": "25050",
+                "rarity": 20
+            },
+            {
+                "itemId": "26154",
+                "rarity": 25
+            },
+            {
+                "itemId": "54736",
+                "rarity": 15
+            }
+        ],
+        "hair": [
+            {
+                "itemId": "48640",
+                "rarity": 15
+            },
+            {
+                "itemId": "61151",
+                "rarity": 25
+            },
+            {
+                "itemId": "60504",
+                "rarity": 15
+            },
+            {
+                "itemId": "60315",
+                "rarity": 15
+            },
+            {
+                "itemId": "60457",
+                "rarity": 10
+            },
+            {
+                "itemId": "61153",
+                "rarity": 20
+            }
+        ],
+        "clothes": [
+            {
+                "itemId": "1050537",
+                "rarity": 15
+            },
+            {
+                "itemId": "1050523",
+                "rarity": 15
+            },
+            {
+                "itemId": "1050542",
+                "rarity": 20
+            },
+            {
+                "itemId": "1053871",
+                "rarity": 20
+            },
+            {
+                "itemId": "1053644",
+                "rarity": 10
+            },
+            {
+                "itemId": "1050452",
+                "rarity": 20
+            }
+        ],
+        "shoes": [
+            {
+                "itemId": "1072758",
+                "rarity": 30
+            },
+            {
+                "itemId": "1072259",
+                "rarity": 35
+            },
+            {
+                "itemId": "1072529",
+                "rarity": 35
+            }
+        ],
+        "eye_decoration": [
+            {
+                "itemId": "none",
+                "rarity": 80
+            },
+            {
+                "itemId": "1022033",
+                "rarity": 10
+            },
+            {
+                "itemId": "1022015",
+                "rarity": 10
+            }
+        ],
+        "face_accessory": [
+            {
+                "itemId": "none",
+                "rarity": 80
+            },
+            {
+                "itemId": "1012703",
+                "rarity": 10
+            },
+            {
+                "itemId": "1012085",
+                "rarity": 10
+            }
+        ]
+    }
 }
