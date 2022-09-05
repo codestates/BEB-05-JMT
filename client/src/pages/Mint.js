@@ -26,28 +26,26 @@ const Mint = () => {
 
     const mint = async () => {
         if(username) {
-            // await axios.post('http://localhost:4000/user/signup', {                
-            //     "username" : username,
-            //     "address" : account.address        
-            // });
-            await window.ethereum.enable();
-            const accounts = await window.ethereum.request({
-                method: "eth_accounts",
+            await axios.post('http://localhost:4000/user/signup', {                
+                "username" : username,
+                "address" : account.address        
             });
             console.log(NFT_CONTRACT_ADDR);
-            console.log(accounts[0]);
+            console.log(account.address);
             const NFTContract = await new web3.eth.Contract(
                 NFT_CONTRACT_ABI,
                 NFT_CONTRACT_ADDR,
             );
-            const result = await NFTContract.methods.mintMapleNFT().call(
+            const result = await NFTContract.methods.mintMapleNFT().send(
                 {
-                    from: accounts[0]
+                    from: account.address,
+                    gas: 1500000,
+                    gasPrice: '3000000'
                 }
             );
-            console.log(result);
-            // setAccount({...account, username: username});
-            // navigate('/home');
+            console.log(result.events.Minted.returnValues);
+            setAccount({...account, username: username});
+            navigate('/home');
         }
     }
 
