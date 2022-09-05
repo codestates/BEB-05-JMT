@@ -2,9 +2,9 @@ const NFT = require ("./abi/nft");
 const TOKEN = require ("./abi/token");
 const MARKET = require ("./abi/market");
 
-export const NFT_CONTRACT_ADDR = process.env.NFT_CONTRACT_ADDR;
-export const MARKET_CONTRACT_ADDR = process.env.MARKET_CONTRACT_ADDR;
-export const TOKEN_CONTRACT_ADDR = process.env.TOKEN_CONTRACT_ADDR;
+export const NFT_CONTRACT_ADDR = process.env.REACT_APP_NFT_CONTRACT_ADDR;
+export const MARKET_CONTRACT_ADDR = process.env.REACT_APP_MARKET_CONTRACT_ADDR;
+export const TOKEN_CONTRACT_ADDR = process.env.REACT_APP_TOKEN_CONTRACT_ADDR;
 
 const getNFTContractABI = () => {
     return NFT["abi"];

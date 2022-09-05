@@ -5,6 +5,14 @@ import { accountAtom } from "../recoil/account/atom"
 import axios from 'axios';
 import './styles/Mint.css';
 
+const Web3 = require('web3');
+const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+const {
+    NFT_CONTRACT_ADDR,
+    NFT_CONTRACT_ABI,
+} = require('../global_variables');
+
+
 const Mint = () => {
     const [account, setAccount] = useRecoilState(accountAtom);
     const [username, setUsername] = useState();
@@ -18,13 +26,28 @@ const Mint = () => {
 
     const mint = async () => {
         if(username) {
-            await axios.post('http://localhost:4000/user/signup', {                
-                "username" : username,
-                "address" : account.address        
+            // await axios.post('http://localhost:4000/user/signup', {                
+            //     "username" : username,
+            //     "address" : account.address        
+            // });
+            await window.ethereum.enable();
+            const accounts = await window.ethereum.request({
+                method: "eth_accounts",
             });
-
-            setAccount({...account, username: username});
-            navigate('/home');
+            console.log(NFT_CONTRACT_ADDR);
+            console.log(accounts[0]);
+            const NFTContract = await new web3.eth.Contract(
+                NFT_CONTRACT_ABI,
+                NFT_CONTRACT_ADDR,
+            );
+            const result = await NFTContract.methods.mintMapleNFT().call(
+                {
+                    from: accounts[0]
+                }
+            );
+            console.log(result);
+            // setAccount({...account, username: username});
+            // navigate('/home');
         }
     }
 
