@@ -34,6 +34,7 @@ const Home = () => {
     const tokenURI = await NFTContract.methods
     .tokenURI(myNFTId)
     .call();
+    console.log(tokenURI);
 
     const response = await axios.get(tokenURI);
     console.log(response);
