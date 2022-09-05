@@ -70,9 +70,9 @@ const main = async () => {
   if (!fs.existsSync(imageDir)) {
     fs.mkdirSync(imageDir);
   }
-  const metadataDir = './characters_metadata';
-  if (!fs.existsSync(metadataDir)) {
-    fs.mkdirSync(metadataDir);
+  const traitsDir = './characters_traits';
+  if (!fs.existsSync(traitsDir)) {
+    fs.mkdirSync(traitsDir);
   }
 
   let exists = {};
@@ -164,13 +164,13 @@ const main = async () => {
       }
     );
 
-    // save metadata file
-    const metadataFilename = `${metadataDir}/${idx}.json`
-    fs.writeFile(metadataFilename, JSON.stringify(picked), function(err) {
+    // save traits file
+    const traitsFilename = `${traitsDir}/${idx}.json`
+    fs.writeFile(traitsFilename, JSON.stringify(picked), function(err) {
       if (err) {
           console.log(err);
       } else {
-        console.log(`Download ${metadataFilename} Completed`);
+        console.log(`Saved ${traitsFilename} Completed`);
       }
     });
 
