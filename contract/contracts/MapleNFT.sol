@@ -46,7 +46,7 @@ contract MapleNFT is Ownable, ERC721Enumerable {
         uint256 minted = waitForMint[waitForMint.length - 1];
         waitForMint.pop();
 
-        _safeMint(msg.sender, minted);
+        _mint(msg.sender, minted);
         setApprovalForAll(marketContractAddress, true); // grant transaction permission to market
 
         emit Minted(msg.sender, minted, tokenURI(minted));
