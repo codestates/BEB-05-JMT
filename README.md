@@ -11,13 +11,16 @@ https://maplestory.nexon.com/Media/Font
 ## 환경 설정
 
 - npm install 명령어로 모듈 설치 
-`client`, `contract`, `server` 폴더 하위
+
+`client`, `contract`, `server`, `script` 폴더 하위
 
 ```
 npm install
 ```
 - 환경 변수 설정
+
 `client`, `contract`, `server` 폴더 하위에 `.env.example`을 참고하여 `.env`로 생성하고, 환경 변수들을 넣어준다.
+
 
 - 도커로 MySQL 서버 실행
 
@@ -41,7 +44,7 @@ npx sequelize db:migrate
 ```
 
 
-- DB/컨트랙트 재설정
+- DB 재설정
 ```
 # db
 docker stop mysql-container
@@ -54,7 +57,10 @@ create database jmt
 
 # server 폴더에서
 npx sequelize db:migrate
+```
 
+- 컨트랙트 재설정
+```
 # contract (from truffle)
 compile --all
 migrate --reset
