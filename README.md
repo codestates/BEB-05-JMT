@@ -34,6 +34,9 @@ docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=root -d -p 3306:3306 my
 docker exec -it mysql-container bash
 mysql -u root -p
 {패스워드 입력}
+
+//jmt 데이터베이스를 생성하지 않았다면 생성!
+create database jmt 
 ```
 
 - MYSQL Sequelize 사용법
