@@ -37,6 +37,7 @@ mysql -u root -p
 ```
 
 - MYSQL Sequelize 사용법
+
 mysql에 `jmt` 데이터베이스 생성 후 진행한다.
 ```
 npx sequelize db:migrate
