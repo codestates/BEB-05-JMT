@@ -19,3 +19,15 @@
     font-size: calc(100vw * 12/620);
     height: calc(100vw * 20/620);
 }
+
+.home-fight{
+    position: absolute;
+    left: 80%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.home-fightimg{
+    width: 250px;
+    height: 110px;
+}

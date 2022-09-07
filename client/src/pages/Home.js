@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { useRecoilValue } from "recoil"
+import { useRecoilState, useRecoilValue } from "recoil"
 import { accountAtom } from "../recoil/account/atom"
+import { tokenMetadataAtom } from '../recoil/tokenMetadata/atom';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import './styles/Home.css';
 
@@ -15,8 +17,10 @@ const {
 
 const Home = () => {
   const account = useRecoilValue(accountAtom);
+  const [,setTokenMetadata] = useRecoilState(tokenMetadataAtom); // tokenMetadata recoil 상태관리
   const navigate = useNavigate();
   const [image, setImage] = useState();
+
   useEffect(() => {
     if (!account.address) {
       navigate('/login');
@@ -44,6 +48,7 @@ const Home = () => {
     console.log(tokenMetadata.image);
 
     setImage(tokenMetadata.image);
+    setTokenMetadata(tokenMetadata);
   }
 
   mychar();
@@ -60,6 +65,11 @@ const Home = () => {
         {account.username}
       </div>
       <img className="my-character" src={image} />
+      <div className="home-fight">
+        <Link to="/fight">
+          <img className="home-fightimg" src='../img/fight.png' />
+        </Link>
+      </div>
 		</div>
 	);
 }
