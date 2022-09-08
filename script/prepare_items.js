@@ -20,7 +20,7 @@ const save = (metadata, item, idx, imageDir, traitsDir) => {
   
       // save traits file
       const traitsFilename = `${traitsDir}/${idx}.json`
-      fs.writeFile(traitsFilename, JSON.stringify(item.itemId), function(err) {
+      fs.writeFile(traitsFilename, JSON.stringify(item), function(err) {
         if (err) {
             console.log(err);
         } else {

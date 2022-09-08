@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
 
-contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {\
+contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     uint256 public constant SWORD0 = 0;
     uint256 public constant SWORD1 = 1;
     uint256 public constant SWORD2 = 2;
@@ -41,8 +41,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {\
 
 
     constructor() ERC1155(
-    //URI
-    //"https://game.example/api/item/{id}.json"
+    "https://ipfs.io/ipfs/QmXrVJngzKoLoyaJuDkWJHZZXEG8igRtFPYZdgaFwSti5Q/{id}"
     ) {
         _mint(msg.sender, SCROLL100, 10, "");
         _mint(msg.sender, SCROLL90, 20, "");

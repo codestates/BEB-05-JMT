@@ -1,14 +1,22 @@
 const fs = require('fs');
-const axios = require('axios');
+const path = require('path');
+const EXTENSION = '.json';
 
 const main = async () => {
-  const traitsDir = './characters_traits'
-  const metadataDir = './characters_metadata';
+  const traitsDir = './items_traits'
+  const metadataDir = './items_metadata';
   if (!fs.existsSync(metadataDir)) {
     fs.mkdirSync(metadataDir);
   }
-
-  for (let idx = 0; idx<100; idx++) {
+  const files = fs.readdirSync(traitsDir);
+  const targetFiles = files.filter(file => {
+    return path.extname(file).toLowerCase() === EXTENSION;
+  })
+  const items = targetFiles.map(name => {
+    return path.basename(name, EXTENSION);
+  })
+  console.log(items);
+  for (let idx of items) {
     const rawdata = fs.readFileSync(`${traitsDir}/${idx}.json`);
     const traits = JSON.parse(rawdata);
 
@@ -26,8 +34,8 @@ const main = async () => {
 
 
     metadata = {
-      image: `ipfs://QmQdHek9auPTYGk5z9b1mgnkcZWP79dRYsDjpLpXHYXbA4/${idx}.png`,
-      name: `Maple #${idx}`,
+      image: `ipfs://QmRKNWffD6AKqvsG2rdkUKeQSPXtfo1Mgo5AkswRVYRMHk/${idx}.png`,
+      name: `Maple Item #${idx}`,
       description: "CODESTATES BEB05 Project5 https://github.com/codestates/BEB-05-JMT",
       attributes: attributes
     }
