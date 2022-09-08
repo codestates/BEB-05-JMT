@@ -1,15 +1,6 @@
 const fs = require('fs');
 const axios = require('axios');
 
-// const skinNames = {
-//   "2000": "Light",
-//   "2004": "Ashen",
-//   "2011": "Clay",
-//   "2012": "Mercedes",
-//   "2015": "Soft Petal",
-//   "2019": "라벤더 홍조"
-// }
-
 const main = async () => {
   const traitsDir = './characters_traits'
   const metadataDir = './characters_metadata';
@@ -26,16 +17,10 @@ const main = async () => {
       if (value == "none") {
         continue;
       }
-      let name = value;
-      // if (key != "skin") {
-      //   const response = await axios.get(`https://maplestory.io/api/KMS/367/item/${value}/name`);
-      //   name = response.data.name;
-      // } else {
-      //   name = skinNames[value]
-      // }
+
       attributes.push({
         "trait_type": key,
-        "value": name
+        "value": value
       })
     }
 

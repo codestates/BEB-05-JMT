@@ -1,6 +1,7 @@
 const JMToken= artifacts.require("JMToken");
 const MapleNFT= artifacts.require("MapleNFT");
 const MapleMarket= artifacts.require("MapleMarket");
+const MapleItems = artifacts.require("MapleItems");
 
 module.exports = function (deployer) {
   deployer.then(async () => {
@@ -12,5 +13,9 @@ module.exports = function (deployer) {
       JMToken.address,
       "https://ipfs.io/ipfs/QmSw939aq99z9xAri2KfkaLUhj37TdevYzxTMyP9DYVpWb/" // 예시
     );
+    await deployer.deploy(
+      MapleItems,
+      MapleMarket.address,
+      JMToken.address,);
   })
 };
