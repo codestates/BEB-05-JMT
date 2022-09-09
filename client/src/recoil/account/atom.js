@@ -7,6 +7,8 @@ export const accountAtom = atom({
   default: {
     address: "",
     username: "",
+    charId: "",
+    weaponId: ""
   },
   effects_UNSTABLE: [persistAtom]
 });

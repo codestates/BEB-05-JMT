@@ -12,6 +12,8 @@ const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
 const {
     NFT_CONTRACT_ADDR,
     NFT_CONTRACT_ABI,
+    ITEMS_CONTRACT_ADDR,
+    ITEMS_CONTRACT_ABI,
 } = require('../global_variables');
 
 
@@ -25,6 +27,7 @@ const Home = () => {
     if (!account.address) {
       navigate('/login');
     }
+    mychar();
   }, []);
 
   const mychar = async() =>{
@@ -32,26 +35,42 @@ const Home = () => {
       NFT_CONTRACT_ABI,
       NFT_CONTRACT_ADDR,
     );
+    const itemsContract = await new web3.eth.Contract(
+      ITEMS_CONTRACT_ABI,
+      ITEMS_CONTRACT_ADDR,
+    );
     // console.log(account.address);
     const myNFTId = await NFTContract.methods.tokenOfOwnerByIndex(account.address, 0).call();
     console.log(myNFTId);
-    const tokenURI = await NFTContract.methods
-    .tokenURI(myNFTId)
-    .call();
-    // console.log(tokenURI);
+    const tokenURI = await NFTContract.methods.tokenURI(myNFTId).call();
+    console.log(tokenURI);
+    // const myWeaponId = await itemsContract.methods.tokenOfOwnerByIndex(account.address, 0).call();
+    const myWeaponId = account.weaponId;
+    console.log(myWeaponId);
+    const weaponURI = await itemsContract.methods.uri(parseInt(myWeaponId)).call();
+    console.log(weaponURI);
+    // const response = await axios.get(tokenURI);
+    // // console.log(response);
+    // const tokenMetadata = response.data;
+    // console.log(tokenMetadata);
+    // tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
+    // console.log(tokenMetadata.image);
 
-    const response = await axios.get(tokenURI);
+    const response2 = await axios.get(weaponURI);
     // console.log(response);
-    const tokenMetadata = response.data;
-    console.log(tokenMetadata);
-    tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
-    console.log(tokenMetadata.image);
+    const weaponMetadata = response2.data;
+    console.log(weaponMetadata);
+    weaponMetadata.image = weaponMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
+    console.log(weaponMetadata.image);
 
-    setImage(tokenMetadata.image);
-    setTokenMetadata(tokenMetadata);
+    setImage(weaponMetadata.image);
+    setTokenMetadata(weaponMetadata);
+
+    // setImage(tokenMetadata.image);
+    // setTokenMetadata(tokenMetadata);
   }
 
-  mychar();
+  
   // const myTotalNFT = await NFTContract.balanceOf(account).call();
   // for(let i = 0; i< myTotalNFT; i++){
   //   NFTContract.tokenOfOwnerByIndex.call(account, i).then((id)=> {...})

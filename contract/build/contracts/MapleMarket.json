@@ -15331,12 +15331,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xc34D39d7fF53172eD60098672A4678Ac352Fc782",
-      "transactionHash": "0x347ea4a9f285517ca0a7b7c2fb0e5b1d67f7e5a54ea90797bb98c2b19ab944d4"
+      "address": "0xad60A8C3362095E9944b46D8d8386cFb82Eece13",
+      "transactionHash": "0xc54881348317b75b3b0a1488d91deac9357dadf3060d24acfb5f1373186e7ffa"
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-05T21:46:11.053Z",
+  "updatedAt": "2022-09-09T18:25:08.229Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

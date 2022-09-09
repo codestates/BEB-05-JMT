@@ -14,6 +14,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    charId: {
+      type: DataTypes.INTEGER
+    },
+    weaponId: {
+      type: DataTypes.INTEGER
+    },
   }, {
     charset: "utf8",
     collate: "utf8_general_ci", // 한글 저장
