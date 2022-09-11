@@ -11,7 +11,7 @@ module.exports = function (deployer) {
       MapleNFT,
       MapleMarket.address,
       JMToken.address,
-      "https://ipfs.io/ipfs/QmSw939aq99z9xAri2KfkaLUhj37TdevYzxTMyP9DYVpWb/" // 예시
+      "https://ipfs.io/ipfs/QmVrTbBgFA36MW3KFArybwEZfFA99QwQWRExUc9n1D6ixM/" // 예시
     );
     await deployer.deploy(
       MapleItems,

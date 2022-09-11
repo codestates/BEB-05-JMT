@@ -41,7 +41,7 @@ const main = async () => {
 
 
     metadata = {
-      image: `ipfs://QmQdHek9auPTYGk5z9b1mgnkcZWP79dRYsDjpLpXHYXbA4/${idx}.png`,
+      image: `ipfs://QmU3P2xqb4TReaog4LjBuRyCkpYfCSBFz1vbZ6Ko233KjS/${idx}.png`,
       name: `Maple #${idx}`,
       description: "CODESTATES BEB05 Project5 https://github.com/codestates/BEB-05-JMT",
       attributes: attributes

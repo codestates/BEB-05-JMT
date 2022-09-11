@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 import "./interfaces/ERC20Interface.sol";
 
 contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
@@ -50,6 +51,15 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         _setToken(_tokenContractAddress);
         _generateWeaponArray();
         _generatefirstWeapon();
+    }
+
+    function uri(uint256 _tokenid) override public pure returns (string memory) {
+        return string(
+            abi.encodePacked(
+                "https://ipfs.io/ipfs/QmXrVJngzKoLoyaJuDkWJHZZXEG8igRtFPYZdgaFwSti5Q/",
+                Strings.toString(_tokenid)
+            )
+        );
     }
 
     function setURI(string memory newuri) public onlyOwner {
