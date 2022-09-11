@@ -23,7 +23,7 @@ const Login = () => {
       setAccount({address: address});
       navigate('/mint');
     }else{
-      setAccount({address: address, username: check.username});
+      setAccount({address: address, username: check.username, charId: check.charId, weaponId: check.weaponId});
       navigate('/home');
     }
   }

@@ -10,6 +10,8 @@ const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
 const {
     NFT_CONTRACT_ADDR,
     NFT_CONTRACT_ABI,
+    ITEMS_CONTRACT_ADDR,
+    ITEMS_CONTRACT_ABI,
 } = require('../global_variables');
 
 
@@ -30,21 +32,40 @@ const Mint = () => {
                 "username" : username,
                 "address" : account.address        
             });
-            console.log(NFT_CONTRACT_ADDR);
-            console.log(account.address);
+            // console.log(NFT_CONTRACT_ADDR);
+            // console.log(account.address);
             const NFTContract = await new web3.eth.Contract(
                 NFT_CONTRACT_ABI,
                 NFT_CONTRACT_ADDR,
             );
-            const result = await NFTContract.methods.mintMapleNFT().send(
+            const itemsContract = await new web3.eth.Contract(
+                ITEMS_CONTRACT_ABI,
+                ITEMS_CONTRACT_ADDR,
+              );
+            const char = await NFTContract.methods.mintMapleNFT().send(
                 {
                     from: account.address,
                     gas: 1500000,
                     gasPrice: '3000000'
                 }
             );
-            console.log(result.events.Minted.returnValues);
-            setAccount({...account, username: username});
+            const charId = char.events.Minted.returnValues.tokenId;
+            // console.log(charId);
+            const weapon = await itemsContract.methods.mintFirstWeapon().send(
+                {
+                    from: account.address,
+                    gas: 1500000,
+                    gasPrice: '3000000'
+                }
+            );
+            const weaponId = weapon.events.TransferSingle.returnValues.id;
+            console.log(weaponId);
+            await axios.post('http://localhost:4000/user/equip', {   
+                "address" : account.address,
+                "charId": charId,
+                "weaponId": weaponId
+            });
+            setAccount({...account, username: username, charId:charId, weaponId: weaponId});
             navigate('/home');
         }
     }

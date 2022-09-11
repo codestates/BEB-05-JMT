@@ -35,7 +35,9 @@ const check = async(req, res, next) => {
         res.status(200).json({
             message: "true",
             username: user.username,
-            address: user.address
+            address: user.address,
+            charId: user.charId,
+            weaponId: user.weaponId
         })
     }else{
         res.status(200).json({
@@ -44,7 +46,17 @@ const check = async(req, res, next) => {
     }
 }
 
+const equip = async(req, res, next) =>{
+    const result = await User.update({charId: req.body.charId, weaponId: req.body.weaponId}, {where: {address: req.body.address}});
+    if(result){
+        res.status(200).send("캐릭터 무기 장착 완료");
+    } else{
+        res.status(400).send("캐릭터 무기 장착 애러");
+    }    
+}
+
 module.exports = {
     signup,
-    check
+    check,
+    equip
 };

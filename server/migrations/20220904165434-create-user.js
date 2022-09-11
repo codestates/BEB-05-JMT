@@ -16,6 +16,12 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      charId: {
+        type: Sequelize.INTEGER
+      },
+      weaponId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

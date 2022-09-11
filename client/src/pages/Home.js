@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { useRecoilState, useRecoilValue } from "recoil"
+import { useSetRecoilState, useRecoilValue} from "recoil"
 import { accountAtom } from "../recoil/account/atom"
-import { tokenMetadataAtom } from '../recoil/tokenMetadata/atom';
+import { charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/atom';
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import './styles/Home.css';
-
-const Web3 = require('web3');
-const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
-const {
-    NFT_CONTRACT_ADDR,
-    NFT_CONTRACT_ABI,
-} = require('../global_variables');
-
+import contractAPI from '../api/contract';
+import metadataAPI from '../api/metadata';
 
 const Home = () => {
   const account = useRecoilValue(accountAtom);
-  const [,setTokenMetadata] = useRecoilState(tokenMetadataAtom); // tokenMetadata recoil 상태관리
+  const setCharMetadata = useSetRecoilState(charMetadataAtom);
+  const setWeaponMeatadata = useSetRecoilState(weaponMetadataAtom);
   const navigate = useNavigate();
   const [image, setImage] = useState();
 
@@ -25,39 +19,25 @@ const Home = () => {
     if (!account.address) {
       navigate('/login');
     }
+    mychar();
   }, []);
 
   const mychar = async() =>{
-    const NFTContract = await new web3.eth.Contract(
-      NFT_CONTRACT_ABI,
-      NFT_CONTRACT_ADDR,
-    );
-    // console.log(account.address);
-    const myNFTId = await NFTContract.methods.tokenOfOwnerByIndex(account.address, 0).call();
-    console.log(myNFTId);
-    const tokenURI = await NFTContract.methods
-    .tokenURI(myNFTId)
-    .call();
-    // console.log(tokenURI);
-
-    const response = await axios.get(tokenURI);
-    // console.log(response);
-    const tokenMetadata = response.data;
-    console.log(tokenMetadata);
-    tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
-    console.log(tokenMetadata.image);
-
-    setImage(tokenMetadata.image);
-    setTokenMetadata(tokenMetadata);
+    console.log(account);
+    const characterMetadata = await contractAPI.fetchCharacter(account.address, account.charId);
+    console.log(characterMetadata.attributes);
+    setCharMetadata(characterMetadata);
+    console.log('check');
+    const weaponMetadata = await contractAPI.fetchWeapon(account.address, account.weaponId);
+    setWeaponMeatadata(weaponMetadata);
+    console.log(weaponMetadata.attributes);
+    const standImage = await metadataAPI.fetchFightImage(characterMetadata.attributes, weaponMetadata.attributes, 'animated');
+    // const standImage = await assetAPI.fetchCharImage(characterMetadata.attributes, '0');
+    const strength = await metadataAPI.fetchStrength(weaponMetadata.attributes);
+    console.log(strength);
+    console.log(standImage);
+    setImage(standImage);
   }
-
-  mychar();
-  // const myTotalNFT = await NFTContract.balanceOf(account).call();
-  // for(let i = 0; i< myTotalNFT; i++){
-  //   NFTContract.tokenOfOwnerByIndex.call(account, i).then((id)=> {...})
-  // }
-
-
 
 	return (
 		<div className='home-container'>
