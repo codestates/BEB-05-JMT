@@ -6,7 +6,7 @@ import { charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/at
 import { Link } from "react-router-dom";
 import './styles/Home.css';
 import contractAPI from '../api/contract';
-import assetAPI from '../api/asset';
+import metadataAPI from '../api/metadata';
 
 const Home = () => {
   const account = useRecoilValue(accountAtom);
@@ -31,7 +31,10 @@ const Home = () => {
     const weaponMetadata = await contractAPI.fetchWeapon(account.address, account.weaponId);
     setWeaponMeatadata(weaponMetadata);
     console.log(weaponMetadata.attributes);
-    const standImage = await assetAPI.fetchFightImage(characterMetadata.attributes, weaponMetadata.attributes, 'animated');
+    const standImage = await metadataAPI.fetchFightImage(characterMetadata.attributes, weaponMetadata.attributes, 'animated');
+    // const standImage = await assetAPI.fetchCharImage(characterMetadata.attributes, '0');
+    const strength = await metadataAPI.fetchStrength(weaponMetadata.attributes);
+    console.log(strength);
     console.log(standImage);
     setImage(standImage);
   }

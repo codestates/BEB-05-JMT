@@ -8,6 +8,12 @@ const fetchAttributes = (attributes) => {
   return result;
 }
 
+const fetchStrength = (weaponAttr) => {
+  const weapon = fetchAttributes(weaponAttr);
+
+  return weapon.strength;
+}
+
 const fetchCharImage = async (charAttr, motion) => {
   const version ='367';
   const character = fetchAttributes(charAttr); 
@@ -56,7 +62,7 @@ const fetchStandImage = async (charAttr, weaponAttr, motion) =>{
     (character.clothes && character.clothes != 'none') ? encodeURIComponent(`{"itemId":${character.clothes},"region":"KMS","version":"${version}"},`) : "",
     (character.shoes && character.shoes != 'none') ? encodeURIComponent(`{"itemId":${character.shoes},"region":"KMS","version":"${version}"},`) : "",
     (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
-    (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"}`) : "",
+    (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
     (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
     `/${weapon.stand}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
   ]);
@@ -78,7 +84,7 @@ const fetchFightImage = async (charAttr, weaponAttr, motion) =>{
     (character.clothes && character.clothes != 'none') ? encodeURIComponent(`{"itemId":${character.clothes},"region":"KMS","version":"${version}"},`) : "",
     (character.shoes && character.shoes != 'none') ? encodeURIComponent(`{"itemId":${character.shoes},"region":"KMS","version":"${version}"},`) : "",
     (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
-    (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"}`) : "",
+    (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
     (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
     `/${weapon.fight}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
   ]);
@@ -88,12 +94,13 @@ const fetchFightImage = async (charAttr, weaponAttr, motion) =>{
 
 //fetchWinImage
 //fetchLoseImage
-const assetAPI = {
+const metadataAPI = {
   fetchAttributes,
   fetchCharImage,
   fetchWeaponImage,
   fetchStandImage,
-  fetchFightImage
+  fetchFightImage,
+  fetchStrength
 };
 
-export default assetAPI;
+export default metadataAPI;

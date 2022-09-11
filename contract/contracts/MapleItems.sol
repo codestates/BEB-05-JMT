@@ -38,9 +38,8 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     uint256 public constant SCROLL10 = 404;
 
     constructor(address _marketAddress, address _tokenContractAddress) ERC1155(
-    "https://ipfs.io/ipfs/QmXrVJngzKoLoyaJuDkWJHZZXEG8igRtFPYZdgaFwSti5Q/{id}"
+    "https://ipfs.io/ipfs/QmTUTALQp1a2pzWCRT5d1vf59MUCFBW4UniCQMGbTTQ2Ub/{id}"
     ) {
-        // setURI("https://ipfs.io/ipfs/QmXrVJngzKoLoyaJuDkWJHZZXEG8igRtFPYZdgaFwSti5Q/{id}");
         _mint(msg.sender, SCROLL100, 10, "");
         _mint(msg.sender, SCROLL90, 20, "");
         _mint(msg.sender, SCROLL60, 40, "");
@@ -56,7 +55,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     function uri(uint256 _tokenid) override public pure returns (string memory) {
         return string(
             abi.encodePacked(
-                "https://ipfs.io/ipfs/QmXrVJngzKoLoyaJuDkWJHZZXEG8igRtFPYZdgaFwSti5Q/",
+                "https://ipfs.io/ipfs/QmTUTALQp1a2pzWCRT5d1vf59MUCFBW4UniCQMGbTTQ2Ub/",
                 Strings.toString(_tokenid)
             )
         );
