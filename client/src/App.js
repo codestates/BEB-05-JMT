@@ -1,25 +1,25 @@
 import React from 'react';
 import { useRecoilValue } from "recoil"
-import { accountAtom } from "./recoil/account/atom"
+import { backgroundAtom } from "./recoil/background/atom"
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import { Home, Inventory, Store, Ranking, Login, Mint, Swap, Fight, Lootbox } from './pages';
+import { Home, Inventory, Market, Ranking, Login, Mint, Swap, Fight, Lootbox } from './pages';
 import { Fighting, FightResult, NotFound } from './components';
 import MainLayout from './components/MainLayout';
 
 const App = () => {
-  const account = useRecoilValue(accountAtom)
+  const background = useRecoilValue(backgroundAtom)
 
   return (
     <div className="App">
-      <div className={account && account.address ? "App-header logged-in": "App-header not-logged-in"}>
+      <div className={`App-header background-${background.type}`}>
         <Routes>
           {/* Navbar를 보여주고 싶은 컴포넌트*/}
           <Route element={<MainLayout />}>
             <Route exact path="/" element={<Home/>} />
             <Route path="/home" element={<Home/>} />
             <Route path="/inventory" element={<Inventory/>} />
-            <Route path="/store" element={<Store/>} />
+            <Route path="/market" element={<Market/>} />
             <Route path="/swap" element={<Swap/>} />
             <Route path="/ranking" element={<Ranking/>} />
             <Route path="/lootbox" element={<Lootbox/>} />

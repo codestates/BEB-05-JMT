@@ -25,7 +25,7 @@ const Navbar = () => {
           <Link to="/inventory" className="nav-item">인벤토리</Link>
         </div>
         <div className="nav-item-container">
-          <Link to="/store" className="nav-item">상점</Link>
+          <Link to="/market" className="nav-item">상점</Link>
         </div>
         <div className="nav-item-container">
           <Link to="/ranking" className="nav-item">랭킹</Link>

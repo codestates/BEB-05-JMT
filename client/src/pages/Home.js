@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useSetRecoilState, useRecoilValue} from "recoil"
 import { accountAtom } from "../recoil/account/atom"
+import { backgroundAtom } from "../recoil/background/atom"
 import { charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/atom';
 import { Link } from "react-router-dom";
 import './styles/Home.css';
@@ -11,6 +12,7 @@ import metadataAPI from '../api/metadata';
 const Home = () => {
   const account = useRecoilValue(accountAtom);
   const setCharMetadata = useSetRecoilState(charMetadataAtom);
+  const setBackground = useSetRecoilState(backgroundAtom)
   const setWeaponMeatadata = useSetRecoilState(weaponMetadataAtom);
   const navigate = useNavigate();
   const [image, setImage] = useState();
@@ -19,6 +21,7 @@ const Home = () => {
     if (!account.address) {
       navigate('/login');
     }
+    setBackground({type: 'default'});
     mychar();
   }, []);
 

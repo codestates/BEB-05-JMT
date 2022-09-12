@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { useRecoilState } from "recoil"
+import { useRecoilState, useSetRecoilState } from "recoil"
+import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
 import './styles/Mint.css';
 import contractAPI from '../api/contract';
 import accountAPI from '../api/account';
+import nobody from '../assets/nobody.png';
 
 const Mint = () => {
     const [account, setAccount] = useRecoilState(accountAtom);
+    const setBackground = useSetRecoilState(backgroundAtom)
     const [username, setUsername] = useState();
     const navigate = useNavigate();
 
     useEffect(() => {
-    if (!account.address) {
-        navigate('/login');
-    }
+        if (!account.address) {
+            navigate('/login');
+        }
+        setBackground({type: 'default'});
     }, []);
 
     const mint = async () => {
@@ -38,14 +42,21 @@ const Mint = () => {
     }
     return (
         <div className='mint-container'>
-            <h2>
-                민트
+            <h2 className="mint-label">
+                당신의 고유한 NFT 캐릭터를 만들어 보세요
             </h2>
-            <label className="mint-label"> 유저 이름 </label>
-            <input type="text" className="mint-input" placeholder="유저 이름을 정하세요" onChange={(e) => handleChangeName(e.target.value)} />
-            <div className="mint-btn" onClick={mint}>
-                MINT
+            <div className='mint-input-container'>
+                <input
+                    type="text"
+                    className="mint-input"
+                    placeholder=""
+                    onChange={(e) => handleChangeName(e.target.value)}
+                />
+                <div className="mint-btn" onClick={mint}>
+                    MINT
+                </div>
             </div>
+            <img className="nobody-character" src={nobody} />
         </div>
     );
 }

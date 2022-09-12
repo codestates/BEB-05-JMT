@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { useRecoilValue } from "recoil"
+import { useRecoilValue, useSetRecoilState } from "recoil"
 import { accountAtom } from "../recoil/account/atom"
 import { tokenMetadataAtom } from '../recoil/tokenMetadata/atom';
 import { fightAtom } from '../recoil/fight/atom';
 import { dummyFight } from './dummyFight';
 import '../pages/styles/Fight.css';
+import { backgroundAtom } from "../recoil/background/atom"
 
 const Fighting = () => {
   const fightTokenMetadata = useRecoilValue(tokenMetadataAtom);
   const fightdata = useRecoilValue(fightAtom)
   const account = useRecoilValue(accountAtom)
+  const setBackground = useSetRecoilState(backgroundAtom)
   const navigate = useNavigate();
 
   const result = () => {
@@ -22,6 +24,7 @@ const Fighting = () => {
     if (!account.address) {
       navigate('/login');
     }
+    setBackground({type: 'fight'});
   }, []);
 
 	return (

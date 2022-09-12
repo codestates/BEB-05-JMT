@@ -1,16 +1,51 @@
+.mint-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8vw;
+}
+
 .mint-container .mint-btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #fff;
     text-decoration: none;
-    min-width: calc(100vw * 110/620);
-    height: calc(100vw * 45/620);
-    margin-top: calc(100vw * 25/620);
+    width: calc(100vw * 110/620);
+    height: 4vw;
     background-color: #FE7427;
     cursor: pointer;
+    font-size: 2vw;
+    padding: 3px 4px;
 }
 
-.mint-container {
-    margin-top: calc(100vw * 25/620);
+.mint-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 4vw;
+}
+
+.mint-input-container .mint-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 4vw;
+    border-color: #FE7427;
+    outline: none;
+    border-style: solid;
+    min-width: 40vw;
+    font-size: 2vw;
+}
+
+.mint-container .mint-label {
+    font-size: 3vw;
+}
+
+.mint-container .nobody-character {
+    position: absolute;
+    top: 0;
+    margin-top: 27vw;
+    width: 10vw;
 }

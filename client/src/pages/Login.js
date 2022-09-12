@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSetRecoilState } from "recoil"
+import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
 import './styles/Login.css';
 import { useNavigate } from 'react-router-dom'
@@ -7,10 +8,12 @@ import accountAPI from '../api/account';
 
 const Login = () => {
   const setAccount = useSetRecoilState(accountAtom)
+  const setBackground = useSetRecoilState(backgroundAtom)
   const navigate = useNavigate();
 
   useEffect(() => {
     setAccount({address: ''});
+    setBackground({type: 'not-logged-in'});
   }, []);
 
   const connectWallet = async () => {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { useRecoilState, useRecoilValue } from "recoil"
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
+import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
 import { fightAtom } from "../recoil/fight/atom"
 import { tokenMetadataAtom } from '../recoil/tokenMetadata/atom';
@@ -13,6 +14,7 @@ const Fight = () => {
   const [isFight, setFight] = useRecoilState(fightAtom);
   const account = useRecoilValue(accountAtom);
   const fightTokenMetadata = useRecoilValue(tokenMetadataAtom);
+  const setBackground = useSetRecoilState(backgroundAtom)
   const navigate = useNavigate();
   
   const fight = async () => {
@@ -29,6 +31,7 @@ const Fight = () => {
     if (!account.address) {
       navigate('/login');
     }
+    setBackground({type: 'fight'});
     fight();
   }, []);
 

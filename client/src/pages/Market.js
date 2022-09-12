@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useRecoilValue, useSetRecoilState } from "recoil"
 import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
+import './styles/Market.css'
 
-const Inventory = () => {
+const Market = () => {
   const account = useRecoilValue(accountAtom)
   const setBackground = useSetRecoilState(backgroundAtom)
   const navigate = useNavigate();
@@ -13,14 +14,14 @@ const Inventory = () => {
     if (!account.address) {
       navigate('/login');
     }
-    setBackground({type: 'default'});
+    setBackground({type: 'market'});
   }, []);
 
 	return (
-		<div className='inventory-container'>
-			인벤토리
+		<div className='market-container'>
+      <Link to="/lootbox" className="lootbox-btn">뽑기</Link>
 		</div>
 	);
 }
 
-export default Inventory;
+export default Market;
