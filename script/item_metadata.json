@@ -60,19 +60,19 @@
                 "itemId": "1382004",
                 "type": "staff",
                 "stand":"stand1",
-                "fight":"swing1"
+                "fight":"swingO1"
             },
             {
                 "itemId": "1382225",
                 "type": "staff",
                 "stand":"stand1",
-                "fight":"swing3"
+                "fight":"swingO3"
             },
             {
                 "itemId": "1382239",
                 "type": "staff",
                 "stand":"stand1",
-                "fight":"swing3"
+                "fight":"swingO3"
             }
         ],
         "polearm": [
