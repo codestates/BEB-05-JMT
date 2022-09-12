@@ -31,7 +31,7 @@ const Home = () => {
     const weaponMetadata = await contractAPI.fetchWeapon(account.address, account.weaponId);
     setWeaponMeatadata(weaponMetadata);
     console.log(weaponMetadata.attributes);
-    const standImage = await metadataAPI.fetchFightImage(characterMetadata.attributes, weaponMetadata.attributes, 'animated');
+    const standImage = await metadataAPI.fetchStandImage(characterMetadata.attributes, weaponMetadata.attributes, 'animated');
     // const standImage = await assetAPI.fetchCharImage(characterMetadata.attributes, '0');
     const strength = await metadataAPI.fetchStrength(weaponMetadata.attributes);
     console.log(strength);
