@@ -13,9 +13,26 @@ const fetchUsername = async (address) => {
   return check.data;
 }
 
+const signUp = async (address, username) => {
+  await axios.post('http://localhost:4000/user/signup', {                
+      "username" : username,
+      "address" : address        
+  });
+}
+
+const equip = async (address, charId, weaponId) => {
+  await axios.post('http://localhost:4000/user/equip', {   
+      "address" : address,
+      "charId": charId,
+      "weaponId": weaponId
+  });
+}
+
 const accountAPI = {
   fetchAccount,
-  fetchUsername
+  fetchUsername,
+  signUp,
+  equip
 };
 
 export default accountAPI;

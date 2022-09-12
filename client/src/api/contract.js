@@ -43,12 +43,54 @@ const fetchWeapon = async (address, weaponId) => {
     return weaponMetadata;
 }
 
+const mintCharNFT = async(address) => {
+    const NFTContract = await contractAPI.fetchNFTContract();
+    const char = await NFTContract.methods.mintMapleNFT().send(
+        {
+            from: address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        }
+    );
+    const charId = char.events.Minted.returnValues.tokenId;
+
+    return charId;
+}
+
+const mintFirstWeaponNFT = async(address) => {
+    const itemsContract = await contractAPI.fetchItemsContract();
+    const weapon = await itemsContract.methods.mintFirstWeapon().send(
+        {
+            from: address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        }
+    );
+    const weaponId = weapon.events.TransferSingle.returnValues.id;
+    return weaponId;
+}
+
+const mintWeaponNFT = async(address) => {
+    const itemsContract = await contractAPI.fetchItemsContract();
+    const weapon = await itemsContract.methods.mintRandomWeapon().send(
+        {
+            from: address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        }
+    );
+    const weaponId = weapon.events.TransferSingle.returnValues.id;
+    return weaponId;
+}
+
 const contractAPI = {
     fetchNFTContract,
     fetchItemsContract,
     fetchCharacter,
-    fetchWeapon
-     
+    fetchWeapon,
+    mintCharNFT,
+    mintFirstWeaponNFT,
+    mintWeaponNFT     
 };
 
 export default contractAPI;

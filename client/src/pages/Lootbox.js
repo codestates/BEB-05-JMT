@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 import { useRecoilState, useRecoilValue } from "recoil"
 import { accountAtom } from "../recoil/account/atom"
 import axios from 'axios';
 import './styles/Lootbox.css';
-
-const Web3 = require('web3');
-const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
-const {
-    NFT_CONTRACT_ADDR,
-    NFT_CONTRACT_ABI,
-} = require('../global_variables');
-
+import contractAPI from '../api/contract';
+import metadataAPI from '../api/metadata';
 
 const Lootbox = () => {
     const account = useRecoilValue(accountAtom);
+    const [charNFT, setCharNFT] = useState();
+    const [weaponNFT, setWeaponNFT] = useState();
+    const navigate = useNavigate();
 
     useEffect(() => {
     if (!account.address) {
@@ -22,22 +20,13 @@ const Lootbox = () => {
     }, []);
 
     const charMint = async () => {
-        const NFTContract = await new web3.eth.Contract(
-            NFT_CONTRACT_ABI,
-            NFT_CONTRACT_ADDR,
-        );
-        const result = await NFTContract.methods.mintMapleNFT().send(
-            {
-                from: account.address,
-                gas: 1500000,
-                gasPrice: '3000000'
-            }
-        );
-        console.log(result.events.Minted.returnValues);
+        
+        const charId = await contractAPI.mintCharNFT(account.address);
+        
     }
 
     const weaponMint = async () => {
-
+        const weaponId = await contractAPI.mintRandomWeaponNFT(account.address);
     }
 
     return (

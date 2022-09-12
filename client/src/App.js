@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil"
 import { accountAtom } from "./recoil/account/atom"
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import { Home, Inventory, Store, Ranking, Login, Mint, Swap, Fight } from './pages';
+import { Home, Inventory, Store, Ranking, Login, Mint, Swap, Fight, Lootbox } from './pages';
 import { Fighting, FightResult, NotFound } from './components';
 import MainLayout from './components/MainLayout';
 
@@ -22,6 +22,7 @@ const App = () => {
             <Route path="/store" element={<Store/>} />
             <Route path="/swap" element={<Swap/>} />
             <Route path="/ranking" element={<Ranking/>} />
+            <Route path="/lootbox" element={<Lootbox/>} />
             <Route component={<NotFound/>} />
           </Route>
           {/* Navbar를 안 보여주고 싶은 컴포넌트*/}
