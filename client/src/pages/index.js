@@ -1,7 +1,7 @@
 export { default as Home } from './Home'
 export { default as Inventory } from './Inventory'
 export { default as Ranking } from './Ranking'
-export { default as Store } from './Store'
+export { default as Market } from './Market'
 export { default as Login } from './Login'
 export { default as Mint } from './Mint'
 export { default as Swap } from './Swap'

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { useRecoilState, useRecoilValue } from "recoil"
+import { useRecoilValue, useSetRecoilState } from "recoil"
+import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
 import axios from 'axios';
 import './styles/Lootbox.css';
@@ -9,18 +10,21 @@ import metadataAPI from '../api/metadata';
 
 const Lootbox = () => {
     const account = useRecoilValue(accountAtom);
+    const setBackground = useSetRecoilState(backgroundAtom)
     const [charNFT, setCharNFT] = useState();
     const [weaponNFT, setWeaponNFT] = useState();
+    const [charImg, setCharImg] = useState();
+    const [weaponImg, setWeaponImg] = useState();
     const navigate = useNavigate();
 
     useEffect(() => {
     if (!account.address) {
         navigate('/login');
     }
+    setBackground({type: 'market'});
     }, []);
 
     const charMint = async () => {
-        
         const charId = await contractAPI.mintCharNFT(account.address);
         
     }

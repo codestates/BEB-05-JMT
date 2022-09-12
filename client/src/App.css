@@ -7,14 +7,14 @@
 
 .App-header {
   background-color: #fff;
-  height: calc(100vw * 9/16 - 100vw * 45/620);
+  height: calc(100vw * 9/16 - 100vw * 35/620);
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
 }
 
-.logged-in {
+.background-default {
   background-image: url('./assets/background.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -23,10 +23,37 @@
   background-size: 330vw auto;
 }
 
-.not-logged-in {
+.background-not-logged-in {
   background-image: url('./assets/login.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: 100vw auto;
+}
+
+.background-market {
+  background-image: url('./assets/market.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: 54%;
+  background-position-y: -21vw;
+  background-size: 150vw auto;
+}
+
+.background-fight {
+  background-image: url('./assets/fight.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: 55%;
+  background-position-y: -10vw;
+  background-size: 190vw auto;
+}
+
+.background-ranking {
+  background-image: url('./assets/ranking.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: 50%;
+  background-position-y: -11.5vw;
   background-size: 100vw auto;
 }
 
@@ -42,4 +69,5 @@
 
 .App-footer-text {
   color: #fff;
+  font-size: calc(5px + 1vmin);
 }
