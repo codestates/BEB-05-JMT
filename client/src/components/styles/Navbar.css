@@ -26,6 +26,7 @@
     overflow: hidden;
     flex-grow: 1;
     margin-right: calc(100vw * 22/620);
+    border-radius: 1.2vw;
 }
 .nav-item-container-end {
     display: flex;
@@ -38,6 +39,7 @@
     overflow: hidden;
     flex-grow: 1;
     margin-right: calc(100vw * 32/620);
+    border-radius: 1.2vw;
 }
 
 .nav-item-home {
@@ -51,6 +53,7 @@
     overflow: hidden;
     flex-grow: 1;
     margin-right: calc(100vw * 32/620);
+    border-radius: 1.2vw;
 }
 
 .nav-item-logout {
