@@ -25,17 +25,19 @@ const Home = () => {
   const mychar = async() =>{
     console.log(account);
     const characterMetadata = await contractAPI.fetchCharacter(account.address, account.charId);
-    console.log(characterMetadata.attributes);
     setCharMetadata(characterMetadata);
-    console.log('check');
+    console.log(characterMetadata.attributes);
+
     const weaponMetadata = await contractAPI.fetchWeapon(account.address, account.weaponId);
     setWeaponMeatadata(weaponMetadata);
     console.log(weaponMetadata.attributes);
+
     const standImage = await metadataAPI.fetchStandImage(characterMetadata.attributes, weaponMetadata.attributes, 'animated');
     // const standImage = await assetAPI.fetchCharImage(characterMetadata.attributes, '0');
+    console.log(standImage);
+
     const strength = await metadataAPI.fetchStrength(weaponMetadata.attributes);
     console.log(strength);
-    console.log(standImage);
     setImage(standImage);
   }
 
