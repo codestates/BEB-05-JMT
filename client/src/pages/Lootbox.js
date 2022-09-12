@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useRecoilValue, useSetRecoilState } from "recoil"
 import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
@@ -25,25 +25,43 @@ const Lootbox = () => {
     }, []);
 
     const charMint = async () => {
-        const charId = await contractAPI.mintCharNFT(account.address);
+        if(!charImg){
+            const charId = await contractAPI.mintCharNFT(account.address);
+            console.log(charId);
+            const char = await contractAPI.fetchCharacter(account.address, charId);
+            console.log(char.image);
+            setCharImg(char.image);
+        } else{
+            setCharImg();
+            navigate('/lootbox');
+        }
+        
         
     }
 
     const weaponMint = async () => {
-        const weaponId = await contractAPI.mintRandomWeaponNFT(account.address);
+        if(!weaponImg){
+            const weaponId = await contractAPI.mintWeaponNFT(account.address);
+            console.log(weaponId);
+            const weapon = await contractAPI.fetchWeapon(account.address, weaponId);
+            console.log(weapon.image);
+            setWeaponImg(weapon.image);
+        } else {
+            setWeaponImg();
+            navigate('/lootbox');
+        }
+        
     }
 
     return (
         <div className='lootbox-container'>
-            <h2>
-                랜덤 뽑기
-            </h2>
-            <div className="charMint-btn" onClick={charMint}>
-                캐릭터 민팅
-            </div>
-            <div className="weaponMint-btn" onClick={weaponMint}>
-                무기 민팅
-            </div>
+            <span className="lootbox-btn" onClick={charMint}>
+                {charImg ? 
+                <img className="lootbox-char" src={charImg} /> : "캐릭터 민팅"}
+            </span>
+            <span className="lootbox-btn" onClick={weaponMint}>
+                {weaponImg ? <img className="lootbox-weapon" src={weaponImg} />  : "무기 민팅"}
+            </span>
         </div>
     );
 }

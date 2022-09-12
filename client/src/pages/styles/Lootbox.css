@@ -1,0 +1,38 @@
+.lootbox-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    color: #fff;
+    align-items: center;
+    flex-direction: row;
+}
+
+.lootbox-container .lootbox-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:  #FE7427;
+    text-decoration: none;
+    width: calc(100vw * 180/620);
+    height: calc(100vw * 180/620);
+    margin-top: calc(100vw * 10/620);
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: calc(15vw);
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.lootbox-container .lootbox-btn .lootbox-char {
+    height: 22vw;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.lootbox-container .lootbox-btn .lootbox-weapon {
+    height: 15vw;
+    margin-left: auto; 
+    margin-right: auto;
+}
