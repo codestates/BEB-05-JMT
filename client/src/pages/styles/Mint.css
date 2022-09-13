@@ -49,3 +49,55 @@
     margin-top: 27vw;
     width: 10vw;
 }
+
+
+.mint-container .mint-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:  #FE7427;
+    text-decoration: none;
+    width: calc(100vw * 180/620);
+    height: calc(100vw * 180/620);
+    margin-top: calc(100vw * 10/620);
+    border-radius: 5vw;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: calc(15vw);
+    margin-left: auto; 
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.mint-char {
+    height: 22vw;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.mint-weapon {
+    height: 15vw;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.mint-container .mintdata {
+    position: absolute;
+    left: 15vw;
+    top: 18vw;
+    width: 24vw;
+    height: 30vw;
+    font-size: calc(100vw * 10/620);
+    text-align: left;
+
+    word-wrap: break-word;
+    font-size: 2vw;
+}
+
+.mint-container .mintdata .line {
+    margin-top: 0.5vw;
+}
+
+.mint-container .mintdata .line2 {
+    margin-top: 1.5vw;
+}

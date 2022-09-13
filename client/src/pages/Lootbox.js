@@ -10,11 +10,12 @@ import metadataAPI from '../api/metadata';
 
 const Lootbox = () => {
     const account = useRecoilValue(accountAtom);
-    const setBackground = useSetRecoilState(backgroundAtom)
-    const [charNFT, setCharNFT] = useState();
-    const [weaponNFT, setWeaponNFT] = useState();
+    const setBackground = useSetRecoilState(backgroundAtom);
     const [charImg, setCharImg] = useState();
     const [weaponImg, setWeaponImg] = useState();
+    const [strength, setStrength] = useState();
+    const [charName, setCharName] = useState();
+    const [weaponName, setWeaponName] = useState();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -31,6 +32,9 @@ const Lootbox = () => {
             const char = await contractAPI.fetchCharacter(account.address, charId);
             console.log(char.image);
             setCharImg(char.image);
+
+            const attr= await metadataAPI.fetchCharName(char.attributes);
+            setCharName(attr);
         } else{
             setCharImg();
             navigate('/lootbox');
@@ -46,6 +50,11 @@ const Lootbox = () => {
             const weapon = await contractAPI.fetchWeapon(account.address, weaponId);
             console.log(weapon.image);
             setWeaponImg(weapon.image);
+
+            const name = await metadataAPI.fetchWeaponName(weapon.attributes);
+            setWeaponName(name);
+            const str = await metadataAPI.fetchStrength(weapon.attributes);
+            setStrength(str);
         } else {
             setWeaponImg();
             navigate('/lootbox');
@@ -55,13 +64,41 @@ const Lootbox = () => {
 
     return (
         <div className='lootbox-container'>
-            <span className="lootbox-btn" onClick={charMint}>
-                {charImg ? 
-                <img className="lootbox-char" src={charImg} /> : "캐릭터 민팅"}
-            </span>
-            <span className="lootbox-btn" onClick={weaponMint}>
-                {weaponImg ? <img className="lootbox-weapon" src={weaponImg} />  : "무기 민팅"}
-            </span>
+            {(charImg||weaponImg) ?
+                (charImg? 
+                    <>
+                        <span className="lootbox-result" onClick={charMint}>
+                            <img className="lootbox-char" src={charImg} />
+                        </span>
+                        <div className ="itemdata"> 
+                            <div className = 'line'>스킨: {charName?.skin}</div>
+                            <div className = 'line'>얼굴: {charName?.face}</div>
+                            <div className = 'line'>헤어: {charName?.hair}</div>
+                            <div className = 'line'>의상: {charName?.clothes}</div>
+                            <div className = 'line'>신발: {charName?.shoes}</div>
+                            <div className = 'line'>안경: {charName && charName.eyeDecoration ? charName.eyeDecoration: '없음'}</div>
+                            <div className = 'line'>악세서리: {charName && charName.faceAccessory ? charName.faceAccessory: '없음'}</div>
+                        </div>
+                    </> 
+                    :<>
+                        <span className="lootbox-result" onClick={weaponMint}>
+                            <img className="lootbox-weapon" src={weaponImg} />
+                        </span>
+                        <div className ="itemdata"> 
+                            <div className = 'line2'>무기: {weaponName}</div>
+                            <div className = 'line2'>레벨: {strength}</div>
+                        </div>
+                    </>
+                ) :
+                <>
+                    <span className="lootbox-btn" onClick={charMint}>
+                        캐릭터 민팅
+                    </span>
+                    <span className="lootbox-btn" onClick={weaponMint}>
+                        무기 민팅
+                    </span>
+                </>
+            }
         </div>
     );
 }

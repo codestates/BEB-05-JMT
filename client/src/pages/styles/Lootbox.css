@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    color: #fff;
+    color: rgb(0, 0, 0);
     align-items: center;
     flex-direction: row;
 }
@@ -17,7 +17,7 @@
     width: calc(100vw * 180/620);
     height: calc(100vw * 180/620);
     margin-top: calc(100vw * 10/620);
-    border-radius: 18%;
+    border-radius: 5vw;
     background-color: #fff;
     cursor: pointer;
     margin-right: calc(15vw);
@@ -26,14 +26,53 @@
     opacity: 0.9;
 }
 
-.lootbox-container .lootbox-btn .lootbox-char {
+.lootbox-container .lootbox-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:  #FE7427;
+    text-decoration: none;
+    width: calc(100vw * 490/620);
+    height: calc(100vw * 180/620);
+    margin-top: calc(100vw * 10/620);
+    border-radius: 5vw;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: calc(15vw);
+    margin-left: auto; 
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.lootbox-char {
     height: 22vw;
     margin-left: auto; 
     margin-right: auto;
 }
 
-.lootbox-container .lootbox-btn .lootbox-weapon {
+.lootbox-weapon {
     height: 15vw;
     margin-left: auto; 
     margin-right: auto;
+}
+
+.lootbox-container .itemdata {
+    position: absolute;
+    left: 15vw;
+    top: 18vw;
+    width: 24vw;
+    height: 30vw;
+    font-size: calc(100vw * 10/620);
+    text-align: left;
+
+    word-wrap: break-word;
+    font-size: 2vw;
+}
+
+.lootbox-container .itemdata .line {
+    margin-top: 0.5vw;
+}
+
+.lootbox-container .itemdata .line2 {
+    margin-top: 1.5vw;
 }
