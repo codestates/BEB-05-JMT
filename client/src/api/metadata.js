@@ -153,15 +153,57 @@ const fetchWalkImage = async (charAttr, weaponAttr, motion) =>{
   return uri;
 }
 
+const fetchWinImage = async (charAttr, weaponAttr, motion) =>{
+  const character = fetchAttributes(charAttr); 
+  const weapon = fetchAttributes(weaponAttr);
 
-//fetchWinImage
-//fetchLoseImage
+  const uri = "".concat(...[
+    'https://maplestory.io/api/character/',
+    (character.skin && character.skin != 'none') ? encodeURIComponent(`{"itemId":1${character.skin},"region":"KMS","version":"${version}"},`) : "",
+    (character.skin && character.skin != 'none') ? encodeURIComponent(`{"itemId":${character.skin},"region":"KMS","version":"${version}"},`) : "",
+    encodeURIComponent(`{"itemId":25050,"animationName":"smile","region":"KMS","version":"${version}"},`),
+    (character.hair && character.hair != 'none') ? encodeURIComponent(`{"itemId":${character.hair},"region":"KMS","version":"${version}"},`) : "",
+    (character.clothes && character.clothes != 'none') ? encodeURIComponent(`{"itemId":${character.clothes},"region":"KMS","version":"${version}"},`) : "",
+    (character.shoes && character.shoes != 'none') ? encodeURIComponent(`{"itemId":${character.shoes},"region":"KMS","version":"${version}"},`) : "",
+    (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
+    (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
+    (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
+    `/${weapon.stand}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
+  ]);
+
+  return uri;
+}
+
+const fetchLoseImage = async (charAttr, weaponAttr, motion) =>{
+  const character = fetchAttributes(charAttr); 
+  const weapon = fetchAttributes(weaponAttr);
+  
+  const uri = "".concat(...[
+    'https://maplestory.io/api/character/',
+    (character.skin && character.skin != 'none') ? encodeURIComponent(`{"itemId":1${character.skin},"region":"KMS","version":"${version}"},`) : "",
+    (character.skin && character.skin != 'none') ? encodeURIComponent(`{"itemId":${character.skin},"region":"KMS","version":"${version}"},`) : "",
+    encodeURIComponent(`{"itemId":25050,"animationName":"cry","region":"KMS","version":"${version}"},`),
+    (character.hair && character.hair != 'none') ? encodeURIComponent(`{"itemId":${character.hair},"region":"KMS","version":"${version}"},`) : "",
+    (character.clothes && character.clothes != 'none') ? encodeURIComponent(`{"itemId":${character.clothes},"region":"KMS","version":"${version}"},`) : "",
+    (character.shoes && character.shoes != 'none') ? encodeURIComponent(`{"itemId":${character.shoes},"region":"KMS","version":"${version}"},`) : "",
+    (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
+    (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
+    (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
+    `/${weapon.stand}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
+  ]);
+ 
+  return uri;
+}
+
+
 const metadataAPI = {
   fetchAttributes,
   fetchCharImage,
   fetchWeaponImage,
   fetchStandImage,
   fetchFightImage,
+  fetchWinImage,
+  fetchLoseImage,
   fetchStrength,
   fetchWalkImage,
   fetchWeaponName,
