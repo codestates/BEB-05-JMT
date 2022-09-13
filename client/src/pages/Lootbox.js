@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useRecoilValue, useSetRecoilState } from "recoil"
 import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
-import axios from 'axios';
 import './styles/Lootbox.css';
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
@@ -29,7 +28,7 @@ const Lootbox = () => {
         if(!charImg){
             const charId = await contractAPI.mintCharNFT(account.address);
             console.log(charId);
-            const char = await contractAPI.fetchCharacter(account.address, charId);
+            const char = await contractAPI.fetchCharacter(charId);
             console.log(char.image);
             setCharImg(char.image);
 
@@ -47,7 +46,7 @@ const Lootbox = () => {
         if(!weaponImg){
             const weaponId = await contractAPI.mintWeaponNFT(account.address);
             console.log(weaponId);
-            const weapon = await contractAPI.fetchWeapon(account.address, weaponId);
+            const weapon = await contractAPI.fetchWeapon(weaponId);
             console.log(weapon.image);
             setWeaponImg(weapon.image);
 
