@@ -55,8 +55,20 @@ const equip = async(req, res, next) =>{
     }    
 }
 
+const userinfo = async(req, res, next) => { // 유저 address 조회
+    const result = await User.findAll({
+        attributes: ['username', 'address', 'charId', 'weaponId']
+    });
+    if (!result) {
+        res.status(400).send({ data: null, message: '에러'})
+    } else {
+        res.status(200).json({ data: result })
+    }
+}
+
 module.exports = {
     signup,
     check,
-    equip
+    equip,
+    userinfo
 };

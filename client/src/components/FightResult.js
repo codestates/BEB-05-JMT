@@ -3,20 +3,26 @@ import { useNavigate } from 'react-router-dom'
 import { useRecoilValue , useSetRecoilState } from "recoil"
 import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
-import { tokenMetadataAtom } from '../recoil/tokenMetadata/atom';
+import { charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/atom';
+import { matchingAtom } from '../recoil/matching/atom';
 import { fightAtom } from '../recoil/fight/atom';
 import { Link } from "react-router-dom";
 import { dummyFight } from './dummyFight';
 import '../pages/styles/Fight.css';
+import metadataAPI from '../api/metadata';
 
 const FightResult = () => {
-  const fightTokenMetadata = useRecoilValue(tokenMetadataAtom);
+  const chardata = useRecoilValue(charMetadataAtom);
+  const weapondata = useRecoilValue(weaponMetadataAtom);
+  const matchingdata = useRecoilValue(matchingAtom);
   const fightdata = useRecoilValue(fightAtom)
   const account = useRecoilValue(accountAtom)
   const navigate = useNavigate();
   const leftweapon = dummyFight[0].weapon;
   const rightweapon = fightdata.weapon;
   const [isLoading, setLoading] = useState(true);
+  const [userImage, setUserImage] = useState();
+  const [matchingImage, setMatchingImage] = useState();
   const [LeftResult, setLeftResult] = useState();
   const [RightResult, setRightResult] = useState();
   const setBackground = useSetRecoilState(backgroundAtom)
@@ -25,6 +31,14 @@ const FightResult = () => {
   console.log(rightweapon);
 
   const fightresult = async () => {
+    const standImage = await metadataAPI.fetchStandImage(chardata.attributes, weapondata.attributes, 'animated');
+    setUserImage(standImage);
+
+    const Mchardata = matchingdata.matchingChardata
+    const Mweapondata = matchingdata.matchingWeapondata
+    const MstandImage = await metadataAPI.fetchStandImage(Mchardata.attributes, Mweapondata.attributes, 'animated');
+    setMatchingImage(MstandImage);
+
     if ( leftweapon > rightweapon) {
       setLeftResult(dummyFight[0].winimg);
       setRightResult(fightdata.loseimg);
@@ -67,9 +81,9 @@ const FightResult = () => {
           : <img className='fightresult-right-result' src ='../img/win.png' />
         }
         <div className='fightresult-left-name'>{account.username}</div>
-        <img className='fightresult-left-image' src ={fightTokenMetadata.image} />
-        <div className='fightresult-right-name'>{fightdata.username}</div>
-        <img className='fightresult-right' src ={RightResult} />
+        <img className='fightresult-left-image' src ={userImage} />
+        <div className='fightresult-right-name'>{matchingdata.username}</div>
+        <img className='fightresult-right-image' src ={matchingImage} />
         <Link to="/home" className="fightresult-home">홈</Link>
 		</div>
 	);

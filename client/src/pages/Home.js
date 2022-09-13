@@ -4,13 +4,16 @@ import { useSetRecoilState, useRecoilValue} from "recoil"
 import { accountAtom } from "../recoil/account/atom"
 import { backgroundAtom } from "../recoil/background/atom"
 import { charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/atom';
+import { addrinfoAtom } from '../recoil/addrinfo/atom';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 import './styles/Home.css';
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 
 const Home = () => {
   const account = useRecoilValue(accountAtom);
+  const setAddrInfo = useSetRecoilState(addrinfoAtom); // 계정 주소 recoil 상태관리
   const setCharMetadata = useSetRecoilState(charMetadataAtom);
   const setBackground = useSetRecoilState(backgroundAtom)
   const setWeaponMeatadata = useSetRecoilState(weaponMetadataAtom);
@@ -26,6 +29,7 @@ const Home = () => {
     }
     setBackground({type: 'default'});
     mychar();
+    addrinfo();
   }, []);
 
   const mychar = async() =>{
@@ -50,6 +54,18 @@ const Home = () => {
     setCharName(attr);
     const name = await metadataAPI.fetchWeaponName(weaponMetadata.attributes);
     setWeaponName(name);
+  }
+
+  const addrinfo = async () => {
+    try {
+      const result = await axios.get('http://localhost:4000/user/userinfo',
+      )
+      const checkAddr = result.data.data.filter(el => el.username !== account.username)
+      setAddrInfo(checkAddr);
+      console.log(checkAddr);
+    } catch (err) {
+        console.log(err);
+    }
   }
 
 	return (

@@ -46,7 +46,7 @@
 
 .fight-left-image {
     position: absolute;
-    left: 10%;
+    left: 4%;
     top: 36%;
     transform: scaleX(-1);
 }
@@ -59,7 +59,7 @@
 
 .fighting-left-image {
     position: absolute;
-    left: 10%;
+    left: 4%;
     top: 36%;
     transform: scaleX(-1);
 }
@@ -72,7 +72,7 @@
 
 .fightresult-left-image {
     position: absolute;
-    left: 10%;
+    left: 4%;
     top: 36%;
     transform: scaleX(-1);
 }
@@ -122,44 +122,38 @@
 
 .fight-right-image {
     position: absolute;
-    left: 78%;
-    top: 64%;
+    left: 68%;
+    top: 35%;
 }
 
 .fight-right-name {
     position: absolute;
-    left: 75%;
-    top: 30%;
+    left: 72%;
+    top: 29%;
 }
 
 .fighting-right-image {
     position: absolute;
-    left: 78%;
-    top: 67%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 200px;
+    left: 60%;
+    top: 35%;
 }
 
 .fighting-right-name {
     position: absolute;
-    left: 75%;
-    top: 30%;
+    left: 72%;
+    top: 29%;
 }
 
 .fightresult-right-image {
     position: absolute;
-    left: 73%;
-    top: 67%;
-    transform: translate(-50%, -50%);
-    width: 230px;
-    height: 200px;
+    left: 66%;
+    top: 35%;
 }
 
 .fightresult-right-name {
     position: absolute;
-    left: 75%;
-    top: 30%;
+    left: 72%;
+    top: 29%;
 }
 
 .fightresult-right-result {
@@ -189,7 +183,7 @@
 
 .weapon-right {
     position: absolute;
-    left: 70%;
+    left: 69%;
     top: 10%;
     color: #fff;
     text-decoration: none;
