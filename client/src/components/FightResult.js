@@ -21,32 +21,40 @@ const FightResult = () => {
   const leftweapon = dummyFight[0].weapon;
   const rightweapon = fightdata.weapon;
   const [isLoading, setLoading] = useState(true);
-  const [userImage, setUserImage] = useState();
-  const [matchingImage, setMatchingImage] = useState();
-  const [LeftResult, setLeftResult] = useState();
-  const [RightResult, setRightResult] = useState();
+  const [userWinImage, setUserWinImage] = useState();
+  const [userLoseImage, setUserLoseImage] = useState();
+  const [matchingwinImage, setMatchingWinImage] = useState();
+  const [matchingloseImage, setMatchingLoseImage] = useState();
+  const [leftResult, setLeftResult] = useState();
+  const [rightResult, setRightResult] = useState();
   const setBackground = useSetRecoilState(backgroundAtom)
 
   console.log(leftweapon);
   console.log(rightweapon);
 
   const fightresult = async () => {
-    const standImage = await metadataAPI.fetchStandImage(chardata.attributes, weapondata.attributes, 'animated');
-    setUserImage(standImage);
+    const WinImage = await metadataAPI.fetchWinImage(chardata.attributes, weapondata.attributes, 'animated');
+    const LoseImage = await metadataAPI.fetchLoseImage(chardata.attributes, weapondata.attributes, 'animated');
+    setUserWinImage(WinImage);
+    setUserLoseImage(LoseImage);
 
     const Mchardata = matchingdata.matchingChardata
     const Mweapondata = matchingdata.matchingWeapondata
-    const MstandImage = await metadataAPI.fetchStandImage(Mchardata.attributes, Mweapondata.attributes, 'animated');
-    setMatchingImage(MstandImage);
+    const MwinImage = await metadataAPI.fetchWinImage(Mchardata.attributes, Mweapondata.attributes, 'animated');
+    const MloseImage = await metadataAPI.fetchLoseImage(Mchardata.attributes, Mweapondata.attributes, 'animated');
+    setMatchingWinImage(MwinImage);
+    setMatchingLoseImage(MloseImage);
 
     if ( leftweapon > rightweapon) {
-      setLeftResult(dummyFight[0].winimg);
-      setRightResult(fightdata.loseimg);
-      setLoading(false);
+      setLeftResult(userWinImage);
+      setRightResult(matchingloseImage);
+      console.log(leftResult);
+      console.log(rightResult);
     } else if ( leftweapon < rightweapon) {
-      setLeftResult(dummyFight[0].loseimg);
-      setRightResult(fightdata.winimg);
-      setLoading(false);
+      setLeftResult(userLoseImage);
+      setRightResult(matchingwinImage);
+      console.log(leftResult);
+      console.log(rightResult);
     }
   } 
 
@@ -56,34 +64,31 @@ const FightResult = () => {
     }
     setBackground({type: 'fight'});
     fightresult();
-  }, []);
+  }, [userWinImage, userLoseImage, matchingwinImage, matchingloseImage]);
 
-  console.log(fightdata);
-
-  console.log(LeftResult);
-  console.log(RightResult);
 	return (
 		<div className='fight-container'>
-        {LeftResult === dummyFight[0].winimg?
+        {leftResult === userWinImage?
           <img className='fightresult-left-result' src ='../img/win.png' />
           : <img className='fightresult-left-result' src ='../img/lose.png' />
         }
-        {LeftResult === dummyFight[0].winimg?
+        {leftResult === userWinImage?
           <img className='fightresult-left-paper' src ='../img/weaponpaper.png' />
           : <img className='fightresult-right-paper' src ='../img/weaponpaper.png' />
         }
-        {LeftResult === dummyFight[0].winimg?
+        {leftResult === userWinImage?
           <img className='fightresult-left-token' src ='../img/token.png' />
           : <img className='fightresult-right-token' src ='../img/token.png' />
         }
-        {RightResult === fightdata.loseimg?
+        {rightResult === matchingloseImage?
           <img className='fightresult-right-result' src ='../img/lose.png' />
           : <img className='fightresult-right-result' src ='../img/win.png' />
         }
+
         <div className='fightresult-left-name'>{account.username}</div>
-        <img className='fightresult-left-image' src ={userImage} />
+        <img className='fightresult-left-image' src ={leftResult} />
         <div className='fightresult-right-name'>{matchingdata.username}</div>
-        <img className='fightresult-right-image' src ={matchingImage} />
+        <img className='fightresult-right-image' src ={rightResult} />
         <Link to="/home" className="fightresult-home">홈</Link>
 		</div>
 	);
