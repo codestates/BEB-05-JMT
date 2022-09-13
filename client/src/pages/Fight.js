@@ -40,10 +40,10 @@ const Fight = () => {
       const Raddrdata = addrdata[RData];
       console.log(Raddrdata);
 
-      const matchingChardata = await contractAPI.fetchCharacter(Raddrdata.address, Raddrdata.charId);
+      const matchingChardata = await contractAPI.fetchCharacter(Raddrdata.charId);
       console.log(matchingChardata.attributes);
 
-      const matchingWeapondata = await contractAPI.fetchWeapon(Raddrdata.address, Raddrdata.weaponId);
+      const matchingWeapondata = await contractAPI.fetchWeapon(Raddrdata.weaponId);
       console.log(matchingWeapondata.attributes);
 
       const MstandImage = await metadataAPI.fetchStandImage(matchingChardata.attributes, matchingWeapondata.attributes, 'animated');

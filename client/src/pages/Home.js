@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { useSetRecoilState, useRecoilValue} from "recoil"
+import { useRecoilState, useSetRecoilState, useRecoilValue} from "recoil"
 import { accountAtom } from "../recoil/account/atom"
 import { backgroundAtom } from "../recoil/background/atom"
 import { charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/atom';
@@ -14,14 +14,14 @@ import metadataAPI from '../api/metadata';
 const Home = () => {
   const account = useRecoilValue(accountAtom);
   const setAddrInfo = useSetRecoilState(addrinfoAtom); // 계정 주소 recoil 상태관리
+  const setBackground = useSetRecoilState(backgroundAtom);
   const setCharMetadata = useSetRecoilState(charMetadataAtom);
-  const setBackground = useSetRecoilState(backgroundAtom)
   const setWeaponMeatadata = useSetRecoilState(weaponMetadataAtom);
-  const navigate = useNavigate();
   const [image, setImage] = useState();
-  const [strength, setStrength] = useState();
   const [charName, setCharName] = useState();
   const [weaponName, setWeaponName] = useState();
+  const [strength, setStrength] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!account.address) {
@@ -33,27 +33,18 @@ const Home = () => {
   }, []);
 
   const mychar = async() =>{
-    console.log(account);
-    const characterMetadata = await contractAPI.fetchCharacter(account.address, account.charId);
-    setCharMetadata(characterMetadata);
-    console.log(characterMetadata.attributes);
-
-    const weaponMetadata = await contractAPI.fetchWeapon(account.address, account.weaponId);
-    setWeaponMeatadata(weaponMetadata);
-    console.log(weaponMetadata.attributes);
-
-    const standImage = await metadataAPI.fetchStandImage(characterMetadata.attributes, weaponMetadata.attributes, 'animated');
-    // const standImage = await assetAPI.fetchCharImage(characterMetadata.attributes, '0');
-    console.log(standImage);
-    setImage(standImage);
-
-    const result = await metadataAPI.fetchStrength(weaponMetadata.attributes);
-    setStrength(result);
-
-    const attr= await metadataAPI.fetchCharName(characterMetadata.attributes);
+    const char = await contractAPI.fetchCharacter(account.charId);
+    setCharMetadata(char);
+    const weapon = await contractAPI.fetchWeapon(account.weaponId);
+    setWeaponMeatadata(weapon);
+    const attr= await metadataAPI.fetchCharName(char.attributes);
     setCharName(attr);
-    const name = await metadataAPI.fetchWeaponName(weaponMetadata.attributes);
+    const name = await metadataAPI.fetchWeaponName(weapon.attributes);
     setWeaponName(name);
+    const str = await metadataAPI.fetchStrength(weapon.attributes);
+    setStrength(str);
+    const standImage = await metadataAPI.fetchStandImage(char.attributes, weapon.attributes, 'animated');
+    setImage(standImage);
   }
 
   const addrinfo = async () => {

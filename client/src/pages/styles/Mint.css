@@ -4,6 +4,15 @@
     justify-content: center;
     align-items: center;
     margin-top: 8vw;
+    width: 90%;
+}
+.mint-container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
 }
 
 .mint-container .mint-btn {
@@ -55,13 +64,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color:  #FE7427;
     text-decoration: none;
-    width: calc(100vw * 180/620);
+    width: calc(100vw * 240/620);
     height: calc(100vw * 180/620);
     margin-top: calc(100vw * 10/620);
     border-radius: 5vw;
-    background-color: #fff;
+    background-color: rgba( 240, 190, 100, 0.7 );
     cursor: pointer;
     margin-right: calc(15vw);
     margin-left: auto; 
@@ -72,32 +80,43 @@
 .mint-char {
     height: 22vw;
     margin-left: auto; 
-    margin-right: auto;
+    margin-right: 2vw;
 }
 
 .mint-weapon {
-    height: 15vw;
+    height: 13vw;
+    margin-top: 6vw;
     margin-left: auto; 
-    margin-right: auto;
+    margin-right: 8vw;
 }
 
 .mint-container .mintdata {
     position: absolute;
-    left: 15vw;
-    top: 18vw;
+    left: 10vw;
+    top: 12vw;
     width: 24vw;
     height: 30vw;
     font-size: calc(100vw * 10/620);
     text-align: left;
-
     word-wrap: break-word;
-    font-size: 2vw;
+    font-size: 1.5vw;
+}
+.mint-container .mintdata2 {
+    position: absolute;
+    left: 55vw;
+    top: 12vw;
+    width: 24vw;
+    height: 30vw;
+    font-size: calc(100vw * 10/620);
+    text-align: left;
+    word-wrap: break-word;
+    font-size: 1.5vw;
 }
 
-.mint-container .mintdata .line {
+.mint-container .mintdata .mintline {
     margin-top: 0.5vw;
 }
 
-.mint-container .mintdata .line2 {
-    margin-top: 1.5vw;
+.mint-container .mintdata2 .mintline2 {
+    margin-top: 1vw;
 }
