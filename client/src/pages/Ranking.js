@@ -6,7 +6,6 @@ import { accountAtom } from "../recoil/account/atom";
 import UserData from '../components/UserData';
 import './styles/Ranking.css';
 import contractAPI from '../api/contract';
-import metadataAPI from '../api/metadata';
 import axios from 'axios';
 
 const Ranking = () => {
