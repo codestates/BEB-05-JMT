@@ -1,9 +1,30 @@
-.userdata-container {
+
+.ranking-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
     color: rgb(0, 0, 0);
     align-items: center;
-    flex-direction: row;
+    margin-top: calc(100vw * 110/620);
+}
+
+.ranking-container .userList {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: calc(100vw * 330/620);
+    height: calc(100vw * 200/620);
+    overflow: auto;
+    margin-right: calc(100vw * 220/620);
+    border-radius: 2vw;
+    background-color: rgba( 255, 255, 255, 0.7 );
+}
+
+.ranking-container .selectedUser {
+    position: absolute;
+    width: calc(100vw * 190/620);
+    height: calc(100vw * 200/620);
+    margin-left: calc(100vw * 350/620);
+    border-radius: 2vw;
+    background-color: rgba( 255, 255, 255, 0.7 );
 }

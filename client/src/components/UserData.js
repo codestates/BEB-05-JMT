@@ -37,9 +37,9 @@ function UserData({userData}) {
     return (
         (isChar&&isWeapon ? 
             <div className='userdata-container'>
-                <img src={img} height={60}/>
-                <div>{userData.username}</div>
-                <div>{str}</div>
+                <img className='userdata-char' src={img} />
+                <div className='userdata-name'>{userData.username}</div>
+                <div className='userdata-str'>{str}</div>
             </div>
             :
             null
