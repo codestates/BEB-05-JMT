@@ -1,4 +1,5 @@
 import axios from "axios";
+import NFT from "../abi/nft";
 const Web3 = require('web3');
 const {
     NFT_CONTRACT_ADDR,
@@ -15,7 +16,6 @@ const fetchNFTContract = async () => {
       );
       return NFTContract;
 }
-
 const fetchItemsContract = async () => {
     const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
     const itemsContract = await new web3.eth.Contract(
@@ -24,56 +24,49 @@ const fetchItemsContract = async () => {
       );
       return itemsContract;
 }
-
+const _fetchCharacter = async (charId) => {
+    const NFTContract = await contractAPI.fetchNFTContract();
+    const tokenURI = await NFTContract.methods.tokenURI(charId).call();
+    const response = await axios.get(tokenURI);
+    const tokenMetadata = response.data;
+    tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
+    return tokenMetadata;
+}
 const fetchCharacter = async (charId) => {
     try{
-        const NFTContract = await contractAPI.fetchNFTContract();
-        const tokenURI = await NFTContract.methods.tokenURI(charId).call();
-        const response = await axios.get(tokenURI);
-        const tokenMetadata = response.data;
-        tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
-        return tokenMetadata;
+        return _fetchCharacter(charId);
     } catch(err){
-        const NFTContract = await contractAPI.fetchNFTContract();
-        const tokenURI = await NFTContract.methods.tokenURI(charId).call();
-        const response = await axios.get(tokenURI);
-        const tokenMetadata = response.data;
-        tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
-        return tokenMetadata;
+        return _fetchCharacter(charId);
     }
 }
-
+const _fetchWeapon = async (weaponId) =>{
+    const itemsContract = await contractAPI.fetchItemsContract();
+    const weaponURI = await itemsContract.methods.uri(parseInt(weaponId)).call();
+    const response = await axios.get(weaponURI);
+    const weaponMetadata = response.data;
+    weaponMetadata.image = weaponMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
+    return weaponMetadata;
+}
 const fetchWeapon = async (weaponId) => {
     try{
-        const itemsContract = await contractAPI.fetchItemsContract();
-        const weaponURI = await itemsContract.methods.uri(parseInt(weaponId)).call();
-        const response = await axios.get(weaponURI);
-        const weaponMetadata = response.data;
-        weaponMetadata.image = weaponMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
-        return weaponMetadata;
+        return _fetchWeapon(weaponId);
     } catch(err) {
-        const itemsContract = await contractAPI.fetchItemsContract();
-        const weaponURI = await itemsContract.methods.uri(parseInt(weaponId)).call();
-        const response = await axios.get(weaponURI);
-        const weaponMetadata = response.data;
-        weaponMetadata.image = weaponMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
-        return weaponMetadata;
+        return _fetchWeapon(weaponId);
     }    
 }
 
-const fetchStrength = async(weaponId) => {
-    const meta  = await contractAPI.fetchWeapon(weaponId);
-    const weapon = await contractAPI.fetchAttributes(meta.attributes);
-  
-    return weapon.strength;
+const isCharOwner= async(address, charId) =>{
+    const NFTContract = await contractAPI.fetchNFTContract();
+    const owner = await NFTContract.methods.ownerOf(charId).call();
+    console.log(address);
+    console.log(owner);
+    return owner.toLowerCase() == address;
 }
 
-const fetchAttributes = (attributes) => {
-    const result = {};
-    for(let item of attributes){
-      result[item.trait_type] = item.value;
-    }
-    return result;
+const isWeaponOwner= async(address, weaponId) =>{
+    const itemsContract = await contractAPI.fetchItemsContract();
+    const balance = await itemsContract.methods.balanceOf(address, weaponId).call();
+    return balance!=0;
 }
 
 const mintCharNFT = async(address) => {
@@ -115,6 +108,21 @@ const mintWeaponNFT = async(address) => {
     const weaponId = weapon.events.TransferSingle.returnValues.id;
     return weaponId;
 }
+//metadata
+const fetchStrength = async(weaponId) => {
+    const meta  = await contractAPI.fetchWeapon(weaponId);
+    const weapon = await contractAPI.fetchAttributes(meta.attributes);
+  
+    return weapon.strength;
+}
+
+const fetchAttributes = (attributes) => {
+    const result = {};
+    for(let item of attributes){
+      result[item.trait_type] = item.value;
+    }
+    return result;
+}
 
 const contractAPI = {
     fetchNFTContract,
@@ -125,7 +133,9 @@ const contractAPI = {
     mintFirstWeaponNFT,
     mintWeaponNFT,
     fetchStrength,
-    fetchAttributes     
+    fetchAttributes,
+    isCharOwner,
+    isWeaponOwner     
 };
 
 export default contractAPI;

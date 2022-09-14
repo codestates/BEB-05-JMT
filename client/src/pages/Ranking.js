@@ -6,7 +6,6 @@ import { accountAtom } from "../recoil/account/atom";
 import UserData from '../components/UserData';
 import './styles/Ranking.css';
 import contractAPI from '../api/contract';
-import metadataAPI from '../api/metadata';
 import axios from 'axios';
 
 const Ranking = () => {
@@ -48,12 +47,17 @@ const Ranking = () => {
 	return (
 		<div className='ranking-container'>
 			<div className= 'userList'>
-        {[...Array(rankInfo.length)].map((_, idx) => {
-          const userData = rankInfo[idx];
-          return(
-            <UserData userData={userData} key={idx}/>
-          )
-        })}
+        {rankInfo ?
+          [...Array(rankInfo.length)].map((_, idx) => {
+            const userData = rankInfo[idx];
+            return(
+              <UserData userData={userData} key={idx}/>
+            )
+          })
+          :
+          ""
+        }
+        
       </div>
 		</div>
 	);

@@ -8,7 +8,8 @@ export const tokenMetadataAtom = atom({
     attributes: "",
     image: "",
     name: ""
-  }
+  },
+  effects_UNSTABLE: [persistAtom]
 });
 
 export const charMetadataAtom = atom({
@@ -41,7 +42,7 @@ export const charNameAtom = atom({
     shoes: "",
     eyeDecoration: "",
     faceAccessory: ""
-  } 
+  }
 })
 
 export const weaponNameAtom = atom({

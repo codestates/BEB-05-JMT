@@ -7,6 +7,8 @@ import metadataAPI from '../api/metadata';
 function UserData({userData}) {
     const [img, setImg] = useState();
     const [str, setStr] = useState();
+    const [isChar, setIsChar] = useState();
+    const [isWeapon, setIsWeapon] = useState();
 
     useEffect(() => {
         metadata();
@@ -15,20 +17,33 @@ function UserData({userData}) {
     const metadata = async() => {
         const char = await contractAPI.fetchCharacter(userData.charId);
         const weapon = await contractAPI.fetchWeapon(userData.weaponId);
-        const str = await metadataAPI.fetchStrength(weapon.attributes);
-        setStr(str);
-        const standImage = await metadataAPI.fetchStandImage(char.attributes, weapon.attributes, '0');
-        setImg(standImage);
-        console.log("check");
+
+        const hasChar = await contractAPI.isCharOwner(userData.address, userData.charId);
+        const hasWeapon = await contractAPI.isWeaponOwner(userData.address, userData.weaponId);
+        console.log(hasChar);
+        console.log(hasWeapon);
+        setIsChar(hasChar);
+        setIsWeapon(hasWeapon);
+
+        if(hasChar&&hasWeapon){
+            const str = await metadataAPI.fetchStrength(weapon.attributes);
+            setStr(str);
+            const standImage = await metadataAPI.fetchStandImage(char.attributes, weapon.attributes, '0');
+            setImg(standImage);
+            console.log("check");
+        }
     }
 
     return (
-        <div className='userdata-container'>
-            <img src={img} height={60}/>
-            <div>{userData.username}</div>
-            <div>{str}</div>
-        </div>
+        (isChar&&isWeapon ? 
+            <div className='userdata-container'>
+                <img src={img} height={60}/>
+                <div>{userData.username}</div>
+                <div>{str}</div>
+            </div>
+            :
+            null
+        )            
     );
-
 }
 export default UserData;
