@@ -1,32 +1,45 @@
 .userdata-container {
     display: flex;
     width: calc(100vw * 300/620);
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     color: rgb(0, 0, 0);
     flex-direction: row;
     background-color: rgba(255, 215, 151, 0.7);
-    margin-top: 1vw;
+    margin-top: 0.8vw;
     margin-left:auto;
     margin-right:auto;
     left: auto;
     right: auto;
     border-radius: 1.5vw;
+    padding: 0.2vw;
+    font-size: calc(100vw * 15/620);
 }
 
 .userdata-container .userdata-char {
+    /* position: relative; */
+    left:auto;
+    right: auto;
     height: 8vw;
     margin-left: calc(100vw * 30/620);
+    margin-right: auto;;
 
 }
 
 .userdata-container .userdata-name {
-
+    width: 6vw;
+    text-align: center;
+    margin-left: calc(100vw * 30/620);
+    margin-right: auto;
+}
+.userdata-container .userdata-str {
+    width: 3vw;
     margin-left: calc(100vw * 30/620);
     margin-right: calc(100vw * 30/620);
 
 }
-.userdata-container .userdata-name {
-    margin-right: calc(100vw * 30/620);
-
+.userdata-container .userdata-rank {
+    margin-left: calc(100vw * 30/620);
+    color:  #FE7427;
+    font-weight: bold;
 }

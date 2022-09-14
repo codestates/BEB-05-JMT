@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 
-function UserData({userData}) {
+function UserData({userData, rank}) {
     const [img, setImg] = useState();
     const [str, setStr] = useState();
     const [isChar, setIsChar] = useState();
@@ -37,9 +37,10 @@ function UserData({userData}) {
     return (
         (isChar&&isWeapon ? 
             <div className='userdata-container'>
-                <img className='userdata-char' src={img} />
+                <div className='userdata-rank'>{rank}위</div>
                 <div className='userdata-name'>{userData.username}</div>
-                <div className='userdata-str'>{str}</div>
+                <img className='userdata-char' src={img} />
+                <div className='userdata-str'>Lv.{str}</div>
             </div>
             :
             null
