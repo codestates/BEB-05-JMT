@@ -39,7 +39,7 @@ const fetchCharacter = async (charId) => {
         return _fetchCharacter(charId);
     }
 }
-const fetchMyCharacter = async (address, charId) => {
+const fetchMyCharacter = async (address) => {
     const NFTContract = await contractAPI.fetchNFTContract();
     const balance = await NFTContract.methods.balanceOf(address).call();
 
@@ -50,7 +50,7 @@ const fetchMyCharacter = async (address, charId) => {
         // console.log(arr);
     }
     let myNFTs = [];
-    for(charId of arr) {
+    for(const charId of arr) {
         const tokenURI = await NFTContract.methods.tokenURI(charId).call();
         const response = await axios.get(tokenURI);
         const tokenMetadata = response.data;

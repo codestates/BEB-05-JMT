@@ -35,7 +35,7 @@ const Inventory = () => {
 
   const mychar = async() =>{
     //캐릭터
-    const characterMetadata = await contractAPI.fetchMyCharacter(account.address, account.charId);
+    const characterMetadata = await contractAPI.fetchMyCharacter(account.address);
     console.log(characterMetadata);
     for(let i = 0; i <= characterMetadata.length; i++){
       if(characterMetadata[i]){
