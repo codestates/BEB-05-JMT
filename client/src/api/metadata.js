@@ -168,7 +168,7 @@ const fetchWinImage = async (charAttr, weaponAttr, motion) =>{
     (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
     (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
     (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
-    `/${weapon.stand}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
+    `/fly/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
   ]);
 
   return uri;
@@ -189,7 +189,7 @@ const fetchLoseImage = async (charAttr, weaponAttr, motion) =>{
     (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
     (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
     (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
-    `/${weapon.stand}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
+    `/alert/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
   ]);
  
   return uri;
