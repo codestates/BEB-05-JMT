@@ -51,7 +51,7 @@ const Ranking = () => {
           [...Array(rankInfo.length)].map((_, idx) => {
             const userData = rankInfo[idx];
             return(
-              <UserData userData={userData} key={idx}/>
+              <UserData userData={userData} rank={idx} key={idx}/>
             )
           })
           :
