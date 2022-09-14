@@ -24,21 +24,62 @@ const fetchItemsContract = async () => {
       );
       return itemsContract;
 }
-const _fetchCharacter = async (charId) => {
-    const NFTContract = await contractAPI.fetchNFTContract();
-    const tokenURI = await NFTContract.methods.tokenURI(charId).call();
-    const response = await axios.get(tokenURI);
-    const tokenMetadata = response.data;
-    tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
-    return tokenMetadata;
-}
-const fetchCharacter = async (charId) => {
+const fetchCharacter = async (address, charId) => {
     try{
-        return _fetchCharacter(charId);
+        const NFTContract = await contractAPI.fetchNFTContract();
+        const balance = await NFTContract.methods.balanceOf(address).call();
+        let arr = [];
+        for(let i = 0; i < balance; i++) {
+            const charId = await NFTContract.methods.tokenOfOwnerByIndex(address, i).call();
+            arr.push(charId);
+            // console.log(arr);
+        }
+            let myNFTs = [];
+            for(charId of arr) {
+                const tokenURI = await NFTContract.methods.tokenURI(charId).call();
+                const response = await axios.get(tokenURI);
+                const tokenMetadata = response.data;
+                tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
+                myNFTs.push(tokenMetadata)
+            }
+            // console.log(myNFTs)
+            return myNFTs;
+        // const tokenURI = await NFTContract.methods.tokenURI(charId).call();
+        // const response = await axios.get(tokenURI);
+        // const tokenMetadata = response.data;
+        // tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
+        // return tokenMetadata;
     } catch(err){
-        return _fetchCharacter(charId);
+        const NFTContract = await contractAPI.fetchNFTContract();
+        const balance = await NFTContract.methods.balanceOf(address).call();
+        let arr = [];
+        for(let i = 0; i < balance; i++) {
+            const charId = await NFTContract.methods.tokenOfOwnerByIndex(address, i).call();
+            arr.push(charId);
+        }
+            let myNFTs = [];
+            for(charId of arr) {
+                const tokenURI = await NFTContract.methods.tokenURI(charId).call();
+                const response = await axios.get(tokenURI);
+                const tokenMetadata = response.data;
+                tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
+                myNFTs.push(tokenMetadata)
+            }
+            return myNFTs;
+        // const tokenURI = await NFTContract.methods.tokenURI(charId).call();
+        // const response = await axios.get(tokenURI);
+        // const tokenMetadata = response.data;
+        // tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
+        // return tokenMetadata;
     }
 }
+// const fetchCharacter = async (charId) => {
+//     try{
+//         return _fetchCharacter(charId);
+//     } catch(err){
+//         return _fetchCharacter(charId);
+//     }
+// }
 const _fetchWeapon = async (weaponId) =>{
     const itemsContract = await contractAPI.fetchItemsContract();
     const weaponURI = await itemsContract.methods.uri(parseInt(weaponId)).call();
