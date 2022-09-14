@@ -59,6 +59,9 @@ const Ranking = () => {
         }
         
       </div>
+      <div className= 'selectedUser'>
+        
+      </div>
 		</div>
 	);
 }
