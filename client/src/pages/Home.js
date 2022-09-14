@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useRecoilState, useSetRecoilState, useRecoilValue} from "recoil"
 import { accountAtom } from "../recoil/account/atom"
 import { backgroundAtom } from "../recoil/background/atom"
-import { charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/atom';
+import { charMetadataAtom, weaponMetadataAtom, strengthAtom, equipImgAtom } from '../recoil/tokenMetadata/atom';
 import { addrinfoAtom } from '../recoil/addrinfo/atom';
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -17,10 +17,10 @@ const Home = () => {
   const setBackground = useSetRecoilState(backgroundAtom);
   const setCharMetadata = useSetRecoilState(charMetadataAtom);
   const setWeaponMeatadata = useSetRecoilState(weaponMetadataAtom);
-  const [image, setImage] = useState();
+  const [image, setImage] = useRecoilState(equipImgAtom);
   const [charName, setCharName] = useState();
   const [weaponName, setWeaponName] = useState();
-  const [strength, setStrength] = useState();
+  const [strength, setStrength] = useRecoilState(strengthAtom);
   const navigate = useNavigate();
 
   useEffect(() => {
