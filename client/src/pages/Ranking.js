@@ -35,23 +35,43 @@ const Ranking = () => {
       return b[0]-a[0];
     });
 
+    const asyncFilter = async (arr, predicate) => {
+      const results = await Promise.all(arr.map(predicate));
+    
+      return arr.filter((_v, index) => results[index]);
+    }
+
+
     const sortedArr = comparableArr.map((x)=>{
       return x[1];
     });
 
-    console.log(sortedArr);
-    setRankInfo(sortedArr);
-  }
+    const realArr = await asyncFilter(sortedArr, async(x)=>{
+      const hasChar = await contractAPI.isCharOwner(x.address, x.charId);
+      const hasWeapon = await contractAPI.isWeaponOwner(x.address, x.weaponId);
+      return hasChar&&hasWeapon;
+    })
 
+
+    console.log(realArr);
+    setRankInfo(realArr);
+  }
 
 	return (
 		<div className='ranking-container'>
+      <div className= 'column'>
+        <span className='column-rank'>순위</span>
+        <span className='column-name'>이름</span>
+        <span className='column-char'>캐릭터</span>
+        <span className='column-str'>레벨</span>
+      </div>
 			<div className= 'userList'>
         {rankInfo ?
           [...Array(rankInfo.length)].map((_, idx) => {
             const userData = rankInfo[idx];
+            const rank = idx+1;
             return(
-              <UserData userData={userData} rank={idx} key={idx}/>
+              <UserData rankArr={rankInfo} userData={userData} rank={rank} key={idx}/>
             )
           })
           :

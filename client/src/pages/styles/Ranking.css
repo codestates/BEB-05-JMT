@@ -1,23 +1,78 @@
-
 .ranking-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: rgb(0, 0, 0);
     align-items: center;
+    color: rgb(0, 0, 0);
     margin-top: calc(100vw * 110/620);
 }
-
+.ranking-container .column {
+    flex-direction: row;
+    position: absolute;
+    width: calc(100vw * 330/620);
+    height: calc(100vw * 20/620);
+    line-height: calc(100vw * 20/620);
+    margin-right: calc(100vw * 220/620);
+    margin-bottom: calc(100vw * 180/620);
+    border-radius: 1vw;
+    background-color: #fe7227e7;
+    color:  #ffffff;
+    font-size: calc(100vw * 11/620);
+    align-items: center;
+}
+.ranking-container .column .column-rank {
+    margin-left: calc(100vw * 30/620);
+    margin-right: calc(100vw * 8/620);
+}
+.ranking-container .column .column-name {
+    width: 6vw;
+    margin-left: calc(100vw * 30/620);
+    margin-right: calc(100vw * 30/620);
+}
+.ranking-container .column .column-char {
+    left:auto;
+    right: auto;
+    margin-left: calc(100vw * 30/620);
+    margin-right: calc(100vw * 30/620);
+}
+.ranking-container .column .column-str {
+    width: 3vw;
+    margin-left: calc(100vw * 30/620);
+    margin-right: calc(100vw * 30/620);
+}
 .ranking-container .userList {
     position: absolute;
     justify-content: center;
     align-items: center;
     width: calc(100vw * 330/620);
-    height: calc(100vw * 200/620);
+    height: calc(100vw * 178/620);
+    margin-top: calc(100vw * 22/620);
     overflow: auto;
     margin-right: calc(100vw * 220/620);
-    border-radius: 2vw;
+    border-radius: 1vw;
     background-color: rgba( 255, 255, 255, 0.7 );
+    border-style: solid;
+    border-width: 1.2vw;
+    border-color: rgba( 255, 255, 255, 0 );
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+}
+.ranking-container .userList::-webkit-scrollbar {
+    width: 1.2vw;
+    border-radius: 0.5vw;
+}
+.ranking-container .userList::-webkit-scrollbar-thumb {
+    background-color: #fe7227e7;
+    border-radius: 0.5vw;
+    width: 0.8vw;
+    background-clip: padding-box;
+    border: 0.2vw solid transparent;
+}
+.ranking-container .userList::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.708);
+    border-radius: 0.5vw;
 }
 
 .ranking-container .selectedUser {
@@ -25,6 +80,6 @@
     width: calc(100vw * 190/620);
     height: calc(100vw * 200/620);
     margin-left: calc(100vw * 350/620);
-    border-radius: 2vw;
+    border-radius: 1vw;
     background-color: rgba( 255, 255, 255, 0.7 );
 }
