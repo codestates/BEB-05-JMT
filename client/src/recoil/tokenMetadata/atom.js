@@ -28,7 +28,7 @@ export const weaponMetadataAtom = atom({
     attributes: "",
     image: "",
     name: ""
-  } ,
+  },
   effects_UNSTABLE: [persistAtom]
 })
 
