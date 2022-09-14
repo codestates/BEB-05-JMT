@@ -1,4 +1,6 @@
 import { atom } from "recoil";
+import { recoilPersist } from 'recoil-persist'
+const { persistAtom } = recoilPersist()
 
 export const tokenMetadataAtom = atom({
   key: 'tokenMeta',
@@ -6,7 +8,8 @@ export const tokenMetadataAtom = atom({
     attributes: "",
     image: "",
     name: ""
-  }
+  },
+  effects_UNSTABLE: [persistAtom]
 });
 
 export const charMetadataAtom = atom({
@@ -15,7 +18,8 @@ export const charMetadataAtom = atom({
     attributes: "",
     image: "",
     name: ""
-  }
+  },
+  effects_UNSTABLE: [persistAtom]
 });
 
 export const weaponMetadataAtom = atom({
@@ -24,7 +28,8 @@ export const weaponMetadataAtom = atom({
     attributes: "",
     image: "",
     name: ""
-  } 
+  } ,
+  effects_UNSTABLE: [persistAtom]
 })
 
 export const charNameAtom = atom({
@@ -37,7 +42,7 @@ export const charNameAtom = atom({
     shoes: "",
     eyeDecoration: "",
     faceAccessory: ""
-  } 
+  }
 })
 
 export const weaponNameAtom = atom({

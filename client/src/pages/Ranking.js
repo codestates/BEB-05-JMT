@@ -48,12 +48,17 @@ const Ranking = () => {
 	return (
 		<div className='ranking-container'>
 			<div className= 'userList'>
-        {[...Array(rankInfo.length)].map((_, idx) => {
-          const userData = rankInfo[idx];
-          return(
-            <UserData userData={userData} key={idx}/>
-          )
-        })}
+        {rankInfo ?
+          [...Array(rankInfo.length)].map((_, idx) => {
+            const userData = rankInfo[idx];
+            return(
+              <UserData userData={userData} key={idx}/>
+            )
+          })
+          :
+          ""
+        }
+        
       </div>
 		</div>
 	);
