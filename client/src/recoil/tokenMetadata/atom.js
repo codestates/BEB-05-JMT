@@ -53,4 +53,11 @@ export const weaponNameAtom = atom({
 export const strengthAtom = atom({
   key: 'strength',
   default: '',
+  effects_UNSTABLE: [persistAtom]
+})
+
+export const equipImgAtom = atom({
+  key: 'image',
+  default: '',
+  effects_UNSTABLE: [persistAtom]
 })

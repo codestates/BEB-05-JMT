@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from "recoil";
+import { strengthAtom, equipImgAtom } from '../recoil/tokenMetadata/atom';
 import { backgroundAtom } from "../recoil/background/atom";
 import { accountAtom } from "../recoil/account/atom";
 import UserData from '../components/UserData';
@@ -11,8 +12,11 @@ import axios from 'axios';
 const Ranking = () => {
   const account = useRecoilValue(accountAtom)
   const setBackground = useSetRecoilState(backgroundAtom)
+  const myImg = useRecoilValue(equipImgAtom);
   const navigate = useNavigate();
   const [rankInfo, setRankInfo] = useState();
+  const [myRank, setmyRank] = useState();
+  const myStr = useRecoilValue(strengthAtom);
 
   useEffect(() => {
     if (!account.address) {
@@ -30,7 +34,8 @@ const Ranking = () => {
         await contractAPI.fetchStrength(x.weaponId),
         x
       ])
-    )
+    );
+
     comparableArr.sort((a,b)=>{
       return b[0]-a[0];
     });
@@ -39,8 +44,7 @@ const Ranking = () => {
       const results = await Promise.all(arr.map(predicate));
     
       return arr.filter((_v, index) => results[index]);
-    }
-
+    };
 
     const sortedArr = comparableArr.map((x)=>{
       return x[1];
@@ -50,11 +54,20 @@ const Ranking = () => {
       const hasChar = await contractAPI.isCharOwner(x.address, x.charId);
       const hasWeapon = await contractAPI.isWeaponOwner(x.address, x.weaponId);
       return hasChar&&hasWeapon;
-    })
+    });
 
-
+    myrank(realArr);
     console.log(realArr);
     setRankInfo(realArr);
+  }
+
+  const myrank = async(arr) => {
+    for(const idx in arr){
+      if(arr[idx].username == account.username){
+        const rank = parseInt(idx)+1;
+        setmyRank(rank);
+      }
+    }
   }
 
 	return (
@@ -79,8 +92,14 @@ const Ranking = () => {
         }
         
       </div>
+      <div className= 'mychar'>
+        <span className='desc'>내 캐릭터</span>
+      </div>
       <div className= 'selectedUser'>
-        
+        <div className='myname'>{account.username}</div>
+        <img className='myimg' src={myImg} />
+        <div className='mystr'>Lv.{myStr}</div>
+        <div className='myrank'>{myRank}위</div>
       </div>
 		</div>
 	);
