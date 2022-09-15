@@ -6,7 +6,8 @@ export const matchingAtom = atom({
   key: 'matchingImageAtom',
   default: {
     username: "",
-    image: ""
+    image: "",
+    strength: ""
   },
   effects_UNSTABLE: [persistAtom]
 });
