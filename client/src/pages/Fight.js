@@ -69,8 +69,10 @@ const Fight = () => {
 }
 
   useEffect(() => {
-    if (!account.address||!account.charId) {
+    if (!account.address) {
       navigate('/login');
+    } else if(!account.charId){
+        navigate('/mint');
     } else {
       setBackground({type: 'fight'});
       fight();
