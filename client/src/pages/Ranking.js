@@ -5,6 +5,7 @@ import { strengthAtom, equipImgAtom } from '../recoil/tokenMetadata/atom';
 import { backgroundAtom } from "../recoil/background/atom";
 import { accountAtom } from "../recoil/account/atom";
 import UserData from '../components/UserData';
+import Spinner from "../components/Spinner";
 import './styles/Ranking.css';
 import contractAPI from '../api/contract';
 import axios from 'axios';
@@ -16,6 +17,7 @@ const Ranking = () => {
   const navigate = useNavigate();
   const [rankInfo, setRankInfo] = useState();
   const [myRank, setmyRank] = useState();
+  const [loading, setLoading] = useState(false);
   const myStr = useRecoilValue(strengthAtom);
 
   useEffect(() => {
@@ -24,6 +26,7 @@ const Ranking = () => {
     }
     setBackground({type: 'ranking'});
     sortArr();
+    setLoading(true);
   }, []);
 
   const sortArr = async()=>{
@@ -59,6 +62,7 @@ const Ranking = () => {
     myrank(realArr);
     console.log(realArr);
     setRankInfo(realArr);
+    setLoading(false);
   }
 
   const myrank = async(arr) => {
@@ -71,37 +75,42 @@ const Ranking = () => {
   }
 
 	return (
-		<div className='ranking-container'>
-      <div className= 'column'>
-        <span className='column-rank'>순위</span>
-        <span className='column-name'>이름</span>
-        <span className='column-char'>캐릭터</span>
-        <span className='column-str'>레벨</span>
-      </div>
-			<div className= 'userList'>
-        {rankInfo ?
-          [...Array(rankInfo.length)].map((_, idx) => {
-            const userData = rankInfo[idx];
-            const rank = idx+1;
-            return(
-              <UserData rankArr={rankInfo} userData={userData} rank={rank} key={idx}/>
-            )
-          })
-          :
-          ""
-        }
-        
-      </div>
-      <div className= 'mychar'>
-        <span className='desc'>내 캐릭터</span>
-      </div>
-      <div className= 'selectedUser'>
-        <div className='myname'>{account.username}</div>
-        <img className='myimg' src={myImg} />
-        <div className='mystr'>Lv.{myStr}</div>
-        <div className='myrank'>{myRank}위</div>
-      </div>
-		</div>
+		<>
+      {loading ? 
+      (<Spinner/>) : (
+        <div className='ranking-container'>
+          <div className= 'column'>
+            <span className='column-rank'>순위</span>
+            <span className='column-name'>이름</span>
+            <span className='column-char'>캐릭터</span>
+            <span className='column-str'>레벨</span>
+          </div>
+          <div className= 'userList'>
+            {rankInfo ?
+              [...Array(rankInfo.length)].map((_, idx) => {
+                const userData = rankInfo[idx];
+                const rank = idx+1;
+                return(
+                  <UserData rankArr={rankInfo} userData={userData} rank={rank} key={idx}/>
+                )
+              })
+              :
+              ""
+            }
+            
+          </div>
+          <div className= 'mychar'>
+            <span className='desc'>내 캐릭터</span>
+          </div>
+          <div className= 'selectedUser'>
+            <div className='myname'>{account.username}</div>
+            <img className='myimg' src={myImg} />
+            <div className='mystr'>Lv.{myStr}</div>
+            <div className='myrank'>{myRank}위</div>
+          </div>
+        </div>
+      )}
+		</>
 	);
 }
 
