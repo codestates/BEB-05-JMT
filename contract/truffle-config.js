@@ -66,16 +66,17 @@ module.exports = {
     //
     development: {
       host: "127.0.0.1",     // Localhost (default: none)
-      port: 8545,            // Standard Ethereum port (default: none)
-      network_id: "*",       // Any network (default: none)
+      port: 7545,            // Standard Ethereum port (default: none)
+      network_id: "5777",       // Any network (default: none)
+      from:"0x61aDA980c7D8a6Ef5113aA51919d89b1FD4f6669" 
      },
-    ganache:{
-       host: "127.0.0.1",     
-       port: 7545,       
-       network_id: "1337", 
-       from:"0x525a7F5BF1341aEA1A7b129496549a495929bCB4" //어카운트1로 지정       
-     },
-    //
+    // ganache:{
+    //    host: "127.0.0.1",     
+    //    port: 7545,       
+    //    network_id: "1337", 
+    //    from:"0x525a7F5BF1341aEA1A7b129496549a495929bCB4" //어카운트1로 지정       
+    //  },
+    // //
     // An additional network, but with some advanced options…
     // advanced: {
     //   port: 8777,             // Custom port

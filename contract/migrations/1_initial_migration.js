@@ -9,12 +9,13 @@ const lptContract = artifacts.require('../contracts/LPT.sol');
 const router = artifacts.require('../contracts/JMTRouter.sol');
 
 module.exports = async function (deployer) {
-  // NFTorMarket
-  let jmtCont,lpCont,lptCont,routerCont;
-  await deployer.deploy(jonMatangContract, ContractOwner);
-  jmtCont = await jonMatangContract.deployed();
 
   deployer.then(async () => {
+      // NFTorMarket
+    let jmtCont,lpCont,lptCont,routerCont;
+    await deployer.deploy(jonMatangContract, ContractOwner);
+    jmtCont = await jonMatangContract.deployed();
+
     await deployer.deploy(MapleMarket);
     await deployer.deploy(
       MapleNFT,
@@ -25,28 +26,27 @@ module.exports = async function (deployer) {
     await deployer.deploy(
       MapleItems,
       MapleMarket.address,
-      jonMatangContract.address,);
+      jonMatangContract.address,
+    );    
+          // swap_pool
+    await deployer.deploy(lpContract); // lp 디플로이
+    lpCont = await lpContract.deployed(); 
+
+    await deployer.deploy(lptContract,lpCont.address) // lpt 디플로이 
+    lptCont = await lptContract.deployed();
+
+    // address setting
+    await lpCont.setJmtCoinAddress(jmtCont.address)
+    await lpCont.setLPTAddress(lptCont.address)
+
+    await deployer.deploy(router,
+        lpCont.address,
+        jmtCont.address
+    );
+
+    routerCont = await router.deployed();
+    await jmtCont.setRouterAddress(routerCont.address);
   })
-
-  // swap_pool
-  await deployer.deploy(lpContract); // lp 디플로이
-  lpCont = await lpContract.deployed(); 
-
-  await deployer.deploy(lptContract,lpCont.address) // lpt 디플로이 
-  lptCont = await lptContract.deployed();
-
-  // address setting
-  await lpCont.setJmtCoinAddress(jmtCont.address)
-  await lpCont.setLPTAddress(lptCont.address)
-
-  await deployer.deploy(router,
-      lpCont.address,
-      jmtCont.address
-  );
-
-  routerCont = await router.deployed();
-  await jmtCont.setRouterAddress(routerCont.address);
-  
   // await routerCont._getAddress().then((value)=>{
   //     console.log(value)
   // });

@@ -366,10 +366,10 @@
     "absolutePath": "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol",
     "exportedSymbols": {
       "Address": [
-        3431
+        4120
       ],
       "Context": [
-        3453
+        4142
       ],
       "ERC1155": [
         1335
@@ -378,7 +378,7 @@
         1724
       ],
       "ERC165": [
-        3777
+        4466
       ],
       "IERC1155": [
         1457
@@ -390,7 +390,7 @@
         1498
       ],
       "IERC165": [
-        3789
+        4478
       ]
     },
     "id": 1725,
@@ -455,9 +455,9 @@
           1335,
           1739,
           1457,
-          3777,
-          3789,
-          3453
+          4466,
+          4478,
+          4142
         ],
         "name": "ERC1155Supply",
         "nameLocation": "540:13:5",
@@ -2311,7 +2311,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-14T11:35:58.373Z",
+  "updatedAt": "2022-09-15T12:03:25.289Z",
   "devdoc": {
     "details": "Extension of ERC1155 that adds tracking of total supply per id. Useful for scenarios where Fungible and Non-fungible tokens have to be clearly identified. Note: While a totalSupply of 1 might mean the corresponding is an NFT, there is no guarantees that no other token with the same id are not going to be minted.",
     "kind": "dev",

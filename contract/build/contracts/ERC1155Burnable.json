@@ -374,10 +374,10 @@
     "absolutePath": "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol",
     "exportedSymbols": {
       "Address": [
-        3431
+        4120
       ],
       "Context": [
-        3453
+        4142
       ],
       "ERC1155": [
         1335
@@ -386,7 +386,7 @@
         1567
       ],
       "ERC165": [
-        3777
+        4466
       ],
       "IERC1155": [
         1457
@@ -398,7 +398,7 @@
         1498
       ],
       "IERC165": [
-        3789
+        4478
       ]
     },
     "id": 1568,
@@ -463,9 +463,9 @@
           1335,
           1739,
           1457,
-          3777,
-          3789,
-          3453
+          4466,
+          4478,
+          4142
         ],
         "name": "ERC1155Burnable",
         "nameLocation": "375:15:4",
@@ -522,7 +522,7 @@
                               "name": "_msgSender",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3443,
+                              "referencedDeclaration": 4132,
                               "src": "553:10:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -575,7 +575,7 @@
                                 "name": "_msgSender",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 3443,
+                                "referencedDeclaration": 4132,
                                 "src": "595:10:4",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -953,7 +953,7 @@
                               "name": "_msgSender",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3443,
+                              "referencedDeclaration": 4132,
                               "src": "900:10:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -1006,7 +1006,7 @@
                                 "name": "_msgSender",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 3443,
+                                "referencedDeclaration": 4132,
                                 "src": "942:10:4",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -1365,7 +1365,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-14T11:35:58.372Z",
+  "updatedAt": "2022-09-15T12:03:25.288Z",
   "devdoc": {
     "details": "Extension of {ERC1155} that allows token holders to destroy both their own tokens and those that they have been approved to use. _Available since v3.1._",
     "kind": "dev",

@@ -1,9 +1,8 @@
 import React, { useEffect,useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSetRecoilState, useRecoilValue, useRecoilState, useRecoilValueLoadable } from "recoil";
+import { useSetRecoilState, useRecoilValue, useRecoilState} from "recoil";
 import { backgroundAtom } from "../recoil/background/atom";
 import { accountAtom } from "../recoil/account/atom";
-import { selectedCharAtom, selectedImgAtom } from "../recoil/temp/atom";
 import { equipImgAtom } from '../recoil/tokenMetadata/atom';
 import CharNFTs from '../components/CharNFTs';
 import ItemNFTs from '../components/ItemNFTs';
@@ -18,10 +17,11 @@ const Inventory = () => {
   const setBackground = useSetRecoilState(backgroundAtom);
   const navigate = useNavigate();
   const [myCharInfo, setMyCharInfo] = useState();
-  const selectedChar = useRecoilValueLoadable(selectedCharAtom);
-  const selectedImg = useRecoilValueLoadable(selectedImgAtom);
+  const [selectedImg, setSelectedImg] = useState();
+  const [selectedChar, setSelectedChar] = useState();
   const img = useRecoilValue(equipImgAtom);
   const [charName, setCharName] = useState();
+  const [selected, setSelected] = useState(true);
 
   useEffect(() => {
     if (!account.address) {
@@ -36,22 +36,28 @@ const Inventory = () => {
     // console.log(result);
     setMyCharInfo(result);
 
-    if(selectedChar.state=='hasValue'){      
-      const attr= await metadataAPI.fetchCharName(selectedChar.contents.attributes);
+    if(selectedChar){      
+      const attr= await metadataAPI.fetchCharName(selectedChar.attributes);
       setCharName(attr);
+    }
+
+    if(selectedChar){
+      const check =  selectedChar.name!=`Maple #${account.charId}`;
+      setSelected(false);
+    }else{
+      setSelected(true);
     }
   }
 
   const equip = async() => {
     console.log("장착 신청");
-    const charId=parseInt(selectedChar.contents.name.replace("Maple #", ""));
+    const charId=parseInt(selectedChar?.name.replace("Maple #", ""));
     console.log(charId);
     console.log(account.address);
     console.log(account.weaponId);
     await accountAPI.equip(account.address, charId, account.weaponId);
     setAccount({...account, charId:charId, weaponId: account.weaponId});
   }
-
 
 	return (
 		<div className='inventory-container'>
@@ -63,9 +69,8 @@ const Inventory = () => {
         {myCharInfo ?
           [...Array(myCharInfo.length)].map((_, idx) => {
             const myChar = myCharInfo[idx];
-            // console.log(myChar);
             return(
-              <CharNFTs charData= {myChar} key={idx}/>
+              <CharNFTs charData= {myChar} setSelectedImg={setSelectedImg} setSelectedChar={setSelectedChar} key={idx}/>
             )
           })
           :
@@ -76,9 +81,9 @@ const Inventory = () => {
         <span className='desc'>상세 정보</span>
       </div>
       <div className= 'selectedUser'>
-        <div className='myname'>{selectedChar.state=='hasValue'?selectedChar.contents.name: account.username}</div>
-        <img className='myimg' src={selectedImg.state=='hasValue'? selectedImg.contents:img} />
-        { selectedChar.contents.name==`Maple #${account.charId}`?
+        <div className='myname'>{selectedChar? selectedChar.name: account.username}</div>
+        <img className='myimg' src={selectedImg? selectedImg:img} />
+        { selected ?
           <div className='equipped'>장착중</div>
           : 
           <div className='equip' onClick={equip}>장착</div>
