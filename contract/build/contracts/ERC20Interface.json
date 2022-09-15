@@ -231,7 +231,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.0;\n\ninterface ERC20Interface {\n    function totalSupply() external view returns (uint256);\n    function balanceOf(address account) external view returns (uint256);\n    function transfer(address recipient, uint256 amount) external returns (bool);\n    function approve(address spender, uint256 amount) external returns (bool);\n    function allowance(address owner, address spender) external view returns (uint256);\n    function transferFrom(address spender, address recipient, uint256 amount) external returns (bool);\n    \n    event Transfer(address indexed from, address indexed to, uint256 amount);\n    event Transfer(address indexed spender, address indexed from, address indexed to, uint256 amount);\n    event Approval(address indexed owner, address indexed spender, uint256 oldAmount, uint256 amount);\n}\n",
-  "sourcePath": "/Users/hyenne/workspace/BEB-05-JMT/contract/contracts/interfaces/ERC20Interface.sol",
+  "sourcePath": "/Users/king/BEB-05-JMT/contract/contracts/interfaces/ERC20Interface.sol",
   "ast": {
     "absolutePath": "project:/contracts/interfaces/ERC20Interface.sol",
     "exportedSymbols": {
@@ -1258,7 +1258,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-12T11:45:51.938Z",
+  "updatedAt": "2022-09-14T11:35:58.459Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
