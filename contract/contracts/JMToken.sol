@@ -66,7 +66,7 @@ contract JMToken is ERC20 {
   
     // 이더 펀딩 
     function contribute() external payable isPaused areFundsMoved {
-        
+
         //교환 비율이 1:100
         uint256 tokenAmount = msg.value * 100;
         balancesToClaim[msg.sender] += tokenAmount;
@@ -153,13 +153,16 @@ contract JMToken is ERC20 {
             address(liquidityPool),
             jmtCoinAmountToTransfer
         );
+
         //msg.value = totalContributed, 리저브 생성, 이더전송
         liquidityPool.deposit{value: totalContributed}(
             jmtCoinAmountToTransfer,
             address(this)
         );
+
         //펀딩 reserve_setting
         liquidityPool.setFundedReserve();
+
         sendRemainingFundsToTreasury();
     }
     //펀딩 이후 남은 토큰 재무 관련 지갑 전송
