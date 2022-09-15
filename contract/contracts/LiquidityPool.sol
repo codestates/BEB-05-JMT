@@ -145,10 +145,11 @@ contract LiquidityPool is Ownable {
         require(liquidity != 0, "NO_AVAILABLE_TOKENS");
 
         uint256 totalSupply = lpToken.totalSupply();
-
+        //얼마 보내줄지 계산
         uint256 ethAmount = (ethReserve * liquidity) / totalSupply;
         uint256 jmtAmount = (jmtReserve * liquidity) / totalSupply;
 
+        // 소각
         lpToken.burn(account, liquidity); // 유저가 withdraw 한거 소각 
 
         // 각각의 토큰 유저에게 전송
