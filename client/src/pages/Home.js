@@ -28,11 +28,14 @@ const Home = () => {
   useEffect(() => {
     if (!account.address) {
       navigate('/login');
+    } else if(!account.charId){
+        navigate('/mint');
+    } else {
+      setBackground({type: 'default'});
+      mychar();
+      addrinfo();
+      setLoading(false);
     }
-    setBackground({type: 'default'});
-    mychar();
-    addrinfo();
-    setLoading(false);
   }, []);
 
   const mychar = async() =>{

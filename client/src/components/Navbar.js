@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const logout = async() => {
-    setAccount({account: '', username: ''});
+    setAccount({account: ''});
     navigate('/login');
   }
   

@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useSetRecoilState } from "recoil"
 import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
+import { charMetadataAtom, weaponMetadataAtom, strengthAtom, equipImgAtom } from '../recoil/tokenMetadata/atom';
+import { addrinfoAtom } from '../recoil/addrinfo/atom';
 import './styles/Login.css';
 import { useNavigate } from 'react-router-dom'
 import accountAPI from '../api/account';
@@ -10,9 +12,19 @@ const Login = () => {
   const setAccount = useSetRecoilState(accountAtom)
   const setBackground = useSetRecoilState(backgroundAtom)
   const navigate = useNavigate();
+  const setAddrInfo = useSetRecoilState(addrinfoAtom);
+  const setCharMetadata = useSetRecoilState(charMetadataAtom);
+  const setWeaponMeatadata = useSetRecoilState(weaponMetadataAtom);
+  const setImage = useSetRecoilState(equipImgAtom);
+  const setStrength = useSetRecoilState(strengthAtom);
 
   useEffect(() => {
     setAccount({address: ''});
+    setAddrInfo([]);
+    setCharMetadata({});
+    setWeaponMeatadata({});
+    setImage("");
+    setStrength("");
     setBackground({type: 'not-logged-in'});
   }, []);
 

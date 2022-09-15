@@ -14,9 +14,12 @@ const Market = () => {
 
   useEffect(() => {
     if (!account.address) {
-      navigate("/login");
-    }
+      navigate('/login');
+    } else if(!account.charId){
+        navigate('/mint');
+    } else {
     setBackground({ type: "market" });
+    }
   }, []);
 
   // peudo code
@@ -32,7 +35,7 @@ const Market = () => {
     return (
     <div class="card 1">
       <div class="card_image">
-        <img src={itemUrlSrc} />
+        {/* <img src={itemUrlSrc} /> */}
       </div>
       <div class="card_title title-white">
         <p>Card Title</p>

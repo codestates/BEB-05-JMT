@@ -40,11 +40,12 @@ const Fighting = () => {
   setTimeout(result, 4000);
 
   useEffect(() => {
-    if (!account.address) {
+    if (!account.address||!account.charId) {
       navigate('/login');
-    }
-    fighting();
-    setBackground({type: 'fight'});
+     } else {
+      fighting();
+      setBackground({type: 'fight'});
+     }
   }, []);
 
 	return (

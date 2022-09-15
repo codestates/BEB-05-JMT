@@ -26,9 +26,12 @@ const Inventory = () => {
   useEffect(() => {
     if (!account.address) {
       navigate('/login');
+    } else if(!account.charId){
+        navigate('/mint');
+    } else {
+      setBackground({type: 'default'});
+      mychar();
     }
-    setBackground({type: 'default'});
-    mychar();
   }, [selectedImg]);
 
   const mychar = async() => {
@@ -42,8 +45,8 @@ const Inventory = () => {
     }
 
     if(selectedChar){
-      const check =  selectedChar.name!=`Maple #${account.charId}`;
-      setSelected(false);
+      const check =  selectedChar.name==`Maple #${account.charId}`;
+      setSelected(check);
     }else{
       setSelected(true);
     }
@@ -52,11 +55,9 @@ const Inventory = () => {
   const equip = async() => {
     console.log("장착 신청");
     const charId=parseInt(selectedChar?.name.replace("Maple #", ""));
-    console.log(charId);
-    console.log(account.address);
-    console.log(account.weaponId);
     await accountAPI.equip(account.address, charId, account.weaponId);
     setAccount({...account, charId:charId, weaponId: account.weaponId});
+    setSelected(true);
   }
 
 	return (

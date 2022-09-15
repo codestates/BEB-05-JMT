@@ -69,11 +69,12 @@ const Fight = () => {
 }
 
   useEffect(() => {
-    if (!account.address) {
+    if (!account.address||!account.charId) {
       navigate('/login');
+    } else {
+      setBackground({type: 'fight'});
+      fight();
     }
-    setBackground({type: 'fight'});
-    fight();
   }, []);
 
 	return (

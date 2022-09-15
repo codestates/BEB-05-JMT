@@ -19,8 +19,11 @@ const Swap = () => {
   useEffect(() => {
     if (!account.address) {
       navigate('/login');
+    } else if(!account.charId){
+        navigate('/mint');
+    } else {
+      setBackground({type: 'default'});
     }
-    setBackground({type: 'default'});
   }, []);
 
   const handleTabChange = (event, newTabIndex) => {

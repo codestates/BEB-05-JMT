@@ -25,9 +25,10 @@ const Mint = () => {
     useEffect(() => {
         if (!account.address) {
             navigate('/login');
+        } else {
+            setBackground({type: 'default'});
+            setLoading(false);
         }
-        setBackground({type: 'default'});
-        setLoading(false);
     }, []);
 
     const mint = async () => {

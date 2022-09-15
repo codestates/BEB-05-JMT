@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useSetRecoilState } from "recoil"
 import { selectedCharAtom, selectedImgAtom } from "../recoil/temp/atom";
 import metadataAPI from '../api/metadata';
 import './styles/CharNFT.css';
 
 function CharNFTs({charData, setSelectedImg, setSelectedChar}) {
-  // const setSelectedChar = useSetRecoilState(selectedCharAtom);
-  // const setSelectedImg = useSetRecoilState(selectedImgAtom);
   const [image, setImage] = useState();
 
   useEffect(() => {

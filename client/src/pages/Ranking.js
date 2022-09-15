@@ -23,10 +23,13 @@ const Ranking = () => {
   useEffect(() => {
     if (!account.address) {
       navigate('/login');
+    } else if(!account.charId){
+        navigate('/mint');
+    } else {
+      setBackground({type: 'ranking'});
+      sortArr();
+      setLoading(true);
     }
-    setBackground({type: 'ranking'});
-    sortArr();
-    setLoading(true);
   }, []);
 
   const sortArr = async()=>{

@@ -58,11 +58,12 @@ const FightResult = () => {
   } 
 
   useEffect(() => {
-    if (!account.address) {
+    if (!account.address||!account.charId) {
       navigate('/login');
+    } else {
+      setBackground({type: 'fight'});
+      fightresult();
     }
-    setBackground({type: 'fight'});
-    fightresult();
   }, [userWinImage, userLoseImage, matchingwinImage, matchingloseImage]);
 
 

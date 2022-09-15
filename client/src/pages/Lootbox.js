@@ -18,10 +18,13 @@ const Lootbox = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-    if (!account.address) {
-        navigate('/login');
-    }
-    setBackground({type: 'market'});
+        if (!account.address) {
+            navigate('/login');
+        } else if(!account.charId){
+            navigate('/mint');
+        } else {
+            setBackground({type: 'market'});
+        }
     }, []);
 
     const charMint = async () => {
