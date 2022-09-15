@@ -1,5 +1,5 @@
 import axios from "axios";
-import NFT from "../abi/nft";
+
 const Web3 = require('web3');
 const {
     NFT_CONTRACT_ADDR,

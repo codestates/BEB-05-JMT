@@ -1,56 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import { useRecoilValue , useSetRecoilState } from "recoil"
-import { accountAtom } from "../recoil/account/atom"
-import { charMetadataAtom } from '../recoil/tokenMetadata/atom';
-import Inventory from '../pages/Inventory';
-import contractAPI from '../api/contract';
+import { useSetRecoilState } from "recoil"
+import { selectedCharAtom, selectedImgAtom } from "../recoil/temp/atom";
 import metadataAPI from '../api/metadata';
+import './styles/CharNFT.css';
 
-function CharNFTs() {
-   //캐릭터 관련
-  const account = useRecoilValue(accountAtom);
-  const setCharMetadata = useSetRecoilState(charMetadataAtom);
+function CharNFTs({charData}) {
+  const setSelectedChar = useSetRecoilState(selectedCharAtom);
+  const setSelectedImg = useSetRecoilState(selectedImgAtom);
   const [image, setImage] = useState();
-  const [char, setChar] = useState();
-  const [charName, setCharName] = useState();
-  const [charItemName, setCharItemName] = useState();
 
   useEffect(() => {
     mycharx();
   }, []);
 
   const mycharx = async() =>{
-    //캐릭터
-    const charx = await contractAPI.fetchMyCharacter(account.address, account.charId);
-    setCharMetadata(charx);//캐릭터 데이터
-    // console.log(charx);
-    for(let i = 0; i <= charx.length; i++){
-      if(charx[i]){
-        const arrImage = charx[i].image;
-        const nftImage = [...Array(arrImage)].map((_,i) => {
-          return arrImage;
-        })
-        setImage(nftImage);//캐릭터 이미지
-        console.log(nftImage);
-        const attr = await metadataAPI.fetchCharName(charx[i].attributes);
-        setCharItemName(attr);//캐릭터 옷 정보
-        setCharName(charx[i].name);//캐릭터 ID
-      }
-    }
+    const img = await metadataAPI.fetchCharImage(charData.attributes, '0');
+    console.log(img);
+    setImage(img);
   }
 
-  const reqCharChainge=()=>{
-    setChar(image);
+  const selected = async() => {
+    setSelectedChar(charData);
+    const img = await metadataAPI.fetchCharImage(charData.attributes, 'animated');
+    setSelectedImg(img);
   }
+
 
   return (
-    (image ?
-        <li>
-            <button onClick={reqCharChainge} ><img className='Character_size' src={image} alt="myNft"/></button>
-        </li>
-      :
-      null
-    )
+    <div className='mychar-container' onClick={selected}>
+      <div className='display'></div>
+      <img className='mychar-img' src={image? image:null}/>
+    </div>
   )
 }
 

@@ -33,6 +33,7 @@ const Home = () => {
   }, []);
 
   const mychar = async() =>{
+    console.log('check');
     const char = await contractAPI.fetchCharacter(account.charId);
     setCharMetadata(char);
     const weapon = await contractAPI.fetchWeapon(account.weaponId);
