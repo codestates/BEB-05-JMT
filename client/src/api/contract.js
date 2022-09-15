@@ -34,9 +34,9 @@ const _fetchCharacter = async (charId) => {
 }
 const fetchCharacter = async (charId) => {
     try{
-        return _fetchCharacter(charId);
+        return await _fetchCharacter(charId);
     } catch(err){
-        return _fetchCharacter(charId);
+        return await _fetchCharacter(charId);
     }
 }
 const fetchMyCharacter = async (address) => {
@@ -71,9 +71,9 @@ const _fetchWeapon = async (weaponId) =>{
 }
 const fetchWeapon = async (weaponId) => {
     try{
-        return _fetchWeapon(weaponId);
+        return await _fetchWeapon(weaponId);
     } catch(err) {
-        return _fetchWeapon(weaponId);
+        return await _fetchWeapon(weaponId);
     }    
 }
 
