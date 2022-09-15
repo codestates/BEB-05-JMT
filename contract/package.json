@@ -1,5 +1,12 @@
 {
   "dependencies": {
-    "@openzeppelin/contracts": "^4.7.3"
+    "@openzeppelin/contracts": "^4.7.3",
+    "@remix-project/remixd": "^0.6.6",
+    "@uniswap/v2-core": "^1.0.1",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "bignumber.js": "^9.1.0",
+    "chai": "^4.3.6",
+    "openzeppelin-solidity": "4.6.0",
+    "web3": "^1.7.5"
   }
 }
