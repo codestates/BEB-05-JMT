@@ -5,22 +5,17 @@ import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
 import { charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/atom';
 import { matchingAtom } from '../recoil/matching/atom';
-import { fightAtom } from '../recoil/fight/atom';
 import { Link } from "react-router-dom";
-import { dummyFight } from './dummyFight';
 import '../pages/styles/Fight.css';
+import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 
 const FightResult = () => {
+  const [isLoading, setLoading] = useState(true);
   const chardata = useRecoilValue(charMetadataAtom);
   const weapondata = useRecoilValue(weaponMetadataAtom);
   const matchingdata = useRecoilValue(matchingAtom);
-  const fightdata = useRecoilValue(fightAtom)
   const account = useRecoilValue(accountAtom)
-  const navigate = useNavigate();
-  const leftweapon = dummyFight[0].weapon;
-  const rightweapon = fightdata.weapon;
-  const [isLoading, setLoading] = useState(true);
   const [userWinImage, setUserWinImage] = useState();
   const [userLoseImage, setUserLoseImage] = useState();
   const [matchingwinImage, setMatchingWinImage] = useState();
@@ -28,15 +23,19 @@ const FightResult = () => {
   const [leftResult, setLeftResult] = useState();
   const [rightResult, setRightResult] = useState();
   const setBackground = useSetRecoilState(backgroundAtom)
+  const navigate = useNavigate();
 
-  console.log(leftweapon);
-  console.log(rightweapon);
 
   const fightresult = async () => {
+    const userweapon = contractAPI.fetchAttributes(weapondata.attributes);
+    const leftstrength = userweapon.strength;
+    const rightstrength = matchingdata.strength;
+
     const WinImage = await metadataAPI.fetchWinImage(chardata.attributes, weapondata.attributes, 'animated');
     const LoseImage = await metadataAPI.fetchLoseImage(chardata.attributes, weapondata.attributes, 'animated');
     setUserWinImage(WinImage);
     setUserLoseImage(LoseImage);
+    console.log(userWinImage);
 
     const Mchardata = matchingdata.matchingChardata
     const Mweapondata = matchingdata.matchingWeapondata
@@ -45,12 +44,12 @@ const FightResult = () => {
     setMatchingWinImage(MwinImage);
     setMatchingLoseImage(MloseImage);
 
-    if ( leftweapon > rightweapon) {
+    if ( leftstrength > rightstrength ) {
       setLeftResult(userWinImage);
       setRightResult(matchingloseImage);
       console.log(leftResult);
       console.log(rightResult);
-    } else if ( leftweapon < rightweapon) {
+    } else if ( leftstrength < rightstrength ) {
       setLeftResult(userLoseImage);
       setRightResult(matchingwinImage);
       console.log(leftResult);
@@ -65,6 +64,7 @@ const FightResult = () => {
     setBackground({type: 'fight'});
     fightresult();
   }, [userWinImage, userLoseImage, matchingwinImage, matchingloseImage]);
+
 
 	return (
 		<div className='fight-container'>
