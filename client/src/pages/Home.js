@@ -6,6 +6,7 @@ import { backgroundAtom } from "../recoil/background/atom"
 import { charMetadataAtom, weaponMetadataAtom, strengthAtom, equipImgAtom } from '../recoil/tokenMetadata/atom';
 import { addrinfoAtom } from '../recoil/addrinfo/atom';
 import { Link } from "react-router-dom";
+import Spinner from "../components/Spinner";
 import axios from 'axios';
 import './styles/Home.css';
 import contractAPI from '../api/contract';
@@ -21,6 +22,7 @@ const Home = () => {
   const [charName, setCharName] = useState();
   const [weaponName, setWeaponName] = useState();
   const [strength, setStrength] = useRecoilState(strengthAtom);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,6 +32,7 @@ const Home = () => {
     setBackground({type: 'default'});
     mychar();
     addrinfo();
+    setLoading(false);
   }, []);
 
   const mychar = async() =>{
@@ -60,34 +63,40 @@ const Home = () => {
   }
 
 	return (
-		<div className='home-container'>
-      <div className='username'>
-        {account?.username}
-      </div>
-      <img className="my-character" src={image} />
-      <div className='mydata'>
-        <div className = 'metadata'>
-          {/* <div className = 'line2'>------대표 캐릭터------</div>
-          <div className = 'line'>{account?.charId}</div> */}
-          <div className = 'line2'>-------전투 정보-------</div>
-          <div className = 'line'>무기: {weaponName}</div>
-          <div className = 'line'>레벨: {strength}</div>
-          <div className = 'line2'>------캐릭터 정보------</div>
-          <div className = 'line'>스킨: {charName?.skin}</div>
-          <div className = 'line'>얼굴: {charName?.face}</div>
-          <div className = 'line'>헤어: {charName?.hair}</div>
-          <div className = 'line'>의상: {charName?.clothes}</div>
-          <div className = 'line'>신발: {charName?.shoes}</div>
-          <div className = 'line'>안경: {charName && charName.eyeDecoration ? charName.eyeDecoration: '없음'}</div>
-          <div className = 'line'>악세서리: {charName && charName.faceAccessory ? charName.faceAccessory: '없음'}</div>
+		<>
+      {loading ?
+      // <div><div>NFT 정보 불러오는 중...</div><img src={loding}/></div> 
+      (<Spinner/>) : (
+        <div className='home-container'>
+          <div className='username'>
+            {account?.username}
+          </div>
+          <img className="my-character" src={image} />
+          <div className='mydata'>
+            <div className = 'metadata'>
+              {/* <div className = 'line2'>------대표 캐릭터------</div>
+              <div className = 'line'>{account?.charId}</div> */}
+              <div className = 'line2'>-------전투 정보-------</div>
+              <div className = 'line'>무기: {weaponName}</div>
+              <div className = 'line'>레벨: {strength}</div>
+              <div className = 'line2'>------캐릭터 정보------</div>
+              <div className = 'line'>스킨: {charName?.skin}</div>
+              <div className = 'line'>얼굴: {charName?.face}</div>
+              <div className = 'line'>헤어: {charName?.hair}</div>
+              <div className = 'line'>의상: {charName?.clothes}</div>
+              <div className = 'line'>신발: {charName?.shoes}</div>
+              <div className = 'line'>안경: {charName && charName.eyeDecoration ? charName.eyeDecoration: '없음'}</div>
+              <div className = 'line'>악세서리: {charName && charName.faceAccessory ? charName.faceAccessory: '없음'}</div>
+            </div>
+          </div>
+          <div className="home-fight">
+            <Link to="/fight">
+              <img className="home-fightimg" src='../img/fight.png' />
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className="home-fight">
-        <Link to="/fight">
-          <img className="home-fightimg" src='../img/fight.png' />
-        </Link>
-      </div>
-		</div>
+        )}
+		</>
 	);
 }
 

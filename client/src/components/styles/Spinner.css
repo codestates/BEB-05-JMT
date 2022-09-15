@@ -1,0 +1,16 @@
+.loding {
+  height: calc(100vw * 9/16 * 19/50);
+  width: calc(100vw - 2*45/110*100vw);
+  background-color: #fff;
+  margin-top:calc(100vw - 2*45/95*100vw);
+  border-radius: 25px;
+  border:5px solid #FE7427;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+}
+.loding .img {
+  height: calc(100vw * 9/16 * 30/50);
+  width: calc(100vw - 2*45/620*100vw);
+}

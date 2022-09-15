@@ -8,6 +8,8 @@
 
 .my-character {
     display: flex;
+    width: calc(100vw * 40/220);
+    height: calc(100vw * 40/320);
     min-height: 100%;
     max-height: 100%;
     align-self: center;
