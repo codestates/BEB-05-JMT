@@ -1,13 +1,124 @@
 import axios from "axios";
+import TOKEN from "../abi/token";
+import ROUTER from "../abi/router";
+import LP from "../abi/lp";
+import LPT from "../abi/lpt"
 
+const BigNumber = require('bignumber.js');
 const Web3 = require('web3');
 const {
     NFT_CONTRACT_ADDR,
     NFT_CONTRACT_ABI,
     ITEMS_CONTRACT_ADDR,
     ITEMS_CONTRACT_ABI,
+    TOKEN_CONTRACT_ADDR,
+    LP_CONTRACT_ADDR,
+    ROUTER_CONTRACT_ADDR,
+    LPT_CONTRACT_ADDR
 } = require('../global_variables');
 
+// <-- swap 
+const getBalnceOfJmt = async(address) => {
+    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const JMTContract = await new web3.eth.Contract(
+        TOKEN,
+        TOKEN_CONTRACT_ADDR
+    );
+    const result = await JMTContract.methods.balanceOf(address).call();
+    return result;
+}
+
+const SendJmtToken = async(to,address,amount) => {
+    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    var BN = web3.utils.BN;
+    const _amount = new BN(String(amount)).mul(new BN(String(10**18))).toString();
+    const JMTContract = await new web3.eth.Contract(
+        TOKEN,
+        TOKEN_CONTRACT_ADDR
+    );
+    await JMTContract.methods.transfer(to,_amount).send({from:address});
+} 
+
+const GetReserve = async() => {
+    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const lpContract = await new web3.eth.Contract(
+        LP,
+        LP_CONTRACT_ADDR
+    );
+    return await lpContract.methods.getReserves().call();
+}
+//toFixed(2); 고정 소수점, 지정된 숫자만큼 표시하고 나머지는 0으로 채움
+const SwapToken = async(eth,jmt,address,inputToken) =>{
+    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const routerContract = await new web3.eth.Contract(
+        ROUTER,
+        ROUTER_CONTRACT_ADDR
+    );
+    if(inputToken == 0){ // eth -> jmt
+        const _ethAmount = web3.utils.toWei(parseFloat(eth).toFixed(6),'ether'); // new BN(parseFloat(eth)) // new BigNumber(eth*10**18)
+        const r = routerContract.methods.swapTokens(0).send({
+            value : _ethAmount,
+            from : address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        });
+        console.log(r)
+    }else if(inputToken == 1) {// jmt -> eth 
+        const _jmtAmount = web3.utils.toWei(parseFloat(jmt).toFixed(6),'ether');
+        const r =  routerContract.methods.swapTokens(_jmtAmount).send({
+            from : address,
+            gas: 1500000,
+            gasPrice: '30000000'
+        });
+        console.log(r)
+    }
+    //console.log(result)
+} 
+
+const getBalnceOfLpToken = async(address) => {
+    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const lptContract = await new web3.eth.Contract(
+        LPT,
+        LPT_CONTRACT_ADDR
+    );
+     
+    const result = await lptContract.methods.balanceOf(address).call();
+    return parseFloat(web3.utils.fromWei(result,'ether')).toFixed(6)
+}
+
+const depositToken = async(jmtAmount,ethAmount,address) => {
+    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const routerContract = await new web3.eth.Contract(
+        ROUTER,
+        ROUTER_CONTRACT_ADDR
+    );
+    const _ethAmount = web3.utils.toWei(parseFloat(ethAmount).toFixed(6),'ether');
+    const _jmtAmount = web3.utils.toWei(parseFloat(jmtAmount).toFixed(6),'ether');
+    return await routerContract.methods.addLiquidity(_jmtAmount).send({
+        value: _ethAmount,
+        from : address,
+        gas: 1500000,
+        gasPrice: '30000000'
+    });
+}
+
+const withdrawToken = async(address) => {
+    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const routerContract = await new web3.eth.Contract(
+        ROUTER,
+        ROUTER_CONTRACT_ADDR
+    );
+    const aa = await routerContract.methods.pullLiquidity().send({
+        gas: 1500000,
+        gasPrice: '30000000',
+        from:address
+    });
+    console.log(aa)
+    return aa;
+}
+
+
+// swap -->
 const fetchNFTContract = async () => {
     const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
     const NFTContract = await new web3.eth.Contract(
@@ -158,7 +269,14 @@ const contractAPI = {
     fetchAttributes,
     isCharOwner,
     isWeaponOwner,
-    fetchMyCharacter     
+    fetchMyCharacter,
+    getBalnceOfJmt,
+    SendJmtToken,
+    GetReserve,
+    SwapToken,
+    getBalnceOfLpToken,
+    depositToken,
+    withdrawToken
 };
 
 export default contractAPI;
