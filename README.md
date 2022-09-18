@@ -73,6 +73,15 @@ migrate --reset
 # .env 파일의 컨트랙트 주소 변경
 ```
 
+## Merge 이후 main 프로젝트 재설정 
+1. Server, Client, Contract npm install 
+2. Server DB User table data 삭제 
+3. Truffle-config.js networkid, from, port 확인
+4. contract/migrate .js 파일 ContractOwner local account[0]계정으로 변경 
+5. Truffle local 컨트랙트 배포 
+6. client/.env 컨트랙트 주소 수정  
+
+
 ## REST API
 
 ### 엔드포인트
