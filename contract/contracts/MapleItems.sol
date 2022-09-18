@@ -48,12 +48,6 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         JMToken _tokenContractAddress,
         address payable _treasuryWallet) 
         ERC1155("ipfs://QmUkUUWBisiFa9XUk4ucJiDr2fvk2tDr1xDrCkEF6FFCF8/{id}") {
-        _mint(msg.sender, SCROLL100, 10, "");
-        _mint(msg.sender, SCROLL90, 20, "");
-        _mint(msg.sender, SCROLL60, 40, "");
-        _mint(msg.sender, SCROLL30, 60, "");
-        _mint(msg.sender, SCROLL10, 70, "");
-
         mintPrice = 1;
         
         marketContractAddress = _marketAddress;
