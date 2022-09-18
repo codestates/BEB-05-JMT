@@ -314,7 +314,7 @@ const contractAPI = {
     isWeaponOwner,
     fetchMyCharacter,
     fetchMyItems,
-    mintScrollNFT
+    mintScrollNFT,
     getBalnceOfJmt,
     SendJmtToken,
     GetReserve,
