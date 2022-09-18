@@ -1,4 +1,4 @@
-const ContractOwner = '0x61aDA980c7D8a6Ef5113aA51919d89b1FD4f6669' //오너,가나슈(index[0])
+const ContractOwner = '0xED900863220fE80335E5c8BDEE3fee7C7741cF71' //오너,가나슈(index[0])
 const MapleNFT= artifacts.require("MapleNFT");
 const MapleMarket= artifacts.require("MapleMarket");
 const MapleItems = artifacts.require("MapleItems");

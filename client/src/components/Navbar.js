@@ -1,13 +1,23 @@
-import React from 'react';
+import React,{ useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useRecoilState } from "recoil"
 import { accountAtom } from "../recoil/account/atom"
 import { Link } from "react-router-dom";
+import contractAPI from '../api/contract';
 import './styles/Navbar.css';
 
 const Navbar = () => {
   const [account, setAccount] = useRecoilState(accountAtom);
+  const [jmtAmount,setJmtAmount] = useState(0);
   const navigate = useNavigate();
+  const decimals = 10**18;
+
+  useEffect(() => {
+    contractAPI.getBalnceOfJmt(account.address).then((result)=>{
+      setJmtAmount(result)
+    })
+
+  }, []);
 
   const logout = async() => {
     setAccount({account: ''});
@@ -33,6 +43,7 @@ const Navbar = () => {
         <div className="nav-item-container-end">
           <Link to="/swap" className="nav-item">토큰 스왑</Link>
         </div>
+        <div className="nav-item-container-end-token">{Math.floor(jmtAmount/decimals)} JMT</div>
         <img className="nav-item-logout" onClick={logout} src="https://seeklogo.com/images/M/metamask-logo-09EDE53DBD-seeklogo.com.png" />
       </div>
     </div>

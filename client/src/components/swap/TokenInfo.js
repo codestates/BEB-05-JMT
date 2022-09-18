@@ -24,6 +24,7 @@ function TokenInfo() {
         alert("전송 완료!");
         contractAPI.getBalnceOfJmt(account.address).then((result)=>{
           setJmtAmount(result)
+          window.location.reload();
         })
       })
     }

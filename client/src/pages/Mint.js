@@ -27,7 +27,6 @@ const Mint = () => {
             navigate('/login');
         } else {
             setBackground({type: 'default'});
-            setLoading(false);
         }
     }, [account]);
 
@@ -56,6 +55,7 @@ const Mint = () => {
             await accountAPI.equip(account.address, charId, weaponId);
 
             setAccount({...account, username: username, charId:charId, weaponId: weaponId});
+            setLoading(false);
         }
     }
 
@@ -63,55 +63,51 @@ const Mint = () => {
         setUsername(value);
     }
     return (
-        // <div>
-        // {loading ? 
-        //     <Spinner/> : 
-            <div className='mint-container'>
-                {account.charId&&account.weaponId ? 
-                    <div className = 'mint-container2'> 
-                        <span className="mint-result" onClick={()=>navigate('/home')}>
-                            <img className="mint-char" src={charImg} />
-                        </span>
-                        <div className ="mintdata"> 
-                            <div className = 'mintline'>스킨: {charName?.skin}</div>
-                            <div className = 'mintline'>얼굴: {charName?.face}</div>
-                            <div className = 'mintline'>헤어: {charName?.hair}</div>
-                            <div className = 'mintline'>의상: {charName?.clothes}</div>
-                            <div className = 'mintline'>신발: {charName?.shoes}</div>
-                            <div className = 'mintline'>안경: {charName && charName.eyeDecoration ? charName.eyeDecoration: '없음'}</div>
-                            <div className = 'mintline'>악세서리: {charName && charName.faceAccessory ? charName.faceAccessory: '없음'}</div>
-                        </div>
-                        <span className="mint-result" onClick={()=>navigate('/home')}>
-                            <img className="mint-weapon" src={weaponImg} />
-                        </span>
-                        <div className ="mintdata2"> 
-                            <div className = 'mintline2'>무기: {weaponName}</div>
-                            <div className = 'mintline2'>레벨: {strength}</div>
+        <div className='mint-container'>
+            {account.charId&&account.weaponId ? 
+                (loading ? 
+                <Spinner/> : 
+                <div className = 'mint-container2'> 
+                    <span className="mint-result" onClick={()=>navigate('/home')}>
+                        <img className="mint-char" src={charImg} />
+                    </span>
+                    <div className ="mintdata"> 
+                        <div className = 'mintline'>스킨: {charName?.skin}</div>
+                        <div className = 'mintline'>얼굴: {charName?.face}</div>
+                        <div className = 'mintline'>헤어: {charName?.hair}</div>
+                        <div className = 'mintline'>의상: {charName?.clothes}</div>
+                        <div className = 'mintline'>신발: {charName?.shoes}</div>
+                        <div className = 'mintline'>안경: {charName && charName.eyeDecoration ? charName.eyeDecoration: '없음'}</div>
+                        <div className = 'mintline'>악세서리: {charName && charName.faceAccessory ? charName.faceAccessory: '없음'}</div>
+                    </div>
+                    <span className="mint-result" onClick={()=>navigate('/home')}>
+                        <img className="mint-weapon" src={weaponImg} />
+                    </span>
+                    <div className ="mintdata2"> 
+                        <div className = 'mintline2'>무기: {weaponName}</div>
+                        <div className = 'mintline2'>레벨: {strength}</div>
+                    </div>
+                </div>
+                ):
+                <>
+                    <h2 className="mint-label">
+                        당신의 고유한 NFT 캐릭터를 만들어 보세요
+                    </h2>
+                    <div className='mint-input-container'>
+                        <input
+                            type="text"
+                            className="mint-input"
+                            placeholder=""
+                            onChange={(e) => handleChangeName(e.target.value)}
+                        />
+                        <div className="mint-btn" onClick={mint}>
+                            MINT
                         </div>
                     </div>
-                    :
-                    <>
-                        <h2 className="mint-label">
-                            당신의 고유한 NFT 캐릭터를 만들어 보세요
-                        </h2>
-                        <div className='mint-input-container'>
-                            <input
-                                type="text"
-                                className="mint-input"
-                                placeholder=""
-                                onChange={(e) => handleChangeName(e.target.value)}
-                            />
-                            <div className="mint-btn" onClick={mint}>
-                                MINT
-                            </div>
-                        </div>
-                        <img className="nobody-character" src={nobody} />
-                    </>
-                }
-                
-            </div>
-        //     }
-        // </div>
+                    <img className="nobody-character" src={nobody} />
+                </>
+            }
+        </div>
     );
 }
 
