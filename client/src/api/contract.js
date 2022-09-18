@@ -241,6 +241,25 @@ const mintWeaponNFT = async(address) => {
     const weaponId = weapon.events.TransferSingle.returnValues.id;
     return weaponId;
 }
+
+/*
+const fetchFightContract = async () => {
+    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const FightContract = await new web3.eth.Contract(
+        FIGHT_CONTRACT_ABI,
+        FIGHT_CONTRACT_ADDR
+      );
+      return FightContract;
+}
+
+const fetchFight = async(userweaponId, matchingweaponId) => {
+    const FightContract = await contractAPI.fetchFightContract();
+    const result = await FightContract.methods.fight(userweaponId, matchingweaponId).call();
+
+    return result;
+}
+*/
+
 //metadata
 const fetchStrength = async(weaponId) => {
     const meta  = await contractAPI.fetchWeapon(weaponId);
