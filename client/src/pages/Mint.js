@@ -29,7 +29,7 @@ const Mint = () => {
             setBackground({type: 'default'});
             setLoading(false);
         }
-    }, []);
+    }, [account]);
 
     const mint = async () => {
         if(username) {

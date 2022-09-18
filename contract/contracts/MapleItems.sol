@@ -176,9 +176,14 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
 
     function mintScroll() public {
         uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % (scrollMint.length);
-        uint id = firstMint[n];
+        uint id = scrollMint[n];
         
         _mint(msg.sender, id, 1, "");
+        setApprovalForAll(marketContractAddress, true);
+    }
+
+    function upgrade(uint256 scrollId, uint256 weaponId) public{
+        _mint(msg.sender, weaponId+1, 1, "");
         setApprovalForAll(marketContractAddress, true);
     }
 

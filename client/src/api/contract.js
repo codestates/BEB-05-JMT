@@ -137,6 +137,21 @@ const mintWeaponNFT = async(address) => {
     const weaponId = weapon.events.TransferSingle.returnValues.id;
     return weaponId;
 }
+
+const mintScrollNFT = async(address) => {
+    const scrollContract = await contractAPI.fetchItemsContract();
+    const scroll = await scrollContract.methods.mintScroll().send(
+        {
+            from: address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        }
+    );
+    const scrollId = scroll.events.TransferSingle.returnValues.id;
+    console.log(scrollId);
+    console.log("check");
+    return scrollId;
+}
 //metadata
 const fetchStrength = async(weaponId) => {
     const meta  = await contractAPI.fetchWeapon(weaponId);
@@ -168,7 +183,8 @@ const contractAPI = {
     isCharOwner,
     isWeaponOwner,
     fetchMyCharacter,
-    fetchMyItems
+    fetchMyItems,
+    mintScrollNFT
 };
 
 export default contractAPI;

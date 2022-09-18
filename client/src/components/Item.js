@@ -31,23 +31,27 @@ function Item({itemData, selectedId, setSelectedImg, setSelectedItem, setSelecte
     setSelectedId(itemData[0]);
     const itemAttr = await contractAPI.fetchAttributes(item.attributes);
     setItemAttr(itemAttr);
-    const name = await metadataAPI.fetchItemName(item.attributes);
-    setItemName(name);
+    
+    let name="";
 
     if(itemAttr?.type=='scroll'){
-      console.log('scroll');
+      console.log(itemAttr.successRate*100);
       setSelectedImg(image);
+      name = `강화 주문서 ${itemAttr.successRate*100}%`;
     }else{
       console.log('weapon');
       const img = await metadataAPI.fetchWeaponImage(item.attributes);
       setSelectedImg(img);
+      name = await metadataAPI.fetchItemName(item.attributes);
     }
+
+    setItemName(name);
   }
 
   const isSelected = () => {
     return selectedId && itemData && selectedId == itemData[0]
   }
-  
+
   return (
     <div className={`myitem-container ${isSelected() ? 'item-clicked' : ''}`} onClick={selected}>
       <img className='myitem-img' src={image? image:null}/>
