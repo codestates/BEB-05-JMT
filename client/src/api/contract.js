@@ -9,7 +9,7 @@ const {
 } = require('../global_variables');
 
 const fetchNFTContract = async () => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
     const NFTContract = await new web3.eth.Contract(
         NFT_CONTRACT_ABI,
         NFT_CONTRACT_ADDR,
@@ -17,7 +17,7 @@ const fetchNFTContract = async () => {
       return NFTContract;
 }
 const fetchItemsContract = async () => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
     const itemsContract = await new web3.eth.Contract(
         ITEMS_CONTRACT_ABI,
         ITEMS_CONTRACT_ADDR,
@@ -75,6 +75,13 @@ const fetchWeapon = async (weaponId) => {
     } catch(err) {
         return await _fetchWeapon(weaponId);
     }    
+}
+
+const fetchMyItems = async(address) => {
+    const itemsContract = await contractAPI.fetchItemsContract();
+    const myItems = await itemsContract.methods.balanceCheck(address).call();
+
+    return myItems;
 }
 
 const isCharOwner= async(address, charId) =>{
@@ -146,6 +153,8 @@ const fetchAttributes = (attributes) => {
     return result;
 }
 
+
+
 const contractAPI = {
     fetchNFTContract,
     fetchItemsContract,
@@ -158,7 +167,8 @@ const contractAPI = {
     fetchAttributes,
     isCharOwner,
     isWeaponOwner,
-    fetchMyCharacter     
+    fetchMyCharacter,
+    fetchMyItems
 };
 
 export default contractAPI;

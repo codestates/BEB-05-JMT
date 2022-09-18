@@ -5,9 +5,8 @@
   color: rgb(0, 0, 0);
   margin-top: calc(100vw * 110/620);
 }
-
 /* tap창 관련 */
-.inven_wrap{
+/* .inven_wrap{
   cursor:pointer;
   flex-direction: row;
   position: absolute;
@@ -17,18 +16,57 @@
   margin-right: calc(100vw * 220/620);
   margin-bottom: calc(100vw * 180/620);
   border-radius: 1vw;
-  background-color: #fe7227e7;
+  color:  #ffffff;
+  font-size: calc(100vw * 11/620);
+  align-items: center;
+} */
+.inven_char{
+  cursor:pointer;
+  flex-direction: row;
+  position: absolute;
+  width: calc(100vw * 160/620);
+  height: calc(100vw * 20/620);
+  line-height: calc(100vw * 20/620);
+  margin-right: calc(100vw * 390/620);
+  margin-bottom: calc(100vw * 180/620);
+  border-radius: 1vw;
   color:  #ffffff;
   font-size: calc(100vw * 11/620);
   align-items: center;
 }
+
+.inven_weapon{
+  cursor:pointer;
+  flex-direction: row;
+  position: absolute;
+  width: calc(100vw * 160/620);
+  height: calc(100vw * 20/620);
+  line-height: calc(100vw * 20/620);
+  margin-right: calc(100vw * 50/620);
+  margin-bottom: calc(100vw * 180/620);
+  border-radius: 1vw;
+  color:  #ffffff;
+  font-size: calc(100vw * 11/620);
+  align-items: center;
+}
+
+.inven_clicked{
+  background-color: #fe7227e7;
+}
+.inven_notclicked{
+  background-color: #ffb790e6;
+}
+.inven_notclicked:hover{
+  background-color: #ff955ce6;
+}
+
 /* .inven_wrap{width:50%;height:350px;float:left;margin-top:20px;}
 .tabs_is-boxed li{cursor: pointer;} */
 
 /* 캐릭터 창 관련 */
 /* .Character_url{width:500px;height:300px;float:left;background: url(https://ifh.cc/g/L7VRHx.png) left top no-repeat;background-size:420px;background-position:45px;background-position-y:60px;} */
 /* .Character_url{width:500px;height:300px;float:left;} */
-.Character_pot{
+.inventory_pot{
   display: flex;
   flex-direction: row;
   position: absolute;
@@ -48,18 +86,18 @@
   box-sizing: border-box;
 }
 
-.Character_pot::-webkit-scrollbar {
+.inventory_pot::-webkit-scrollbar {
   width: 1.2vw;
   border-radius: 0.5vw;
 }
-.Character_pot::-webkit-scrollbar-thumb {
+.inventory_pot::-webkit-scrollbar-thumb {
   background-color: #fe7227e7;
   border-radius: 0.5vw;
   width: 0.7vw;
   background-clip: padding-box;
   border: 0.2vw solid transparent;
 }
-.Character_pot::-webkit-scrollbar-track {
+.inventory_pot::-webkit-scrollbar-track {
   background-color: #fe722765;
   border-radius: 0.5vw;
 }
@@ -73,6 +111,7 @@
  */
 
 /* 무기 or 강화서 창 관련 */
+
 /* .weapon_url{width:500px;height:285px;float:left;background: url(https://ifh.cc/g/G71gJV.jpg) left top no-repeat;
   background-size:435px;background-position-y:-0px;background-position-x:35px;margin-top: 15px;}
 
@@ -155,24 +194,27 @@ li{float:left;width:90px;} */
   border-radius: 1vw;
   background-color: rgba(255, 240, 212, 0.7);
   font-size: 2vw;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 .inventory-container .selectedUser .myname {
-  margin-top: 0.2vw;
+  position: absolute;
+  top: 2.5vw;
 }
 
 .inventory-container .selectedUser .myimg {
-  margin-top: 2vw;
-  height: 16vw;
-  margin-left: 14vw;
+  position: relative;
+  bottom: 2vw;
+  height: 17vw;
+  margin-left: 11vw;
 }
 .inventory-container .selectedUser .mystr {
   margin-top: 0.5vw;
 }
 .inventory-container .selectedUser .equip {
+  position: relative;
   cursor:pointer;
-  margin-top: 1vw;
+  bottom: 2vw;
   width: 10vw;
   height: 4vw;
   line-height: 4vw;
@@ -182,7 +224,8 @@ li{float:left;width:90px;} */
 }
 
 .inventory-container .selectedUser .equipped {
-  margin-top: 1vw;
+  position: relative;
+  bottom: 2vw;
   width: 10vw;
   height: 4vw;
   line-height: 4vw;
@@ -199,4 +242,9 @@ li{float:left;width:90px;} */
   font-size: 1.3vw;
   text-align: left;
   word-wrap: break-word;
+}
+
+.item-clicked {
+  border-width: 0.5vw;
+  border-color:#fe722765;
 }

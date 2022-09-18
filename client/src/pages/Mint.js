@@ -37,18 +37,18 @@ const Mint = () => {
 
             const charId = await contractAPI.mintCharNFT(account.address);
             console.log(charId);
+            const weaponId = await contractAPI.mintFirstWeaponNFT(account.address);
+            console.log(weaponId);
 
             const char = await contractAPI.fetchCharacter(charId);
             setCharImg(char.image);
             const attr= await metadataAPI.fetchCharName(char.attributes);
             setCharName(attr);
 
-            const weaponId = await contractAPI.mintFirstWeaponNFT(account.address);
-            console.log(weaponId);
 
             const weapon = await contractAPI.fetchWeapon(weaponId);
             setWeaponImg(weapon.image);
-            const name = await metadataAPI.fetchWeaponName(weapon.attributes);
+            const name = await metadataAPI.fetchItemName(weapon.attributes);
             setWeaponName(name);
             const str = await metadataAPI.fetchStrength(weapon.attributes);
             setStrength(str);
