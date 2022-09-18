@@ -27216,4 +27216,4 @@ const TOKEN = {
 	  "version": 1
 	}
   }
-export default TOKEN;
+  module.exports = TOKEN;

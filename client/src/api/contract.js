@@ -1,5 +1,4 @@
 import axios from "axios";
-import TOKEN from "../abi/token";
 import ROUTER from "../abi/router";
 import LP from "../abi/lp";
 import LPT from "../abi/lpt"
@@ -12,6 +11,7 @@ const {
     ITEMS_CONTRACT_ADDR,
     ITEMS_CONTRACT_ABI,
     TOKEN_CONTRACT_ADDR,
+    TOKEN_CONTRACT_ABI,
     LP_CONTRACT_ADDR,
     ROUTER_CONTRACT_ADDR,
     LPT_CONTRACT_ADDR
@@ -19,9 +19,10 @@ const {
 
 // <-- swap 
 const getBalnceOfJmt = async(address) => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
+    console.log(TOKEN_CONTRACT_ABI);
     const JMTContract = await new web3.eth.Contract(
-        TOKEN,
+        TOKEN_CONTRACT_ABI,
         TOKEN_CONTRACT_ADDR
     );
     const result = await JMTContract.methods.balanceOf(address).call();
@@ -29,18 +30,18 @@ const getBalnceOfJmt = async(address) => {
 }
 
 const SendJmtToken = async(to,address,amount) => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
     var BN = web3.utils.BN;
     const _amount = new BN(String(amount)).mul(new BN(String(10**18))).toString();
     const JMTContract = await new web3.eth.Contract(
-        TOKEN,
+        TOKEN_CONTRACT_ABI,
         TOKEN_CONTRACT_ADDR
     );
     await JMTContract.methods.transfer(to,_amount).send({from:address});
 } 
 
 const GetReserve = async() => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
     const lpContract = await new web3.eth.Contract(
         LP,
         LP_CONTRACT_ADDR
@@ -49,7 +50,7 @@ const GetReserve = async() => {
 }
 //toFixed(2); 고정 소수점, 지정된 숫자만큼 표시하고 나머지는 0으로 채움
 const SwapToken = async(eth,jmt,address,inputToken) =>{
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
     const routerContract = await new web3.eth.Contract(
         ROUTER,
         ROUTER_CONTRACT_ADDR
@@ -76,7 +77,7 @@ const SwapToken = async(eth,jmt,address,inputToken) =>{
 } 
 
 const getBalnceOfLpToken = async(address) => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
     const lptContract = await new web3.eth.Contract(
         LPT,
         LPT_CONTRACT_ADDR
@@ -87,7 +88,7 @@ const getBalnceOfLpToken = async(address) => {
 }
 
 const depositToken = async(jmtAmount,ethAmount,address) => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
     const routerContract = await new web3.eth.Contract(
         ROUTER,
         ROUTER_CONTRACT_ADDR
@@ -103,7 +104,7 @@ const depositToken = async(jmtAmount,ethAmount,address) => {
 }
 
 const withdrawToken = async(address) => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
     const routerContract = await new web3.eth.Contract(
         ROUTER,
         ROUTER_CONTRACT_ADDR

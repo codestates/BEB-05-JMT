@@ -1,4 +1,5 @@
 const NFT = require ("./abi/nft");
+const TOKEN = require ("./abi/token");
 const MARKET = require ("./abi/market");
 const ITEMS = require ("./abi/items");
 
@@ -21,9 +22,16 @@ const getMarketContractABI = () => {
 }
 
 const getItemsContractABI = () => {
+    console.log(ITEMS["abi"]);
     return ITEMS["abi"];
+}
+
+const getTokenContractABI = () => {
+    console.log(TOKEN["abi"]);
+    return TOKEN["abi"];
 }
 
 export const NFT_CONTRACT_ABI = getNFTContractABI();
 export const MARKET_CONTRACT_ABI = getMarketContractABI();
 export const ITEMS_CONTRACT_ABI = getItemsContractABI();
+export const TOKEN_CONTRACT_ABI = getTokenContractABI();
