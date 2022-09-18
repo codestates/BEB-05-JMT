@@ -22,12 +22,10 @@ const getMarketContractABI = () => {
 }
 
 const getItemsContractABI = () => {
-    console.log(ITEMS["abi"]);
     return ITEMS["abi"];
 }
 
 const getTokenContractABI = () => {
-    console.log(TOKEN["abi"]);
     return TOKEN["abi"];
 }
 

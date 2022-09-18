@@ -20,7 +20,6 @@ const {
 // <-- swap 
 const getBalnceOfJmt = async(address) => {
     const web3 = new Web3(window.ethereum);
-    console.log(TOKEN_CONTRACT_ABI);
     const JMTContract = await new web3.eth.Contract(
         TOKEN_CONTRACT_ABI,
         TOKEN_CONTRACT_ADDR
@@ -82,7 +81,7 @@ const getBalnceOfLpToken = async(address) => {
         LPT,
         LPT_CONTRACT_ADDR
     );
-     
+    console.log(address);
     const result = await lptContract.methods.balanceOf(address).call();
     return parseFloat(web3.utils.fromWei(result,'ether')).toFixed(6)
 }
