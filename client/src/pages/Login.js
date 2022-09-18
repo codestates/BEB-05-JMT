@@ -20,11 +20,11 @@ const Login = () => {
 
   useEffect(() => {
     setAccount({address: ''});
-    setAddrInfo([]);
-    setCharMetadata({});
-    setWeaponMeatadata({});
-    setImage("");
-    setStrength("");
+    setAddrInfo();
+    setCharMetadata();
+    setWeaponMeatadata();
+    setImage();
+    setStrength();
     setBackground({type: 'not-logged-in'});
   }, []);
 

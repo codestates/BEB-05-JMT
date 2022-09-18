@@ -44,9 +44,9 @@ const fetchCharName = async (charAttr) =>{
   return attributes;
 }
 
-const fetchWeaponName = async (weaponAttr)=> {
-  const weapon = fetchAttributes(weaponAttr);
-  const itemId = weapon.itemId;
+const fetchItemName = async (itemAttr)=> {
+  const item = fetchAttributes(itemAttr);
+  const itemId = item.itemId;
 
   const response = await axios.get(`https://maplestory.io/api/KMS/367/item/${itemId}/name`);
   const name = response.data.name;
@@ -100,7 +100,7 @@ const fetchStandImage = async (charAttr, weaponAttr, motion) =>{
     (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
     (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
     (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
-    `/${weapon.stand}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
+    `/${weapon.stand}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=2&name=&flipX=false&bgColor=0,0,0,0`,
   ]);
 
   return uri;
@@ -121,7 +121,7 @@ const fetchFightImage = async (charAttr, weaponAttr, motion) =>{
     (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
     (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
     (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
-    `/${weapon.fight}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
+    `/${weapon.fight}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=2&name=&flipX=false&bgColor=0,0,0,0`,
   ]);
 
   return uri;
@@ -147,7 +147,7 @@ const fetchWalkImage = async (charAttr, weaponAttr, motion) =>{
     (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
     (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
     (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
-    `/${walk}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
+    `/${walk}/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=2&name=&flipX=false&bgColor=0,0,0,0`,
   ]);
 
   return uri;
@@ -168,7 +168,7 @@ const fetchWinImage = async (charAttr, weaponAttr, motion) =>{
     (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
     (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
     (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
-    `/fly/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
+    `/fly/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=2&name=&flipX=false&bgColor=0,0,0,0`,
   ]);
 
   return uri;
@@ -189,7 +189,7 @@ const fetchLoseImage = async (charAttr, weaponAttr, motion) =>{
     (character.eyeDecoration && character.eyeDecoration != 'none') ? encodeURIComponent(`{"itemId":${character.eyeDecoration},"region":"KMS","version":"${version}"},`) : "",
     (character.faceAccessory && character.faceAccessory != 'none') ? encodeURIComponent(`{"itemId":${character.faceAccessory},"region":"KMS","version":"${version}"},`) : "",
     (weapon.itemId != 'none') ? encodeURIComponent(`{"itemId":${weapon.itemId},"region":"KMS","version":"${version}"}`) : "",
-    `/alert/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=4&name=&flipX=false&bgColor=0,0,0,0`,
+    `/alert/${motion}?showears=false&showLefEars=false&showHighLefEars=undefined&resize=2&name=&flipX=false&bgColor=0,0,0,0`,
   ]);
  
   return uri;
@@ -206,7 +206,7 @@ const metadataAPI = {
   fetchLoseImage,
   fetchStrength,
   fetchWalkImage,
-  fetchWeaponName,
+  fetchItemName,
   fetchCharName
 };
 

@@ -16,6 +16,8 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
 
     uint256[] private waitForMint;
     uint256[] private firstMint;
+    uint256[] private itemCheck;
+    uint256[] private scrollMint;
     address private marketContractAddress;
 
     uint256 public constant SWORD0 = 0;
@@ -53,10 +55,14 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         _mint(msg.sender, SCROLL10, 70, "");
 
         mintPrice = 1;
+        
         marketContractAddress = _marketAddress;
         _setToken(_tokenContractAddress);
         _generateWeaponArray();
         _generatefirstWeapon();
+        _generateItemCheck();
+        _generateScrollArray();
+        
         treasuryWallet = _treasuryWallet;
     }
 
@@ -72,6 +78,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     function setURI(string memory newuri) public onlyOwner {
         _setURI(newuri);
     }
+
     function _generateWeaponArray() private onlyOwner{
         for (uint256 i = 0; i < 4; i++ ){
             waitForMint.push(SWORD0); 
@@ -124,23 +131,64 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         firstMint.push(POLEARM0); 
     }
 
-    function mintFirstWeapon() public returns(uint256){
+    function _generateItemCheck() private onlyOwner{
+        itemCheck.push(SWORD0);
+        itemCheck.push(SWORD1);
+        itemCheck.push(SWORD2);
+        itemCheck.push(SWORD3);
+
+        itemCheck.push(BOW0);
+        itemCheck.push(BOW1);
+        itemCheck.push(BOW2);
+
+        itemCheck.push(STAFF0);
+        itemCheck.push(STAFF1);
+        itemCheck.push(STAFF2);
+
+        itemCheck.push(POLEARM0);
+        itemCheck.push(POLEARM1);
+        itemCheck.push(POLEARM2);
+
+        itemCheck.push(SCROLL100);
+        itemCheck.push(SCROLL90);
+        itemCheck.push(SCROLL60);
+        itemCheck.push(SCROLL30);
+        itemCheck.push(SCROLL10);
+    }
+
+    function _generateScrollArray() private onlyOwner{
+        for (uint256 i = 0; i < 1; i++ ){
+            scrollMint.push(SCROLL100); 
+        }
+        for (uint256 i = 0; i < 2; i++ ){
+            scrollMint.push(SCROLL90);
+        }
+        for (uint256 i = 0; i < 4; i++ ){
+            scrollMint.push(SCROLL60); 
+        }
+        for (uint256 i = 0; i < 6; i++ ){
+            scrollMint.push(SCROLL30); 
+        }
+        for (uint256 i = 0; i < 7; i++ ){
+            scrollMint.push(SCROLL10); 
+        }
+    }
+
+    function mintFirstWeapon() public {
         uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % (firstMint.length);
         uint id = firstMint[n];
         
         _mint(msg.sender, id, 1, "");
         setApprovalForAll(marketContractAddress, true);
-
-        return id;
     }
 
-    function mintRandomWeapon() public payable returns (uint256){   
+    function mintRandomWeapon() public payable returns (uint256){  
         uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % (waitForMint.length);
         uint256 id = waitForMint[n];
         
         _mint(msg.sender, id, 1, "");
         setApprovalForAll(marketContractAddress, true);
-
+        
         //재무 토큰 지갑으로 전송
         bool success = token.increaseContractAllowance(
             msg.sender, 
@@ -154,11 +202,48 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         return id;
     }
 
+    function mintScroll() public {
+        uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % (scrollMint.length);
+        uint id = scrollMint[n];
+        
+        _mint(msg.sender, id, 1, "");
+        setApprovalForAll(marketContractAddress, true);
+    }
+
+    function upgrade(uint256 scrollId, uint256 weaponId) public{
+        _mint(msg.sender, weaponId+1, 1, "");
+        setApprovalForAll(marketContractAddress, true);
+    }
+
     function mintBatch(address to, uint256[] memory ids, uint256[] memory amounts, bytes memory data)
         public
         onlyOwner
     {
         _mintBatch(to, ids, amounts, data);
+    }
+
+    function balanceCheck(address sender) public returns(uint256[][] memory){
+        uint256[][] memory balance = new uint256[][](itemCheck.length);
+        uint256 count = 0;
+
+        for(uint256 i=0; i<itemCheck.length; i++){
+            uint256 mybalance = balanceOf(sender, itemCheck[i]); 
+            if(mybalance!=0){
+                balance[count] = new uint256[](2);
+                balance[count][0] = itemCheck[i];
+                balance[count][1] = mybalance;
+                count++;
+            }            
+        }
+
+        uint256[][] memory result = new uint256[][](count);
+        for(uint256 i=0; i<count; i++){
+            result[i] = new uint256[](2);
+            result[i][0] = balance[i][0];
+            result[i][1] = balance[i][1];
+        }
+
+        return result;
     }
     
     function _setToken(JMToken _tokenAddress) private onlyOwner returns (bool) {

@@ -18,10 +18,8 @@ const Lootbox = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!account.address) {
+        if (!account.address||!account.charId) {
             navigate('/login');
-        } else if(!account.charId){
-            navigate('/mint');
         } else {
             setBackground({type: 'market'});
         }
@@ -52,8 +50,9 @@ const Lootbox = () => {
             const weapon = await contractAPI.fetchWeapon(weaponId);
             console.log(weapon.image);
             setWeaponImg(weapon.image);
+            const scroll = await contractAPI.mintScrollNFT(account.address);
 
-            const name = await metadataAPI.fetchWeaponName(weapon.attributes);
+            const name = await metadataAPI.fetchItemName(weapon.attributes);
             setWeaponName(name);
             const str = await metadataAPI.fetchStrength(weapon.attributes);
             setStrength(str);

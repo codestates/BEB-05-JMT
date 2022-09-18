@@ -46,7 +46,7 @@ const Home = () => {
     setWeaponMeatadata(weapon);
     const attr= await metadataAPI.fetchCharName(char.attributes);
     setCharName(attr);
-    const name = await metadataAPI.fetchWeaponName(weapon.attributes);
+    const name = await metadataAPI.fetchItemName(weapon.attributes);
     setWeaponName(name);
     const str = await metadataAPI.fetchStrength(weapon.attributes);
     setStrength(str);

@@ -83,7 +83,7 @@
     }
   }
   
-  .ranking-container {
+  /* .ranking-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -200,7 +200,7 @@
     margin-top: 0.5vw;
     color:  #FE7427;
     font-weight: bold;
-}
+} */
   /*
   .card {
     margin: 30px auto;

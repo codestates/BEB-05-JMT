@@ -120,7 +120,7 @@ const withdrawToken = async(address) => {
 
 // swap -->
 const fetchNFTContract = async () => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
     const NFTContract = await new web3.eth.Contract(
         NFT_CONTRACT_ABI,
         NFT_CONTRACT_ADDR,
@@ -128,7 +128,7 @@ const fetchNFTContract = async () => {
       return NFTContract;
 }
 const fetchItemsContract = async () => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
+    const web3 = new Web3(window.ethereum);
     const itemsContract = await new web3.eth.Contract(
         ITEMS_CONTRACT_ABI,
         ITEMS_CONTRACT_ADDR,
@@ -188,6 +188,13 @@ const fetchWeapon = async (weaponId) => {
     }    
 }
 
+const fetchMyItems = async(address) => {
+    const itemsContract = await contractAPI.fetchItemsContract();
+    const myItems = await itemsContract.methods.balanceCheck(address).call();
+
+    return myItems;
+}
+
 const isCharOwner= async(address, charId) =>{
     const NFTContract = await contractAPI.fetchNFTContract();
     const owner = await NFTContract.methods.ownerOf(charId).call();
@@ -242,6 +249,21 @@ const mintWeaponNFT = async(address) => {
     return weaponId;
 }
 
+const mintScrollNFT = async(address) => {
+    const scrollContract = await contractAPI.fetchItemsContract();
+    const scroll = await scrollContract.methods.mintScroll().send(
+        {
+            from: address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        }
+    );
+    const scrollId = scroll.events.TransferSingle.returnValues.id;
+    console.log(scrollId);
+    console.log("check");
+    return scrollId;
+}
+
 /*
 const fetchFightContract = async () => {
     const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
@@ -276,6 +298,8 @@ const fetchAttributes = (attributes) => {
     return result;
 }
 
+
+
 const contractAPI = {
     fetchNFTContract,
     fetchItemsContract,
@@ -289,6 +313,8 @@ const contractAPI = {
     isCharOwner,
     isWeaponOwner,
     fetchMyCharacter,
+    fetchMyItems,
+    mintScrollNFT
     getBalnceOfJmt,
     SendJmtToken,
     GetReserve,
