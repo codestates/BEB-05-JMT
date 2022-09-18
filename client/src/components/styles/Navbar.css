@@ -41,6 +41,22 @@
     margin-right: calc(100vw * 32/620);
     border-radius: 1.2vw;
 }
+.nav-item-container-end-token {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: rgba(255, 240, 212, 0.7);
+    width: calc(100vw * 120/620);
+    height: calc(100vw * 9/16 * 30/550);
+    overflow: hidden;
+    flex-grow: 1;
+    margin-right: calc(40vw * 32/620);
+    margin-top: calc(40vw * 15/620);;
+    border-radius: 1.2vw;
+    font-size: 1.2vw;
+}
 
 .nav-item-home {
     display: flex;

@@ -69,7 +69,6 @@ const Home = () => {
 	return (
 		<>
       {loading ?
-      // <div><div>NFT 정보 불러오는 중...</div><img src={loding}/></div> 
       (<Spinner/>) : (
         <div className='home-container'>
           <div className='username'>
