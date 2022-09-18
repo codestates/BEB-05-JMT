@@ -18,6 +18,8 @@ contract JMToken is ERC20 {
     address public owner; // 오너 
     address payable public treasuryWallet; // 비상금 계좌!
     address public Router;
+    address public MapleNFT;
+    address public MapleItems;
 
     mapping(address => uint256) public balancesToClaim; // 투자금1:100 비율==jmt
     mapping(address => uint256) public contributionsOf; // 실제 기부금 eth
@@ -36,9 +38,13 @@ contract JMToken is ERC20 {
         _;
     }
 
+    modifier mapleNFTOnly(){
+        require(msg.sender == MapleNFT || msg.sender == MapleItems, "MAPLENFT_ONLY");
+        _;
+    }
     // router 컨트랙트에서만 실행
     modifier routerOnly() {
-        require(msg.sender == Router, "ROUTER_ONLY");
+        require(msg.sender == Router || msg.sender == MapleNFT || msg.sender == MapleItems, "ROUTER_OR_MAPLE_ONLY");
         _;
     }
     // 펀딩 종료 체크 
@@ -53,15 +59,20 @@ contract JMToken is ERC20 {
         _;
     }
 
-    // // test code 
-    // function getTreasuryAddress() public view returns (address){
-    //     return treasuryWallet;
-    // } 
 
     // 첫 계약 제로 계정 배포자(0x0)와 같은지 확인, 딱 한번만 실행가능
     function setRouterAddress(address _router) external  ownerOnly {
         require(address(Router) == address(0), "WRITE_ONCE!"); // 0x00000000
         Router = _router;
+    }
+
+     function setMapleNFTAddress(address _mapleNft) external  ownerOnly {
+        require(address(MapleNFT) == address(0), "WRITE_ONCE!");
+        MapleNFT = _mapleNft;
+    }
+    function setMapleItemsAddress(address _mapleItems ) external  ownerOnly {
+        require(address(MapleItems) == address(0), "WRITE_ONCE!");
+        MapleItems = _mapleItems;
     }
   
     // 이더 펀딩 
@@ -119,9 +130,14 @@ contract JMToken is ERC20 {
         require(totalSupply() + amount <= MAX_SUPPLY, "ABOVE_MAX_SUPPLY"); // 총발행량 체크 
         _mint(account, amount * 10**decimals());
     }
-
+    
     function burn(address account, uint256 amount) external ownerOnly {
         _burn(account, amount * 10**decimals());
+    }
+
+    function marketBurn(address account, uint256 amount) external mapleNFTOnly {
+        _burn(account, amount);
+
     }
 
     //tranferfrom에서 권한 부여
