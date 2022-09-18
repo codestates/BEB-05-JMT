@@ -1,33 +1,41 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
-
+pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "./interfaces/ERC20Interface.sol";
+import "./JMToken.sol";
 
 contract MapleNFT is Ownable, ERC721Enumerable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
-    ERC20Interface private token;
+    JMToken private token;
+    uint256 decimals = 10**18;
+    address payable public treasuryWallet; // 비상금 계좌!
     uint256 private mintPrice;
     address private marketContractAddress;
     uint256[] private waitForMint;
     uint256 private maxTokenNum;
     string private baseURIextended;
+    
 
     event Minted(address addr, uint256 tokenId, string tokenURI);
 
-    constructor(address _marketAddress, address _tokenContractAddress, string memory _MapleBaseURI) ERC721("MapleNFT", "NFT") {
-        marketContractAddress = _marketAddress;
+    constructor(
+        address _marketAddress,
+        JMToken _tokenContractAddress, 
+        string memory _MapleBaseURI, 
+        address payable _treasuryWallet)  ERC721("MapleNFT", "NFT") {
 
-        mintPrice = 0;
+        marketContractAddress = _marketAddress;
+        mintPrice = 1;
         maxTokenNum = 50; // TODO: change to 10000 on live environment
         _setToken(_tokenContractAddress);
         _setBaseURI(_MapleBaseURI);
         _generateMintArray();
+        treasuryWallet = _treasuryWallet;
     }
 
     function _generateMintArray() private onlyOwner {
@@ -35,19 +43,28 @@ contract MapleNFT is Ownable, ERC721Enumerable {
             waitForMint.push(i);
         }
     }
-
-    function mintMapleNFT() public returns (uint256) {
-        // require(token.balanceOf(msg.sender) >= mintPrice, "ERC721: recipient lack of erc20 balance");
+    
+    // 민팅 페이어블 
+    function mintMapleNFT() public payable returns (uint256)  {
+        require(token.balanceOf(msg.sender) >= mintPrice, "ERC721: recipient lack of erc20 balance");
         require(maxTokenNum >= totalSupply(), "ERC721: all nfts are minted");
-
-        // token.transferFrom(msg.sender, address(this), mintPrice);
-
+        
         _shuffleMintArray();
         uint256 minted = waitForMint[waitForMint.length - 1];
         waitForMint.pop();
 
         _mint(msg.sender, minted);
         setApprovalForAll(marketContractAddress, true); // grant transaction permission to market
+
+        //재무 토큰 지갑으로 전송
+        bool success = token.increaseContractAllowance(
+            msg.sender, 
+            address(this),
+            mintPrice * decimals
+        );
+        require(success,"IncreaseContract Fail");
+        token.transferFrom(msg.sender, treasuryWallet, mintPrice * decimals); 
+        token.marketBurn(treasuryWallet, (mintPrice * decimals)/2);
 
         emit Minted(msg.sender, minted, tokenURI(minted));
 
@@ -97,9 +114,9 @@ contract MapleNFT is Ownable, ERC721Enumerable {
         return super.tokenURI(_tokenId);
     }
 
-    function _setToken(address _tokenAddress) private onlyOwner returns (bool) {
-        require(_tokenAddress != address(0x0));
-        token = ERC20Interface(_tokenAddress);
+    function _setToken(JMToken jmtoken) private onlyOwner returns (bool) {
+        require(address(jmtoken) != address(0x0));
+        token = jmtoken;
         return true;
     }
 

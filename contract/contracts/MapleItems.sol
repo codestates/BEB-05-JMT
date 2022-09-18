@@ -6,10 +6,14 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "./interfaces/ERC20Interface.sol";
+import "./JMToken.sol";
 
 contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
-    ERC20Interface private token;
+    JMToken private token;
+    uint256 decimals = 10**18;
+    address payable public treasuryWallet; // 비상금 계좌!
+    uint256 private mintPrice;
+
     uint256[] private waitForMint;
     uint256[] private firstMint;
     address private marketContractAddress;
@@ -37,19 +41,23 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     uint256 public constant SCROLL30 = 403;
     uint256 public constant SCROLL10 = 404;
 
-    constructor(address _marketAddress, address _tokenContractAddress) ERC1155(
-    "ipfs://QmUkUUWBisiFa9XUk4ucJiDr2fvk2tDr1xDrCkEF6FFCF8/{id}"
-    ) {
+    constructor(
+        address _marketAddress,
+        JMToken _tokenContractAddress,
+        address payable _treasuryWallet) 
+        ERC1155("ipfs://QmUkUUWBisiFa9XUk4ucJiDr2fvk2tDr1xDrCkEF6FFCF8/{id}") {
         _mint(msg.sender, SCROLL100, 10, "");
         _mint(msg.sender, SCROLL90, 20, "");
         _mint(msg.sender, SCROLL60, 40, "");
         _mint(msg.sender, SCROLL30, 60, "");
         _mint(msg.sender, SCROLL10, 70, "");
 
+        mintPrice = 1;
         marketContractAddress = _marketAddress;
         _setToken(_tokenContractAddress);
         _generateWeaponArray();
         _generatefirstWeapon();
+        treasuryWallet = _treasuryWallet;
     }
 
     function uri(uint256 _tokenid) override public pure returns (string memory) {
@@ -126,12 +134,22 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         return id;
     }
 
-    function mintRandomWeapon() public returns (uint256){   
+    function mintRandomWeapon() public payable returns (uint256){   
         uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % (waitForMint.length);
         uint256 id = waitForMint[n];
         
         _mint(msg.sender, id, 1, "");
         setApprovalForAll(marketContractAddress, true);
+
+        //재무 토큰 지갑으로 전송
+        bool success = token.increaseContractAllowance(
+            msg.sender, 
+            address(this),
+            mintPrice * decimals
+        );
+        require(success,"IncreaseContract Fail");
+        token.transferFrom(msg.sender, treasuryWallet, mintPrice * decimals); 
+        token.marketBurn(treasuryWallet, (mintPrice * decimals)/2);
 
         return id;
     }
@@ -143,9 +161,9 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         _mintBatch(to, ids, amounts, data);
     }
     
-    function _setToken(address _tokenAddress) private onlyOwner returns (bool) {
-        require(_tokenAddress != address(0x0));
-        token = ERC20Interface(_tokenAddress);
+    function _setToken(JMToken _tokenAddress) private onlyOwner returns (bool) {
+        require(address(_tokenAddress) != address(0x0));
+        token =_tokenAddress;
         return true;
     }
     // The following functions are overrides required by Solidity.

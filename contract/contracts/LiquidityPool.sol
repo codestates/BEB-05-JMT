@@ -56,15 +56,7 @@ contract LiquidityPool is Ownable {
         require(ethReserve != 0 && jmtReserve != 0,"RESERVE AMOUNT EMPTY");
         totalReserve = ethReserve*jmtReserve;
     }
-    //reserve ratio 
-    function getReserveRatio(uint32 rType, uint256 value) public view returns (uint256){
-        if(rType == 1){ // jmt -> eth 
-            return totalReserve;
-        }else if(rType == 2){ // eth -> jmt 
-            return 0;
-        }  
-        return 0;
-    }
+
     // lpt 주소 셋팅 
     function setLPTAddress(LPT _lpToken) external onlyOwner {
         require(address(lpToken) == address(0), "WRITE_ONCE");
@@ -150,7 +142,7 @@ contract LiquidityPool is Ownable {
         uint256 jmtAmount = (jmtReserve * liquidity) / totalSupply;
 
         // 소각
-        lpToken.burn(account, liquidity); // 유저가 withdraw 한거 소각 
+        lpToken.burn(account, liquidity); // account유저 토큰 제거, lpt토큰 양만큼 제거 
 
         // 각각의 토큰 유저에게 전송
         (bool ethTransferSuccess, ) = account.call{value: ethAmount}("");
