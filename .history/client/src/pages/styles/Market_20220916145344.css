@@ -1,0 +1,254 @@
+.market-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+}
+
+.market-container .lootbox-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    width: calc(100vw * 90/620);
+    height: calc(100vw * 40/620);
+    margin-top: calc(100vw * 60/620);
+    background-color: #FE7427;
+    cursor: pointer;
+    margin-right: calc(-48vw);
+    border-radius: 1.3vw;
+}
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    margin: 30px auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  
+  .card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+  }
+  
+  .card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
+  }
+  
+  .card .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: -10px;
+    height: 40px;
+  }
+  
+  .card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+      -5px -5px 30px 15px rgba(0,0,0,0.22);
+  }
+  
+  .title-white {
+    color: white;
+  }
+  
+  .title-black {
+    color: black;
+  }
+  
+  @media all and (max-width: 500px) {
+    .card-list {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
+  
+.item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    margin-top: calc(100vw * 110/620);
+}
+.item-container .column {
+    flex-direction: row;
+    position: absolute;
+    width: calc(100vw * 400/620);
+    height: calc(100vw * 20/620);
+    line-height: calc(100vw * 20/620);
+    margin-right: calc(100vw * 5/620);
+    margin-bottom: calc(100vw * 180/620);
+    border-radius: 1vw;
+    background-color: #fe7227e7;
+    color:  #ffffff;
+    font-size: calc(100vw * 11/620);
+    align-items: center;
+}
+.item-container .column .column-rank {
+    margin-left: calc(100vw * 30/620);
+    margin-right: calc(100vw * 8/620);
+}
+.item-container .column .column-name {
+    width: 6vw;
+    margin-left: calc(100vw * 30/620);
+    margin-right: calc(100vw * 30/620);
+}
+.item-container .column .column-char {
+    left:auto;
+    right: auto;
+    margin-left: calc(100vw * 30/620);
+    margin-right: calc(100vw * 30/620);
+}
+.item-container .column .column-str {
+    width: 3vw;
+    margin-left: calc(100vw * 30/620);
+    margin-right: calc(100vw * 30/620);
+}
+.item-container .userList {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: calc(100vw * 400/620);
+    height: calc(100vw * 178/620);
+    margin-top: calc(100vw * 22/620);
+    overflow: auto;
+    margin-right: calc(100vw * 4/620);
+    border-radius: 1vw;
+    background-color: rgba( 255, 255, 255, 0.85 );
+    border-style: solid;
+    border-width: 1.2vw;
+    border-color: rgba( 255, 255, 255, 0 );
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+}
+.item-container .userList::-webkit-scrollbar {
+    width: 1.2vw;
+    border-radius: 0.5vw;
+}
+.item-container .userList::-webkit-scrollbar-thumb {
+    background-color: #fe7227e7;
+    border-radius: 0.5vw;
+    width: 0.8vw;
+    background-clip: padding-box;
+    border: 0.2vw solid transparent;
+}
+.item-container .userList::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.708);
+    border-radius: 0.5vw;
+}
+.ranking-container .mychar {
+    flex-direction: row;
+    position: absolute;
+    width: calc(100vw * 190/620);
+    height: calc(100vw * 20/620);
+    line-height: calc(100vw * 20/620);
+    margin-left: calc(100vw * 350/620);
+    margin-bottom: calc(100vw * 180/620);
+    border-radius: 1vw;
+    background-color: #fe7227e7;
+    color:  #ffffff;
+    font-size: calc(100vw * 11/620);
+    align-items: center;
+}
+
+.ranking-container .selectedUser {
+    position: absolute;
+    width: calc(100vw * 190/620);
+    height: calc(100vw * 178/620);
+    margin-top: calc(100vw * 22/620);
+    margin-left: calc(100vw * 350/620);
+    border-radius: 1vw;
+    background-color: rgba( 255, 255, 255, 0.85 );
+    font-size: 3vw;
+}
+.ranking-container .selectedUser .myname {
+    margin-top: 1vw;
+}
+
+.ranking-container .selectedUser .myimg {
+    margin-top: 0.5vw;
+    height: 15vw;
+}
+.ranking-container .selectedUser .mystr {
+    margin-top: 0.5vw;
+    font-size: 2vw;
+}
+.ranking-container .selectedUser .myrank {
+    margin-top: 0.5vw;
+    color:  #FE7427;
+    font-weight: bold;
+}
+  /*
+  .card {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    transition: 0.4s;
+  }
+  */
+
+  /* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }

@@ -1,0 +1,22 @@
+.market-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+}
+
+.market-container .lootbox-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    width: calc(100vw * 110/620);
+    height: calc(100vw * 40/620);
+    margin-top: calc(100vw * 180/620);
+    background-color: #FE7427;
+    cursor: pointer;
+    margin-right: calc(15vw);
+    border-radius: 1.3vw;
+}
