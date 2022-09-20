@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 
 import "./LPT.sol";
 import "./JMToken.sol";
+import "./VJMToken.sol";
 import "@openzeppelin/contracts/utils/math/Math.sol";
 import "@uniswap/lib/contracts/libraries/Babylonian.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -37,6 +38,8 @@ contract LiquidityPool is Ownable {
 
     LPT lpToken; // 현재 lp풀 토큰 주소
     JMToken jmtToken;
+    VJMToken vJmt;
+    
     uint256 ethReserve; // 리저브 이더 
     uint256 jmtReserve;  // 리저브 jmt 
     uint32 lastBlockTimestamp;
@@ -67,6 +70,11 @@ contract LiquidityPool is Ownable {
     function setJmtCoinAddress(JMToken _jmtToken) external onlyOwner {
         require(address(jmtToken) == address(0), "WRITE_ONCE");
         jmtToken = _jmtToken;
+    }
+    // vJmt 토큰 어드레스 셋팅 
+    function setVJMTCoinAddress(VJMToken _vJmt) external onlyOwner(){
+        require(address(vJmt) == address(0), "WRITE_ONCE");
+        vJmt = _vJmt;
     }
 
     // 리저브 코인들 반환 

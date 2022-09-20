@@ -10,6 +10,7 @@ import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 import nobody from '../assets/nobody.png';
 
+
 const Mint = () => {
     const [account, setAccount] = useRecoilState(accountAtom);
     const setBackground = useSetRecoilState(backgroundAtom)
@@ -26,6 +27,10 @@ const Mint = () => {
         if (!account.address) {
             navigate('/login');
         } else {
+            contractAPI.getBalnceOfJmt(account.address).then((value)=>{
+                Number(value) === 0 ? navigate('/nonswap') : navigate('/Login');
+            })
+          
             setBackground({type: 'default'});
         }
     }, [account]);

@@ -1,2 +1,4 @@
 # dependencies
 /node_modules
+truffle-config.js
+./build/*
