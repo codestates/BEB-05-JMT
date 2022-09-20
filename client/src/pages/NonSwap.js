@@ -27,25 +27,18 @@ const NonSwap = () => {
 
 	return (
     <div>
-    <div className="navbar">
-      <div className="navbar-items"></div>
-        <img className="nav-item-logout" onClick={logout} src="https://seeklogo.com/images/M/metamask-logo-09EDE53DBD-seeklogo.com.png" />
-    </div>
+      <div className="navbar-non">
+        <div className="navbar-items-non"></div>
+          <img className="non-logout" onClick={logout} src="https://seeklogo.com/images/M/metamask-logo-09EDE53DBD-seeklogo.com.png" />
+      </div>
 
-    <div style={{"width":1000}}>
-    <div className='ranking-container' style={{"marginTop":50}}>
-       <div className= 'column'>
-        <div style={{"marginTop":10}}>
-        <span className='column-rank'>Swap</span>
+      <div className="swap-test">Swap</div>
+      <div className='nonswap-container'>
+        <div>
+          <Trading/>
         </div>
-       </div>
-       <Trading/>
-     
-      </div>
       </div>
     </div>
-      
-
 	);
 }
 
