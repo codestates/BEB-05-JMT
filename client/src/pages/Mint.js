@@ -20,7 +20,7 @@ const Mint = () => {
     const [charName, setCharName] = useState();
     const [weaponName, setWeaponName] = useState();
     const [strength, setStrength] = useState();
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -39,6 +39,7 @@ const Mint = () => {
     }, [account]);
 
     const mint = async () => {
+        setLoading(true);
         if(username) {
             await accountAPI.signUp(account.address, username);
 

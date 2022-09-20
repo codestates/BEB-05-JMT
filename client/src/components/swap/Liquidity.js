@@ -46,12 +46,18 @@ function Liquidity() {
 
 	const deposit = () => {
 		console.log(jmtAmount+"|||"+ethAmount)
-		contractAPI.depositToken(jmtAmount,ethAmount,account.address)
+		contractAPI.depositToken(jmtAmount,ethAmount,account.address).then(() => {
+			alert("완료!")
+			window.location.reload();
+		})
 
 	}
 
 	const withdraw = () => {
-		contractAPI.withdrawToken(account.address)
+		contractAPI.withdrawToken(account.address).then(() => {
+			alert("완료!")
+			window.location.reload();
+		})
 	}
 
 

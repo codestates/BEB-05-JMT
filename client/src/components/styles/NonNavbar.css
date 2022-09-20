@@ -1,12 +1,12 @@
-.navbar {
-    padding-top: calc(100vw * 9/16 * 25/350);
+.navbar-non {
+    padding-top: calc(80vw * 9/16 * 25/350);
     padding-bottom: calc(100vw * 9/16 * 15/350);
     position: sticky;
     top: 0;
     z-index: 9999;
 }
 
-.nav-item-logout {
+.non-logout {
     width: 5%;
     cursor: pointer;
     position: fixed;
@@ -14,136 +14,23 @@
     right: 1em;
 }
 
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #fff;
-    text-decoration: none;
-    min-width: calc(100vw * 140/620);
-    background-color: #FE7427;
-    height: 100%;
-    font-size: 3vw;
-
-}
-
-.ranking-container {
-
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    margin-top: calc(100vw * 110/620);
-}
-.ranking-container .column {
-    flex-direction: row;
+.nonswap-container {
+    background-color: rgba(255, 245, 225, 0.7);
+    border-radius: 1vw;
+    height: calc(900vw * 9/16 * 15/350);
+    width: calc(1000vw * 18/350);
     position: absolute;
-    width: calc(75vw);
-    height: calc(100vw * 20/420);
-    line-height: calc(100vw * 20/620);
-    margin-left: calc(35vw + 20vh);
+}
+
+.swap-test {
+    height: calc(160vw * 9/16 * 15/350);
+    width: calc(1000vw * 18/350);
+    margin-top: calc(200vw * 22/620);
+    position: relative;
+    cursor:pointer;
+    bottom: 2vw;
+    line-height: 4vw;
     border-radius: 1vw;
     background-color: #fe7227e7;
     color:  #ffffff;
-    font-size: calc(100vw * 11/350);
-    align-items: center;
-}
-.ranking-container .column .column-rank {
-    margin-top: calc(20vh);
-    margin-left: calc(100vw * 30/620);
-    margin-right: calc(100vw * 8/620);
-}
-.ranking-container .column .column-name {
-    width: 6vw;
-    margin-left: calc(100vw * 30/620);
-    margin-right: calc(100vw * 30/620);
-}
-.ranking-container .column .column-char {
-    left:auto;
-    right: auto;
-    margin-left: calc(100vw * 30/620);
-    margin-right: calc(100vw * 30/620);
-}
-.ranking-container .column .column-str {
-    width: 3vw;
-    margin-left: calc(100vw * 30/620);
-    margin-right: calc(100vw * 30/620);
-}
-.ranking-container .userList {
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    width: calc(100vw * 330/620);
-    height: calc(100vw * 178/620);
-    margin-top: calc(100vw * 22/620);
-    overflow: auto;
-    margin-right: calc(100vw * 220/620);
-    border-radius: 1vw;
-    background-color: rgba( 255, 255, 255, 0.85 );
-    border-style: solid;
-    border-width: 1.2vw;
-    border-color: rgba( 255, 255, 255, 0 );
-    box-sizing: border-box;
-
-}
-.ranking-container .userList::-webkit-scrollbar {
-    width: 1.2vw;
-    border-radius: 0.5vw;
-}
-.ranking-container .userList::-webkit-scrollbar-thumb {
-    background-color: #fe7227e7;
-    border-radius: 0.5vw;
-    width: 0.8vw;
-    background-clip: padding-box;
-    border: 0.2vw solid transparent;
-}
-.ranking-container .userList::-webkit-scrollbar-track {
-    background-color: rgba(255, 255, 255, 0.708);
-    border-radius: 0.5vw;
-}
-.ranking-container .mychar {
-    flex-direction: row;
-    position: absolute;
-    width: calc(100vw * 190/620);
-    height: calc(100vw * 20/620);
-    line-height: calc(100vw * 20/620);
-    margin-left: calc(100vw * 350/620);
-    margin-bottom: calc(100vw * 180/620);
-    border-radius: 1vw;
-    background-color: #fe7227e7;
-    color:  #ffffff;
-    font-size: calc(100vw * 11/620);
-    align-items: center;
-}
-
-.ranking-container .selectedUser {
-    position: absolute;
-    width: calc(100vw * 190/620);
-    height: calc(100vw * 178/620);
-    margin-top: calc(100vw * 22/620);
-    margin-left: calc(100vw * 350/620);
-    border-radius: 1vw;
-    background-color: rgba( 255, 255, 255, 0.85 );
-    font-size: 3vw;
-}
-.ranking-container .selectedUser .myname {
-    margin-top: 1vw;
-}
-
-.ranking-container .selectedUser .myimg {
-    /* display:flex; */
-    margin-top: -5vw;
-    /* height: 16vw; */
-    /* align-self: center; */
-    min-height: 100%;
-    max-height: 100%;
-    transform: scale(0.6);
-}
-.ranking-container .selectedUser .mystr {
-    margin-top: -7vw;
-    font-size: 2vw;
-}
-.ranking-container .selectedUser .myrank {
-    margin-top: 0.5vw;
-    color:  #FE7427;
-    font-weight: bold;
 }
