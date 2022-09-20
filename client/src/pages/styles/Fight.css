@@ -48,7 +48,7 @@
     position: absolute;
     cursor:pointer;
     padding-top: 1.5vw;
-    left: 55%;
+    left: 45%;
     top: 63%;
     width: 10vw;
     height: 3.5vw;
@@ -60,32 +60,7 @@
 .fightresult-scroll-reward{
     position: absolute;
     padding-top: 1.5vw;
-    left: 55%;
-    top: 63%;
-    width: 10vw;
-    height: 3.5vw;
-    border-radius: 1vw;
-    background-color: #32d635e7;
-    color:  #ffffff;
-}
-
-.fightresult-token-rewardbutton {
-    position: absolute;
-    cursor:pointer;
-    padding-top: 1.5vw;
-    left: 38%;
-    top: 63%;
-    width: 10vw;
-    height: 3.5vw;
-    border-radius: 1vw;
-    background-color: #fe7227e7;
-    color:  #ffffff;
-}
-
-.fightresult-token-reward{
-    position: absolute;
-    padding-top: 1.5vw;
-    left: 38%;
+    left: 45%;
     top: 63%;
     width: 10vw;
     height: 3.5vw;

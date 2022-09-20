@@ -11,65 +11,36 @@ import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 
 const FightResult = () => {
-  const chardata = useRecoilValue(charMetadataAtom);
+  const [isLoading, setLoading] = useState(true);
   const weapondata = useRecoilValue(weaponMetadataAtom);
   const matchingdata = useRecoilValue(matchingAtom);
   const account = useRecoilValue(accountAtom)
   const [scrollselected, setScrollSelected] = useState(true);
-  const [tokenselected, setTokenSelected] = useState(true);
-  const [userWinImage, setUserWinImage] = useState();
-  const [userLoseImage, setUserLoseImage] = useState();
-  const [matchingwinImage, setMatchingWinImage] = useState();
-  const [matchingloseImage, setMatchingLoseImage] = useState();
   const [leftResult, setLeftResult] = useState();
   const [rightResult, setRightResult] = useState();
   const setBackground = useSetRecoilState(backgroundAtom)
   const navigate = useNavigate();
-
-
+  
   const fightresult = async () => {
     const userweapon = contractAPI.fetchAttributes(weapondata.attributes);
-    const leftstrength = userweapon.strength;
-    const rightstrength = matchingdata.strength;
-
-    // 유저 승,패 이미지
-    const WinImage = await metadataAPI.fetchWinImage(chardata.attributes, weapondata.attributes, 'animated');
-    const LoseImage = await metadataAPI.fetchLoseImage(chardata.attributes, weapondata.attributes, 'animated');
-    setUserWinImage(WinImage);
-    setUserLoseImage(LoseImage);
-    console.log(userWinImage);
-
-    // 매칭 승,패 이미지
-    const Mchardata = matchingdata.matchingChardata
-    const Mweapondata = matchingdata.matchingWeapondata
-    const MwinImage = await metadataAPI.fetchWinImage(Mchardata.attributes, Mweapondata.attributes, 'animated');
-    const MloseImage = await metadataAPI.fetchLoseImage(Mchardata.attributes, Mweapondata.attributes, 'animated');
-    setMatchingWinImage(MwinImage);
-    setMatchingLoseImage(MloseImage);    
+    const leftstrength = await userweapon.strength;
+    const rightstrength = await matchingdata.strength;
 
     if ( leftstrength > rightstrength ) {
-      //랜덤 보상
-      //const scrollId = contractAPI.rewardScrollNFT(account.address);
-      //setRewardScroll()
-      setLeftResult(userWinImage);
-      setRightResult(matchingloseImage);
-      console.log(leftResult);
-      console.log(rightResult);
+      setTimeout(rewardToken, 1000);
+      setLeftResult(matchingdata.userWinImage);
+      setRightResult(matchingdata.MloseImage);
     } else if ( leftstrength < rightstrength ) {
-      setLeftResult(userLoseImage);
-      setRightResult(matchingwinImage);
-      console.log(leftResult);
-      console.log(rightResult);
+      setLeftResult(matchingdata.userLoseImage);
+      setRightResult(matchingdata.MwinImage);
     }
-  } 
-
-  const userScroll = () => {
-    const scrollId = contractAPI.rewardScrollNFT(account.address);
-    setScrollSelected(false);
   }
-  const userToken = () => {
-    const rewardToken = contractAPI.rewardToken(account.address);
-    setTokenSelected(false);
+
+  const rewardScroll = () => {
+    const scrollId = contractAPI.rewardScrollNFT(account.address);
+  }
+  const rewardToken = () => {
+    const rewardtoken = contractAPI.rewardToken(account.address);
   }
 
   useEffect(() => {
@@ -81,21 +52,17 @@ const FightResult = () => {
       setBackground({type: 'fight'});
       fightresult();
     }
-  }, [userWinImage, userLoseImage, matchingwinImage, matchingloseImage]);
-
+  }, []);
 
 	return (
 		<div className='fight-container'>
-        {leftResult === userWinImage?
+        {leftResult === matchingdata.userWinImage?
         <div>
           <img className='fightresult-left-result' src ='../img/win.png' />
           <img className='fightresult-left-paper' src ='../img/weaponpaper.png' />
           <img className='fightresult-left-token' src ='../img/token.png' />
-          {scrollselected ? <div className='fightresult-scroll-rewardbutton' onClick={userScroll} >스크롤 획득</div>
+          {scrollselected ? <div className='fightresult-scroll-rewardbutton' onClick={rewardScroll} >스크롤 획득</div>
           : <div className='fightresult-scroll-reward'>획득 완료</div>
-          }
-          {tokenselected ? <div className='fightresult-token-rewardbutton' onClick={userToken} >토큰 획득</div>
-          : <div className='fightresult-token-reward'>획득 완료</div>
           }
         </div>
         :
@@ -105,7 +72,7 @@ const FightResult = () => {
           <img className='fightresult-right-token' src ='../img/token.png' />
         </div>
         }
-        {rightResult === matchingloseImage?
+        {rightResult === matchingdata.MloseImage?
           <img className='fightresult-right-result' src ='../img/lose.png' />
           : <img className='fightresult-right-result' src ='../img/win.png' />
         }
