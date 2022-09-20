@@ -13,6 +13,8 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     uint256 decimals = 10**18;
     address payable public treasuryWallet; // 비상금 계좌!
     uint256 private mintPrice;
+    uint randNum = 0;
+    uint rewardProbability = 70;
 
     uint256[] private waitForMint;
     uint256[] private firstMint;
@@ -252,5 +254,17 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         override(ERC1155, ERC1155Supply)
     {
         super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
+    }
+
+    // 전투 랜덤 보상(강화 스크롤)
+    function randMod(uint _modulus) internal returns(uint) { // 랜덤함수
+        randNum++;
+        return uint(keccak256(abi.encodePacked(block.timestamp, msg.sender, randNum))) % _modulus;
+    }
+
+    function randRewardScroll() external {
+        uint rand = randMod(100);
+        require(rand <= rewardProbability, "Not rewardScroll." ); // 70% 확률로 강화 스크롤 획득
+        mintScroll();
     }
 }
