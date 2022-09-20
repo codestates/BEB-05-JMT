@@ -3,7 +3,7 @@ import { selectedCharAtom, selectedImgAtom } from "../recoil/temp/atom";
 import metadataAPI from '../api/metadata';
 import './styles/Character.css';
 
-function Character({charData, selectedChar, setSelectedImg, setSelectedChar, setSelectedId}) {
+function Character({charData, selectedChar, setSelectedImg, setSelectedChar}) {
   const [image, setImage] = useState();
 
   useEffect(() => {

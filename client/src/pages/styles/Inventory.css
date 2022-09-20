@@ -215,7 +215,21 @@ li{float:left;width:90px;} */
 .inventory-container .selectedUser .equip {
   position: relative;
   cursor:pointer;
-  bottom: 2vw;
+  right: -7vw;
+  bottom: 1vw;
+  width: 10vw;
+  height: 4vw;
+  line-height: 4vw;
+  border-radius: 1vw;
+  background-color: #fe7227e7;
+  color:  #ffffff;
+}
+
+.inventory-container .selectedUser .use {
+  position: relative;
+  cursor:pointer;
+  right: -7vw;
+  bottom: 1vw;
   width: 10vw;
   height: 4vw;
   line-height: 4vw;
@@ -226,7 +240,8 @@ li{float:left;width:90px;} */
 
 .inventory-container .selectedUser .equipped {
   position: relative;
-  bottom: 2vw;
+  right: -7vw;
+  bottom: 1vw;
   width: 10vw;
   height: 4vw;
   line-height: 4vw;
@@ -234,6 +249,20 @@ li{float:left;width:90px;} */
   background-color: #32d635e7;
   color:  #ffffff;
 }
+
+.inventory-container .selectedUser .upgrade {
+  position: absolute;
+  cursor:pointer;
+  right: 17vw;
+  bottom: 1vw;
+  width: 10vw;
+  height: 4vw;
+  line-height: 4vw;
+  border-radius: 1vw;
+  background-color: #fe7227e7;
+  color:  #ffffff;
+}
+
 .inventory-container .selectedUser .selected {
   position: absolute;
   left: 1vw;

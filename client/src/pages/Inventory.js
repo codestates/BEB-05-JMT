@@ -19,17 +19,20 @@ const Inventory = () => {
   const img = useRecoilValue(equipImgAtom);
   const charMetadata = useRecoilValue(charMetadataAtom);
   const navigate = useNavigate();
-  const [myCharInfo, setMyCharInfo] = useState();
-  const [myWeaponInfo, setMyWeaponInfo] = useState();
-  const [selectedChar, setSelectedChar] = useState();
-  const [selectedItem, setSelectedItem] = useState();
-  const [selectedId, setSelectedId]=useState();
-  const [charName, setCharName] = useState();
-  const [itemName, setItemName]=useState();
-  const [itemAttr, setItemAttr]=useState();
-  const [selectedImg, setSelectedImg] = useState();
-  const [selected, setSelected] = useState(true);
-  const [isClicked, setIsClicked] = useState(false);
+  const [myCharInfo, setMyCharInfo] = useState(); //내 캐릭터들
+  const [myItemInfo, setMyItemInfo] = useState(); //내 무기 및 아이템들
+  const [selectedChar, setSelectedChar] = useState();//선택된 캐릭터 메타데이터
+  const [selectedItem, setSelectedItem] = useState();//선택된 아이템 메타데이터
+  const [selectedId, setSelectedId]=useState();//선택된 아이템 아이디
+  const [charName, setCharName] = useState();//선택된 캐릭터 메타데이터 이름
+  const [itemName, setItemName]=useState();//선택된 아이템 이름
+  const [itemAttr, setItemAttr]=useState();//선택된 아이템 attributes
+  const [selectedImg, setSelectedImg] = useState();//선택된 이미지
+  const [equipped, setEquipped] = useState(true);//선택된 캐릭터나 무기를 장착중인가
+  const [isScroll, setIsScroll] = useState(false);//선택된 아이템이 스크롤인가
+  const [isClicked, setIsClicked] = useState(false);//아이템 버튼이 선택되었는가? 아이템 상태 : 캐릭터 상태
+  const [onUpgrade, setOnUpgrade] = useState(false);//강화 진행 여부
+  const [selectedId2, setSelectedId2] = useState();//강화 추가 아이템 아이디
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -59,25 +62,26 @@ const Inventory = () => {
     if(!isClicked){
       if(selectedChar){
         const check =  selectedChar.name==`Maple #${account.charId}`;
-        setSelected(check);
+        setEquipped(check);
       }else{
-        setSelected(true);
+        setEquipped(true);
       }
     }
+    console.log(isScroll);
   }
 
   const myItems = async() => {
     const items = await contractAPI.fetchMyItems(account.address);
-    setMyWeaponInfo(items);
+    setMyItemInfo(items);
 
     if(isClicked){
       if(selectedId){
         console.log(selectedItem);
         console.log(selectedId);
         const check =  parseInt(selectedId) == account.weaponId;
-        setSelected(check);
+        setEquipped(check);
       }else{
-        setSelected(true);
+        setEquipped(true);
       }
     }
   }
@@ -92,7 +96,32 @@ const Inventory = () => {
       await accountAPI.equip(account.address, account.charId, weaponId);
       setAccount({...account, charId: account.charId, weaponId: weaponId});
     }
-    setSelected(true);
+    setEquipped(true);
+  }
+
+  const upgrade = async() => {
+    setOnUpgrade(true); 
+    if(isScroll){
+      //스크롤 투명화, onclick 제거
+
+
+    }else{
+      //무기들 투명화, onclick 제거
+      console.log(account.address);
+      console.log(selectedId);
+      await contractAPI.upgradeWeapon(account.address, 401, selectedId);
+    }
+  }
+
+  /** 탭 변경시 선택 정보 초기화 */
+  const init = () => {
+    setSelectedImg();
+    setCharName(); 
+    setSelectedChar();
+    setItemAttr(); 
+    setItemName(); 
+    setSelectedId(); 
+    setOnUpgrade(false); 
   }
 
 	return (
@@ -101,11 +130,13 @@ const Inventory = () => {
       (<Spinner/>) : (
         <div className='inventory-container'>
           <span className={`inven_char ${!isClicked ? "inven_clicked" : "inven_notclicked"}`} 
-          onClick={()=> {setIsClicked(false); setSelectedImg(); setCharName(); setItemAttr(); setItemName();}}>
+          onClick={()=>{init(); 
+            setIsClicked(false);}}>
             캐릭터
           </span>
           <span className={`inven_weapon ${isClicked ? "inven_clicked" : "inven_notclicked"}`} 
-          onClick={()=> {setIsClicked(true); setSelectedImg(); setCharName(); setItemAttr(); setItemName();}}>
+          onClick={()=>{init(); 
+            setIsClicked(true);}}>
             아이템
           </span>
           <div className= 'inventory_pot'>
@@ -126,9 +157,9 @@ const Inventory = () => {
                 ""
               )
               :
-              (myWeaponInfo ?
-                [...Array(myWeaponInfo.length)].map((_, idx) => {
-                  const myItem = myWeaponInfo[idx];
+              (myItemInfo ?
+                [...Array(myItemInfo.length)].map((_, idx) => {
+                  const myItem = myItemInfo[idx];
                   return(
                     <Item 
                       itemData={myItem} 
@@ -138,6 +169,7 @@ const Inventory = () => {
                       setSelectedId={setSelectedId} 
                       setItemAttr={setItemAttr}
                       setItemName={setItemName}
+                      setIsScroll={setIsScroll}
                       key={idx} />
                   )
                 })
@@ -155,11 +187,20 @@ const Inventory = () => {
               (selectedChar? selectedChar.name: account.username)
               : (itemName? itemName : "")
             }</div>
-            <img className='myimg' src={!isClicked ? (selectedImg? selectedImg:img) : (selectedImg? selectedImg:"")} />
-            { selected ?
+            <img className='myimg' src={selectedImg? selectedImg:img} />
+            { equipped ?
               <div className='equipped'>장착중</div>
               : 
-              <div className='equip' onClick={equip}>장착</div>
+              (!isScroll?          
+                <div className='equip' onClick={equip}>장착</div>
+                :
+                <div className='use' onClick={upgrade}>사용</div>
+              )
+            }
+            {isClicked&&!isScroll ?               
+              <div className='upgrade' onClick={upgrade}>강화</div>
+              :
+              null
             }
             <div>        
             <div className ="selected"> 

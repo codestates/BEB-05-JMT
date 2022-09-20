@@ -191,7 +191,7 @@ const fetchWeapon = async (weaponId) => {
 const fetchMyItems = async(address) => {
     const itemsContract = await contractAPI.fetchItemsContract();
     const myItems = await itemsContract.methods.balanceCheck(address).call();
-
+    console.log(myItems);
     return myItems;
 }
 
@@ -264,6 +264,17 @@ const mintScrollNFT = async(address) => {
     return scrollId;
 }
 
+const upgradeWeapon = async(address, scrollId, weaponId) => {
+    const itemsContract = await contractAPI.fetchItemsContract();
+    const upgrade = await itemsContract.methods.upgrade(scrollId, weaponId).send(
+        {
+            from: address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        }
+    );
+    console.log(upgrade);
+}
 /*
 const fetchFightContract = async () => {
     const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
@@ -321,7 +332,8 @@ const contractAPI = {
     SwapToken,
     getBalnceOfLpToken,
     depositToken,
-    withdrawToken
+    withdrawToken,
+    upgradeWeapon
 };
 
 export default contractAPI;

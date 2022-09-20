@@ -6,7 +6,7 @@ import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 import './styles/Item.css';
 
-function Item({itemData, selectedId, setSelectedImg, setSelectedItem, setSelectedId, setItemAttr, setItemName}) {
+function Item({itemData, selectedId, setSelectedImg, setSelectedItem, setSelectedId, setItemAttr, setItemName, setIsScroll}) {
   //무기 관련
   const [item, setItem] = useState();
   const [image, setImage] = useState();
@@ -14,13 +14,11 @@ function Item({itemData, selectedId, setSelectedImg, setSelectedItem, setSelecte
 
   useEffect(() => {
     myitem();
+    isSelected();
   }, [selectedId]);
  
   const myitem = async() =>{
-    // 무기 erc1155
-    console.log(itemData);
     const item = await contractAPI.fetchWeapon(itemData[0]);
-    console.log(item);
     setItem(item);
     setImage(item.image);
     setAmount(itemData[1]);
@@ -35,10 +33,12 @@ function Item({itemData, selectedId, setSelectedImg, setSelectedItem, setSelecte
     let name="";
 
     if(itemAttr?.type=='scroll'){
+      setIsScroll(true);
       console.log(itemAttr.successRate*100);
       setSelectedImg(image);
       name = `강화 주문서 ${itemAttr.successRate*100}%`;
     }else{
+      setIsScroll(false);
       console.log('weapon');
       const img = await metadataAPI.fetchWeaponImage(item.attributes);
       setSelectedImg(img);
