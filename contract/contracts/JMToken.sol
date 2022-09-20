@@ -20,6 +20,10 @@ contract JMToken is ERC20 {
     address public Router;
     address public MapleNFT;
     address public MapleItems;
+    address public winRewardAddr;
+    uint winRewardAmount;
+    uint randNum = 0;
+    uint rewardProbability = 70;
 
     mapping(address => uint256) public balancesToClaim; // 투자금1:100 비율==jmt
     mapping(address => uint256) public contributionsOf; // 실제 기부금 eth
@@ -189,4 +193,19 @@ contract JMToken is ERC20 {
         super._transfer(address(this), address(treasuryWallet), remainingJMT);
         emit FundsMoved();
     }
+
+    // 전투 랜덤 보상(토큰)
+    function randMod(uint _modulus) internal returns(uint) { // 랜덤함수
+        randNum++;
+        return uint(keccak256(abi.encodePacked(block.timestamp, msg.sender, randNum))) % _modulus;
+    }
+
+    function randRewardToken(address _addr, uint _amount) external {
+        winRewardAddr = _addr;
+        winRewardAmount = _amount;
+        uint rand = randMod(100);
+        require(rand <= rewardProbability, "Not rewardToken." ); // 70% 확률로 JMT 토큰 획득
+        super._transfer(address(treasuryWallet), address(winRewardAddr), winRewardAmount); // JMT 토큰 
+    }
+
 }

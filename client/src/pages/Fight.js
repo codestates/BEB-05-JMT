@@ -55,6 +55,7 @@ const Fight = () => {
       setMatchingName(Raddrdata.username);
       setMatchingImage(MstandImage);
       setMatchingData({
+        address: Raddrdata.address,
         username: Raddrdata.username,
         charId: Raddrdata.charId,
         weaponId: Raddrdata.weaponId,
