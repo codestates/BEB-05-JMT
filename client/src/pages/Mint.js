@@ -28,7 +28,10 @@ const Mint = () => {
             navigate('/login');
         } else {
             contractAPI.getBalnceOfJmt(account.address).then((value)=>{
-                Number(value) === 0 ? navigate('/nonswap') : navigate('/Login');
+                console.log(value)
+                if(Number(value)===0){
+                    navigate('/nonswap');
+                }
             })
           
             setBackground({type: 'default'});

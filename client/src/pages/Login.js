@@ -35,9 +35,11 @@ const Login = () => {
 
     console.log(address);
     console.log(check.message);
-    if(check.message==="false"){
+    if(check.message === "false"){
+      console.log("111")
       setAccount({address: address});
       contractAPI.getBalnceOfJmt(address).then((value)=>{
+        console.log(value)
         Number(value) === 0 ? navigate('/nonswap') : navigate('/mint');
       })
       
