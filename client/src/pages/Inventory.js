@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useSetRecoilState, useRecoilValue, useRecoilState} from "recoil";
 import { backgroundAtom } from "../recoil/background/atom";
 import { accountAtom } from "../recoil/account/atom";
-import { equipImgAtom, charMetadataAtom } from '../recoil/tokenMetadata/atom';
+import { modalAtom } from "../recoil/modal/atom";
+import { equipImgAtom, charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/atom';
 import Character from '../components/Character';
 import Item from '../components/Item';
 import Spinner from "../components/Spinner";
@@ -15,9 +16,11 @@ import metadataAPI from '../api/metadata';
 
 const Inventory = () => {
   const [account, setAccount] = useRecoilState(accountAtom);
+  const [modal, setModal] = useRecoilState(modalAtom);
   const setBackground = useSetRecoilState(backgroundAtom);
   const img = useRecoilValue(equipImgAtom);
   const charMetadata = useRecoilValue(charMetadataAtom);
+  const weaponMetadata = useRecoilValue(weaponMetadataAtom);
   const navigate = useNavigate();
   const [myCharInfo, setMyCharInfo] = useState(); //내 캐릭터들
   const [myItemInfo, setMyItemInfo] = useState(); //내 무기 및 아이템들
@@ -32,7 +35,7 @@ const Inventory = () => {
   const [isScroll, setIsScroll] = useState(false);//선택된 아이템이 스크롤인가
   const [isClicked, setIsClicked] = useState(false);//아이템 버튼이 선택되었는가? 아이템 상태 : 캐릭터 상태
   const [onUpgrade, setOnUpgrade] = useState(false);//강화 진행 여부
-  const [selectedId2, setSelectedId2] = useState();//강화 추가 아이템 아이디
+  const [selectedId2, setSelectedId2] = useState();//강화 추가 선택 아이템 아이디
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -46,7 +49,7 @@ const Inventory = () => {
       myItems();
       setLoading(false);
     }
-  }, [selectedImg, selectedChar]);
+  }, [selectedImg, selectedChar, selectedId]);
 
   const myChar = async() => {
     const result = await contractAPI.fetchMyCharacter(account.address);
@@ -73,6 +76,10 @@ const Inventory = () => {
   const myItems = async() => {
     const items = await contractAPI.fetchMyItems(account.address);
     setMyItemInfo(items);
+    if(!itemAttr){
+      const attr= await contractAPI.fetchAttributes(weaponMetadata.attributes);
+      setItemAttr(attr);
+    }
 
     if(isClicked){
       if(selectedId){
@@ -100,27 +107,36 @@ const Inventory = () => {
   }
 
   const upgrade = async() => {
-    setOnUpgrade(true); 
-    if(isScroll){
-      //스크롤 투명화, onclick 제거
-
-
+    if(onUpgrade){
+      setModal({...modal, open: true, type: 'upgrade', data: {message: "강화중..."}});
+      let result;
+      if(isScroll){
+        result = await contractAPI.upgradeWeapon(account.address, selectedId2, selectedId);        
+      }else{
+        result = await contractAPI.upgradeWeapon(account.address, selectedId, selectedId2);
+      }
+      console.log(result);
+      setModal({...modal, open: true, type: 'upgrade', data: {error: result[0], upgrade: result[1], message: result[2]}});       
+      
+      setOnUpgrade(false);
+      setSelectedId(); 
+      setSelectedId2();         
     }else{
-      //무기들 투명화, onclick 제거
-      console.log(account.address);
-      console.log(selectedId);
-      await contractAPI.upgradeWeapon(account.address, 401, selectedId);
+      setOnUpgrade(true); 
     }
   }
 
   /** 탭 변경시 선택 정보 초기화 */
-  const init = () => {
+  const init = async() => {
+    const attr= await metadataAPI.fetchCharName(charMetadata.attributes);
+    setCharName(attr);
+    const weaponAttr= await contractAPI.fetchAttributes(weaponMetadata.attributes);
+    setItemAttr(weaponAttr);
     setSelectedImg();
-    setCharName(); 
     setSelectedChar();
-    setItemAttr(); 
     setItemName(); 
     setSelectedId(); 
+    setSelectedId2(); 
     setOnUpgrade(false); 
   }
 
@@ -163,10 +179,14 @@ const Inventory = () => {
                   return(
                     <Item 
                       itemData={myItem} 
+                      onUpgrade= {onUpgrade}
                       selectedId={selectedId}
+                      selectedId2={selectedId2}
+                      isScroll={isScroll}
                       setSelectedImg={setSelectedImg} 
                       setSelectedItem={setSelectedItem} 
                       setSelectedId={setSelectedId} 
+                      setSelectedId2={setSelectedId2} 
                       setItemAttr={setItemAttr}
                       setItemName={setItemName}
                       setIsScroll={setIsScroll}
@@ -178,27 +198,35 @@ const Inventory = () => {
               )
             }        
           </div>
-          <div className= 'mychar'>
-            <span className='desc'>상세 정보</span>
+          <div className={`myinfo ${onUpgrade ? 'desc-upgrade' : ''}`}>
+            {onUpgrade? '강화중' : '상세 정보'}
           </div>
-          <div className= 'selectedUser'>
+          <div className={`selectedUser ${onUpgrade ? 'background-upgrade' : ''}`}>
             <div className='myname'>
               {!isClicked ? 
               (selectedChar? selectedChar.name: account.username)
-              : (itemName? itemName : "")
+              : (itemName? itemName : account.username)
             }</div>
             <img className='myimg' src={selectedImg? selectedImg:img} />
-            { equipped ?
-              <div className='equipped'>장착중</div>
-              : 
-              (!isScroll?          
-                <div className='equip' onClick={equip}>장착</div>
+            {!onUpgrade? 
+              (equipped ?
+                <div className='equipped'>장착중</div>
+                : 
+                (!isScroll?          
+                  <div className='equip' onClick={equip}>장착</div>
+                  :
+                  null
+                )
+              )
+              :
+              <div className='cancelUpgrade' onClick={()=>{setOnUpgrade(false); init();}}>강화 취소</div>
+            }
+            {isClicked&&selectedId ?
+              (!isScroll ?               
+                <div className='upgrade' onClick={upgrade}>강화</div>
                 :
                 <div className='use' onClick={upgrade}>사용</div>
               )
-            }
-            {isClicked&&!isScroll ?               
-              <div className='upgrade' onClick={upgrade}>강화</div>
               :
               null
             }

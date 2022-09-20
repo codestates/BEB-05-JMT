@@ -265,15 +265,22 @@ const mintScrollNFT = async(address) => {
 }
 
 const upgradeWeapon = async(address, scrollId, weaponId) => {
-    const itemsContract = await contractAPI.fetchItemsContract();
-    const upgrade = await itemsContract.methods.upgrade(scrollId, weaponId).send(
-        {
-            from: address,
-            gas: 1500000,
-            gasPrice: '3000000'
-        }
-    );
-    console.log(upgrade);
+    try{
+        const itemsContract = await contractAPI.fetchItemsContract();
+        const upgrade = await itemsContract.methods.upgrade(scrollId, weaponId).send(
+            {
+                from: address,
+                gas: 1500000,
+                gasPrice: '3000000'
+            }
+        );
+        const result = upgrade.events.Upgraded.returnValues.result;
+        const id = upgrade.events.Upgraded.returnValues.weaponId;
+        return [true, result, id];
+    }catch(e){
+        const message = e.message.split(':')[6].split('"')[0];
+        return [false, false, message];
+    }
 }
 /*
 const fetchFightContract = async () => {

@@ -3,7 +3,7 @@
     padding-bottom: calc(100vw * 9/16 * 15/350);
     position: sticky;
     top: 0;
-    z-index: 9999;
+    z-index: 200;
 }
 
 .navbar-items {
