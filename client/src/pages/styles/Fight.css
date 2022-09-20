@@ -44,6 +44,31 @@
     height: 100px;
 }
 
+.fightresult-scroll-rewardbutton {
+    position: absolute;
+    cursor:pointer;
+    padding-top: 1.5vw;
+    left: 45%;
+    top: 63%;
+    width: 10vw;
+    height: 3.5vw;
+    border-radius: 1vw;
+    background-color: #fe7227e7;
+    color:  #ffffff;
+}
+
+.fightresult-scroll-reward{
+    position: absolute;
+    padding-top: 1.5vw;
+    left: 45%;
+    top: 63%;
+    width: 10vw;
+    height: 3.5vw;
+    border-radius: 1vw;
+    background-color: #32d635e7;
+    color:  #ffffff;
+}
+
 .fight-left-image {
     position: absolute;
     left: 4%;

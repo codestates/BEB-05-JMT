@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
-import { fightAtom } from "../recoil/fight/atom"
 import { charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/atom';
 import { addrinfoAtom } from '../recoil/addrinfo/atom';
 import { matchingAtom } from '../recoil/matching/atom';
@@ -13,7 +12,6 @@ import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 
 const Fight = () => {
-  const [isLoading, setLoading] = useState(true);
   const [userWeapon, setUserWeapon] = useState();
   const [userImage, setUserImage] = useState();
   const [matchingWeapon, setMatchingWeapon] = useState();
@@ -36,7 +34,9 @@ const Fight = () => {
       console.log(standImage);
       setUserWeapon(userweapon.strength);
       setUserImage(standImage);
-
+      const userWinImage = await metadataAPI.fetchWinImage(chardata.attributes, weapondata.attributes, 'animated');
+      const userLoseImage = await metadataAPI.fetchLoseImage(chardata.attributes, weapondata.attributes, 'animated');
+ 
       // 매칭 캐릭터 정보
       const RData = Math.floor(Math.random() * (addrdata.length));
       const Raddrdata = addrdata[RData];
@@ -47,6 +47,9 @@ const Fight = () => {
 
       const matchingWeapondata = await contractAPI.fetchWeapon(Raddrdata.weaponId);
       console.log(matchingWeapondata.attributes);
+
+      const MwinImage = await metadataAPI.fetchWinImage(matchingChardata.attributes, matchingWeapondata.attributes, 'animated');
+      const MloseImage = await metadataAPI.fetchLoseImage(matchingChardata.attributes, matchingWeapondata.attributes, 'animated');
       
       const matchingweapon = contractAPI.fetchAttributes(matchingWeapondata.attributes);
       const MstandImage = await metadataAPI.fetchStandImage(matchingChardata.attributes, matchingWeapondata.attributes, 'animated');
@@ -55,14 +58,18 @@ const Fight = () => {
       setMatchingName(Raddrdata.username);
       setMatchingImage(MstandImage);
       setMatchingData({
+        address: Raddrdata.address,
         username: Raddrdata.username,
         charId: Raddrdata.charId,
         weaponId: Raddrdata.weaponId,
         matchingChardata: matchingChardata,
         matchingWeapondata: matchingWeapondata,
-        strength: matchingweapon.strength
+        strength: matchingweapon.strength,
+        userWinImage: userWinImage,
+        userLoseImage: userLoseImage,
+        MwinImage: MwinImage,
+        MloseImage: MloseImage
       });
-      setLoading(false);
     } catch (err) {
         console.log(err);
     }

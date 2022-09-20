@@ -8,6 +8,7 @@ contract JMToken is ERC20 {
     event TokensBought(address indexed _account, uint256 amount); // 펀딩이후 토큰 클레임 
     event OwnerAction(); // 오너의 액션
     event FundsMoved(); // 펀딩 종료 
+    event _MovedStakingReward();
 
     uint256 public MAX_SUPPLY; // 발행량 
     uint256 public constant TAX = 1; //  수수료 tx 1%
@@ -20,6 +21,11 @@ contract JMToken is ERC20 {
     address public Router;
     address public MapleNFT;
     address public MapleItems;
+    address public winRewardAddr;
+    uint winRewardAmount;
+    uint randNum = 0;
+    uint rewardProbability = 70;
+    address public Staking;
 
     mapping(address => uint256) public balancesToClaim; // 투자금1:100 비율==jmt
     mapping(address => uint256) public contributionsOf; // 실제 기부금 eth
@@ -65,14 +71,17 @@ contract JMToken is ERC20 {
         require(address(Router) == address(0), "WRITE_ONCE!"); // 0x00000000
         Router = _router;
     }
-
-     function setMapleNFTAddress(address _mapleNft) external  ownerOnly {
+    function setMapleNFTAddress(address _mapleNft) external  ownerOnly {
         require(address(MapleNFT) == address(0), "WRITE_ONCE!");
         MapleNFT = _mapleNft;
     }
     function setMapleItemsAddress(address _mapleItems ) external  ownerOnly {
         require(address(MapleItems) == address(0), "WRITE_ONCE!");
         MapleItems = _mapleItems;
+    }
+    function setStakingAddress(address _staking ) external  ownerOnly {
+        require(address(Staking) == address(0), "WRITE_ONCE!");
+        Staking = _staking;
     }
   
     // 이더 펀딩 
@@ -185,8 +194,30 @@ contract JMToken is ERC20 {
     //일단은 오너지갑으로, 소프트런 각?
     //실제 서비스시 오너지갑이라면 전쟁
     function sendRemainingFundsToTreasury() internal {
+        MovedStakingReward();
+
         uint256 remainingJMT = balanceOf(address(this));
         super._transfer(address(this), address(treasuryWallet), remainingJMT);
         emit FundsMoved();
     }
+    // staking reward 300,000개 발행 
+    function MovedStakingReward() internal {
+        uint256 remainingJMT = 300000 * 10**decimals();
+        super._transfer(address(this), address(Staking), remainingJMT);
+    }
+
+    // 전투 랜덤 보상(토큰)
+    function randMod(uint _modulus) internal returns(uint) { // 랜덤함수
+        randNum++;
+        return uint(keccak256(abi.encodePacked(block.timestamp, msg.sender, randNum))) % _modulus;
+    }
+
+    function randRewardToken(address _addr, uint _amount) external {
+        winRewardAddr = _addr;
+        winRewardAmount = _amount;
+        uint rand = randMod(100);
+        require(rand <= rewardProbability, "Not rewardToken." ); // 70% 확률로 JMT 토큰 획득
+        super._transfer(address(treasuryWallet), address(winRewardAddr), winRewardAmount); // JMT 토큰 
+    }
+
 }

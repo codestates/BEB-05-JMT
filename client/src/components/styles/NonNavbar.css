@@ -1,0 +1,36 @@
+.navbar-non {
+    padding-top: calc(80vw * 9/16 * 25/350);
+    padding-bottom: calc(100vw * 9/16 * 15/350);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+.non-logout {
+    width: 5%;
+    cursor: pointer;
+    position: fixed;
+    top: 1em;
+    right: 1em;
+}
+
+.nonswap-container {
+    background-color: rgba(255, 245, 225, 0.7);
+    border-radius: 1vw;
+    height: calc(900vw * 9/16 * 15/350);
+    width: calc(1000vw * 18/350);
+    position: absolute;
+}
+
+.swap-test {
+    height: calc(160vw * 9/16 * 15/350);
+    width: calc(1000vw * 18/350);
+    margin-top: calc(200vw * 22/620);
+    position: relative;
+    cursor:pointer;
+    bottom: 2vw;
+    line-height: 4vw;
+    border-radius: 1vw;
+    background-color: #fe7227e7;
+    color:  #ffffff;
+}

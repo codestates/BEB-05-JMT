@@ -10,6 +10,7 @@ import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 import nobody from '../assets/nobody.png';
 
+
 const Mint = () => {
     const [account, setAccount] = useRecoilState(accountAtom);
     const setBackground = useSetRecoilState(backgroundAtom)
@@ -19,18 +20,26 @@ const Mint = () => {
     const [charName, setCharName] = useState();
     const [weaponName, setWeaponName] = useState();
     const [strength, setStrength] = useState();
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
         if (!account.address) {
             navigate('/login');
         } else {
+            contractAPI.getBalnceOfJmt(account.address).then((value)=>{
+                console.log(value)
+                if(Number(value)===0){
+                    navigate('/nonswap');
+                }
+            })
+          
             setBackground({type: 'default'});
         }
     }, [account]);
 
     const mint = async () => {
+        setLoading(true);
         if(username) {
             await accountAPI.signUp(account.address, username);
 

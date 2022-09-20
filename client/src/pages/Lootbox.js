@@ -46,6 +46,10 @@ const Lootbox = () => {
         
     }
 
+    const reload = () => {
+        window.location.reload();
+    }
+
     const weaponMint = async () => {
         if(!weaponImg){
             const weaponId = await contractAPI.mintWeaponNFT(account.address);
@@ -74,7 +78,7 @@ const Lootbox = () => {
                     (loading ?
                         <Spinner/> :
                             <>
-                                <span className="lootbox-result" onClick={charMint}>
+                                <span className="lootbox-result" onClick={charMint,reload}>
                                     <img className="lootbox-char" src={charImg} />
                                 </span>
                                 <div className ="itemdata"> 
@@ -90,7 +94,7 @@ const Lootbox = () => {
                 ) : (loading ?
                         <Spinner/> :
                     <>
-                        <span className="lootbox-result" onClick={weaponMint}>
+                        <span className="lootbox-result" onClick={weaponMint,reload}>
                             <img className="lootbox-weapon" src={weaponImg} />
                         </span>
                         <div className ="itemdata"> 

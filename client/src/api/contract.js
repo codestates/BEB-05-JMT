@@ -282,6 +282,46 @@ const upgradeWeapon = async(address, scrollId, weaponId) => {
         return [false, false, message];
     }
 }
+
+const rewardScrollNFT = async(address) => {
+    try {
+        const scrollContract = await contractAPI.fetchItemsContract();
+        const scroll = await scrollContract.methods.randRewardScroll().send(
+        {
+            from: address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        }
+        );
+        const scrollId = scroll.events.TransferSingle.returnValues.id;
+        alert('스크롤을 획득하였습니다.');
+        console.log(scrollId);
+        console.log("check");
+        return scrollId;
+    } catch (err) {
+        alert('스크롤을 획득하지 못하였습니다.');
+        console.log(err);
+    }
+}
+
+const rewardToken = async(address) => {
+    try {
+        const web3 = new Web3(window.ethereum);
+        var BN = web3.utils.BN;
+        const _amount = new BN(String(1)).mul(new BN(String(10**18))).toString();
+        const JMTContract = await new web3.eth.Contract(
+            TOKEN_CONTRACT_ABI,
+            TOKEN_CONTRACT_ADDR
+        );
+        const token = await JMTContract.methods.randRewardToken(address, _amount).send({from:address});
+        alert('JMT 토큰을 획득하였습니다.');
+        console.log("check");
+    } catch (err) {
+        alert('JMT 토큰을 획득하지 못하였습니다.');
+        console.log(err);
+    }
+}
+
 /*
 const fetchFightContract = async () => {
     const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
@@ -333,6 +373,8 @@ const contractAPI = {
     fetchMyCharacter,
     fetchMyItems,
     mintScrollNFT,
+    rewardScrollNFT,
+    rewardToken,
     getBalnceOfJmt,
     SendJmtToken,
     GetReserve,
