@@ -7,6 +7,7 @@ import { addrinfoAtom } from '../recoil/addrinfo/atom';
 import './styles/Login.css';
 import { useNavigate } from 'react-router-dom'
 import accountAPI from '../api/account';
+import contractAPI from '../api/contract';
 
 const Login = () => {
   const setAccount = useSetRecoilState(accountAtom)
@@ -36,7 +37,10 @@ const Login = () => {
     console.log(check.message);
     if(check.message==="false"){
       setAccount({address: address});
-      navigate('/mint');
+      contractAPI.getBalnceOfJmt(address).then((value)=>{
+        Number(value) === 0 ? navigate('/nonswap') : navigate('/mint');
+      })
+      
     }else{
       setAccount({address: address, username: check.username, charId: check.charId, weaponId: check.weaponId});
       navigate('/home');
