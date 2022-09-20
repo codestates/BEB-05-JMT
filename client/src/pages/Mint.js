@@ -100,7 +100,7 @@ const Mint = () => {
                 ):
                 <>
                     <h2 className="mint-label">
-                        당신의 고유한 NFT 캐릭터를 만들어 보세요
+                        당신의 고유한 메이플스토리 NFT 캐릭터를 만들어 보세요
                     </h2>
                     <div className='mint-input-container'>
                         <input

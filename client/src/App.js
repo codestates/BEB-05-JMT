@@ -3,8 +3,8 @@ import { useRecoilValue } from "recoil"
 import { backgroundAtom } from "./recoil/background/atom"
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import { Home, Inventory, Market, Ranking, Login, Mint, Swap, Fight, Lootbox,NonSwap } from './pages';
-import { Fighting, FightResult, NotFound } from './components';
+import { Home, Inventory, Market, Ranking, Login, Mint, Swap, Fight, Lootbox, NonSwap } from './pages';
+import { Fighting, FightResult, NotFound, Modal } from './components';
 import MainLayout from './components/MainLayout';
 
 const App = () => {
@@ -33,6 +33,7 @@ const App = () => {
             <Route path="/fighting" element={<Fighting/>} />
             <Route path="/fightresult" element={<FightResult/>} />
         </Routes>
+        <Modal />
       </div>
       <footer className='App-footer'>
         <p className='App-footer-text'>개발 중...</p>

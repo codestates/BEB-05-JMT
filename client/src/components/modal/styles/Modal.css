@@ -1,0 +1,31 @@
+.dim {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba( 255, 255, 255, 0.5);
+    position: absolute;
+    z-index: 300;
+    height: calc(100vw * 9/16 - 100vw * 35/620);
+    width: 100vw;
+}
+
+.upgrade-modal {
+    display: flex;
+    flex-direction: column;
+    background-color: #fe7227e7;
+    width: calc(100vw * 250/620);
+    height: calc(100vw * 190/620);
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5vw;
+    flex-wrap : wrap;
+    color:  #ffffff;
+}
+
+.upgrade-success {
+    background-color: #4f27fee7;
+}
+.upgrade-fail {
+    background-color: #fe4727e7;
+}

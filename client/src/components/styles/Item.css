@@ -1,11 +1,11 @@
 .myitem-container{
-    cursor:pointer;
     /* display:grid; */
     width: 5vw;
     height: 5vw;
     color: rgb(0, 0, 0);
     background-color: rgba(255, 215, 151, 0.394);
     margin-top: 0vw;
+    margin-bottom:1vw;
     margin-right: 0.8vw;
     border-radius: 1.5vw;
     padding: 1vw;
@@ -16,7 +16,32 @@
 
 }
 
-.myitem-container:hover{
+.myitem-container{
+    width: 5vw;
+    height: 5vw;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 215, 151, 0.394);
+    margin-top: 0vw;
+    margin-bottom:1vw;
+    margin-right: 0.8vw;
+    border-radius: 1.5vw;
+    padding: 1vw;
+    align-items: end;
+    border:solid;
+    border-width: 0.5vw;
+    border-color:rgba(255, 255, 255, 0);
+
+}
+
+.item-trans {
+    opacity: 40%;
+}
+
+.item-opaque {
+    cursor:pointer;
+}
+
+.item-opaque:hover{
 
     background-color: rgba(255, 205, 125, 0.702);
 }
@@ -46,4 +71,10 @@
     border:solid;
     border-width: 0.5vw;
     border-color:#fe722765;
+}
+
+.item-forUpgrade {
+    border:solid;
+    border-width: 0.5vw;
+    border-color:#0dd76565;
 }

@@ -13,6 +13,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     uint256 decimals = 10**18;
     address payable public treasuryWallet; // 비상금 계좌!
     uint256 private mintPrice;
+    uint256 private maxStrength;
     uint randNum = 0;
     uint rewardProbability = 70;
 
@@ -44,6 +45,8 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     uint256 public constant SCROLL60 = 402;
     uint256 public constant SCROLL30 = 403;
     uint256 public constant SCROLL10 = 404;
+    
+    event Upgraded(bool result, uint256 weaponId);
 
     constructor(
         address _marketAddress,
@@ -51,7 +54,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         address payable _treasuryWallet) 
         ERC1155("ipfs://QmUkUUWBisiFa9XUk4ucJiDr2fvk2tDr1xDrCkEF6FFCF8/{id}") {
         mintPrice = 1;
-        
+        maxStrength = 2;
         marketContractAddress = _marketAddress;
         _setToken(_tokenContractAddress);
         _generateWeaponArray();
@@ -171,6 +174,8 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     }
 
     function mintFirstWeapon() public {
+        require(balanceCheck(msg.sender).length==0, "ERC1155: you already have first weapon");
+
         uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % (firstMint.length);
         uint id = firstMint[n];
         
@@ -206,9 +211,35 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         setApprovalForAll(marketContractAddress, true);
     }
 
-    function upgrade(uint256 scrollId, uint256 weaponId) public{
-        _mint(msg.sender, weaponId+1, 1, "");
-        setApprovalForAll(marketContractAddress, true);
+    function upgrade(uint256 scrollId, uint256 weaponId) public {
+        require(balanceOf(msg.sender, scrollId)!=0, "ERC1155: this scroll is not yours");
+        require(balanceOf(msg.sender, weaponId)!=0, "ERC1155: this weapon is not yours");
+        require(weaponId%100<2, "ERC1155: this weapon is fully upgraded");
+        uint256 scrollRate;
+
+        if(scrollId%100==0){
+            scrollRate = 100;
+        }else if(scrollId%100==1){
+            scrollRate = 90;
+        }else if(scrollId%100==2){
+            scrollRate = 60;
+        }else if(scrollId%100==3){
+            scrollRate = 30;
+        }else if(scrollId%100==4){
+            scrollRate = 10;
+        }
+
+        uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % 100;
+        if(n<=scrollRate){
+            _mint(msg.sender, weaponId+1, 1, "");
+            _burn(msg.sender, weaponId, 1);
+            _burn(msg.sender, scrollId, 1);
+            setApprovalForAll(marketContractAddress, true);
+            emit Upgraded(true, weaponId+1);
+        } else{
+            _burn(msg.sender, scrollId, 1);
+            emit Upgraded(false, weaponId);
+        }        
     }
 
     function mintBatch(address to, uint256[] memory ids, uint256[] memory amounts, bytes memory data)

@@ -1,4 +1,4 @@
-const ContractOwner = '0x2c29eA0894cFf2558277340Bb3F088c699392bF2' //오너,가나슈(index[0])
+const ContractOwner = '0x61aDA980c7D8a6Ef5113aA51919d89b1FD4f6669' //오너,가나슈(index[0])
 const MapleNFT= artifacts.require("MapleNFT");
 const MapleMarket= artifacts.require("MapleMarket");
 const MapleItems = artifacts.require("MapleItems");
@@ -39,7 +39,7 @@ module.exports = async function (deployer) {
       MapleMarket.address,
       jonMatangContract.address,
       "https://ipfs.io/ipfs/QmVrTbBgFA36MW3KFArybwEZfFA99QwQWRExUc9n1D6ixM/", // 예시
-      ContractOwner 
+      ContractOwner
     );
     await deployer.deploy(
       MapleItems,
