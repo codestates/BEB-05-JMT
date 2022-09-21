@@ -49,7 +49,7 @@ const Inventory = () => {
       myItems();
       setLoading(false);
     }
-  }, [selectedImg, selectedChar, selectedId]);
+  }, [selectedImg, selectedChar, onUpgrade]);
 
   const myChar = async() => {
     const result = await contractAPI.fetchMyCharacter(account.address);
@@ -70,7 +70,6 @@ const Inventory = () => {
         setEquipped(true);
       }
     }
-    console.log(isScroll);
   }
 
   const myItems = async() => {
@@ -85,13 +84,14 @@ const Inventory = () => {
       if(selectedId){
         console.log(selectedItem);
         console.log(selectedId);
-        const check =  parseInt(selectedId) == account.weaponId;
+        const check = parseInt(selectedId) == account.weaponId;
         setEquipped(check);
       }else{
         setEquipped(true);
       }
     }
   }
+
   const equip = async() => {
     console.log("장착 신청");
     if(!isClicked){
@@ -116,11 +116,11 @@ const Inventory = () => {
         result = await contractAPI.upgradeWeapon(account.address, selectedId, selectedId2);
       }
       console.log(result);
-      setModal({...modal, open: true, type: 'upgrade', data: {error: result[0], upgrade: result[1], message: result[2]}});       
-      
+      setModal({...modal, open: true, type: 'upgrade', data: {error: result[0], upgrade: result[1], message: result[2]}});
+      await init();
+      setSelectedId();
+      setSelectedId2();
       setOnUpgrade(false);
-      setSelectedId(); 
-      setSelectedId2();         
     }else{
       setOnUpgrade(true); 
     }
@@ -128,16 +128,18 @@ const Inventory = () => {
 
   /** 탭 변경시 선택 정보 초기화 */
   const init = async() => {
-    const attr= await metadataAPI.fetchCharName(charMetadata.attributes);
+    const attr = await metadataAPI.fetchCharName(charMetadata.attributes);
+    const items = await contractAPI.fetchMyItems(account.address);
+    const weaponAttr = await contractAPI.fetchAttributes(weaponMetadata.attributes);
+    setMyItemInfo(items);
     setCharName(attr);
-    const weaponAttr= await contractAPI.fetchAttributes(weaponMetadata.attributes);
     setItemAttr(weaponAttr);
     setSelectedImg();
     setSelectedChar();
     setItemName(); 
     setSelectedId(); 
     setSelectedId2(); 
-    setOnUpgrade(false); 
+    setOnUpgrade(false);
   }
 
 	return (

@@ -12,9 +12,10 @@ function Item({itemData, onUpgrade, selectedId, selectedId2, isScroll, setSelect
   const [attr, setAttr] = useState();
 
   useEffect(() => {
+    console.log(`update item ${itemData}`)
     myitem();
     isSelected();
-  }, [selectedId, onUpgrade]);
+  }, [selectedId, onUpgrade, itemData]);
  
   const myitem = async() =>{
     const item = await contractAPI.fetchWeapon(itemData[0]);
@@ -37,7 +38,7 @@ function Item({itemData, onUpgrade, selectedId, selectedId2, isScroll, setSelect
   const selected = async() => {
     setSelectedItem(item);
     setItemAttr(attr);
-    
+
     let name="";
     if(onUpgrade){
       setSelectedId2(itemData[0]);
