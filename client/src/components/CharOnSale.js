@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { selectedCharAtom, selectedImgAtom } from "../recoil/temp/atom";
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
+import accountAPI from '../api/account';
 import './styles/CharOnSale.css';
 
-function Character({charId, charData, selectedChar, setSelectedImg, setSelectedChar, setCharOnSale, setSelectedCharId}) {
+function CharOnSale({charId, charData, selectedChar, setSelectedImg, setSelectedChar, setCharOnSale, setOwner}) {
   const [image, setImage] = useState();
   const [char, setChar] = useState();
 
@@ -22,14 +23,22 @@ function Character({charId, charData, selectedChar, setSelectedImg, setSelectedC
 
   const selected = async() => {
     setSelectedChar(char);
-    setSelectedCharId(charId);
     setCharOnSale(charData);
+    console.log(charData.seller);
+    const seller = await ownerName(charData.seller);
+    setOwner(seller);
     const img = await metadataAPI.fetchCharImage(char.attributes, 'animated');
     setSelectedImg(img);
   }
 
   const isSelected = () => {
     return selectedChar && char && selectedChar.name == char.name
+  }
+
+  const ownerName= async(address) =>{
+    const check = await accountAPI.fetchUsername(address);
+    console.log(check);
+    return check.username;
   }
 
 
@@ -42,4 +51,4 @@ function Character({charId, charData, selectedChar, setSelectedImg, setSelectedC
   )
 }
 
-export default Character;
+export default CharOnSale;

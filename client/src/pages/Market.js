@@ -28,10 +28,8 @@ const Market = () => {
   const [price, setPrice] = useState();
 
   const [modal, setModal] = useRecoilState(modalAtom);
-  const img = useRecoilValue(equipImgAtom);
   const charMetadata = useRecoilValue(charMetadataAtom);
   const weaponMetadata = useRecoilValue(weaponMetadataAtom);
-
 
   const [charInfo, setCharInfo] = useState(); //마켓 캐릭터들
   const [weaponInfo, setWeaponInfo] = useState(); //마켓 무기
@@ -39,8 +37,7 @@ const Market = () => {
   const [weaponIds, setWeaponIds] = useState(); //마켓 무기
   const [charOnSale, setCharOnSale] = useState();//캐릭터 마켓 정보
   const [weaponOnSale, setWeaponOnSale] = useState();//무기 마켓 정보
-  const [selectedCharId, setSelectedCharId] = useState(); //선택된 마켓 캐릭터 id
-  const [selectedWeaponId, setSelectedWeaponId] = useState(); //선택된 마켓 무기 id
+  const [owner, setOwner] = useState();//소유자 이름
 
 
   const [myCharInfo, setMyCharInfo] = useState(); //내 캐릭터들
@@ -121,10 +118,8 @@ const Market = () => {
 
   const weaponMarket = async() => {
     const items = await marketAPI.fetchMarketWeapon(account.address);
-    console.log(items);
     setWeaponInfo(items);
     setWeaponIds(Object.keys(items));
-
   }
 
   const myChar = async() => {
@@ -147,7 +142,6 @@ const Market = () => {
       }
     }
   }
-
   const myItems = async() => {
     const items = await contractAPI.fetchMyItems(account.address);
     const weapons = items.filter(item => item[0]<400);
@@ -178,7 +172,6 @@ const Market = () => {
     setSelectedChar();
     setItemName(); 
     setSelectedId();
-    setSelectedCharId();
   }
 
   const handleChangePrice = (value) => {
@@ -271,7 +264,7 @@ const Market = () => {
                         setSelectedImg={setSelectedImg} 
                         setSelectedChar={setSelectedChar} 
                         setCharOnSale={setCharOnSale}
-                        setSelectedCharId={setSelectedCharId}
+                        setOwner={setOwner}
                         key={idx}/>
                     )
                   })
@@ -292,6 +285,7 @@ const Market = () => {
                         setItemAttr={setItemAttr}
                         setItemName={setItemName}
                         setWeaponOnSale={setWeaponOnSale}
+                        setOwner={setOwner}
                         key={idx} />
                     )
                   })
@@ -363,8 +357,8 @@ const Market = () => {
                       :
                       <>
                       <div className = 'selectedowner'>
-                        <span>소유자:</span><br/> 
-                        <span>{isClicked? weaponOnSale.seller:(charOnSale && charOnSale?.seller ? charOnSale?.seller : '미정')}</span>
+                        <span>소유자: </span>
+                        <span>{owner}</span>
                       </div>
                       <div className = 'selectedprice'>
                         <span>가격:</span> 
