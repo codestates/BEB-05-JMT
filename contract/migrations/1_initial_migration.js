@@ -1,7 +1,8 @@
-const ContractOwner = '0x61aDA980c7D8a6Ef5113aA51919d89b1FD4f6669' //오너,가나슈(index[0])
+const ContractOwner = '0xC2DF4CeF5c282e0e1630B036D1A97A015E1De3e3' //오너,가나슈(index[0])
 const MapleNFT= artifacts.require("MapleNFT");
 const MapleMarket= artifacts.require("MapleMarket");
 const MapleItems = artifacts.require("MapleItems");
+const MapleFight = artifacts.require("MapleFight");
 
 const lpContract = artifacts.require('../contracts/LiquidityPool.sol');
 const jonMatangContract = artifacts.require('../contracts/JMToken.sol');
@@ -73,6 +74,8 @@ module.exports = async function (deployer) {
         lpCont.address,
         jmtCont.address
     );
+
+    await deployer.deploy(MapleFight); // 전투 컨트랙트
 
     routerCont = await routerContract.deployed();
     await jmtCont.setRouterAddress(routerCont.address);

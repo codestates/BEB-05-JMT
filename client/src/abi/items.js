@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const ITEMS = {
   "contractName": "MapleItems",
   "abi": [
@@ -41360,4 +41361,8 @@ const ITEMS = {
     "version": 1
   }
 }
+=======
+const ITEMS = 
+
+>>>>>>> 34013b3
 module.exports = ITEMS;

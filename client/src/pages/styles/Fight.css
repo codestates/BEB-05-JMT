@@ -16,10 +16,25 @@
     height: 200px;
 }
 
-.fighting-text {
+.fighting-result-text {
     position: absolute;
-    left: 46%;
-    top: 26%;
+    cursor:pointer;
+    padding-top: 1.5vw;
+    left: 45%;
+    top: 60%;
+    width: 12vw;
+    height: 3.5vw;
+    border-radius: 1vw;
+    background-color: #fe7227e7;
+    color:  #ffffff;
+}
+.fighting-spinner {
+    margin-top: 5em;
+}
+
+.fighting-spinner-text {
+    margin-top: 1em;
+    display: block;
 }
 
 .fightresult-home {
@@ -33,6 +48,12 @@
     padding-bottom: 0.5em;
     width: 8%;
     height: 5%;
+}
+
+.fightresult-critical {
+    width: 40%;
+    margin-top: 7em;
+    margin-right: 18em;
 }
 
 .fight-fight{
