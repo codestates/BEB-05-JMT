@@ -47,6 +47,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     uint256 public constant SCROLL10 = 404;
     
     event Upgraded(bool result, uint256 weaponId);
+    event Rewarded(bool result);
 
     constructor(
         address _marketAddress,
@@ -295,7 +296,11 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
 
     function randRewardScroll() external {
         uint rand = randMod(100);
-        require(rand <= rewardProbability, "Not rewardScroll." ); // 70% 확률로 강화 스크롤 획득
-        mintScroll();
+        if ( rand <= rewardProbability ) {// 70% 확률로 강화 스크롤 획득
+            mintScroll();
+            emit Rewarded(true);
+        } else {
+            emit Rewarded(false);
+        }
     }
 }

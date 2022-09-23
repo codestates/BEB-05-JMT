@@ -1,39 +1,33 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity ^0.8.0;
 
 contract MapleFight {
+    uint randNum = 0;
+    uint rewardProbability = 10;
+    uint rewardProbability2 = 50;
+    string result;
 
-    struct User {
-        uint weaponId;
-        uint strength;
-        uint winCount;
-        uint loseCount;
+    function randMod(uint _modulus) internal returns(uint) { // 랜덤함수
+        randNum++;
+        return uint(keccak256(abi.encodePacked(block.timestamp, msg.sender, randNum))) % _modulus;
     }
 
-    User[] public users;
-
-    mapping (uint => address) public fightOwner;
-
-    function fight(uint _userweaponId, uint _matchingweaponId) public {
-        require(msg.sender == fightOwner[_userweaponId]);
-        User storage user = users[_userweaponId];
-        User storage matchinguser = users[_matchingweaponId];
-
-        user.weaponId = _userweaponId;
-        user.strength = _userweaponId % 100;
-        user.winCount = 0;
-        user.loseCount = 0;
-        matchinguser.weaponId = _matchingweaponId;
-        matchinguser.strength = _matchingweaponId % 100;
-        matchinguser.winCount = 0;
-        matchinguser.loseCount = 0;
-        
-        if ( user.strength > matchinguser.strength ) {
-            user.winCount++;
-            matchinguser.loseCount++;
+    function setFight(address _addr, uint _userstrength, uint _matchingstrength) public {
+        require( msg.sender == _addr, "Incorrect Address");
+        uint rand = randMod(100);
+        if ( _userstrength > _matchingstrength ) {
+            result = "User Win!!!";
+        } else if ( rand <= rewardProbability ) { // 10%의 확률로 유저에게 크리티컬 발동
+            _userstrength = _matchingstrength + 1;
+            result = (_userstrength >= _matchingstrength? "User dramatic Win !!": "User Lose...");
+        } else if (_userstrength == _matchingstrength) {  // 비겼을 때, 50%확률로 승리
+            result = ( rand <= rewardProbability2 ? "User dramatic Win !!": "User Lose...");
         } else {
-            user.loseCount++;
-            matchinguser.winCount++;
+            result = "User Lose...";
         }
+    } 
+
+    function getFight() public view returns(string memory) {
+        return result;
     }
 }
