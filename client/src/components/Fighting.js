@@ -16,7 +16,7 @@ console.log(test1);
 const Fighting = () => {
   const [isLoading, setLoading] = useState(true);
   const chardata = useRecoilValue(charMetadataAtom);
-  const weapondata = useRecoilValue(weaponMetadataAtom);
+  const weapondata = useRecoilValue(weaponMetadataAtom); 
   const account = useRecoilValue(accountAtom)
   const matchingdata = useRecoilValue(matchingAtom);
   const [userImage, setUserImage] = useState();
@@ -50,7 +50,7 @@ const fightLoading = async() => {
 }
 
   const result = () => {
-    window.location = '/fightresult';
+    navigate('/fightresult');
   }
 
   useEffect(() => {
