@@ -4,8 +4,7 @@ import { useRecoilValue, useSetRecoilState, useRecoilState} from "recoil";
 import { backgroundAtom } from "../recoil/background/atom";
 import { accountAtom } from "../recoil/account/atom";
 import Trading from "../components/swap/Trading";
-import { Box, Tab, Tabs, Button } from '@mui/material';
-import '../components/styles/NonNavbar.css';
+import './styles/NonNavbar.css';
 
 const NonSwap = () => {
   const [account, setAccount] = useRecoilState(accountAtom);
@@ -32,12 +31,16 @@ const NonSwap = () => {
           <img className="non-logout" onClick={logout} src="https://seeklogo.com/images/M/metamask-logo-09EDE53DBD-seeklogo.com.png" />
       </div>
 
-      <div className="swap-test">Swap</div>
-      <div className='nonswap-container'>
-        <div>
-          <Trading/>
+      <div className="nonswap-container">
+        <div className="nonswap-swap">
+          Swap
         </div>
+          <div className="tab-ui">
+            <Trading/>
+          </div>
+
       </div>
+      
     </div>
 	);
 }

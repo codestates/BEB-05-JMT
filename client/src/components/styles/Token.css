@@ -1,27 +1,332 @@
 .lp-input {
-    background-color: transparent;
-    border: none;
-    font-size: 1.3rem;
-    color: #000000;
-    border-bottom: 1px solid #ff8c00;
-    padding-bottom: 10px;
-    margin: 20px 0;
-    margin-left: 10px;
-    text-align: center;
-  }
-  .input-amounts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .input-container {
-    display: flex;
-    align-items: center;
-    font-size: 1.2em;
-  }
-  ::placeholder {
-    color: var(--placeholder-color);
-  }
-  
+  background-color: transparent;
+  border: none;
+  font-size: 1.3vw;
+  color: #000000;
+  border-bottom: 1px solid #ff8c00;
+  padding-bottom: 0.4vw;
+  margin: 1.4vw 0;
+  margin-left: 1vw;
+  text-align: center;
+}
+
+.text-size {
+font-size: 1.7vw;
+}
+
+
+/* 토큰 정보 tab */
+
+.TokenInfo-tab {
+/* background-color: rgba(255, 245, 225, 0.7);
+border-radius: 1vw; */
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(65vw);
+margin-top: calc(1vw);;
+position: absolute;
+}
+
+.TokenInfo-tab .token-info {
+background-color: rgba(255, 245, 225, 0.7);
+border-radius: 1vw;
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+position: absolute;
+}
+
+.TokenInfo-tab .token-info .token-info1 {
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+margin-top: 6.5vw;
+position: absolute;
+}
+
+.TokenInfo-tab .token-info .token-info1 .token-wallet {
+margin-bottom: 2.5vw;
+}
+
+.TokenInfo-tab .token-info .token-info1 .token-wallet .token-address {
+font-size: 1.1vw;
+margin-top: 1vw;
+}
+
+.TokenInfo-tab .token-info .token-info1 .token-amount {
+font-size: 1.3vw;
+margin-top: 1vw;
+}
+
+/* <----> */
+
+.TokenInfo-tab .send-token {
+background-color: rgba(255, 245, 225, 0.7);
+border-radius: 1vw;
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+margin-left: calc(33vw);
+position: absolute;
+}
+
+.TokenInfo-tab .send-token .send-input {
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+margin-top: 4.5vw;
+position: absolute;
+}
+
+.TokenInfo-tab .send-token .send-input .send-btn {
+position: absolute;
+cursor:pointer;
+right: 12.5vw;
+bottom: 10vw;
+width: 8vw;
+height: 3vw;
+line-height: 2.5vw;
+border-radius: 1vw;
+background-color: #fe7227e7;
+color:  #ffffff;
+font-family: inherit;
+font-size: 1.5vw;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* 유동성 관리 tab */
+
+.Liquidity-tab {
+/* background-color: rgba(255, 245, 225, 0.7); */
+/* border-radius: 1vw; */
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(65vw);
+margin-top: calc(1vw);;
+position: absolute;
+}
+
+.Liquidity-tab .deposit-ui {
+background-color: rgba(255, 245, 225, 0.7);
+border-radius: 1vw;
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+position: absolute;
+}
+
+.Liquidity-tab .deposit-ui .deposit-input{
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+margin-top: 4.5vw;
+position: absolute;
+}
+
+.Liquidity-tab .deposit-ui .deposit-input .deposit-btn{
+position: absolute;
+cursor:pointer;
+right: 12vw;
+bottom: 10vw;
+width: 8vw;
+height: 3vw;
+line-height: 2.5vw;
+border-radius: 1vw;
+background-color: #fe7227e7;
+color:  #ffffff;
+font-family: inherit;
+font-size: 1.5vw;
+}
+
+/* <----> */
+
+.Liquidity-tab .lp-ui {
+background-color: rgba(255, 245, 225, 0.7);
+border-radius: 1vw;
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+margin-left: calc(33vw);
+position: absolute;
+}
+
+.Liquidity-tab .lp-ui .with-ui {
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+margin-top: 8vw;
+position: absolute;
+}
+
+.Liquidity-tab .lp-ui .with-ui .with-btn {
+position: absolute;
+cursor:pointer;
+right: 12.5vw;
+bottom: 16vw;
+width: 8vw;
+height: 3vw;
+line-height: 2.5vw;
+border-radius: 1vw;
+background-color: #fe7227e7;
+color:  #ffffff;
+font-family: inherit;
+font-size: 1.5vw;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* 교환 tab */
+
+.Trading-tab {
+background-color: rgba(255, 245, 225, 0.7);
+border-radius: 1vw;
+height: calc(1000vw * 9/16 * 15/350);
+width: 65vw;
+margin-top: 1vw;
+position: absolute;
+}
+
+.Trading-tab .Trading-ui {
+height: calc(1000vw * 9/16 * 15/350);
+width: 65vw;
+margin-top: 2vw;
+}
+
+.Trading-tab .Trading-ui .exchange-rate{
+margin-bottom: 1vw;
+}
+
+.Trading-tab .Trading-ui .exchange-rate .exchange-rate-text {
+margin-bottom: 1vw;
+font-size: 2vw;
+}
+
+.Trading-tab .Trading-ui .input-amounts .change-btn {
+cursor:pointer;
+width: 8vw;
+height: 3vw;
+line-height: 2.5vw;
+border-radius: 1vw;
+background-color: #3945ece7;
+color:  #ffffff;
+font-family: inherit;
+font-size: 1.5vw;
+margin-bottom: -1vw;
+}
+
+.Trading-tab .Trading-ui .swap-btn {
+cursor:pointer;
+width: 15vw;
+height: 3vw;
+line-height: 2.5vw;
+border-radius: 1vw;
+margin-top: 1.5vw;
+background-color: #fe7227e7;
+color:  #ffffff;
+font-family: inherit;
+font-size: 1.5vw;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* 스테이킹 tab */
+
+.staking-tab {
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(65vw);
+margin-top: calc(1vw);;
+position: absolute;
+}
+
+.staking-tab .staking-info {
+background-color: rgba(255, 245, 225, 0.7);
+border-radius: 1vw;
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+position: absolute;
+}
+
+.staking-tab .staking-info .staking-ui {
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+margin-top: 5vw;
+position: absolute;
+}
+
+.staking-tab .staking-info .staking-ui .staking-uinfo {
+margin-bottom: 1vw;
+}
+
+.staking-tab .staking-info .staking-ui .vtoken-amount{
+font-size: 1.3vw;
+margin-top: 1vw;
+}
+
+.staking-tab .staking-info .staking-ui .vtoken-reward{
+font-size: 1.3vw;
+margin-top: 1vw;
+}
+
+.staking-tab .staking-info .staking-ui .reward-btn {
+position: absolute;
+cursor:pointer;
+right: 12vw;
+bottom: 10vw;
+width: 8vw;
+height: 3vw;
+line-height: 2.5vw;
+border-radius: 1vw;
+background-color: #fe7227e7;
+color:  #ffffff;
+font-family: inherit;
+font-size: 1.5vw;
+}
+
+/* <----> */
+
+.staking-tab .staking-go {
+background-color: rgba(255, 245, 225, 0.7);
+border-radius: 1vw;
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+margin-left: calc(33vw);
+position: absolute;
+}
+
+.staking-tab .staking-go .staking-rego {
+height: calc(1000vw * 9/16 * 15/350);
+width: calc(32vw);
+margin-top: 5vw;
+position: absolute;
+}
+
+.staking-tab .staking-go .staking-rego .staking-rego1{
+margin-bottom: 1vw;
+}
+
+.staking-tab .staking-go .staking-rego .staking-rego1 .staking-text{
+font-size: 1.3vw;
+margin-top: 1vw;
+}
+
+.staking-tab .staking-go .staking-rego .staking-btn{
+position: absolute;
+cursor:pointer;
+right: 16vw;
+bottom: 10vw;
+width: 7vw;
+height: 3vw;
+line-height: 2.5vw;
+border-radius: 1vw;
+background-color: #fe7227e7;
+color:  #ffffff;
+font-family: inherit;
+font-size: 1.1vw;
+}
+
+.staking-tab .staking-go .staking-rego .unstaking-btn{
+position: absolute;
+cursor:pointer;
+right: 8vw;
+bottom: 10vw;
+width: 7vw;
+height: 3vw;
+line-height: 2.5vw;
+border-radius: 1vw;
+background-color: #fe7227e7;
+color:  #ffffff;
+font-family: inherit;
+font-size: 1.1vw;
+}
+

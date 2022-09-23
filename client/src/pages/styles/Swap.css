@@ -1,0 +1,10 @@
+.token-tab {
+  width: calc(100vw * 100/620);
+  background-color: #fe7227e7;
+  border-radius: 1vw;
+  margin-right: calc(1vw * 100/620);
+  color:  #ffffff;
+  font-size: calc(90vw * 11/620);
+  font-family: inherit;
+}
+
