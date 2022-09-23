@@ -27,3 +27,11 @@ export const rewardScrollAtom = atom({
   },
   effects_UNSTABLE: [persistAtom]
 });
+
+export const fightresultAtom = atom({
+  key: 'fightresult',
+  default: {
+    fightresult: "",
+  },
+  effects_UNSTABLE: [persistAtom]
+});

@@ -2,10 +2,12 @@ const NFT = require ("./abi/nft");
 const TOKEN = require ("./abi/token");
 const MARKET = require ("./abi/market");
 const ITEMS = require ("./abi/items");
+const FIGHT = require ("./abi/fight");
 
 export const NFT_CONTRACT_ADDR = process.env.REACT_APP_NFT_CONTRACT_ADDR;
 export const MARKET_CONTRACT_ADDR = process.env.REACT_APP_MARKET_CONTRACT_ADDR;
 export const ITEMS_CONTRACT_ADDR = process.env.REACT_APP_ITEMS_CONTRACT_ADDR;
+export const FIGHT_CONTRACT_ADDR = process.env.REACT_APP_FIGHT_CONTRACT_ADDR;
 
 export const TOKEN_CONTRACT_ADDR = process.env.REACT_APP_TOKEN_CONTRACT_ADDR;
 export const ROUTER_CONTRACT_ADDR = process.env.REACT_APP_ROUTER_CONTRACT_ADDR;
@@ -29,7 +31,12 @@ const getTokenContractABI = () => {
     return TOKEN["abi"];
 }
 
+const getFightContractABI = () => {
+    return FIGHT["abi"];
+}
+
 export const NFT_CONTRACT_ABI = getNFTContractABI();
 export const MARKET_CONTRACT_ABI = getMarketContractABI();
 export const ITEMS_CONTRACT_ABI = getItemsContractABI();
 export const TOKEN_CONTRACT_ABI = getTokenContractABI();
+export const FIGHT_CONTRACT_ABI = getFightContractABI();

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const TOKEN = {
 	"contractName": "JMToken",
 	"abi": [
@@ -23949,4 +23950,7 @@ const TOKEN = {
 	  "version": 1
 	}
   }
+=======
+const TOKEN = 
+>>>>>>> 34013b3
 module.exports = TOKEN;
