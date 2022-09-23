@@ -24,12 +24,14 @@ contract JMToken is ERC20 {
     address public winRewardAddr;
     uint winRewardAmount;
     uint randNum = 0;
-    uint rewardProbability = 70;
+    uint rewardProbability = 90;
     address public Staking;
 
     mapping(address => uint256) public balancesToClaim; // 투자금1:100 비율==jmt
     mapping(address => uint256) public contributionsOf; // 실제 기부금 eth
     mapping(address => bool) public isWhitelisted;
+
+    event TokenRewarded(bool result);
 
     constructor(address payable treasury) ERC20("JMT Token", "JMT") {
         MAX_SUPPLY = 1000000 * 10**decimals(); 
@@ -216,8 +218,12 @@ contract JMToken is ERC20 {
         winRewardAddr = _addr;
         winRewardAmount = _amount;
         uint rand = randMod(100);
-        require(rand <= rewardProbability, "Not rewardToken." ); // 70% 확률로 JMT 토큰 획득
-        super._transfer(address(treasuryWallet), address(winRewardAddr), winRewardAmount); // JMT 토큰 
+        if ( rand <= rewardProbability ) {// 90% 확률로 강화 스크롤 획득
+            super._transfer(address(treasuryWallet), address(winRewardAddr), winRewardAmount); // JMT 토큰
+            emit TokenRewarded(true);
+        } else {
+            emit TokenRewarded(false);
+        }
     }
 
 }
