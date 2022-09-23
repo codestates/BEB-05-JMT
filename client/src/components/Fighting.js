@@ -50,11 +50,7 @@ const fightLoading = async() => {
 }
 
   const result = () => {
-<<<<<<< HEAD
-    window.location = '/fightresult'; //변경 필요. navigate 사용해야합니당
-=======
     navigate('/fightresult');
->>>>>>> 34013b3
   }
 
   useEffect(() => {
