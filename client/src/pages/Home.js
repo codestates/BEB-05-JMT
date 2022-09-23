@@ -7,8 +7,8 @@ import { charMetadataAtom, weaponMetadataAtom, strengthAtom, equipImgAtom } from
 import { addrinfoAtom } from '../recoil/addrinfo/atom';
 import { Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
-import axios from 'axios';
 import './styles/Home.css';
+import accountAPI from '../api/account';
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 
@@ -56,9 +56,8 @@ const Home = () => {
 
   const addrinfo = async () => {
     try {
-      const result = await axios.get('http://localhost:4000/user/userinfo',
-      )
-      const checkAddr = result.data.data.filter(el => el.username !== account.username)
+      const result = await accountAPI.userinfo();
+      const checkAddr = result.filter(el => el.username !== account.username)
       setAddrInfo(checkAddr);
       console.log(checkAddr);
     } catch (err) {

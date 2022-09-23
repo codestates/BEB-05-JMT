@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSetRecoilState, useRecoilValue, useRecoilState} from "recoil";
 import { backgroundAtom } from "../recoil/background/atom";
@@ -13,12 +13,12 @@ import './styles/Inventory.css';
 import accountAPI from '../api/account';
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
+import marketAPI from '../api/market';
 
 const Inventory = () => {
   const [account, setAccount] = useRecoilState(accountAtom);
   const [modal, setModal] = useRecoilState(modalAtom);
   const setBackground = useSetRecoilState(backgroundAtom);
-  const img = useRecoilValue(equipImgAtom);
   const charMetadata = useRecoilValue(charMetadataAtom);
   const weaponMetadata = useRecoilValue(weaponMetadataAtom);
   const navigate = useNavigate();
@@ -36,6 +36,7 @@ const Inventory = () => {
   const [isClicked, setIsClicked] = useState(false);//아이템 버튼이 선택되었는가? 아이템 상태 : 캐릭터 상태
   const [onUpgrade, setOnUpgrade] = useState(false);//강화 진행 여부
   const [selectedId2, setSelectedId2] = useState();//강화 추가 선택 아이템 아이디
+  const [selectedAmount, setSelectedAmount]=useState();//선택된 아이템 갯수
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -116,8 +117,13 @@ const Inventory = () => {
         result = await contractAPI.upgradeWeapon(account.address, selectedId, selectedId2);
       }
       console.log(result);
+
+      if(account.weaponId!= result[2]){
+        console.log("updated!")
+        await accountAPI.equip(account.address, account.charId, result[2]);
+        setAccount({...account, charId: account.charId, weaponId: result[2]});
+      }
       setModal({...modal, open: true, type: 'upgrade', data: {error: result[0], upgrade: result[1], message: result[2]}});
-      await init();
       setSelectedId();
       setSelectedId2();
       setOnUpgrade(false);
@@ -128,11 +134,9 @@ const Inventory = () => {
 
   /** 탭 변경시 선택 정보 초기화 */
   const init = async() => {
-    const attr = await metadataAPI.fetchCharName(charMetadata.attributes);
     const items = await contractAPI.fetchMyItems(account.address);
     const weaponAttr = await contractAPI.fetchAttributes(weaponMetadata.attributes);
     setMyItemInfo(items);
-    setCharName(attr);
     setItemAttr(weaponAttr);
     setSelectedImg();
     setSelectedChar();
@@ -168,6 +172,7 @@ const Inventory = () => {
                       selectedChar={selectedChar}
                       setSelectedImg={setSelectedImg} 
                       setSelectedChar={setSelectedChar} 
+                      setSelectedId={setSelectedId} 
                       key={idx}/>
                   )
                 })
@@ -192,6 +197,7 @@ const Inventory = () => {
                       setItemAttr={setItemAttr}
                       setItemName={setItemName}
                       setIsScroll={setIsScroll}
+                      setSelectedAmount={setSelectedAmount}
                       key={idx} />
                   )
                 })
@@ -204,12 +210,14 @@ const Inventory = () => {
             {onUpgrade? '강화중' : '상세 정보'}
           </div>
           <div className={`selectedUser ${onUpgrade ? 'background-upgrade' : ''}`}>
+          {selectedImg?
+            <>
             <div className='myname'>
               {!isClicked ? 
               (selectedChar? selectedChar.name: account.username)
               : (itemName? itemName : account.username)
             }</div>
-            <img className='myimg' src={selectedImg? selectedImg:img} />
+            <img className='myimg' src={selectedImg} />
             {!onUpgrade? 
               (equipped ?
                 <div className='equipped'>장착중</div>
@@ -233,34 +241,39 @@ const Inventory = () => {
               null
             }
             <div>        
-            <div className ="selected"> 
-            {!isClicked ?  
-            (charName?
+              <div className ="selected"> 
+              {!isClicked ?  
+              (charName?
+                <>            
+                  <div className = 'selectedline'>스킨: {charName?.skin}</div>
+                  <div className = 'selectedline'>얼굴: {charName?.face}</div>
+                  <div className = 'selectedline'>헤어: {charName?.hair}</div>
+                  <div className = 'selectedline'>의상: {charName?.clothes}</div>
+                  <div className = 'selectedline'>신발: {charName?.shoes}</div>
+                  <div className = 'selectedline'>안경: {charName && charName.eyeDecoration ? charName.eyeDecoration: '없음'}</div>
+                  <div className = 'selectedline'>악세서리: {charName && charName.faceAccessory ? charName.faceAccessory: '없음'}</div>
+                </>
+                : ""
+              ):
+              (itemAttr?
               <>            
-                <div className = 'selectedline'>스킨: {charName?.skin}</div>
-                <div className = 'selectedline'>얼굴: {charName?.face}</div>
-                <div className = 'selectedline'>헤어: {charName?.hair}</div>
-                <div className = 'selectedline'>의상: {charName?.clothes}</div>
-                <div className = 'selectedline'>신발: {charName?.shoes}</div>
-                <div className = 'selectedline'>안경: {charName && charName.eyeDecoration ? charName.eyeDecoration: '없음'}</div>
-                <div className = 'selectedline'>악세서리: {charName && charName.faceAccessory ? charName.faceAccessory: '없음'}</div>
+                <div className = 'selectedline'>타입: {itemAttr?.type}</div>
+                {itemAttr?.type=='scroll' ? 
+                  <div className = 'selectedline'>강화 성공 확률: {itemAttr?.successRate}</div>
+                  :
+                  <div className = 'selectedline'>레벨: {itemAttr?.strength}</div>
+                }
               </>
               : ""
-            ):
-            (itemAttr?
-            <>            
-              <div className = 'selectedline'>타입: {itemAttr?.type}</div>
-              {itemAttr?.type=='scroll' ? 
-                <div className = 'selectedline'>강화 성공 확률: {itemAttr?.successRate}</div>
-                :
-                <div className = 'selectedline'>레벨: {itemAttr?.strength}</div>
+              )
               }
-            </>
-            : ""
-            )
-            }
+              </div>
             </div>
-            </div>
+            </>            
+            :
+            <></>
+          }
+            
           </div>
         </div>
       )}

@@ -34,7 +34,12 @@ module.exports = async function (deployer) {
     await deployer.deploy(stakingContract, vjmtCont.address);
     stakingCont = await stakingContract.deployed();
 
-    await deployer.deploy(MapleMarket);
+    await deployer.deploy(
+      MapleMarket, 
+      jonMatangContract.address,
+      ContractOwner
+    );
+
     await deployer.deploy(
       MapleNFT,
       MapleMarket.address,
@@ -51,6 +56,7 @@ module.exports = async function (deployer) {
     //Maple NFT contract instance 
     mapleNFTCont = await MapleNFT.deployed();
     mapleItemsCont = await MapleItems.deployed();
+    mapleMarketCont = await MapleMarket.deployed();
 
     // swap_pool
     await deployer.deploy(lpContract); // lp 디플로이
@@ -75,6 +81,7 @@ module.exports = async function (deployer) {
     await jmtCont.setRouterAddress(routerCont.address);
     await jmtCont.setMapleNFTAddress(mapleNFTCont.address);
     await jmtCont.setMapleItemsAddress(mapleItemsCont.address);
+    await jmtCont.setMapleMarketAddress(mapleMarketCont.address);
     await jmtCont.setStakingAddress(stakingCont.address);
     await stakingCont.setJMTokenAddress(jmtCont.address);
     await vjmtCont.setLPAddress(lpCont.address); // lp어드레스 추가 

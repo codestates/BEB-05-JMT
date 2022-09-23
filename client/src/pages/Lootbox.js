@@ -31,23 +31,17 @@ const Lootbox = () => {
         if(!charImg){
             const charId = await contractAPI.mintCharNFT(account.address);
             console.log(charId);
-            const char = await contractAPI.fetchCharacter(charId);
-            console.log(char.image);
-            setCharImg(char.image);
-
-            const attr= await metadataAPI.fetchCharName(char.attributes);
+            const result = await contractAPI.fetchCharacter(charId);
+            const char = await metadataAPI.fetchCharImage(result.attributes, '0');
+            console.log(char);
+            setCharImg(char);
+            const attr= await metadataAPI.fetchCharName(result.attributes);
             setCharName(attr);
             setLoading(false);
         } else{
             setCharImg();
             navigate('/lootbox');
         }
-        
-        
-    }
-
-    const reload = () => {
-        window.location.reload();
     }
 
     const weaponMint = async () => {
@@ -78,7 +72,7 @@ const Lootbox = () => {
                     (loading ?
                         <Spinner/> :
                             <>
-                                <span className="lootbox-result" onClick={charMint,reload}>
+                                <span className="lootbox-result" onClick={charMint}>
                                     <img className="lootbox-char" src={charImg} />
                                 </span>
                                 <div className ="itemdata"> 
@@ -94,7 +88,7 @@ const Lootbox = () => {
                 ) : (loading ?
                         <Spinner/> :
                     <>
-                        <span className="lootbox-result" onClick={weaponMint,reload}>
+                        <span className="lootbox-result" onClick={weaponMint}>
                             <img className="lootbox-weapon" src={weaponImg} />
                         </span>
                         <div className ="itemdata"> 
@@ -105,13 +99,18 @@ const Lootbox = () => {
                 )) :
                 <>
                     <span className="lootbox-btn" onClick={charMint}>
-                        캐릭터 민팅
+                        <span>캐릭터 민팅</span><br/>
+                        <span>1JMT</span>
                     </span>
                     <span className="lootbox-btn" onClick={weaponMint}>
-                        무기 민팅
+                        <span>무기 민팅</span><br/>
+                        <span>1JMT</span>
                     </span>
                 </>
             }
+            <Link to="/market" className="market-btn">
+                상점
+            </Link>
         </div>
     );
 }
