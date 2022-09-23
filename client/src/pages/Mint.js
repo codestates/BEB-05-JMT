@@ -36,7 +36,7 @@ const Mint = () => {
           
             setBackground({type: 'default'});
         }
-    }, [account]);
+    }, [account, charImg]);
 
     const mint = async () => {
         setLoading(true);
@@ -47,12 +47,13 @@ const Mint = () => {
             console.log(charId);
             const weaponId = await contractAPI.mintFirstWeaponNFT(account.address);
             console.log(weaponId);
+            setAccount({...account, username: username, charId:charId, weaponId: weaponId});
 
-            const char = await contractAPI.fetchCharacter(charId);
-            setCharImg(char.image);
-            const attr= await metadataAPI.fetchCharName(char.attributes);
+            const result = await contractAPI.fetchCharacter(charId);
+            const char = await metadataAPI.fetchCharImage(result.attributes, '0');
+            setCharImg(char);
+            const attr= await metadataAPI.fetchCharName(result.attributes);
             setCharName(attr);
-
 
             const weapon = await contractAPI.fetchWeapon(weaponId);
             setWeaponImg(weapon.image);
@@ -63,7 +64,6 @@ const Mint = () => {
 
             await accountAPI.equip(account.address, charId, weaponId);
 
-            setAccount({...account, username: username, charId:charId, weaponId: weaponId});
             setLoading(false);
         }
     }

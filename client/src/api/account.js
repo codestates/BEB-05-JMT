@@ -27,12 +27,17 @@ const equip = async (address, charId, weaponId) => {
       "weaponId": weaponId
   });
 }
+const userinfo = async () => {
+  const result = await axios.get('http://localhost:4000/user/userinfo');
+  return result.data.data;
+}
 
 const accountAPI = {
   fetchAccount,
   fetchUsername,
   signUp,
-  equip
+  equip,
+  userinfo
 };
 
 export default accountAPI;

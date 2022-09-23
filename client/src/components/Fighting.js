@@ -35,7 +35,7 @@ const Fighting = () => {
   }
 
   const result = () => {
-    window.location = '/fightresult';
+    window.location = '/fightresult'; //변경 필요. navigate 사용해야합니당
   }
   setTimeout(result, 4000);
 

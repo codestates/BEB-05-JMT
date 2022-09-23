@@ -88,3 +88,7 @@
     height: 100%;
     font-size: 3vw;
 }
+
+.nav-item:hover {
+    background-color: #ff955ce6;
+}

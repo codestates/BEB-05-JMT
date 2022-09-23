@@ -21,6 +21,7 @@ contract JMToken is ERC20 {
     address public Router;
     address public MapleNFT;
     address public MapleItems;
+    address public MapleMarket;
     address public winRewardAddr;
     uint winRewardAmount;
     uint randNum = 0;
@@ -45,12 +46,12 @@ contract JMToken is ERC20 {
     }
 
     modifier mapleNFTOnly(){
-        require(msg.sender == MapleNFT || msg.sender == MapleItems, "MAPLENFT_ONLY");
+        require(msg.sender == MapleNFT || msg.sender == MapleItems || msg.sender == MapleMarket, "MAPLENFT_ONLY");
         _;
     }
     // router 컨트랙트에서만 실행
     modifier routerOnly() {
-        require(msg.sender == Router || msg.sender == MapleNFT || msg.sender == MapleItems, "ROUTER_OR_MAPLE_ONLY");
+        require(msg.sender == Router || msg.sender == MapleNFT || msg.sender == MapleItems || msg.sender == MapleMarket, "ROUTER_OR_MAPLE_ONLY");
         _;
     }
     // 펀딩 종료 체크 
@@ -67,17 +68,21 @@ contract JMToken is ERC20 {
 
 
     // 첫 계약 제로 계정 배포자(0x0)와 같은지 확인, 딱 한번만 실행가능
-    function setRouterAddress(address _router) external  ownerOnly {
+    function setRouterAddress(address _router) external ownerOnly {
         require(address(Router) == address(0), "WRITE_ONCE!"); // 0x00000000
         Router = _router;
     }
-    function setMapleNFTAddress(address _mapleNft) external  ownerOnly {
+    function setMapleNFTAddress(address _mapleNft) external ownerOnly {
         require(address(MapleNFT) == address(0), "WRITE_ONCE!");
         MapleNFT = _mapleNft;
     }
-    function setMapleItemsAddress(address _mapleItems ) external  ownerOnly {
+    function setMapleItemsAddress(address _mapleItems) external ownerOnly {
         require(address(MapleItems) == address(0), "WRITE_ONCE!");
         MapleItems = _mapleItems;
+    }
+    function setMapleMarketAddress(address _mapleMarket) external ownerOnly {
+        require(address(MapleMarket) == address(0), "WRITE_ONCE!");
+        MapleMarket = _mapleMarket;
     }
     function setStakingAddress(address _staking ) external  ownerOnly {
         require(address(Staking) == address(0), "WRITE_ONCE!");

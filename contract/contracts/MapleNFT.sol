@@ -25,7 +25,7 @@ contract MapleNFT is Ownable, ERC721Enumerable {
 
     constructor(
         address _marketAddress,
-        JMToken _tokenContractAddress, 
+        address _tokenContractAddress, 
         string memory _MapleBaseURI, 
         address payable _treasuryWallet)  ERC721("MapleNFT", "NFT") {
 
@@ -114,9 +114,9 @@ contract MapleNFT is Ownable, ERC721Enumerable {
         return super.tokenURI(_tokenId);
     }
 
-    function _setToken(JMToken jmtoken) private onlyOwner returns (bool) {
-        require(address(jmtoken) != address(0x0));
-        token = jmtoken;
+    function _setToken(address jmtokenAddress) private onlyOwner returns (bool) {
+        require(jmtokenAddress != address(0x0));
+        token = JMToken(jmtokenAddress);
         return true;
     }
 

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     color: rgb(0, 0, 0);
     align-items: center;
     flex-direction: row;
@@ -12,11 +12,33 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color:  #FE7427;
+    color: #3b6fff;
     text-decoration: none;
     width: calc(100vw * 180/620);
     height: calc(100vw * 180/620);
-    margin-top: calc(100vw * 10/620);
+    margin-top: calc(100vw * 20/620);
+    border-radius: 5vw;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: calc(15vw);
+    margin-left: auto; 
+    margin-right: auto;
+    opacity: 0.9;
+}
+.lootbox-container .lootbox-btn:hover {
+    background-color: #81a2ffe1;
+    color:  #ffffff;
+}
+
+.lootbox-container .lootbox-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:  #3b6fff;
+    text-decoration: none;
+    width: calc(100vw * 490/620);
+    height: calc(100vw * 180/620);
+    margin-top: calc(100vw * 20/620);
     border-radius: 5vw;
     background-color: #fff;
     cursor: pointer;
@@ -26,22 +48,10 @@
     opacity: 0.9;
 }
 
-.lootbox-container .lootbox-result {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color:  #FE7427;
-    text-decoration: none;
-    width: calc(100vw * 490/620);
-    height: calc(100vw * 180/620);
-    margin-top: calc(100vw * 10/620);
-    border-radius: 5vw;
-    background-color: #fff;
-    cursor: pointer;
-    margin-right: calc(15vw);
-    margin-left: auto; 
-    margin-right: auto;
-    opacity: 0.9;
+
+.lootbox-container .lootbox-result:hover {
+    background-color: #81a2ffe1;
+    color:  #ffffff;
 }
 
 .lootbox-char {
@@ -76,3 +86,29 @@
 .lootbox-container .itemdata .line2 {
     margin-top: 1.5vw;
 }
+
+.market-btn {
+    position:absolute;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    width: 9vw;
+    height: 9vw;
+    top: 39vw;
+    cursor: pointer;
+    right: 4vw;
+    border-radius: 5vw;
+    font-size: 3vw;
+
+    background-color: #2955cdd3; 
+    border-style: solid;
+    border-width: 0.7vw;
+    border-color: hsla(224, 100%, 73%, 0.686); 
+}
+
+.market-btn:hover {
+    background-color: #1c44b3e1;
+  }

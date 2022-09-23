@@ -8,11 +8,11 @@ import UserData from '../components/UserData';
 import Spinner from "../components/Spinner";
 import './styles/Ranking.css';
 import contractAPI from '../api/contract';
-import axios from 'axios';
+import accountAPI from '../api/account';
 
 const Ranking = () => {
-  const account = useRecoilValue(accountAtom)
-  const setBackground = useSetRecoilState(backgroundAtom)
+  const account = useRecoilValue(accountAtom);
+  const setBackground = useSetRecoilState(backgroundAtom);
   const myImg = useRecoilValue(equipImgAtom);
   const navigate = useNavigate();
   const [rankInfo, setRankInfo] = useState();
@@ -33,8 +33,8 @@ const Ranking = () => {
   }, []);
 
   const sortArr = async()=>{
-    const result = await axios.get('http://localhost:4000/user/userinfo');
-    const orginalArr = result.data.data;
+    const result = await accountAPI.userinfo();
+    const orginalArr = result;
     const comparableArr = await Promise.all(
       orginalArr.map(async (x)=> [
         await contractAPI.fetchStrength(x.weaponId),

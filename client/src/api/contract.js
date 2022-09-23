@@ -3,7 +3,6 @@ import ROUTER from "../abi/router";
 import LP from "../abi/lp";
 import LPT from "../abi/lpt"
 
-const BigNumber = require('bignumber.js');
 const Web3 = require('web3');
 const {
     NFT_CONTRACT_ADDR,
@@ -136,7 +135,7 @@ const fetchItemsContract = async () => {
       return itemsContract;
 }
 const _fetchCharacter = async (charId) => {
-    const NFTContract = await contractAPI.fetchNFTContract();
+    const NFTContract = await fetchNFTContract();
     const tokenURI = await NFTContract.methods.tokenURI(charId).call();
     const response = await axios.get(tokenURI);
     const tokenMetadata = response.data;
@@ -151,7 +150,7 @@ const fetchCharacter = async (charId) => {
     }
 }
 const fetchMyCharacter = async (address) => {
-    const NFTContract = await contractAPI.fetchNFTContract();
+    const NFTContract = await fetchNFTContract();
     const balance = await NFTContract.methods.balanceOf(address).call();
 
     let arr = [];
@@ -166,14 +165,14 @@ const fetchMyCharacter = async (address) => {
         const response = await axios.get(tokenURI);
         const tokenMetadata = response.data;
         tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
-        myNFTs.push(tokenMetadata)
+        myNFTs.push([charId, tokenMetadata])
     }
     // console.log(myNFTs)
     return myNFTs;
 }
 
 const _fetchWeapon = async (weaponId) =>{
-    const itemsContract = await contractAPI.fetchItemsContract();
+    const itemsContract = await fetchItemsContract();
     const weaponURI = await itemsContract.methods.uri(parseInt(weaponId)).call();
     const response = await axios.get(weaponURI);
     const weaponMetadata = response.data;
@@ -189,14 +188,13 @@ const fetchWeapon = async (weaponId) => {
 }
 
 const fetchMyItems = async(address) => {
-    const itemsContract = await contractAPI.fetchItemsContract();
+    const itemsContract = await fetchItemsContract();
     const myItems = await itemsContract.methods.balanceCheck(address).call();
-    console.log(myItems);
     return myItems;
 }
 
 const isCharOwner= async(address, charId) =>{
-    const NFTContract = await contractAPI.fetchNFTContract();
+    const NFTContract = await fetchNFTContract();
     const owner = await NFTContract.methods.ownerOf(charId).call();
     console.log(address);
     console.log(owner);
@@ -204,13 +202,13 @@ const isCharOwner= async(address, charId) =>{
 }
 
 const isWeaponOwner= async(address, weaponId) =>{
-    const itemsContract = await contractAPI.fetchItemsContract();
+    const itemsContract = await fetchItemsContract();
     const balance = await itemsContract.methods.balanceOf(address, weaponId).call();
     return balance!=0;
 }
 
 const mintCharNFT = async(address) => {
-    const NFTContract = await contractAPI.fetchNFTContract();
+    const NFTContract = await fetchNFTContract();
     const char = await NFTContract.methods.mintMapleNFT().send(
         {
             from: address,
@@ -224,7 +222,7 @@ const mintCharNFT = async(address) => {
 }
 
 const mintFirstWeaponNFT = async(address) => {
-    const itemsContract = await contractAPI.fetchItemsContract();
+    const itemsContract = await fetchItemsContract();
     const weapon = await itemsContract.methods.mintFirstWeapon().send(
         {
             from: address,
@@ -237,7 +235,7 @@ const mintFirstWeaponNFT = async(address) => {
 }
 
 const mintWeaponNFT = async(address) => {
-    const itemsContract = await contractAPI.fetchItemsContract();
+    const itemsContract = await fetchItemsContract();
     const weapon = await itemsContract.methods.mintRandomWeapon().send(
         {
             from: address,
@@ -250,7 +248,7 @@ const mintWeaponNFT = async(address) => {
 }
 
 const mintScrollNFT = async(address) => {
-    const scrollContract = await contractAPI.fetchItemsContract();
+    const scrollContract = await fetchItemsContract();
     const scroll = await scrollContract.methods.mintScroll().send(
         {
             from: address,
@@ -266,7 +264,7 @@ const mintScrollNFT = async(address) => {
 
 const upgradeWeapon = async(address, scrollId, weaponId) => {
     try{
-        const itemsContract = await contractAPI.fetchItemsContract();
+        const itemsContract = await fetchItemsContract();
         const upgrade = await itemsContract.methods.upgrade(scrollId, weaponId).send(
             {
                 from: address,
@@ -285,7 +283,7 @@ const upgradeWeapon = async(address, scrollId, weaponId) => {
 
 const rewardScrollNFT = async(address) => {
     try {
-        const scrollContract = await contractAPI.fetchItemsContract();
+        const scrollContract = await fetchItemsContract();
         const scroll = await scrollContract.methods.randRewardScroll().send(
         {
             from: address,
@@ -340,10 +338,13 @@ const fetchFight = async(userweaponId, matchingweaponId) => {
 }
 */
 
+//market
+
+
 //metadata
 const fetchStrength = async(weaponId) => {
-    const meta  = await contractAPI.fetchWeapon(weaponId);
-    const weapon = await contractAPI.fetchAttributes(meta.attributes);
+    const meta  = await fetchWeapon(weaponId);
+    const weapon = await fetchAttributes(meta.attributes);
   
     return weapon.strength;
 }
