@@ -9,9 +9,8 @@ import { backgroundAtom } from "../recoil/background/atom"
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 import loading from '../assets/loading.gif'
+import fightdataAPI from '../api/fightdata';
 
-const test1 = contractAPI.fetchFightContract();
-console.log(test1);
 
 const Fighting = () => {
   const [isLoading, setLoading] = useState(true);
@@ -43,7 +42,7 @@ const Fighting = () => {
   }
 
 const fightLoading = async() => {
-  const fightresult = await contractAPI.fightResult(account.address, userweapon.strength, matchingdata.strength);
+  const fightresult = await fightdataAPI.fightResult(account.address, userweapon.strength, matchingdata.strength);
   console.log(fightresult);
   setLoading(false);
   setFightResult(fightresult);
@@ -73,6 +72,12 @@ const fightLoading = async() => {
         <div className='fighting-spinner-text'>
           전투 결과 가져오는 중...
         </div>
+        <div className='weapon-left'>무기 강화: {userWeapon}</div>
+        <div className='fighting-left-name'>{account.username}</div>
+        <img className='fighting-left-image' src ={userImage} />
+        <div className='weapon-right'>무기 강화: {matchingdata.strength}</div>
+        <div className='fighting-right-name'>{matchingdata.username}</div>
+        <img className='fighting-right-image' src ={matchingImage} />
       </div>
       : 
       <div>

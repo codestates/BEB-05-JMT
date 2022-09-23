@@ -3,12 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { useRecoilValue , useSetRecoilState } from "recoil"
 import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
-import { charMetadataAtom, weaponMetadataAtom } from '../recoil/tokenMetadata/atom';
 import { matchingAtom, fightresultAtom } from '../recoil/matching/atom';
 import { Link } from "react-router-dom";
 import '../pages/styles/Fight.css';
-import contractAPI from '../api/contract';
-import metadataAPI from '../api/metadata';
+import fightdataAPI from '../api/fightdata';
 
 const FightResult = () => {
   const matchingdata = useRecoilValue(matchingAtom);
@@ -33,8 +31,8 @@ const FightResult = () => {
   } 
 
   const rewardResult = () => {
-    const scrollId = contractAPI.rewardScrollNFT(account.address);
-    const rewardtoken = contractAPI.rewardToken(account.address);
+    const scrollId = fightdataAPI.rewardScrollNFT(account.address);
+    const rewardtoken = fightdataAPI.rewardToken(account.address);
     setScrollSelected(false);
     console.log(scrollId);
     console.log(rewardtoken);
