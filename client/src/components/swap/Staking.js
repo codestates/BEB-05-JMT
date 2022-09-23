@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState, useSetRecoilState, useRecoilValue} from "recoil";
 import { accountAtom } from "../../recoil/account/atom";
-import contractAPI from "../../api/contract1";
+import contractAPI from "../../api/contract";
 import '../styles/Token.css';
 
 function Staking() {
