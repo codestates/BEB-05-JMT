@@ -3,7 +3,7 @@ import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 import './styles/Item.css';
 
-function Item({itemData, onUpgrade, selectedId, selectedId2, isScroll, setSelectedImg, setSelectedItem, setSelectedId, setSelectedId2, setItemAttr, setItemName, setIsScroll}) {
+function Item({itemData, onUpgrade, selectedId, selectedId2, isScroll, setSelectedImg, setSelectedItem, setSelectedId, setSelectedId2, setItemAttr, setItemName, setIsScroll, setSelectedAmount}) {
   //무기 관련
   const [item, setItem] = useState();
   const [image, setImage] = useState();
@@ -12,7 +12,6 @@ function Item({itemData, onUpgrade, selectedId, selectedId2, isScroll, setSelect
   const [attr, setAttr] = useState();
 
   useEffect(() => {
-    console.log(`update item ${itemData}`)
     myitem();
     isSelected();
   }, [selectedId, onUpgrade, itemData]);
@@ -25,10 +24,12 @@ function Item({itemData, onUpgrade, selectedId, selectedId2, isScroll, setSelect
     const itemAttr = await contractAPI.fetchAttributes(item.attributes);
     setAttr(itemAttr);
     if(onUpgrade){
-      if(isScroll&&itemAttr?.type=='scroll'){
-        setTrans(true);
-      }else if(!isScroll&&itemAttr?.type!='scroll'){
-        setTrans(true);
+      if(!selectedId2){
+        if(isScroll&&itemAttr?.type=='scroll'){
+          setTrans(true);
+        }else if(!isScroll&&itemAttr?.type!='scroll'){
+          setTrans(true);
+        }
       }
     }else{
       setTrans(false);
@@ -38,6 +39,7 @@ function Item({itemData, onUpgrade, selectedId, selectedId2, isScroll, setSelect
   const selected = async() => {
     setSelectedItem(item);
     setItemAttr(attr);
+    setSelectedAmount(amount);
 
     let name="";
     if(onUpgrade){

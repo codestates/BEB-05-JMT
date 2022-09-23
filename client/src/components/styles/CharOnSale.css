@@ -1,10 +1,10 @@
-.mychar-container{
+.char-container{
     cursor:pointer;
     display:grid;
     width: 8.5vw;
     height: 10.5vw;
     color: rgb(0, 0, 0);
-    background-color: rgba(255, 215, 151, 0.394);
+    background-color: rgba(187, 212, 255, 0.486);
     margin-bottom: 0.9vw;
     margin-right: 0.8vw;
     border-radius: 1.5vw;
@@ -14,12 +14,11 @@
     border-color:rgba(255, 255, 255, 0);
 }
 
-.mychar-container:hover{
-
-    background-color: rgba(255, 205, 125, 0.702);
+.char-container:hover{
+    background-color: rgba(125, 164, 255, 0.702);
 }
 
-.mychar-img {
+.char-img {
     align-self:center;
     height: 10vw;
     margin-top: -12vw;
@@ -27,16 +26,24 @@
     margin-right:auto;
 }
 
-.display{
+.char-display{
     width:9vw;
     margin-top: 9vw;
     height:2vw;
-    background-color: #fe722765;
+    background-color: #2768fe65;
     border-radius: 50%;
 }
 
-.mychar-clicked {
+.char-clicked {
     border:solid;
     border-width: 0.5vw;
-    border-color:#fe722765;
+    border-color: #2768fe65;
+}
+
+.char-price {
+    width: 9vw;
+    margin-top: 1.5vw;
+    font-size: 1.5vw;
+    background-color: #2768fe65;
+    border-radius: 1vw;
 }

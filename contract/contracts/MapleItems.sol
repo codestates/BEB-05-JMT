@@ -51,7 +51,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
 
     constructor(
         address _marketAddress,
-        JMToken _tokenContractAddress,
+        address _tokenContractAddress,
         address payable _treasuryWallet) 
         ERC1155("ipfs://QmUkUUWBisiFa9XUk4ucJiDr2fvk2tDr1xDrCkEF6FFCF8/{id}") {
         mintPrice = 1;
@@ -184,7 +184,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         setApprovalForAll(marketContractAddress, true);
     }
 
-    function mintRandomWeapon() public payable returns (uint256){  
+    function mintRandomWeapon() public returns (uint256){  
         uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % (waitForMint.length);
         uint256 id = waitForMint[n];
         
@@ -274,9 +274,9 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         return result;
     }
     
-    function _setToken(JMToken _tokenAddress) private onlyOwner returns (bool) {
-        require(address(_tokenAddress) != address(0x0));
-        token =_tokenAddress;
+    function _setToken(address _tokenAddress) private onlyOwner returns (bool) {
+        require(_tokenAddress != address(0x0));
+        token = JMToken(_tokenAddress);
         return true;
     }
     // The following functions are overrides required by Solidity.
