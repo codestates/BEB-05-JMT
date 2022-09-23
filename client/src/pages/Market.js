@@ -314,7 +314,7 @@ const Market = () => {
                     : (itemName? itemName : account.username)}
                   </div>
                   <img className='myimg' src={selectedImg} />
-                  {equipped&&selectedAmount==1 ?
+                  {(isClicked ? equipped&&selectedAmount==1 : equipped) ?
                     <div className='equipped'>장착중</div>
                     : 
                     (isSell?
@@ -328,7 +328,7 @@ const Market = () => {
                       />                      
                       </>
                     :
-                    (charOnSale?.seller==account.address||weaponOnSale.seller==account.address?
+                    (charOnSale?.seller==account.address||weaponOnSale?.seller==account.address?
                       <div className='sell' onClick={cancelSale}>판매 취소</div>
                       :
                       <div className='sell' onClick={buyNFT}>구매</div>
@@ -364,16 +364,16 @@ const Market = () => {
                       <>
                       <div className = 'selectedowner'>
                         <span>소유자:</span><br/> 
-                        <span>{isClicked? weaponOnSale.seller:(charOnSale && charOnSale.seller ? charOnSale.seller : '미정')}</span>
+                        <span>{isClicked? weaponOnSale.seller:(charOnSale && charOnSale?.seller ? charOnSale?.seller : '미정')}</span>
                       </div>
                       <div className = 'selectedprice'>
                         <span>가격:</span> 
-                        <span>{isClicked? weaponOnSale.price:(charOnSale && charOnSale.price ? charOnSale.price : '미정')} JMT</span>
+                        <span>{isClicked? weaponOnSale.price:(charOnSale && charOnSale?.price ? charOnSale?.price : '미정')} JMT</span>
                       </div>
                       </>
                     }
                   </div>
-                  </>
+                </>
                 )
                 :
                 <>

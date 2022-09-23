@@ -117,6 +117,12 @@ const Inventory = () => {
         result = await contractAPI.upgradeWeapon(account.address, selectedId, selectedId2);
       }
       console.log(result);
+
+      if(account.weaponId!= result[2]){
+        console.log("updated!")
+        await accountAPI.equip(account.address, account.charId, result[2]);
+        setAccount({...account, charId: account.charId, weaponId: result[2]});
+      }
       setModal({...modal, open: true, type: 'upgrade', data: {error: result[0], upgrade: result[1], message: result[2]}});
       setSelectedId();
       setSelectedId2();

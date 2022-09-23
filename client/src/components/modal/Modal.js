@@ -2,6 +2,7 @@ import React from 'react';
 import { useRecoilState} from "recoil";
 import { modalAtom } from "../../recoil/modal/atom";
 import UpgradeModal from './UpgradeModal';
+import MarketModal from './MarketModal';
 import './styles/Modal.css';
 
 const Modal = () => {
