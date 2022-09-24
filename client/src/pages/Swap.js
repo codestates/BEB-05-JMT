@@ -31,13 +31,23 @@ const Swap = () => {
     setTabIndex(newTabIndex);
   };
 
+  const divStyle = {
+    width:"calc(100vw * 100/620);",
+    backgroundColor:"#fe7227e7",
+    borderRadius:"1vw",
+    marginRight:"calc(1vw * 120/620)",
+    color:"#ffffff",
+    fontSize:"calc(90vw * 11/620)",
+    fontFamily: "inherit"
+  }
+
 	return (
     <div className="token-container">
         <Tabs value={tabIndex} onChange={handleTabChange} variant="fullWidth">
-          <Tab className="token-tab" label="토큰 정보" id='1'  />
-          <Tab className="token-tab" label="유동성 관리" id='2'/>
-          <Tab className="token-tab" label="토큰 교환" id='3'/>
-          <Tab className="token-tab" label="스테이킹" id='4'/>
+          <Tab className="token-tab" label="토큰 정보" id='1'  style={divStyle}/>
+          <Tab className="token-tab" label="유동성 관리" id='2' style={divStyle}/>
+          <Tab className="token-tab" label="토큰 교환" id='3' style={divStyle}/>
+          <Tab className="token-tab" label="스테이킹" id='4' style={divStyle}/>
         </Tabs>
       
   

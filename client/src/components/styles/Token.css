@@ -237,10 +237,19 @@ width: calc(32vw);
 position: absolute;
 }
 
+.staking-tab .staking-info .APR {
+  margin-top: 1vw;
+  margin-right: 21.5vw;
+  font-size: 1.7vw;
+  text-decoration: underline;
+  text-decoration-color:#ff8c00;
+  text-decoration-style: wavy;
+}
+
 .staking-tab .staking-info .staking-ui {
 height: calc(1000vw * 9/16 * 15/350);
 width: calc(32vw);
-margin-top: 5vw;
+margin-top: 2vw;
 position: absolute;
 }
 
@@ -291,8 +300,20 @@ margin-top: 5vw;
 position: absolute;
 }
 
+.staking-tab .staking-go .staking-rego .staking-input {
+  background-color: transparent;
+  border: none;
+  font-size: 1.3vw;
+  color: #000000;
+  border-bottom: 1px solid #ff8c00;
+  padding-bottom: 0.4vw;
+  margin-left: 1vw;
+  margin-top: 3vw;
+  text-align: center;
+}
+
 .staking-tab .staking-go .staking-rego .staking-rego1{
-margin-bottom: 1vw;
+margin-top: 2.5vw;
 }
 
 .staking-tab .staking-go .staking-rego .staking-rego1 .staking-text{
@@ -303,8 +324,8 @@ margin-top: 1vw;
 .staking-tab .staking-go .staking-rego .staking-btn{
 position: absolute;
 cursor:pointer;
-right: 16vw;
-bottom: 10vw;
+right: 12.5vw;
+bottom: 13vw;
 width: 7vw;
 height: 3vw;
 line-height: 2.5vw;
@@ -318,8 +339,8 @@ font-size: 1.1vw;
 .staking-tab .staking-go .staking-rego .unstaking-btn{
 position: absolute;
 cursor:pointer;
-right: 8vw;
-bottom: 10vw;
+left: 12.5vw;
+bottom: 13vw;
 width: 7vw;
 height: 3vw;
 line-height: 2.5vw;

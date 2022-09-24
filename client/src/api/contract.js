@@ -47,41 +47,73 @@ const vJMTStaking = async(amount, address) => {
         gas: 1500000,
         gasPrice: '3000000'
     });
-    console.log(result);
     return result;
 }
 
 // <--unstaking
-const vJMTunStaking = async() => {
+const vJMTunStaking = async(address) => {
     const web3 = new Web3(window.ethereum);
     const StakingContract = await new web3.eth.Contract(
         STAKING_CONTRACT_ABI,
         STAKING_CONTRACT_ADDR
     );
-    const result = await StakingContract.methods.unStakingToken().call();
+    const result = await StakingContract.methods.unStakingToken().send({
+        from:address,
+        gas: 1500000,
+        gasPrice: '3000000'
+    });
     return result;
 }
 
-// <--보상 수령 가능한가 확인
-const getReward = async(address, amount) => {
+//<--unstakingclaime
+const vJMTunStakingClaime = async(address) => {
     const web3 = new Web3(window.ethereum);
+    // web3.eth.getAccounts().then((result) => {
+    //     console.log(result)
+    // })
     const StakingContract = await new web3.eth.Contract(
         STAKING_CONTRACT_ABI,
         STAKING_CONTRACT_ADDR
     );
-    const result = await StakingContract.methods.claimReward(address, amount).call();
+    const result = await StakingContract.methods.unStakingClaime().send({
+        from:address,
+        gas: 1500000,
+        gasPrice: '3000000'
+    });
     console.log(result);
     return result;
 }
 
-// <--보상 갯수 보기
-const viewReward = async() => {
+//<--stakeinfo
+const vJMTStakeinfo = async(address) => {
     const web3 = new Web3(window.ethereum);
     const StakingContract = await new web3.eth.Contract(
         STAKING_CONTRACT_ABI,
         STAKING_CONTRACT_ADDR
     );
-    const result = await StakingContract.methods.claimableReward().call();
+    const {0: startTS, 1: claimedTime, 2: unStakingTime, 3: amount, 4: totalClaimed, 5: state} = await StakingContract.methods.stakeInfos(address).call();
+    return {0: startTS, 1: claimedTime, 2: unStakingTime, 3: amount, 4: totalClaimed, 5: state};
+}
+
+// <--보상 수령 가능한가 확인
+const getReward = async(address) => {
+    const web3 = new Web3(window.ethereum);
+    const StakingContract = await new web3.eth.Contract(
+        STAKING_CONTRACT_ABI,
+        STAKING_CONTRACT_ADDR
+    );
+    const result = await StakingContract.methods.claimReward().send({from:address});
+    return result;
+}
+
+// <--보상 갯수 보기
+const viewReward = async(address) => {
+    const web3 = new Web3(window.ethereum);
+    const StakingContract = await new web3.eth.Contract(
+        STAKING_CONTRACT_ABI,
+        STAKING_CONTRACT_ADDR
+    );
+    const result = await StakingContract.methods.claimableReward().call({from:address});
     return result;
 }
 
@@ -202,15 +234,6 @@ const fetchItemsContract = async () => {
         ITEMS_CONTRACT_ADDR,
       );
       return itemsContract;
-}
-
-const fetchFightContract = async () => {
-    const web3 = new Web3(window.ethereum);
-    const fightContract = await new web3.eth.Contract(
-        FIGHT_CONTRACT_ABI,
-        FIGHT_CONTRACT_ADDR
-      );
-    return fightContract;
 }
 
 const _fetchCharacter = async (charId) => {
@@ -360,87 +383,6 @@ const upgradeWeapon = async(address, scrollId, weaponId) => {
     }
 }
 
-const fightResult = async(address, userstrength, matchingstrength) => {
-    const fightContract = await contractAPI.fetchFightContract();
-    const resultcall = await fightContract.methods.setFight(address, userstrength, matchingstrength).send(
-    {
-        from: address,
-        gas: 1500000,
-        gasPrice: '3000000'
-    }
-    );
-    const result = await fightContract.methods.getFight().call();
-    return result;
-}
-
-const rewardScrollNFT = async(address) => {
-    try {
-        const scrollContract = await fetchItemsContract();
-        const scroll = await scrollContract.methods.randRewardScroll().send(
-        {
-            from: address,
-            gas: 1500000,
-            gasPrice: '3000000'
-        }
-        );
-        const scrollresult = scroll.events.Rewarded.returnValues.result;
-        const scrollId = scroll.events.TransferSingle.returnValues.id;
-        if ( scrollresult === true ) {
-            alert('스크롤을 획득 하였습니다.');
-        } else {
-            alert('스크롤을 획득하지 못하였습니다.');
-        }
-        console.log(scrollId);
-        console.log("check");
-        return [scrollresult, scrollId];
-    } catch (err) {
-        alert('스크롤을 획득하지 못하였습니다.!');
-        console.log(err);
-    }
-}
-
-const rewardToken = async(address) => {
-    try {
-        const web3 = new Web3(window.ethereum);
-        var BN = web3.utils.BN;
-        const _amount = new BN(String(1)).mul(new BN(String(10**18))).toString();
-        const JMTContract = await new web3.eth.Contract(
-            TOKEN_CONTRACT_ABI,
-            TOKEN_CONTRACT_ADDR
-        );
-        const token = await JMTContract.methods.randRewardToken(address, _amount).send({from:address});
-        const tokenresult = token.events.TokenRewarded.returnValues.result;
-        if ( tokenresult === true ) {
-            alert('JMT 토큰을 획득하였습니다.');
-        } else {
-            alert('JMT 토큰을 획득하지 못하였습니다.');
-        }
-        console.log("check");
-        return [tokenresult];
-    } catch (err) {
-        alert('JMT 토큰을 획득하지 못하였습니다.!');
-        console.log(err);
-    }
-}
-
-/*
-const fetchFightContract = async () => {
-    const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
-    const FightContract = await new web3.eth.Contract(
-        FIGHT_CONTRACT_ABI,
-        FIGHT_CONTRACT_ADDR
-      );
-      return FightContract;
-}
-const fetchFight = async(userweaponId, matchingweaponId) => {
-    const FightContract = await contractAPI.fetchFightContract();
-    const result = await FightContract.methods.fight(userweaponId, matchingweaponId).call();
-    return result;
-}
-*/
-
-//market
-
 
 //metadata
 const fetchStrength = async(weaponId) => {
@@ -463,7 +405,6 @@ const fetchAttributes = (attributes) => {
 const contractAPI = {
     fetchNFTContract,
     fetchItemsContract,
-    fetchFightContract,
     fetchCharacter,
     fetchWeapon,
     mintCharNFT,
@@ -476,9 +417,6 @@ const contractAPI = {
     fetchMyCharacter,
     fetchMyItems,
     mintScrollNFT,
-    fightResult,
-    rewardScrollNFT,
-    rewardToken,
     getBalnceOfJmt,
     SendJmtToken,
     GetReserve,
@@ -490,6 +428,8 @@ const contractAPI = {
     getBalnceOfvJmt,
     vJMTStaking,
     vJMTunStaking,
+    vJMTunStakingClaime,
+    vJMTStakeinfo,
     getReward,
     viewReward
 };

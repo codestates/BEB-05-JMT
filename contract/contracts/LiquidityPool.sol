@@ -117,7 +117,7 @@ contract LiquidityPool is Ownable {
             jmtToken.transfer(account, totalAmountToTransfer);
 
             Commission = (totalAmountToTransfer * 10) / 100;
-            vJmt.transfer(msg.sender , Commission);
+            vJmt.transfer(account , Commission);
         }
         emit TradedTokens(account, msg.value, _jmtAmount);
         _update();
