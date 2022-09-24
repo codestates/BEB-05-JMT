@@ -7,8 +7,9 @@ import { accountAtom } from "../recoil/account/atom"
 import Trading from "../components/swap/Trading";
 import Liquidity from "../components/swap/Liquidity";
 import TokenInfo from "../components/swap/TokenInfo";
-import Typography from '@mui/material/Typography';
-import { Box, Tab, Tabs, Button } from '@mui/material';
+import Staking from "../components/swap/Staking";
+import { Tab, Tabs } from '@mui/material';
+import "./styles/Swap.css";
 
 const Swap = () => {
   const [tabIndex,setTabIndex] = useState(0);
@@ -30,12 +31,23 @@ const Swap = () => {
     setTabIndex(newTabIndex);
   };
 
+  const divStyle = {
+    width:"calc(100vw * 100/620);",
+    backgroundColor:"#fe7227e7",
+    borderRadius:"1vw",
+    marginRight:"calc(1vw * 120/620)",
+    color:"#ffffff",
+    fontSize:"calc(90vw * 11/620)",
+    fontFamily: "inherit"
+  }
+
 	return (
-    <div style={{"width":1000}}>
+    <div className="token-container">
         <Tabs value={tabIndex} onChange={handleTabChange} variant="fullWidth">
-          <Tab label="Token Info" id='1'  />
-          <Tab label="Liquidity Manage" id='2'/>
-          <Tab label="Trading Token" id='3'/>
+          <Tab className="token-tab" label="토큰 정보" id='1'  style={divStyle}/>
+          <Tab className="token-tab" label="유동성 관리" id='2' style={divStyle}/>
+          <Tab className="token-tab" label="토큰 교환" id='3' style={divStyle}/>
+          <Tab className="token-tab" label="스테이킹" id='4' style={divStyle}/>
         </Tabs>
       
   
@@ -49,6 +61,10 @@ const Swap = () => {
 
       {tabIndex === 2 && (
         <Trading></Trading>
+      )}
+
+      {tabIndex === 3 && (
+        <Staking></Staking>
       )}
       
       </div>

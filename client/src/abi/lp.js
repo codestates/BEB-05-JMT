@@ -75,6 +75,19 @@ const LP = [
 		"type": "event"
 	},
 	{
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -90,30 +103,6 @@ const LP = [
 		"name": "deposit",
 		"outputs": [],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint32",
-				"name": "rType",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "getReserveRatio",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -183,6 +172,19 @@ const LP = [
 			}
 		],
 		"name": "setLPTAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract VJMToken",
+				"name": "_vJmt",
+				"type": "address"
+			}
+		],
+		"name": "setVJMTCoinAddress",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Button, Typography, Stack, Input } from '@mui/material';
 import { useRecoilState, useSetRecoilState, useRecoilValue} from "recoil";
 import { accountAtom } from "../../recoil/account/atom";
 import contractAPI from "../../api/contract";
+import '../styles/Token.css';
 
 function Trading() {
 
@@ -61,18 +61,18 @@ function Trading() {
 	}
 
 	return (
-		<div className='Trading'>
-			<Typography
-				variant="subtitle1"
-				color="text.secondary"
-				component="div"
-				style={{"marginTop":15}}
-			>
-				<div>ETH Reserve : {ethReserve}</div>
-				<div>JMT Reserve : {jmtReserve}</div>
+		<div className='Trading-tab'>
+			<div className="Trading-ui">
+				<div className="exchange-rate">
+					<div>
+						<div className="exchange-rate-text">교환 비율</div>
+						<div className="text-size">ETH : {ethReserve}</div>
+						<div className="text-size">JMT : {jmtReserve}</div>
+					</div>
+				</div>
 
 				<div className="input-amounts">
-					<div className="input-container">
+					<div>
 						<input 
 						type="text" 
 						ref={ref}
@@ -81,7 +81,7 @@ function Trading() {
 						className="lp-input"
 						style={{"color":"rgba(0, 0, 0, 0.6)"}}/>
 
-						<span style={{"paddingLeft":10}}>To</span>
+						<span className="text-size" style={{"paddingLeft":10}}>To</span>
 
 						<input 
 						type="text" 
@@ -91,11 +91,11 @@ function Trading() {
 						className="lp-input" 
 						style={{"color":"rgba(0, 0, 0, 0.6)","backgroundColor":"rgba(105, 104, 79, 0.16)"}}/>
 					</div>
-					<Button color="success"variant="contained" style={{"width":100}} onClick={()=>ChangeToken()} >Change</Button>
+					<button className="change-btn" onClick={()=>ChangeToken()} >바꾸기</button>
 				</div>
 			
-				<Button variant="contained" style={{"width":200,"marginTop":20}} onClick={()=>SwapToken()} >Swap</Button>
-			</Typography>
+				<button className="swap-btn" onClick={()=>SwapToken()} >스왑</button>
+			</div>
 		</div>
 	);
 }

@@ -44,6 +44,7 @@ contract LiquidityPool is Ownable {
     uint256 jmtReserve;  // 리저브 jmt 
     uint32 lastBlockTimestamp;
     uint256 totalReserve; // 총 리저브 
+    uint256 public decimals = 10**18;
 
     constructor () {
         ethReserve=0;
@@ -88,6 +89,7 @@ contract LiquidityPool is Ownable {
         uint256 amountToTransfer;
         uint256 amountToTake;
         uint256 totalAmountToTransfer;
+        uint256 Commission = decimals; //수수료
 
         // jmt -> eth, jmttoken == 0
         if (msg.value == 0) {
@@ -113,6 +115,9 @@ contract LiquidityPool is Ownable {
             totalAmountToTransfer = amountToTransfer - amountToTake;
 
             jmtToken.transfer(account, totalAmountToTransfer);
+
+            Commission = (totalAmountToTransfer * 10) / 100;
+            vJmt.transfer(account , Commission);
         }
         emit TradedTokens(account, msg.value, _jmtAmount);
         _update();
