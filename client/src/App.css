@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Maplestory TTF';
+  src: local('Maplestory Light'),
+    url("./fonts/Maplestory Light.ttf") format("truetype");
+}
+
 .App {
   display: flex;
   flex-direction: column;
