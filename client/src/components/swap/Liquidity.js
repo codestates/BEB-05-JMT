@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useRecoilState, useSetRecoilState, useRecoilValue} from "recoil";
 import { accountAtom } from "../../recoil/account/atom";
 import contractAPI from "../../api/contract";
-import { Button, Typography, Stack, Card, Grid, CardContent, Input, CardActions } from '@mui/material'
 import '../styles/Token.css';
 
 function Liquidity() {
@@ -63,73 +62,38 @@ function Liquidity() {
 
 
 	return (
-		<div className='Liquidity'>
-		<Grid container spacing={4}>
-			<Grid item xs={12} md={12}>
-				<Stack
-					sx={{ pt: 4 }}
-					direction="row"
-					spacing={2}
-					justifyContent="center"
-				>
-				<Card sx={{ width: 450 }}>
-					<Stack
-						sx={{ pt: 4 }}
-						direction="row"
-						spacing={2}
-						justifyContent="center"
-					>
-						<CardContent sx={{ flex: 1 }}>
-							<Typography
-								variant="subtitle1"
-								color="text.secondary"
-								component="div"
-							>
-								<div className="input-amounts">
-									<div className="input-container">
-										ETH<input 
-										type="text" 
-										placeholder="ETH amount..." 
-										className="lp-input" 
-										style={{"color":"rgba(0, 0, 0, 0.6)"}}
-										onChange={(e) => ethHandleInputChange(e.target.value)}
-										ref={ethRef}/>
-									</div>
-									<div className="input-container">
-										JMT<input 
-										type="text" 
-										placeholder="JMT amount..."
-										className="lp-input" 
-										style={{"color":"rgba(0, 0, 0, 0.6)"}}
-										onChange={(e) => jmtHandleInputChange(e.target.value)} 
-										ref={jmtRef}/>
-									</div>
-								</div>
-								<Button variant="contained" style={{"width":200,"marginTop":20}} 
-								onClick={()=> deposit()}>Deposit</Button>
-							</Typography>
-						</CardContent>
-                    </Stack>
-                </Card>
+		<div className='Liquidity-tab'>
+			<div className="deposit-ui">
+				<div className="deposit-input">
+					<div>
+						<span className="text-size">ETH</span>
+						<input 
+						type="text" 
+						placeholder="ETH amount..." 
+						className="lp-input"
+						onChange={(e) => ethHandleInputChange(e.target.value)}
+						ref={ethRef}/>
+					</div>
+					<div className="">
+						<span className="text-size">JMT</span>
+						<input 
+						type="text" 
+						placeholder="JMT amount..."
+						className="lp-input" 
+						onChange={(e) => jmtHandleInputChange(e.target.value)} 
+						ref={jmtRef}/>
+					</div>
+					<button className="deposit-btn" onClick={()=> deposit()}>보증금</button>
+				</div>
+			</div>
 
-            	<Card sx={{ width: 450 }}>
-              	<Stack sx={{ display: "flex" }}>
-                	<CardContent sx={{ flex: 1,"marginTop":5}}>
-					<Typography
-						variant="subtitle1"
-						color="text.secondary"
-						component="div"
-					>
-						<div style={{"marginTop":10}}>LP Token Amount</div>
-						<div style={{"marginTop":10,"borderBottom":"1px solid #ff8c00"}}>{lpToken} LP</div>
-						<Button variant="contained" style={{"width":200,"marginTop":20}} onClick={() => withdraw()}>Withdraw</Button>
-					</Typography>
-					</CardContent>
-              	</Stack>
-            	</Card>
-          	</Stack>
-        	</Grid>
-      	</Grid>
+			<div className="lp-ui">
+				<div className="with-ui">
+					<div className="text-size">LP 토큰</div>
+					<div className="text-size">{lpToken} LP</div>
+					<button className="with-btn" onClick={() => withdraw()}>회수</button>
+				</div>
+			</div>
 		</div>
 	);
 }

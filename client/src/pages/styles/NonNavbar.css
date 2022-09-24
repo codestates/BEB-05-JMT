@@ -1,0 +1,30 @@
+.navbar-non {
+  padding-top: calc(80vw * 9/16 * 25/350);
+  padding-bottom: calc(100vw * 9/16 * 15/350);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.non-logout {
+  width: 5%;
+  cursor: pointer;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+}
+
+
+.nonswap-swap {
+  height: calc(160vw * 9/16 * 15/350);
+  width: 65vw;
+  margin-top: calc(170vw * 22/620);
+  margin-bottom: -2vw;
+  position: relative;
+  bottom: 2vw;
+  line-height: 4vw;
+  border-radius: 1vw;
+  background-color: #fe7227e7;
+  color:  #ffffff;
+  font-size: 2.2vw;
+}

@@ -11,12 +11,111 @@ const {
     ITEMS_CONTRACT_ABI,
     TOKEN_CONTRACT_ADDR,
     TOKEN_CONTRACT_ABI,
+    VTOKEN_CONTRACT_ADDR,
+    VTOKEN_CONTRACT_ABI,
+    STAKING_CONTRACT_ADDR,
+    STAKING_CONTRACT_ABI,
     LP_CONTRACT_ADDR,
     ROUTER_CONTRACT_ADDR,
     LPT_CONTRACT_ADDR,
     FIGHT_CONTRACT_ADDR,
     FIGHT_CONTRACT_ABI
 } = require('../global_variables');
+
+// <-- vJMT
+const getBalnceOfvJmt = async(address) => {
+    const web3 = new Web3(window.ethereum);
+    const VJMTContract = await new web3.eth.Contract(
+        VTOKEN_CONTRACT_ABI,
+        VTOKEN_CONTRACT_ADDR
+    );
+    const result = await VJMTContract.methods.balanceOf(address).call();
+    return result;
+}
+
+// <-- staking
+const vJMTStaking = async(amount, address) => {
+    const web3 = new Web3(window.ethereum);
+    var BN = web3.utils.BN;
+    const _amount = new BN(String(amount)).mul(new BN(String(10**18))).toString();
+    const StakingContract = await new web3.eth.Contract(
+        STAKING_CONTRACT_ABI,
+        STAKING_CONTRACT_ADDR
+    );
+    const result = await StakingContract.methods.stakeToken(_amount).send({
+        from:address,
+        gas: 1500000,
+        gasPrice: '3000000'
+    });
+    return result;
+}
+
+// <--unstaking
+const vJMTunStaking = async(address) => {
+    const web3 = new Web3(window.ethereum);
+    const StakingContract = await new web3.eth.Contract(
+        STAKING_CONTRACT_ABI,
+        STAKING_CONTRACT_ADDR
+    );
+    const result = await StakingContract.methods.unStakingToken().send({
+        from:address,
+        gas: 1500000,
+        gasPrice: '3000000'
+    });
+    return result;
+}
+
+//<--unstakingclaime
+const vJMTunStakingClaime = async(address) => {
+    const web3 = new Web3(window.ethereum);
+    // web3.eth.getAccounts().then((result) => {
+    //     console.log(result)
+    // })
+    const StakingContract = await new web3.eth.Contract(
+        STAKING_CONTRACT_ABI,
+        STAKING_CONTRACT_ADDR
+    );
+    const result = await StakingContract.methods.unStakingClaime().send({
+        from:address,
+        gas: 1500000,
+        gasPrice: '3000000'
+    });
+    console.log(result);
+    return result;
+}
+
+//<--stakeinfo
+const vJMTStakeinfo = async(address) => {
+    const web3 = new Web3(window.ethereum);
+    const StakingContract = await new web3.eth.Contract(
+        STAKING_CONTRACT_ABI,
+        STAKING_CONTRACT_ADDR
+    );
+    const {0: startTS, 1: claimedTime, 2: unStakingTime, 3: amount, 4: totalClaimed, 5: state} = await StakingContract.methods.stakeInfos(address).call();
+    return {0: startTS, 1: claimedTime, 2: unStakingTime, 3: amount, 4: totalClaimed, 5: state};
+}
+
+// <--보상 수령 가능한가 확인
+const getReward = async(address) => {
+    const web3 = new Web3(window.ethereum);
+    const StakingContract = await new web3.eth.Contract(
+        STAKING_CONTRACT_ABI,
+        STAKING_CONTRACT_ADDR
+    );
+    const result = await StakingContract.methods.claimReward().send({from:address});
+    return result;
+}
+
+// <--보상 갯수 보기
+const viewReward = async(address) => {
+    const web3 = new Web3(window.ethereum);
+    const StakingContract = await new web3.eth.Contract(
+        STAKING_CONTRACT_ABI,
+        STAKING_CONTRACT_ADDR
+    );
+    const result = await StakingContract.methods.claimableReward().call({from:address});
+    return result;
+}
 
 // <-- swap 
 const getBalnceOfJmt = async(address) => {
@@ -325,7 +424,14 @@ const contractAPI = {
     getBalnceOfLpToken,
     depositToken,
     withdrawToken,
-    upgradeWeapon
+    upgradeWeapon,
+    getBalnceOfvJmt,
+    vJMTStaking,
+    vJMTunStaking,
+    vJMTunStakingClaime,
+    vJMTStakeinfo,
+    getReward,
+    viewReward
 };
 
 export default contractAPI;
