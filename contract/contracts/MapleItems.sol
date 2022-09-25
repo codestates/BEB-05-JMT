@@ -175,7 +175,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     }
 
     function mintFirstWeapon() public {
-        require(balanceCheck(msg.sender).length==0, "ERC1155: you already have first weapon");
+        require(checkBalance(msg.sender).length==0, "ERC1155: you already have first weapon");
 
         uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % (firstMint.length);
         uint id = firstMint[n];
@@ -250,7 +250,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         _mintBatch(to, ids, amounts, data);
     }
 
-    function balanceCheck(address sender) public returns(uint256[][] memory){
+    function checkBalance(address sender) public returns(uint256[][] memory){
         uint256[][] memory balance = new uint256[][](itemCheck.length);
         uint256 count = 0;
 

@@ -7,10 +7,12 @@ const MapleFight = artifacts.require("MapleFight");
 const lpContract = artifacts.require('../contracts/LiquidityPool.sol');
 const jonMatangContract = artifacts.require('../contracts/JMToken.sol');
 const lptContract = artifacts.require('../contracts/LPT.sol');
-const routerContract = artifacts.require('../contracts/JMTRouter.sol');
+const jmtRouterContract = artifacts.require('../contracts/JMTRouter.sol');
 
 const stakingContract = artifacts.require('../contracts/Staking.sol');
 const vJmtokenContract = artifacts.require('../contracts/VJMToken.sol');
+
+const mapleRouter = artifacts.require('../contracts/MapleRouter.sol');
 
 //테스트
 const Web3 = require('web3');
@@ -52,7 +54,7 @@ module.exports = async function (deployer) {
       MapleMarket.address,
       jonMatangContract.address,
       ContractOwner
-    );    
+    );
     //Maple NFT contract instance 
     mapleNFTCont = await MapleNFT.deployed();
     mapleItemsCont = await MapleItems.deployed();
@@ -70,14 +72,14 @@ module.exports = async function (deployer) {
     await lpCont.setLPTAddress(lptCont.address);
     await lpCont.setVJMTCoinAddress(vjmtCont.address);
 
-    await deployer.deploy(routerContract,
+    await deployer.deploy(jmtRouterContract,
         lpCont.address,
         jmtCont.address
     );
 
     await deployer.deploy(MapleFight); // 전투 컨트랙트
 
-    routerCont = await routerContract.deployed();
+    routerCont = await jmtRouterContract.deployed();
     await jmtCont.setRouterAddress(routerCont.address);
     await jmtCont.setMapleNFTAddress(mapleNFTCont.address);
     await jmtCont.setMapleItemsAddress(mapleItemsCont.address);
@@ -98,7 +100,19 @@ module.exports = async function (deployer) {
     });
     await jmtCont.sendLiquidityToLPContract(lpCont.address);
 
-
+    await deployer.deploy(
+      mapleRouter,
+      mapleNFTCont.address,
+      mapleItemsCont.address,
+      mapleMarketCont.address,
+      MapleFight.address,
+      jmtCont.address,
+      vjmtCont.address,
+      stakingCont.address,
+      lpCont.address,
+      lptCont.address,
+      jmtRouterContract.address
+    );
   })
 
 

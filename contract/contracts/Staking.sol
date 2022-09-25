@@ -56,7 +56,7 @@ contract Staking is Ownable {
 
 
     //토큰 스테이킹
-    function stakeToken(uint256 stakeAmount) public payable Claimable(stakeAmount) returns(bool){
+    function stakeToken(uint256 stakeAmount) public Claimable(stakeAmount) returns(bool){
         require(stakeAmount > 0, "Stake amount should be correct"); // 양 체크
         require(addressStaked[msg.sender] == false, "You already participated"); // 스테이킹 여부
         // 언스 상태에서 스테이킹 안댐 
@@ -87,7 +87,7 @@ contract Staking is Ownable {
     }   
 
     //언스테이킹 
-    function unStakingToken() public payable {
+    function unStakingToken() public {
         require(addressStaked[msg.sender] == true, "You already participated"); // 스테이킹 여부
     
         // staking 보상 수령
@@ -105,7 +105,7 @@ contract Staking is Ownable {
     }
 
     //언스테이킹 토큰 클레임 
-    function unStakingClaime() public payable returns(bool,uint256){
+    function unStakingClaime() public returns(bool,uint256){
         require(stakeInfos[msg.sender].state == 2, "now State is Staking, Please UnStaking!!");
         if(stakeInfos[msg.sender].unStakingTime + stakingExpire < block.timestamp){ //클레임 가능 
             uint256 amount = stakeInfos[msg.sender].amount; // 스테이킹한 벨류 

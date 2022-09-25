@@ -291,7 +291,7 @@ const fetchWeapon = async (weaponId) => {
 
 const fetchMyItems = async(address) => {
     const itemsContract = await fetchItemsContract();
-    const myItems = await itemsContract.methods.balanceCheck(address).call();
+    const myItems = await itemsContract.methods.checkBalance(address).call();
     return myItems;
 }
 
