@@ -186,6 +186,10 @@
   position: absolute;
 }
 
+.nonswap-container .tab-ui .Trading-tab {
+  margin-top: 1vw;
+}
+
 .Trading-tab .Trading-ui {
   height: calc(1000vw * 9/16 * 15/350);
   width: 65vw;

@@ -71,7 +71,7 @@ const Swap = () => {
         <Liquidity></Liquidity>
       )}
       {tabIndex === 2 && (
-        <Trading></Trading>
+        <Trading initialSwap={false}></Trading>
       )}
       {tabIndex === 3 && (
         <Staking></Staking>

@@ -33,14 +33,12 @@ const NonSwap = () => {
 
       <div className="nonswap-container">
         <div className="nonswap-swap">
-          Swap
+          게임 플레이를 위해 JMT 토큰이 필요합니다.
         </div>
           <div className="tab-ui">
-            <Trading/>
+            <Trading initialSwap={true}/>
           </div>
-
       </div>
-      
     </div>
 	);
 }

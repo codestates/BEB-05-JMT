@@ -28,12 +28,10 @@ const Mint = () => {
             navigate('/login');
         } else {
             contractAPI.getBalnceOfJmt(account.address).then((value)=>{
-                console.log(value)
                 if(Number(value)===0){
                     navigate('/nonswap');
                 }
             })
-          
             setBackground({type: 'default'});
         }
     }, [account, charImg]);

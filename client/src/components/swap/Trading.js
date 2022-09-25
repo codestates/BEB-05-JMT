@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useRecoilState, useSetRecoilState, useRecoilValue} from "recoil";
 import { accountAtom } from "../../recoil/account/atom";
 import contractAPI from "../../api/contract";
+import { useNavigate } from 'react-router-dom';
 import '../styles/Token.css';
 
-function Trading() {
-
+function Trading({initialSwap}) {
+	const navigate = useNavigate();
 	const account = useRecoilValue(accountAtom);
 	const [jmtReserve,setJmtReserve] = useState(0);
 	const [ethReserve,setEthReserve] = useState(0);
@@ -40,7 +41,6 @@ function Trading() {
 			setEthAmount(value);
 			setJmtAmount(ratio*value);
 			setToToken(ratio*value);
-
 		} else{ // jmt input
 			setEthAmount(value/ratio);
 			setJmtAmount(value);
@@ -48,16 +48,16 @@ function Trading() {
 		}
 	}
 
-	const SwapToken = () => {
+	const SwapToken = async () => {
 		//console.log(parseFloat(jmtAmount).toFixed(6) +"||||"+ parseFloat(ethAmount).toFixed(6));
 		if(inputToken == 0){ 
-			contractAPI.SwapToken(ethAmount,0,account.address,inputToken).then(()=>{
-			})
+			await contractAPI.SwapToken(ethAmount,0,account.address,inputToken)
+			if (initialSwap) {
+				navigate('/mint');
+			}
 		}else if(inputToken == 1){
-			contractAPI.SwapToken(0,jmtAmount,account.address,inputToken).then(()=>{
-			})
+			await contractAPI.SwapToken(0,jmtAmount,account.address,inputToken)
 		}
-		
 	}
 
 	return (

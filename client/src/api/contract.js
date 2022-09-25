@@ -156,23 +156,22 @@ const SwapToken = async(eth,jmt,address,inputToken) =>{
     );
     if(inputToken == 0){ // eth -> jmt
         const _ethAmount = web3.utils.toWei(parseFloat(eth).toFixed(6),'ether'); // new BN(parseFloat(eth)) // new BigNumber(eth*10**18)
-        const r = routerContract.methods.swapTokens(0).send({
+        const r = await routerContract.methods.swapTokens(0).send({
             value : _ethAmount,
             from : address,
             gas: 1500000,
             gasPrice: '3000000'
         });
-        console.log(r)
+        return r;
     }else if(inputToken == 1) {// jmt -> eth 
         const _jmtAmount = web3.utils.toWei(parseFloat(jmt).toFixed(6),'ether');
-        const r =  routerContract.methods.swapTokens(_jmtAmount).send({
+        const r =  await routerContract.methods.swapTokens(_jmtAmount).send({
             from : address,
             gas: 1500000,
             gasPrice: '30000000'
         });
-        console.log(r)
+        return r;
     }
-    //console.log(result)
 } 
 
 const getBalnceOfLpToken = async(address) => {
