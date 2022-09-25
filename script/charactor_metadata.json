@@ -5,199 +5,579 @@
         "skin": [
             {
                 "itemId": "2015",
-                "rarity": 30
+                "rarity": 750
             },
             {
                 "itemId": "2011",
-                "rarity": 15
+                "rarity": 750
             },
             {
                 "itemId": "2004",
-                "rarity": 15
+                "rarity": 750
             },
             {
                 "itemId": "2019",
-                "rarity": 15
+                "rarity": 750
             },
             {
                 "itemId": "2012",
-                "rarity": 15
+                "rarity": 1500
             },
             {
                 "itemId": "2000",
-                "rarity": 10
+                "rarity": 500
             }
         ],
         "face": [
             {
-                "itemId": "54528",
-                "rarity": 15
-            },
-            {
-                "itemId": "51126",
-                "rarity": 20
-            },
-            {
                 "itemId": "25050",
-                "rarity": 20
+                "rarity": 150
             },
             {
-                "itemId": "26154",
-                "rarity": 25
+                "itemId": "25150",
+                "rarity": 150
             },
             {
-                "itemId": "54736",
-                "rarity": 20
+                "itemId": "25650",
+                "rarity": 150
+            },
+            {
+                "itemId": "25450",
+                "rarity": 150
+            },
+            {
+                "itemId": "50312",
+                "rarity": 150
+            },
+            {
+                "itemId": "50212",
+                "rarity": 150
+            },
+            {
+                "itemId": "50712",
+                "rarity": 150
+            },
+            {
+                "itemId": "50112",
+                "rarity": 150
+            },
+            {
+                "itemId": "28408",
+                "rarity": 150
+            },
+            {
+                "itemId": "28208",
+                "rarity": 150
+            },
+            {
+                "itemId": "28608",
+                "rarity": 150
+            },
+            {
+                "itemId": "54336",
+                "rarity": 150
+            },
+            {
+                "itemId": "54136",
+                "rarity": 150
+            },
+            {
+                "itemId": "54536",
+                "rarity": 150
+            },
+            {
+                "itemId": "53313",
+                "rarity": 200
+            },
+            {
+                "itemId": "53713",
+                "rarity": 200
+            },
+            {
+                "itemId": "53413",
+                "rarity": 200
+            },
+            {
+                "itemId": "51389",
+                "rarity": 100
+            },
+            {
+                "itemId": "51689",
+                "rarity": 100
+            },
+            {
+                "itemId": "51789",
+                "rarity": 100
+            },
+            {
+                "itemId": "51388",
+                "rarity": 100
+            },
+            {
+                "itemId": "51688",
+                "rarity": 100
+            },
+            {
+                "itemId": "51588",
+                "rarity": 100
+            },
+            {
+                "itemId": "25544",
+                "rarity": 100
+            },
+            {
+                "itemId": "25244",
+                "rarity": 100
+            },
+            {
+                "itemId": "25444",
+                "rarity": 100
+            },
+            {
+                "itemId": "53003",
+                "rarity": 150
+            },
+            {
+                "itemId": "53103",
+                "rarity": 150
+            },
+            {
+                "itemId": "53603",
+                "rarity": 150
+            },
+            {
+                "itemId": "53036",
+                "rarity": 100
+            },
+            {
+                "itemId": "53136",
+                "rarity": 100
+            },
+            {
+                "itemId": "53436",
+                "rarity": 100
+            },
+            {
+                "itemId": "50017",
+                "rarity": 100
+            },
+            {
+                "itemId": "50117",
+                "rarity": 100
+            },
+            {
+                "itemId": "50217",
+                "rarity": 100
+            },
+            {
+                "itemId": "51023",
+                "rarity": 70
+            },
+            {
+                "itemId": "51723",
+                "rarity": 70
+            },
+            {
+                "itemId": "51423",
+                "rarity": 70
+            },
+            {
+                "itemId": "53008",
+                "rarity": 70
+            },
+            {
+                "itemId": "28071",
+                "rarity": 70
             }
         ],
         "hair": [
             {
-                "itemId": "48640",
-                "rarity": 10
+                "itemId": "61371",
+                "rarity": 100
+            },
+            {
+                "itemId": "61375",
+                "rarity": 100
+            },
+            {
+                "itemId": "61912",
+                "rarity": 100
+            },
+            {
+                "itemId": "61917",
+                "rarity": 100
+            },
+            {
+                "itemId": "61150",
+                "rarity": 200
             },
             {
                 "itemId": "61151",
-                "rarity": 10
-            },
-            {
-                "itemId": "60504",
-                "rarity": 10
-            },
-            {
-                "itemId": "60315",
-                "rarity": 10
-            },
-            {
-                "itemId": "61834",
-                "rarity": 10
-            },
-            {
-                "itemId": "64001",
-                "rarity": 10
-            },
-            {
-                "itemId": "60457",
-                "rarity": 10
+                "rarity": 200
             },
             {
                 "itemId": "61153",
-                "rarity": 10
+                "rarity": 150
             },
             {
-                "itemId": "61414",
-                "rarity": 10
+                "itemId": "47631",
+                "rarity": 100
             },
             {
-                "itemId": "61393",
-                "rarity": 5
+                "itemId": "47630",
+                "rarity": 100
             },
             {
-                "itemId": "61371",
-                "rarity": 5
+                "itemId": "48370",
+                "rarity": 100
+            },
+            {
+                "itemId": "48377",
+                "rarity": 100
+            },
+            {
+                "itemId": "47740",
+                "rarity": 100
+            },
+            {
+                "itemId": "61122",
+                "rarity": 50
+            },
+            {
+                "itemId": "48640",
+                "rarity": 200
+            },
+            {
+                "itemId": "48644",
+                "rarity": 50
+            },
+            {
+                "itemId": "61550",
+                "rarity": 200
+            },
+            {
+                "itemId": "61557",
+                "rarity": 100
+            },
+            {
+                "itemId": "61405",
+                "rarity": 50
+            },
+            {
+                "itemId": "61404",
+                "rarity": 50
+            },
+            {
+                "itemId": "61307",
+                "rarity": 100
+            },
+            {
+                "itemId": "61306",
+                "rarity": 100
+            },
+            {
+                "itemId": "48350",
+                "rarity": 50
+            },
+            {
+                "itemId": "48340",
+                "rarity": 50
+            },
+            {
+                "itemId": "61700",
+                "rarity": 50
+            },
+            {
+                "itemId": "60313",
+                "rarity": 100
+            },
+            {
+                "itemId": "60315",
+                "rarity": 200
+            },
+            {
+                "itemId": "64000",
+                "rarity": 100
+            },
+            {
+                "itemId": "64007",
+                "rarity": 100
+            },
+            {
+                "itemId": "60470",
+                "rarity": 100
+            },
+            {
+                "itemId": "60475",
+                "rarity": 100
+            },
+            {
+                "itemId": "60162",
+                "rarity": 50
+            },
+            {
+                "itemId": "60161",
+                "rarity": 50
+            },
+            {
+                "itemId": "43810",
+                "rarity": 100
+            },
+            {
+                "itemId": "43817",
+                "rarity": 100
+            },
+            {
+                "itemId": "46800",
+                "rarity": 100
+            },
+            {
+                "itemId": "46807",
+                "rarity": 100
+            },
+            {
+                "itemId": "60295",
+                "rarity": 50
+            },
+            {
+                "itemId": "60294",
+                "rarity": 50
+            },
+            {
+                "itemId": "60171",
+                "rarity": 200
+            },
+            {
+                "itemId": "60176",
+                "rarity": 200
+            },
+            {
+                "itemId": "60183",
+                "rarity": 100
+            },
+            {
+                "itemId": "60185",
+                "rarity": 100
+            },
+            {
+                "itemId": "61140",
+                "rarity": 50
+            },
+            {
+                "itemId": "61144",
+                "rarity": 50
+            },
+            {
+                "itemId": "46070",
+                "rarity": 100
+            },
+            {
+                "itemId": "46075",
+                "rarity": 100
+            },
+            {
+                "itemId": "60502",
+                "rarity": 200
+            },
+            {
+                "itemId": "60506",
+                "rarity": 100
             }
         ],
         "clothes": [
             {
-                "itemId": "1050537",
-                "rarity": 15
+                "itemId": "1053725",
+                "rarity": 200
+            },
+            {
+                "itemId": "1053768",
+                "rarity": 500
+            },
+            {
+                "itemId": "1053192",
+                "rarity": 500
+            },
+            {
+                "itemId": "1051276",
+                "rarity": 200
+            },
+            {
+                "itemId": "1052236",
+                "rarity": 300
             },
             {
                 "itemId": "1050523",
-                "rarity": 15
+                "rarity": 300
             },
             {
-                "itemId": "1050542",
-                "rarity": 20
+                "itemId": "1050489",
+                "rarity": 400
             },
             {
-                "itemId": "1053871",
-                "rarity": 20
+                "itemId": "1050302",
+                "rarity": 200
             },
             {
-                "itemId": "1053644",
-                "rarity": 10
+                "itemId": "1053141",
+                "rarity": 500
             },
             {
                 "itemId": "1050452",
-                "rarity": 20
+                "rarity": 300
+            },
+            {
+                "itemId": "1050313",
+                "rarity": 200
+            },
+            {
+                "itemId": "1052405",
+                "rarity": 200
+            },
+            {
+                "itemId": "1050537",
+                "rarity": 500
+            },
+            {
+                "itemId": "1051554",
+                "rarity": 200
+            }
+            {
+                "itemId": "1050542",
+                "rarity": 300
+            },
+            {
+                "itemId": "1053644",
+                "rarity": 200
             }
         ],
         "shoes": [
             {
-                "itemId": "1072758",
-                "rarity": 30
-            },
-            {
                 "itemId": "1072259",
-                "rarity": 35
+                "rarity": 500
             },
             {
-                "itemId": "1072529",
-                "rarity": 35
+                "itemId": "1072258",
+                "rarity": 500
+            },
+            {
+                "itemId": "1072832",
+                "rarity": 300
+            },
+            {
+                "itemId": "1072998",
+                "rarity": 300
+            },
+            {
+                "itemId": "1073331",
+                "rarity": 500
+            },
+            {
+                "itemId": "1073664",
+                "rarity": 400
+            },
+            {
+                "itemId": "1071146",
+                "rarity": 300
+            },
+            {
+                "itemId": "1073037",
+                "rarity": 400
+            },
+            {
+                "itemId": "1073611",
+                "rarity": 400
+            },
+            {
+                "itemId": "1073545",
+                "rarity": 400
+            },
+            {
+                "itemId": "1073437",
+                "rarity": 500
+            },
+            {
+                "itemId": "1073298",
+                "rarity": 400
+            },
+            {
+                "itemId": "1073670",
+                "rarity": 200
             }
         ],
         "eye_decoration": [
             {
                 "itemId": "none",
-                "rarity": 80
+                "rarity": 4100
+            },
+            {
+                "itemId": "1022285",
+                "rarity": 200
             },
             {
                 "itemId": "1022033",
-                "rarity": 10
-            },
-            {
-                "itemId": "1022015",
-                "rarity": 10
-            },
-            {
-                "itemId": "1022027",
-                "rarity": 5
-            },
-            {
-                "itemId": "1022033",
-                "rarity": 5
-            },
-            {
-                "itemId": "1022292",
-                "rarity": 5
-            },
-            {
-                "itemId": "1022247",
-                "rarity": 5
+                "rarity": 200
             },
             {
                 "itemId": "1022042",
-                "rarity": 5
+                "rarity": 100
+            },
+            {
+                "itemId": "1022287",
+                "rarity": 50
+            },
+            {
+                "itemId": "1022027",
+                "rarity": 100
+            },
+            {
+                "itemId": "1022030",
+                "rarity": 50
+            },
+            {
+                "itemId": "1022014",
+                "rarity": 50
+            },
+            {
+                "itemId": "1022296",
+                "rarity": 50
+            },
+            {
+                "itemId": "1022059",
+                "rarity": 50
+            },
+            {
+                "itemId": "1022034",
+                "rarity": 50
             }
         ],
         "face_accessory": [
             {
                 "itemId": "none",
-                "rarity": 60
+                "rarity": 3000
             },
             {
                 "itemId": "1012703",
-                "rarity": 10
+                "rarity": 500
             },
             {
                 "itemId": "1012085",
-                "rarity": 10
+                "rarity": 500
             },
             {
                 "itemId": "1012551",
-                "rarity": 3
+                "rarity": 100
             },
             {
                 "itemId": "1012419",
-                "rarity": 7
+                "rarity": 350
             },
             {
                 "itemId": "1011006",
-                "rarity": 5
+                "rarity": 300
             },
             {
                 "itemId": "1010007",
-                "rarity": 5
+                "rarity": 250
             }
         ]
     }
