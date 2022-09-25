@@ -89,12 +89,13 @@ function Trading() {
 						placeholder={inputToken == 0 ? "JMT Amount":"ETH Amount"} 
 						value={toToken}
 						className="lp-input" 
-						style={{"color":"rgba(0, 0, 0, 0.6)","backgroundColor":"rgba(105, 104, 79, 0.16)"}}/>
+						style={{"color":"rgba(0, 0, 0, 0.6)"}}/>
 					</div>
-					<button className="change-btn" onClick={()=>ChangeToken()} >바꾸기</button>
 				</div>
-			
-				<button className="swap-btn" onClick={()=>SwapToken()} >스왑</button>
+				<div className="swap-btn-container">
+					<button className="change-btn" onClick={ChangeToken}>방향 변경</button>
+					<button className="swap-btn" onClick={SwapToken}>스왑</button>
+				</div>
 			</div>
 		</div>
 	);

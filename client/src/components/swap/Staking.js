@@ -26,6 +26,7 @@ function Staking() {
       balanceOfreward();
       stakeinfo();
     }
+    console.log(state);
 	}, [])
 
   const balanceOfToken = async () => {
@@ -105,7 +106,7 @@ function Staking() {
       </div>
 
       <div className="staking-go">
-        {state === '0' ? 
+        {state? (state === '0' ? 
           <div className="staking-rego">
             <input 
                 type="text" 
@@ -135,7 +136,7 @@ function Staking() {
               <button className="unstaking-btn" onClick={() => unstakingClaime()}>클레임</button>
             </div>
           </div>
-          )}
+          )): null}
       </div>
     </div>
   )

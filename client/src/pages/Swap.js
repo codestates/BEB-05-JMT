@@ -27,7 +27,7 @@ const Swap = () => {
     }
   }, []);
 
-  const handleTabChange = (event, newTabIndex) => {
+  const handleTabChange = (newTabIndex) => {
     setTabIndex(newTabIndex);
   };
 
@@ -41,43 +41,43 @@ const Swap = () => {
     fontFamily: "inherit"
   }
 
+  const tabClassname = (idx) =>
+    tabIndex === idx ? 'token-tab-clicked token-tab' : 'token-tab';
+
 	return (
     <div className="token-container">
-        <Tabs value={tabIndex} onChange={handleTabChange} variant="fullWidth">
-          <Tab className="token-tab" label="토큰 정보" id='1'  style={divStyle}/>
-          <Tab className="token-tab" label="유동성 관리" id='2' style={divStyle}/>
-          <Tab className="token-tab" label="토큰 교환" id='3' style={divStyle}/>
-          <Tab className="token-tab" label="스테이킹" id='4' style={divStyle}/>
-        </Tabs>
-      
-  
+      <div className="token-tab-container">
+        <div
+          className={tabClassname(0)}
+          onClick={() => handleTabChange(0)}
+        >토큰 정보</div>
+        <div
+          className={tabClassname(1)}
+          onClick={() => handleTabChange(1)}
+        >유동성 관리</div>
+        <div
+          className={tabClassname(2)}
+          onClick={() => handleTabChange(2)}
+        >토큰 교환</div>
+        <div
+          className={tabClassname(3)}
+          onClick={() => handleTabChange(3)}
+        >스테이킹</div>
+      </div>
       {tabIndex === 0 && (
         <TokenInfo></TokenInfo>
       )}
-
       {tabIndex === 1 && (
         <Liquidity></Liquidity>
       )}
-
       {tabIndex === 2 && (
         <Trading></Trading>
       )}
-
       {tabIndex === 3 && (
         <Staking></Staking>
       )}
-      
-      </div>
+    </div>
 	);
 }
 
 export default Swap;
- // <TabPanel value={menue} index={1}>
-      //   Item One
-      // </TabPanel>
-      // <TabPanel value={menue} index={2}>
-      //   Item Two
-      // </TabPanel>
-      // <TabPanel value={menue} index={3}>
-      //   Item Three
-      // </TabPanel>

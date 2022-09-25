@@ -86,7 +86,7 @@
     min-width: calc(100vw * 140/620);
     background-color: #FE7427;
     height: 100%;
-    font-size: 3vw;
+    font-size: 2.4vw;
 }
 
 .nav-item:hover {

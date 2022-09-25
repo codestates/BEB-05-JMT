@@ -1,10 +1,33 @@
-.token-tab {
-  width: calc(100vw * 100/620);
-  background-color: #fe7227e7;
-  border-radius: 1vw;
-  margin-right: calc(1vw * 100/620);
-  color:  #ffffff;
-  font-size: calc(90vw * 11/620);
-  font-family: inherit;
+.token-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.token-tab-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.token-tab {
+  margin-top: 1.5vw;
+  width: calc(98vw * 100/620);
+  height: calc(100vw * 20/620);
+  line-height: calc(100vw * 20/620);
+  background-color: #ffb48bbe;
+  border-radius: 1vw;
+  margin-right: calc(3vw * 100/620);
+  color:  #ffffff;
+  font-size: calc(90vw * 11/620);
+  cursor: pointer;
+}
+
+.token-tab:hover {
+  background-color: #fe7227e7;
+}
+
+.token-tab-clicked {
+  background-color: #fe7227e7;
+}

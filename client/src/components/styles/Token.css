@@ -8,84 +8,87 @@
   margin: 1.4vw 0;
   margin-left: 1vw;
   text-align: center;
+  outline: none;
 }
 
 .text-size {
-font-size: 1.7vw;
+  font-size: 1.7vw;
 }
-
 
 /* 토큰 정보 tab */
 
 .TokenInfo-tab {
-/* background-color: rgba(255, 245, 225, 0.7);
-border-radius: 1vw; */
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(65vw);
-margin-top: calc(1vw);;
-position: absolute;
+  /* background-color: rgba(255, 245, 225, 0.7);
+  border-radius: 1vw; */
+  height: calc(1000vw * 9/16 * 15/350);
+  width: calc(65vw);
+  margin-top: 30.5vw;
+  position: absolute;
 }
 
 .TokenInfo-tab .token-info {
-background-color: rgba(255, 245, 225, 0.7);
-border-radius: 1vw;
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-position: absolute;
+  background-color: rgba(255, 245, 225, 0.7);
+  border-radius: 1vw;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  position: absolute;
 }
 
 .TokenInfo-tab .token-info .token-info1 {
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-margin-top: 6.5vw;
-position: absolute;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  margin-top: 6.5vw;
+  position: absolute;
 }
 
 .TokenInfo-tab .token-info .token-info1 .token-wallet {
-margin-bottom: 2.5vw;
+  margin-bottom: 2.5vw;
 }
 
 .TokenInfo-tab .token-info .token-info1 .token-wallet .token-address {
-font-size: 1.1vw;
-margin-top: 1vw;
+  font-size: 1.1vw;
+  margin-top: 1vw;
 }
 
 .TokenInfo-tab .token-info .token-info1 .token-amount {
-font-size: 1.3vw;
-margin-top: 1vw;
+  font-size: 1.3vw;
+  margin-top: 1vw;
 }
 
 /* <----> */
 
 .TokenInfo-tab .send-token {
-background-color: rgba(255, 245, 225, 0.7);
-border-radius: 1vw;
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-margin-left: calc(33vw);
-position: absolute;
+  background-color: rgba(255, 245, 225, 0.7);
+  border-radius: 1vw;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  margin-left: calc(33vw);
+  position: absolute;
 }
 
 .TokenInfo-tab .send-token .send-input {
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-margin-top: 4.5vw;
-position: absolute;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  margin-top: 4.5vw;
+  position: absolute;
 }
 
 .TokenInfo-tab .send-token .send-input .send-btn {
-position: absolute;
-cursor:pointer;
-right: 12.5vw;
-bottom: 10vw;
-width: 8vw;
-height: 3vw;
-line-height: 2.5vw;
-border-radius: 1vw;
-background-color: #fe7227e7;
-color:  #ffffff;
-font-family: inherit;
-font-size: 1.5vw;
+  position: absolute;
+  cursor:pointer;
+  right: 12.5vw;
+  bottom: 10vw;
+  width: 8vw;
+  height: 3vw;
+  line-height: 2.5vw;
+  border-radius: 1vw;
+  background-color: #fe7227e7;
+  border-color: #fe7227e7;
+  outline: none;
+  border-style: solid;
+  color:  #ffffff;
+  font-family: inherit;
+  font-size: 1.5vw;
 }
 
 
@@ -93,75 +96,81 @@ font-size: 1.5vw;
 /* 유동성 관리 tab */
 
 .Liquidity-tab {
-/* background-color: rgba(255, 245, 225, 0.7); */
-/* border-radius: 1vw; */
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(65vw);
-margin-top: calc(1vw);;
-position: absolute;
+  /* background-color: rgba(255, 245, 225, 0.7); */
+  /* border-radius: 1vw; */
+  height: calc(1000vw * 9/16 * 15/350);
+  width: calc(65vw);
+  margin-top: 30.5vw;
+  position: absolute;
 }
 
 .Liquidity-tab .deposit-ui {
-background-color: rgba(255, 245, 225, 0.7);
-border-radius: 1vw;
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-position: absolute;
+  background-color: rgba(255, 245, 225, 0.7);
+  border-radius: 1vw;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  position: absolute;
 }
 
 .Liquidity-tab .deposit-ui .deposit-input{
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-margin-top: 4.5vw;
-position: absolute;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  margin-top: 4.5vw;
+  position: absolute;
 }
 
 .Liquidity-tab .deposit-ui .deposit-input .deposit-btn{
-position: absolute;
-cursor:pointer;
-right: 12vw;
-bottom: 10vw;
-width: 8vw;
-height: 3vw;
-line-height: 2.5vw;
-border-radius: 1vw;
-background-color: #fe7227e7;
-color:  #ffffff;
-font-family: inherit;
-font-size: 1.5vw;
+  position: absolute;
+  cursor:pointer;
+  right: 12vw;
+  bottom: 10vw;
+  width: 8vw;
+  height: 3vw;
+  line-height: 2.5vw;
+  border-radius: 1vw;
+  background-color: #fe7227e7;
+  border-color: #fe7227e7;
+  outline: none;
+  border-style: solid;
+  color:  #ffffff;
+  font-family: inherit;
+  font-size: 1.5vw;
 }
 
 /* <----> */
 
 .Liquidity-tab .lp-ui {
-background-color: rgba(255, 245, 225, 0.7);
-border-radius: 1vw;
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-margin-left: calc(33vw);
-position: absolute;
+  background-color: rgba(255, 245, 225, 0.7);
+  border-radius: 1vw;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  margin-left: calc(33vw);
+  position: absolute;
 }
 
 .Liquidity-tab .lp-ui .with-ui {
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-margin-top: 8vw;
-position: absolute;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  margin-top: 8vw;
+  position: absolute;
 }
 
 .Liquidity-tab .lp-ui .with-ui .with-btn {
-position: absolute;
-cursor:pointer;
-right: 12.5vw;
-bottom: 16vw;
-width: 8vw;
-height: 3vw;
-line-height: 2.5vw;
-border-radius: 1vw;
-background-color: #fe7227e7;
-color:  #ffffff;
-font-family: inherit;
-font-size: 1.5vw;
+  position: absolute;
+  cursor:pointer;
+  right: 12.5vw;
+  bottom: 16vw;
+  width: 8vw;
+  height: 3vw;
+  line-height: 2.5vw;
+  border-radius: 1vw;
+  background-color: #fe7227e7;
+  border-color: #fe7227e7;
+  outline: none;
+  border-style: solid;
+  color:  #ffffff;
+  font-family: inherit;
+  font-size: 1.5vw;
 }
 
 
@@ -169,53 +178,60 @@ font-size: 1.5vw;
 /* 교환 tab */
 
 .Trading-tab {
-background-color: rgba(255, 245, 225, 0.7);
-border-radius: 1vw;
-height: calc(1000vw * 9/16 * 15/350);
-width: 65vw;
-margin-top: 1vw;
-position: absolute;
+  background-color: rgba(255, 245, 225, 0.7);
+  border-radius: 1vw;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 65vw;
+  margin-top: 30.5vw;
+  position: absolute;
 }
 
 .Trading-tab .Trading-ui {
-height: calc(1000vw * 9/16 * 15/350);
-width: 65vw;
-margin-top: 2vw;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 65vw;
+  margin-top: 2vw;
 }
 
 .Trading-tab .Trading-ui .exchange-rate{
-margin-bottom: 1vw;
+  margin-bottom: 1vw;
 }
 
 .Trading-tab .Trading-ui .exchange-rate .exchange-rate-text {
-margin-bottom: 1vw;
-font-size: 2vw;
+  margin-bottom: 1vw;
+  font-size: 2vw;
 }
 
-.Trading-tab .Trading-ui .input-amounts .change-btn {
-cursor:pointer;
-width: 8vw;
-height: 3vw;
-line-height: 2.5vw;
-border-radius: 1vw;
-background-color: #3945ece7;
-color:  #ffffff;
-font-family: inherit;
-font-size: 1.5vw;
-margin-bottom: -1vw;
+.Trading-tab .Trading-ui .swap-btn-container .change-btn {
+  cursor:pointer;
+  width: 8vw;
+  height: 3vw;
+  line-height: 2.5vw;
+  border-radius: 1vw;
+  background-color: #3945ece7;
+  border-color: #3945ece7;
+  outline: none;
+  border-style: solid;
+  color:  #ffffff;
+  font-family: inherit;
+  font-size: 1.5vw;
+  margin-bottom: -1vw;
+  margin-right: 1vw;
 }
 
 .Trading-tab .Trading-ui .swap-btn {
-cursor:pointer;
-width: 15vw;
-height: 3vw;
-line-height: 2.5vw;
-border-radius: 1vw;
-margin-top: 1.5vw;
-background-color: #fe7227e7;
-color:  #ffffff;
-font-family: inherit;
-font-size: 1.5vw;
+  cursor:pointer;
+  width: 8vw;
+  height: 3vw;
+  line-height: 2.5vw;
+  border-radius: 1vw;
+  margin-top: 1.5vw;
+  background-color: #fe7227e7;
+  border-color: #fe7227e7;
+  outline: none;
+  border-style: solid;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.5vw;
 }
 
 
@@ -223,81 +239,85 @@ font-size: 1.5vw;
 /* 스테이킹 tab */
 
 .staking-tab {
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(65vw);
-margin-top: calc(1vw);;
-position: absolute;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: calc(65vw);
+  margin-top: 30.5vw;
+  position: absolute;
 }
 
 .staking-tab .staking-info {
-background-color: rgba(255, 245, 225, 0.7);
-border-radius: 1vw;
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-position: absolute;
+  background-color: rgba(255, 245, 225, 0.7);
+  border-radius: 1vw;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  position: absolute;
 }
 
 .staking-tab .staking-info .APR {
   margin-top: 1vw;
   margin-right: 21.5vw;
   font-size: 1.7vw;
-  text-decoration: underline;
+  /* 다른 화면과 같은 게임으로 느껴질 수 있게 일관성있는 심플한 디자인이 필요합니다. */
+  /* text-decoration: underline;
   text-decoration-color:#ff8c00;
-  text-decoration-style: wavy;
+  text-decoration-style: wavy; */
 }
 
 .staking-tab .staking-info .staking-ui {
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-margin-top: 2vw;
-position: absolute;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  margin-top: 2vw;
+  position: absolute;
 }
 
 .staking-tab .staking-info .staking-ui .staking-uinfo {
-margin-bottom: 1vw;
+  margin-bottom: 1vw;
 }
 
 .staking-tab .staking-info .staking-ui .vtoken-amount{
-font-size: 1.3vw;
-margin-top: 1vw;
+  font-size: 1.3vw;
+  margin-top: 1vw;
 }
 
 .staking-tab .staking-info .staking-ui .vtoken-reward{
-font-size: 1.3vw;
-margin-top: 1vw;
+  font-size: 1.3vw;
+  margin-top: 1vw;
 }
 
 .staking-tab .staking-info .staking-ui .reward-btn {
-position: absolute;
-cursor:pointer;
-right: 12vw;
-bottom: 10vw;
-width: 8vw;
-height: 3vw;
-line-height: 2.5vw;
-border-radius: 1vw;
-background-color: #fe7227e7;
-color:  #ffffff;
-font-family: inherit;
-font-size: 1.5vw;
+  position: absolute;
+  cursor:pointer;
+  right: 12vw;
+  bottom: 10vw;
+  width: 8vw;
+  height: 3vw;
+  line-height: 2.5vw;
+  border-radius: 1vw;
+  background-color: #fe7227e7;
+  border-color: #fe7227e7;
+  outline: none;
+  border-style: solid;
+  color:  #ffffff;
+  font-family: inherit;
+  font-size: 1.5vw;
 }
 
 /* <----> */
 
 .staking-tab .staking-go {
-background-color: rgba(255, 245, 225, 0.7);
-border-radius: 1vw;
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-margin-left: calc(33vw);
-position: absolute;
+  background-color: rgba(255, 245, 225, 0.7);
+  border-radius: 1vw;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  margin-left: calc(33vw);
+  position: absolute;
 }
 
 .staking-tab .staking-go .staking-rego {
-height: calc(1000vw * 9/16 * 15/350);
-width: calc(32vw);
-margin-top: 5vw;
-position: absolute;
+  height: calc(1000vw * 9/16 * 15/350);
+  width: 32vw;
+  margin-top: 5vw;
+  position: absolute;
 }
 
 .staking-tab .staking-go .staking-rego .staking-input {
@@ -313,41 +333,46 @@ position: absolute;
 }
 
 .staking-tab .staking-go .staking-rego .staking-rego1{
-margin-top: 2.5vw;
+  margin-top: 2.5vw;
 }
 
 .staking-tab .staking-go .staking-rego .staking-rego1 .staking-text{
-font-size: 1.3vw;
-margin-top: 1vw;
+  font-size: 1.3vw;
+  margin-top: 1vw;
 }
 
 .staking-tab .staking-go .staking-rego .staking-btn{
-position: absolute;
-cursor:pointer;
-right: 12.5vw;
-bottom: 13vw;
-width: 7vw;
-height: 3vw;
-line-height: 2.5vw;
-border-radius: 1vw;
-background-color: #fe7227e7;
-color:  #ffffff;
-font-family: inherit;
-font-size: 1.1vw;
+  position: absolute;
+  cursor:pointer;
+  right: 11.5vw;
+  bottom: 13vw;
+  width: 9vw;
+  height: 3vw;
+  line-height: 2.5vw;
+  border-radius: 1vw;
+  background-color: #fe7227e7;
+  border-color: #fe7227e7;
+  outline: none;
+  border-style: solid;
+  color:  #ffffff;
+  font-family: inherit;
+  font-size: 1.5vw;
 }
 
 .staking-tab .staking-go .staking-rego .unstaking-btn{
-position: absolute;
-cursor:pointer;
-left: 12.5vw;
-bottom: 13vw;
-width: 7vw;
-height: 3vw;
-line-height: 2.5vw;
-border-radius: 1vw;
-background-color: #fe7227e7;
-color:  #ffffff;
-font-family: inherit;
-font-size: 1.1vw;
+  position: absolute;
+  cursor:pointer;
+  left: 12vw;
+  bottom: 12vw;
+  width: 8vw;
+  height: 3vw;
+  line-height: 2.5vw;
+  border-radius: 1vw;
+  background-color: #fe7227e7;
+  border-color: #fe7227e7;
+  outline: none;
+  border-style: solid;
+  color:  #ffffff;
+  font-family: inherit;
+  font-size: 1.5vw;
 }
-  
