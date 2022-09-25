@@ -4,10 +4,6 @@
 
 메이플스토리 에셋을 활용한 수집형 NFT 웹 게임
 
-## 폰트 설치
-
-https://maplestory.nexon.com/Media/Font
-
 ## 환경 설정
 
 - npm install 명령어로 모듈 설치 
