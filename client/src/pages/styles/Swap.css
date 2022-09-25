@@ -18,7 +18,7 @@
   line-height: calc(100vw * 20/620);
   background-color: #ffb48bbe;
   border-radius: 1vw;
-  margin-right: calc(3vw * 100/620);
+  margin-right: 0.5vw;
   color:  #ffffff;
   font-size: calc(90vw * 11/620);
   cursor: pointer;
