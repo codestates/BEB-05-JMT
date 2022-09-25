@@ -8,7 +8,6 @@ import Trading from "../components/swap/Trading";
 import Liquidity from "../components/swap/Liquidity";
 import TokenInfo from "../components/swap/TokenInfo";
 import Staking from "../components/swap/Staking";
-import { Tab, Tabs } from '@mui/material';
 import "./styles/Swap.css";
 
 const Swap = () => {
