@@ -65,6 +65,9 @@ create database jmt
 
 # server 폴더에서
 npx sequelize db:migrate
+
+# script 폴더에서
+node upload_character_attributes_db.js
 ```
 
 ### 컨트랙트 재설정
