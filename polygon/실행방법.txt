@@ -1,0 +1,67 @@
+//설치, 모든 과정은 리눅스 기준 입니다, 맥은 알아봐야함..참고링크 확인해서 체크 
+- Go 언어 설치
+0. cd polygon
+1. chomod 777 GoInstall.sh 
+2. ./GoInstall.sh 
+3. source ~/.profile
+4. go version (버전 확인, 터미널 새로열고 확인) 
+
+- polygon 설치
+0. cd polygon
+1. git clone https://github.com/0xPolygon/polygon-edge.git
+2. cd polygon-edge/
+3. go build -o polygon-edge main.go
+4. sudo mv polygon-edge /usr/local/bin
+5. polygon-edge 터미널에 명령어 입력으로 설치 여부 확인
+
+//로컬 노드 구성 
+1. cd polygone-edge/
+2. polygon-edge secrets init --data-dir test-chain-1
+3. polygon-edge secrets init --data-dir test-chain-2
+4. 디렉토리 생성 되었는지 확인 (test-chain-1, test-chain-2)
+5. 터미널에 아래 출력물 복사해서 저장 두기 
+
+[SECRETS INIT]
+Public key (address) = 0xC05a1014aa3E6883FF7AC35fb472fC54b29b161a
+BLS Public key       = 0x97b14f6cfd192c8cf57235092b2ce80b155fc257a906ae2cc32d45d468351b58169044de66380a3136c3324313ccb497
+Node ID              = 16Uiu2HAmNg41zjmzBFyTxGLxTnk6NRbArqkodasGxkAo41Wc3vbe
+
+6. polyon-edge genesis --consensus ibft --ibft-validators-prefix-path test-chain- (기본 명령어) 
+6-1. 부트 노드 설정 --bootnode /ip4/127.0.0.1/tcp/10001/p2p/<아까 저장해둔 Node ID>
+6-2. 체인 ID 설정: --chain-id 2999
+6-3. MATIC 얻는법 : --premine=<메타마스크 지갑주소>:5000000000000000000000
+6-4. 가스 제한 : --block-gas-limit 10000000
+ex) polyon-edge genesis --consensus ibft --ibft-validators-prefix-path test-chain- --bootnode /ip4/127.0.0.1/tcp/10001/p2p/16Uiu2HAmNg41zjmzBFyTxGLxTnk6NRbArqkodasGxkAo41Wc3vbe --bootnode /ip4/127.0.0.1/tcp/20001/p2p/16Uiu2HAm3n4KNqt18dBNPsHoPopegPWxc5MovMqnPUfuzgPmuAm2 --chain-id 3989 --premine=0x28dFA4E83C135CC2f06dA73713034cEEAfa85d5D:5000000000000000000000 --block-gas-limit 10000000
+7. genesis.json 파일 생성되었는지 확인
+
+// 노드 실행 
+1. 터미널1 -> polyon-edge server --data-dir ./test-chain-1 --chain genesis.json --grpc-address :10000 --libp2p :10001 --jsonrpc :10002 --seal
+2. 터미널2 -> polygon-edge server --data-dir ./test-chain-2 --chain genesis.json --grpc-address :20000 --libp2p :20001 --jsonrpc :20002 --seal
+
+*주의 사항 
+1. 위에 모든 포트번호는 위와 같이 동일하게 해주세요 조금만 틀려도 오류찾느라 고생하실수도있습니다 (10001,10000,10001 등등)  
+2. NodeID 설정은 반드시 본인걸로 하셔야합니다 
+3. 노드 실행시 MATIC을 얻는법은 위와같습니다 wei형태이니 숫자에 주의하세요 
+4. 노드는 최소 두개를 실행하셔야합니다 터미널 두개를 여셔야합니다 
+5. sudo mv polygon-edge /usr/local/bin  명령어는 글로벌로 실행할수있게 하는 방법입니다 맥은 다를수있습니다 
+
+// 트러플 배포 
+1. cd contract/
+2. mkdir .secret , 메타마스크 니모닉 키 붙여넣기 (설정 -> 보안및 개인정보 보호)
+3. npm install @truffle/hdwallet-provider
+4. polygon/truffle-config-example.png 참고해서 환경설정 구성하기 
+5. 이후 컴파일및 마이그레이션 과정은 똑같습니다 
+
+*주의 사항
+1. 마이그레이션시 web3 RPC주소를 http://127.0.0.1:10002 설정하셔야합니다 
+2. 가나'치' 에서 가져온 계정은 사용이 불가능하니 사용하지마세요, 메타마스크에서 별도의 계정을 만드세요
+
+
+------------------------------------------------------------------------------------------------------------------
+참고 링크 
+https://wiki.polygon.technology/docs/edge/get-started/installation
+//로컬 설정 
+https://wiki.polygon.technology/docs/edge/get-started/set-up-ibft-locally
+https://medium.com/@asvarma1993/setting-up-local-polygone-edge-node-deploying-erc20-token-contracts-using-hardhat-token-import-8f1c0e73e9e9
+//폴리곤 배포 트러플 설정 
+https://wiki.polygon.technology/docs/develop/truffle/

@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "@maticnetwork/maticjs-web3": "^1.0.2",
     "@openzeppelin/contracts": "^4.7.3",
     "@remix-project/remixd": "^0.6.6",
+    "@truffle/hdwallet-provider": "^2.0.15",
     "@uniswap/v2-core": "^1.0.1",
     "@uniswap/v2-periphery": "^1.1.0-beta.0",
     "bignumber.js": "^9.1.0",

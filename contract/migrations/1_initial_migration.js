@@ -1,4 +1,4 @@
-const ContractOwner = '0xC2DF4CeF5c282e0e1630B036D1A97A015E1De3e3' //오너,가나슈(index[0])
+const ContractOwner = '0x59dd7D8B4FD619Ef3e90924d5bC633b1277E4b5C' //오너,가나슈(index[0])
 const MapleNFT= artifacts.require("MapleNFT");
 const MapleMarket= artifacts.require("MapleMarket");
 const MapleItems = artifacts.require("MapleItems");
@@ -15,7 +15,7 @@ const vJmtokenContract = artifacts.require('../contracts/VJMToken.sol');
 //테스트
 const Web3 = require('web3');
 const web3 = new Web3();
-web3.setProvider(new Web3.providers.HttpProvider('http://127.0.0.1:7545')); //테스트시 본인 가나치 포트에 맞추세요
+web3.setProvider(new Web3.providers.HttpProvider('http://127.0.0.1:7545')); //테스트시 본인 가나치 포트에 맞추세요 10002
 
 module.exports = async function (deployer) {
 

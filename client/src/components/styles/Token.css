@@ -14,7 +14,10 @@
 .text-size {
   font-size: 1.7vw;
 }
-
+.text-size2 {
+  font-size: 1.7vw;
+  color: #3945ece7;
+}
 /* 토큰 정보 tab */
 
 .TokenInfo-tab {
@@ -158,20 +161,38 @@
 .Liquidity-tab .lp-ui .with-ui .with-btn {
   position: absolute;
   cursor:pointer;
-  right: 12.5vw;
-  bottom: 16vw;
+  right: 12.4vw;
+  bottom: 15vw;
   width: 8vw;
+  height: 3vw;
+  line-height: 2.5vw;
+  border-radius: 1vw;
+  background-color: #3945ece7;
+  border-color: #3945ece7;
+  color:  #ffffff;
+  outline: none;
+  border-style: solid;
+  font-family: inherit;
+  font-size: 1.5vw;
+  }
+  
+  .Liquidity-tab .lp-ui .with-ui .with-btn2 {
+  position: absolute;
+  cursor:pointer;
+  right: 8.9vw;
+  bottom: 11vw;
+  width: 15vw;
   height: 3vw;
   line-height: 2.5vw;
   border-radius: 1vw;
   background-color: #fe7227e7;
   border-color: #fe7227e7;
+  color:  #ffffff;
   outline: none;
   border-style: solid;
-  color:  #ffffff;
   font-family: inherit;
   font-size: 1.5vw;
-}
+  }
 
 
 /* --------------------------------------------------------------------- */
@@ -266,6 +287,33 @@
   text-decoration-color:#ff8c00;
   text-decoration-style: wavy; */
 }
+
+ .APR2 {
+  margin-right: 1.5vw;
+  font-size: 1.7vw;
+  position: absolute;
+  cursor:pointer;
+  right: 19vw;
+  bottom: 27.5vw;
+  width: 11vw;
+  height: 3vw;
+}
+/* position: absolute;
+cursor:pointer;
+right: 12vw;
+bottom: 10vw;
+width: 8vw;
+height: 3vw;
+line-height: 2.5vw;
+border-radius: 1vw;
+background-color: #fe7227e7;
+border-color: #fe7227e7;
+outline: none;
+border-style: solid;
+color:  #ffffff;
+font-family: inherit;
+font-size: 1.5vw; */
+
 
 .staking-tab .staking-info .staking-ui {
   height: calc(1000vw * 9/16 * 15/350);
