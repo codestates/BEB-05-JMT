@@ -79,8 +79,7 @@ module.exports = {
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
-      gas: 10000000,        
-
+      gas: 100000000000,
      },
     // ganache:{
     //    host: "127.0.0.1",     
