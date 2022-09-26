@@ -1,8 +1,8 @@
-const ContractOwner = '0x59dd7D8B4FD619Ef3e90924d5bC633b1277E4b5C' //오너,가나슈(index[0])
-const MapleNFT= artifacts.require("MapleNFT");
-const MapleMarket= artifacts.require("MapleMarket");
-const MapleItems = artifacts.require("MapleItems");
-const MapleFight = artifacts.require("MapleFight");
+const ContractOwner = '0x43112976696C2Cbc1dc89B8f805Fa3Db136898Ec' //오너,가나슈(index[0])
+const mapleNFT= artifacts.require("MapleNFT");
+const mapleMarket= artifacts.require("MapleMarket");
+const mapleItems = artifacts.require("MapleItems");
+const mapleFight = artifacts.require("MapleFight");
 
 const lpContract = artifacts.require('../contracts/LiquidityPool.sol');
 const jonMatangContract = artifacts.require('../contracts/JMToken.sol');
@@ -30,7 +30,6 @@ const provider = new HDWalletProvider(
 );
 const web3 = new Web3(provider);
 
-
 module.exports = async function (deployer) {
 
   deployer.then(async () => {
@@ -49,28 +48,28 @@ module.exports = async function (deployer) {
     stakingCont = await stakingContract.deployed();
 
     await deployer.deploy(
-      MapleMarket, 
+      mapleMarket, 
       jonMatangContract.address,
       ContractOwner
     );
+    mapleMarketCont = await mapleMarket.deployed();
 
     await deployer.deploy(
-      MapleNFT,
-      MapleMarket.address,
+      mapleNFT,
+      mapleMarketCont.address,
       jonMatangContract.address,
       "https://ipfs.io/ipfs/Qmb9C6BQg3CXYkDG3yeHGvStHMxjVxUdpK6mWiMCwz6WM8/", // 예시
       ContractOwner
     );
     await deployer.deploy(
-      MapleItems,
-      MapleMarket.address,
+      mapleItems,
+      mapleMarketCont.address,
       jonMatangContract.address,
       ContractOwner
-    );    
+    );
     //Maple NFT contract instance 
-    mapleNFTCont = await MapleNFT.deployed();
-    mapleItemsCont = await MapleItems.deployed();
-    mapleMarketCont = await MapleMarket.deployed();
+    mapleNFTCont = await mapleNFT.deployed();
+    mapleItemsCont = await mapleItems.deployed();
 
     // swap_pool
     await deployer.deploy(lpContract); // lp 디플로이
@@ -89,7 +88,7 @@ module.exports = async function (deployer) {
         jmtCont.address
     );
 
-    await deployer.deploy(MapleFight); // 전투 컨트랙트
+    await deployer.deploy(mapleFight); // 전투 컨트랙트
 
     routerCont = await routerContract.deployed();
     await jmtCont.setRouterAddress(routerCont.address);
@@ -101,8 +100,8 @@ module.exports = async function (deployer) {
     await vjmtCont.setLPAddress(lpCont.address); // lp어드레스 추가 
     await vjmtCont.MoveToTreasuryWallet(); // lp,재무 지갑 자산 이동
 
-    //Contribute
-    const accounts = await web3.eth.getAccounts()
+    // Contribute
+    const accounts = await web3.eth.getAccounts();
     await jmtCont.contribute({ 
         from: accounts[0],
         value: web3.utils.toWei("1","ether") 
@@ -111,12 +110,9 @@ module.exports = async function (deployer) {
         from: accounts[0]
     });
     await jmtCont.sendLiquidityToLPContract(lpCont.address);
-
   })
-
 
   // await routerCont._getAddress().then((value)=>{
   //     console.log(value)
-  // });
-  
+  // });  
 };

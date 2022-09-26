@@ -1,6 +1,4 @@
 import axios from "axios";
-import ROUTER from "../abi/router";
-import LPT from "../abi/lpt"
 
 const Web3 = require('web3');
 const {
@@ -18,8 +16,8 @@ const {
     ROUTER_CONTRACT_ADDR,
     LPT_CONTRACT_ADDR,
     LP_CONTRACT_ABI,
-    FIGHT_CONTRACT_ADDR,
-    FIGHT_CONTRACT_ABI
+    LPT_CONTRACT_ABI,
+    ROUTER_CONTRACT_ABI
 } = require('../global_variables');
 
 // <-- vJMT
@@ -151,7 +149,7 @@ const GetReserve = async() => {
 const SwapToken = async(eth,jmt,address,inputToken) =>{
     const web3 = new Web3(window.ethereum);
     const routerContract = await new web3.eth.Contract(
-        ROUTER,
+        ROUTER_CONTRACT_ABI,
         ROUTER_CONTRACT_ADDR
     );
     if(inputToken == 0){ // eth -> jmt
@@ -177,7 +175,7 @@ const SwapToken = async(eth,jmt,address,inputToken) =>{
 const getBalnceOfLpToken = async(address) => {
     const web3 = new Web3(window.ethereum);
     const lptContract = await new web3.eth.Contract(
-        LPT,
+        LPT_CONTRACT_ABI,
         LPT_CONTRACT_ADDR
     );
     console.log(address);
@@ -188,7 +186,7 @@ const getBalnceOfLpToken = async(address) => {
 const depositToken = async(jmtAmount,ethAmount,address) => {
     const web3 = new Web3(window.ethereum);
     const routerContract = await new web3.eth.Contract(
-        ROUTER,
+        ROUTER_CONTRACT_ABI,
         ROUTER_CONTRACT_ADDR
     );
     const _ethAmount = web3.utils.toWei(parseFloat(ethAmount).toFixed(6),'ether');
@@ -204,7 +202,7 @@ const depositToken = async(jmtAmount,ethAmount,address) => {
 const withdrawToken = async(address) => {
     const web3 = new Web3(window.ethereum);
     const routerContract = await new web3.eth.Contract(
-        ROUTER,
+        ROUTER_CONTRACT_ABI,
         ROUTER_CONTRACT_ADDR
     );
     const aa = await routerContract.methods.pullLiquidity().send({
@@ -263,11 +261,6 @@ const fetchItemsContract = async () => {
 }
 
 const _fetchCharacter = async (charId) => {
-    // const NFTContract = await fetchNFTContract();
-    // const tokenURI = await NFTContract.methods.tokenURI(charId).call();
-    // const response = await axios.get(tokenURI);
-    // const tokenMetadata = response.data;
-    // tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
     const tokenMetadata = await axios.get(`http://localhost:4000/asset/character/metadata/${charId}`);
     console.log(tokenMetadata.data);
     return tokenMetadata.data;

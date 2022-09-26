@@ -36,7 +36,6 @@ const Login = () => {
     console.log(address);
     console.log(check.message);
     if(check.message === "false"){
-      console.log("111")
       setAccount({address: address});
       contractAPI.getBalnceOfJmt(address).then((value)=>{
         console.log(value)

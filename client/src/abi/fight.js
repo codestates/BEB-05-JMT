@@ -3944,20 +3944,20 @@ const FIGHT = {
   "sourceMap": "57:1209:30:-:0;;;98:1;83:16;;130:2;105:27;;164:2;138:28;;57:1209;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "57:1209:30:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1179:85;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;394:778;;;;;;:::i;:::-;;:::i;:::-;;1179:85;1219:13;1251:6;1244:13;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1179:85;:::o;394:778::-;497:10;-1:-1:-1;;;;;497:19:30;;;488:50;;;;-1:-1:-1;;;488:50:30;;1581:2:37;488:50:30;;;1563:21:37;1620:2;1600:18;;;1593:30;-1:-1:-1;;;1639:18:37;;;1632:47;1696:18;;488:50:30;;;;;;;;548:9;560:12;568:3;560:7;:12::i;:::-;548:24;;603:17;587:13;:33;582:584;;;637:22;;;;;;;;;;;;-1:-1:-1;;;637:22:30;;;;:6;;:22;;:6;:22;:::i;:::-;;582:584;;;689:17;;681:4;:25;676:490;;792:21;:17;812:1;792:21;:::i;:::-;776:37;;854:17;837:13;:34;;:74;;;;;;;;;;;;;;;-1:-1:-1;;;837:74:30;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;837:74:30;;;;827:6;;:85;;:6;:85;:::i;676:490::-;950:17;933:13;:34;929:237;;1041:18;;1033:4;:26;;:67;;;;;;;;;;;;;;;-1:-1:-1;;;1033:67:30;;;;;929:237;1132:23;;;;;;;;;;;;-1:-1:-1;;;1132:23:30;;;;:6;;:23;;:6;:23;:::i;:::-;;929:237;478:694;394:778;;;:::o;192:196::-;241:4;273:9;;241:4;;273:9;;;:::i;:::-;;;;-1:-1:-1;;360:7:30;;314:54;;;331:15;314:54;;;4648:19:37;-1:-1:-1;;348:10:30;4705:2:37;4701:15;4697:53;4683:12;;;4676:75;;;;4767:12;;;4760:28;;;;373:8:30;;4804:12:37;;314:54:30;;;;;;;;;;;;304:65;;;;;;299:71;;:82;;;;:::i;:::-;292:89;192:196;-1:-1:-1;;192:196:30:o;14:548:37:-;126:4;155:2;184;173:9;166:21;216:6;210:13;259:6;254:2;243:9;239:18;232:34;284:1;294:140;308:6;305:1;302:13;294:140;;;403:14;;;399:23;;393:30;369:17;;;388:2;365:26;358:66;323:10;;294:140;;;298:3;483:1;478:2;469:6;458:9;454:22;450:31;443:42;553:2;546;542:7;537:2;529:6;525:15;521:29;510:9;506:45;502:54;494:62;;;;14:548;;;;:::o;567:422::-;644:6;652;660;713:2;701:9;692:7;688:23;684:32;681:52;;;729:1;726;719:12;681:52;755:23;;-1:-1:-1;;;;;807:31:37;;797:42;;787:70;;853:1;850;843:12;787:70;876:5;928:2;913:18;;900:32;;-1:-1:-1;979:2:37;964:18;;;951:32;;567:422;-1:-1:-1;;;567:422:37:o;994:380::-;1073:1;1069:12;;;;1116;;;1137:61;;1191:4;1183:6;1179:17;1169:27;;1137:61;1244:2;1236:6;1233:14;1213:18;1210:38;1207:161;;1290:10;1285:3;1281:20;1278:1;1271:31;1325:4;1322:1;1315:15;1353:4;1350:1;1343:15;1207:161;;994:380;;;:::o;1725:127::-;1786:10;1781:3;1777:20;1774:1;1767:31;1817:4;1814:1;1807:15;1841:4;1838:1;1831:15;1983:545;2085:2;2080:3;2077:11;2074:448;;;2121:1;2146:5;2142:2;2135:17;2191:4;2187:2;2177:19;2261:2;2249:10;2245:19;2242:1;2238:27;2232:4;2228:38;2297:4;2285:10;2282:20;2279:47;;;-1:-1:-1;2320:4:37;2279:47;2375:2;2370:3;2366:12;2363:1;2359:20;2353:4;2349:31;2339:41;;2430:82;2448:2;2441:5;2438:13;2430:82;;;2493:17;;;2474:1;2463:13;2430:82;;;2434:3;;;2074:448;1983:545;;;:::o;2704:1352::-;2830:3;2824:10;2857:18;2849:6;2846:30;2843:56;;;2879:18;;:::i;:::-;2908:97;2998:6;2958:38;2990:4;2984:11;2958:38;:::i;:::-;2952:4;2908:97;:::i;:::-;3060:4;;3124:2;3113:14;;3141:1;3136:663;;;;3843:1;3860:6;3857:89;;;-1:-1:-1;3912:19:37;;;3906:26;3857:89;-1:-1:-1;;2661:1:37;2657:11;;;2653:24;2649:29;2639:40;2685:1;2681:11;;;2636:57;3959:81;;3106:944;;3136:663;1930:1;1923:14;;;1967:4;1954:18;;-1:-1:-1;;3172:20:37;;;3290:236;3304:7;3301:1;3298:14;3290:236;;;3393:19;;;3387:26;3372:42;;3485:27;;;;3453:1;3441:14;;;;3320:19;;3290:236;;;3294:3;3554:6;3545:7;3542:19;3539:201;;;3615:19;;;3609:26;-1:-1:-1;;3698:1:37;3694:14;;;3710:3;3690:24;3686:37;3682:42;3667:58;3652:74;;3539:201;-1:-1:-1;;;;;3786:1:37;3770:14;;;3766:22;3753:36;;-1:-1:-1;2704:1352:37:o;4061:127::-;4122:10;4117:3;4113:20;4110:1;4103:31;4153:4;4150:1;4143:15;4177:4;4174:1;4167:15;4193:125;4258:9;;;4279:10;;;4276:36;;;4292:18;;:::i;4323:135::-;4362:3;4383:17;;;4380:43;;4403:18;;:::i;:::-;-1:-1:-1;4450:1:37;4439:13;;4323:135::o;4827:209::-;4859:1;4885;4875:132;;4929:10;4924:3;4920:20;4917:1;4910:31;4964:4;4961:1;4954:15;4992:4;4989:1;4982:15;4875:132;-1:-1:-1;5021:9:37;;4827:209::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract MapleFight {\n    uint randNum = 0;\n    uint rewardProbability = 10;\n    uint rewardProbability2 = 50;\n    string result;\n\n    function randMod(uint _modulus) internal returns(uint) { // 랜덤함수\n        randNum++;\n        return uint(keccak256(abi.encodePacked(block.timestamp, msg.sender, randNum))) % _modulus;\n    }\n\n    function setFight(address _addr, uint _userstrength, uint _matchingstrength) public {\n        require( msg.sender == _addr, \"Incorrect Address\");\n        uint rand = randMod(100);\n        if ( _userstrength > _matchingstrength ) {\n            result = \"User Win!!!\";\n        } else if ( rand <= rewardProbability ) { // 10%의 확률로 유저에게 크리티컬 발동\n            _userstrength = _matchingstrength + 1;\n            result = (_userstrength >= _matchingstrength? \"User dramatic Win !!\": \"User Lose...\");\n        } else if (_userstrength == _matchingstrength) {  // 비겼을 때, 50%확률로 승리\n            result = ( rand <= rewardProbability2 ? \"User dramatic Win !!\": \"User Lose...\");\n        } else {\n            result = \"User Lose...\";\n        }\n    } \n\n    function getFight() public view returns(string memory) {\n        return result;\n    }\n}",
-  "sourcePath": "/home/bcdy19/project3/BEB-05-JMT/contract/contracts/MapleFight.sol",
+  "sourcePath": "/Users/rokrokss/workspace/hyein/BEB-05-JMT/contract/contracts/MapleFight.sol",
   "ast": {
     "absolutePath": "project:/contracts/MapleFight.sol",
     "exportedSymbols": {
       "MapleFight": [
-        6850
+        7134
       ]
     },
-    "id": 6851,
+    "id": 7135,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6729,
+        "id": 7013,
         "literals": [
           "solidity",
           "^",
@@ -3974,9 +3974,9 @@ const FIGHT = {
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 6850,
+        "id": 7134,
         "linearizedBaseContracts": [
-          6850
+          7134
         ],
         "name": "MapleFight",
         "nameLocation": "66:10:30",
@@ -3984,12 +3984,12 @@ const FIGHT = {
         "nodes": [
           {
             "constant": false,
-            "id": 6732,
+            "id": 7016,
             "mutability": "mutable",
             "name": "randNum",
             "nameLocation": "88:7:30",
             "nodeType": "VariableDeclaration",
-            "scope": 6850,
+            "scope": 7134,
             "src": "83:16:30",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3998,7 +3998,7 @@ const FIGHT = {
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 6730,
+              "id": 7014,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "83:4:30",
@@ -4009,7 +4009,7 @@ const FIGHT = {
             },
             "value": {
               "hexValue": "30",
-              "id": 6731,
+              "id": 7015,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -4027,12 +4027,12 @@ const FIGHT = {
           },
           {
             "constant": false,
-            "id": 6735,
+            "id": 7019,
             "mutability": "mutable",
             "name": "rewardProbability",
             "nameLocation": "110:17:30",
             "nodeType": "VariableDeclaration",
-            "scope": 6850,
+            "scope": 7134,
             "src": "105:27:30",
             "stateVariable": true,
             "storageLocation": "default",
@@ -4041,7 +4041,7 @@ const FIGHT = {
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 6733,
+              "id": 7017,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "105:4:30",
@@ -4052,7 +4052,7 @@ const FIGHT = {
             },
             "value": {
               "hexValue": "3130",
-              "id": 6734,
+              "id": 7018,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -4070,12 +4070,12 @@ const FIGHT = {
           },
           {
             "constant": false,
-            "id": 6738,
+            "id": 7022,
             "mutability": "mutable",
             "name": "rewardProbability2",
             "nameLocation": "143:18:30",
             "nodeType": "VariableDeclaration",
-            "scope": 6850,
+            "scope": 7134,
             "src": "138:28:30",
             "stateVariable": true,
             "storageLocation": "default",
@@ -4084,7 +4084,7 @@ const FIGHT = {
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 6736,
+              "id": 7020,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "138:4:30",
@@ -4095,7 +4095,7 @@ const FIGHT = {
             },
             "value": {
               "hexValue": "3530",
-              "id": 6737,
+              "id": 7021,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -4113,12 +4113,12 @@ const FIGHT = {
           },
           {
             "constant": false,
-            "id": 6740,
+            "id": 7024,
             "mutability": "mutable",
             "name": "result",
             "nameLocation": "179:6:30",
             "nodeType": "VariableDeclaration",
-            "scope": 6850,
+            "scope": 7134,
             "src": "172:13:30",
             "stateVariable": true,
             "storageLocation": "default",
@@ -4127,7 +4127,7 @@ const FIGHT = {
               "typeString": "string"
             },
             "typeName": {
-              "id": 6739,
+              "id": 7023,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "172:6:30",
@@ -4140,13 +4140,13 @@ const FIGHT = {
           },
           {
             "body": {
-              "id": 6766,
+              "id": 7050,
               "nodeType": "Block",
               "src": "247:141:30",
               "statements": [
                 {
                   "expression": {
-                    "id": 6748,
+                    "id": 7032,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4156,11 +4156,11 @@ const FIGHT = {
                     "prefix": false,
                     "src": "273:9:30",
                     "subExpression": {
-                      "id": 6747,
+                      "id": 7031,
                       "name": "randNum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6732,
+                      "referencedDeclaration": 7016,
                       "src": "273:7:30",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -4172,7 +4172,7 @@ const FIGHT = {
                       "typeString": "uint256"
                     }
                   },
-                  "id": 6749,
+                  "id": 7033,
                   "nodeType": "ExpressionStatement",
                   "src": "273:9:30"
                 },
@@ -4182,7 +4182,7 @@ const FIGHT = {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 6764,
+                    "id": 7048,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4195,7 +4195,7 @@ const FIGHT = {
                               "arguments": [
                                 {
                                   "expression": {
-                                    "id": 6755,
+                                    "id": 7039,
                                     "name": "block",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -4206,7 +4206,7 @@ const FIGHT = {
                                       "typeString": "block"
                                     }
                                   },
-                                  "id": 6756,
+                                  "id": 7040,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -4222,7 +4222,7 @@ const FIGHT = {
                                 },
                                 {
                                   "expression": {
-                                    "id": 6757,
+                                    "id": 7041,
                                     "name": "msg",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
@@ -4233,7 +4233,7 @@ const FIGHT = {
                                       "typeString": "msg"
                                     }
                                   },
-                                  "id": 6758,
+                                  "id": 7042,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -4248,11 +4248,11 @@ const FIGHT = {
                                   }
                                 },
                                 {
-                                  "id": 6759,
+                                  "id": 7043,
                                   "name": "randNum",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6732,
+                                  "referencedDeclaration": 7016,
                                   "src": "360:7:30",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
@@ -4276,7 +4276,7 @@ const FIGHT = {
                                   }
                                 ],
                                 "expression": {
-                                  "id": 6753,
+                                  "id": 7037,
                                   "name": "abi",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
@@ -4287,7 +4287,7 @@ const FIGHT = {
                                     "typeString": "abi"
                                   }
                                 },
-                                "id": 6754,
+                                "id": 7038,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -4301,7 +4301,7 @@ const FIGHT = {
                                   "typeString": "function () pure returns (bytes memory)"
                                 }
                               },
-                              "id": 6760,
+                              "id": 7044,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -4325,7 +4325,7 @@ const FIGHT = {
                                 "typeString": "bytes memory"
                               }
                             ],
-                            "id": 6752,
+                            "id": 7036,
                             "name": "keccak256",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -4336,7 +4336,7 @@ const FIGHT = {
                               "typeString": "function (bytes memory) pure returns (bytes32)"
                             }
                           },
-                          "id": 6761,
+                          "id": 7045,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4360,7 +4360,7 @@ const FIGHT = {
                             "typeString": "bytes32"
                           }
                         ],
-                        "id": 6751,
+                        "id": 7035,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -4372,14 +4372,14 @@ const FIGHT = {
                           "typeString": "type(uint256)"
                         },
                         "typeName": {
-                          "id": 6750,
+                          "id": 7034,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
                           "src": "299:4:30",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 6762,
+                      "id": 7046,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4398,11 +4398,11 @@ const FIGHT = {
                     "nodeType": "BinaryOperation",
                     "operator": "%",
                     "rightExpression": {
-                      "id": 6763,
+                      "id": 7047,
                       "name": "_modulus",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6742,
+                      "referencedDeclaration": 7026,
                       "src": "373:8:30",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -4415,14 +4415,14 @@ const FIGHT = {
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 6746,
-                  "id": 6765,
+                  "functionReturnParameters": 7030,
+                  "id": 7049,
                   "nodeType": "Return",
                   "src": "292:89:30"
                 }
               ]
             },
-            "id": 6767,
+            "id": 7051,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -4430,17 +4430,17 @@ const FIGHT = {
             "nameLocation": "201:7:30",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 6743,
+              "id": 7027,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6742,
+                  "id": 7026,
                   "mutability": "mutable",
                   "name": "_modulus",
                   "nameLocation": "214:8:30",
                   "nodeType": "VariableDeclaration",
-                  "scope": 6767,
+                  "scope": 7051,
                   "src": "209:13:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4449,7 +4449,7 @@ const FIGHT = {
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6741,
+                    "id": 7025,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "209:4:30",
@@ -4464,17 +4464,17 @@ const FIGHT = {
               "src": "208:15:30"
             },
             "returnParameters": {
-              "id": 6746,
+              "id": 7030,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6745,
+                  "id": 7029,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 6767,
+                  "scope": 7051,
                   "src": "241:4:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4483,7 +4483,7 @@ const FIGHT = {
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6744,
+                    "id": 7028,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "241:4:30",
@@ -4497,7 +4497,7 @@ const FIGHT = {
               ],
               "src": "240:6:30"
             },
-            "scope": 6850,
+            "scope": 7134,
             "src": "192:196:30",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -4505,7 +4505,7 @@ const FIGHT = {
           },
           {
             "body": {
-              "id": 6840,
+              "id": 7124,
               "nodeType": "Block",
               "src": "478:694:30",
               "statements": [
@@ -4517,14 +4517,14 @@ const FIGHT = {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 6780,
+                        "id": 7064,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "expression": {
-                            "id": 6777,
+                            "id": 7061,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -4535,7 +4535,7 @@ const FIGHT = {
                               "typeString": "msg"
                             }
                           },
-                          "id": 6778,
+                          "id": 7062,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4552,11 +4552,11 @@ const FIGHT = {
                         "nodeType": "BinaryOperation",
                         "operator": "==",
                         "rightExpression": {
-                          "id": 6779,
+                          "id": 7063,
                           "name": "_addr",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6769,
+                          "referencedDeclaration": 7053,
                           "src": "511:5:30",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -4571,7 +4571,7 @@ const FIGHT = {
                       },
                       {
                         "hexValue": "496e636f72726563742041646472657373",
-                        "id": 6781,
+                        "id": 7065,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -4597,7 +4597,7 @@ const FIGHT = {
                           "typeString": "literal_string \"Incorrect Address\""
                         }
                       ],
-                      "id": 6776,
+                      "id": 7060,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -4611,7 +4611,7 @@ const FIGHT = {
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 6782,
+                    "id": 7066,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4627,23 +4627,23 @@ const FIGHT = {
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 6783,
+                  "id": 7067,
                   "nodeType": "ExpressionStatement",
                   "src": "488:50:30"
                 },
                 {
                   "assignments": [
-                    6785
+                    7069
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 6785,
+                      "id": 7069,
                       "mutability": "mutable",
                       "name": "rand",
                       "nameLocation": "553:4:30",
                       "nodeType": "VariableDeclaration",
-                      "scope": 6840,
+                      "scope": 7124,
                       "src": "548:9:30",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -4652,7 +4652,7 @@ const FIGHT = {
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 6784,
+                        "id": 7068,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "548:4:30",
@@ -4664,12 +4664,12 @@ const FIGHT = {
                       "visibility": "internal"
                     }
                   ],
-                  "id": 6789,
+                  "id": 7073,
                   "initialValue": {
                     "arguments": [
                       {
                         "hexValue": "313030",
-                        "id": 6787,
+                        "id": 7071,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -4691,18 +4691,18 @@ const FIGHT = {
                           "typeString": "int_const 100"
                         }
                       ],
-                      "id": 6786,
+                      "id": 7070,
                       "name": "randMod",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6767,
+                      "referencedDeclaration": 7051,
                       "src": "560:7:30",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256) returns (uint256)"
                       }
                     },
-                    "id": 6788,
+                    "id": 7072,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4727,17 +4727,17 @@ const FIGHT = {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 6792,
+                    "id": 7076,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 6790,
+                      "id": 7074,
                       "name": "_userstrength",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6771,
+                      "referencedDeclaration": 7055,
                       "src": "587:13:30",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -4747,11 +4747,11 @@ const FIGHT = {
                     "nodeType": "BinaryOperation",
                     "operator": ">",
                     "rightExpression": {
-                      "id": 6791,
+                      "id": 7075,
                       "name": "_matchingstrength",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6773,
+                      "referencedDeclaration": 7057,
                       "src": "603:17:30",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -4770,17 +4770,17 @@ const FIGHT = {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 6800,
+                      "id": 7084,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 6798,
+                        "id": 7082,
                         "name": "rand",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6785,
+                        "referencedDeclaration": 7069,
                         "src": "681:4:30",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4790,11 +4790,11 @@ const FIGHT = {
                       "nodeType": "BinaryOperation",
                       "operator": "<=",
                       "rightExpression": {
-                        "id": 6799,
+                        "id": 7083,
                         "name": "rewardProbability",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6735,
+                        "referencedDeclaration": 7019,
                         "src": "689:17:30",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4813,17 +4813,17 @@ const FIGHT = {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 6820,
+                        "id": 7104,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 6818,
+                          "id": 7102,
                           "name": "_userstrength",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6771,
+                          "referencedDeclaration": 7055,
                           "src": "933:13:30",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -4833,11 +4833,11 @@ const FIGHT = {
                         "nodeType": "BinaryOperation",
                         "operator": "==",
                         "rightExpression": {
-                          "id": 6819,
+                          "id": 7103,
                           "name": "_matchingstrength",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6773,
+                          "referencedDeclaration": 7057,
                           "src": "950:17:30",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -4851,23 +4851,23 @@ const FIGHT = {
                         }
                       },
                       "falseBody": {
-                        "id": 6836,
+                        "id": 7120,
                         "nodeType": "Block",
                         "src": "1118:48:30",
                         "statements": [
                           {
                             "expression": {
-                              "id": 6834,
+                              "id": 7118,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftHandSide": {
-                                "id": 6832,
+                                "id": 7116,
                                 "name": "result",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 6740,
+                                "referencedDeclaration": 7024,
                                 "src": "1132:6:30",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_storage",
@@ -4878,7 +4878,7 @@ const FIGHT = {
                               "operator": "=",
                               "rightHandSide": {
                                 "hexValue": "55736572204c6f73652e2e2e",
-                                "id": 6833,
+                                "id": 7117,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -4898,33 +4898,33 @@ const FIGHT = {
                                 "typeString": "string storage ref"
                               }
                             },
-                            "id": 6835,
+                            "id": 7119,
                             "nodeType": "ExpressionStatement",
                             "src": "1132:23:30"
                           }
                         ]
                       },
-                      "id": 6837,
+                      "id": 7121,
                       "nodeType": "IfStatement",
                       "src": "929:237:30",
                       "trueBody": {
-                        "id": 6831,
+                        "id": 7115,
                         "nodeType": "Block",
                         "src": "969:143:30",
                         "statements": [
                           {
                             "expression": {
-                              "id": 6829,
+                              "id": 7113,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftHandSide": {
-                                "id": 6821,
+                                "id": 7105,
                                 "name": "result",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 6740,
+                                "referencedDeclaration": 7024,
                                 "src": "1022:6:30",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_storage",
@@ -4941,17 +4941,17 @@ const FIGHT = {
                                         "typeIdentifier": "t_uint256",
                                         "typeString": "uint256"
                                       },
-                                      "id": 6824,
+                                      "id": 7108,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 6822,
+                                        "id": 7106,
                                         "name": "rand",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 6785,
+                                        "referencedDeclaration": 7069,
                                         "src": "1033:4:30",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_uint256",
@@ -4961,11 +4961,11 @@ const FIGHT = {
                                       "nodeType": "BinaryOperation",
                                       "operator": "<=",
                                       "rightExpression": {
-                                        "id": 6823,
+                                        "id": 7107,
                                         "name": "rewardProbability2",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 6738,
+                                        "referencedDeclaration": 7022,
                                         "src": "1041:18:30",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_uint256",
@@ -4980,7 +4980,7 @@ const FIGHT = {
                                     },
                                     "falseExpression": {
                                       "hexValue": "55736572204c6f73652e2e2e",
-                                      "id": 6826,
+                                      "id": 7110,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": true,
@@ -4994,7 +4994,7 @@ const FIGHT = {
                                       },
                                       "value": "User Lose..."
                                     },
-                                    "id": 6827,
+                                    "id": 7111,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
@@ -5003,7 +5003,7 @@ const FIGHT = {
                                     "src": "1033:67:30",
                                     "trueExpression": {
                                       "hexValue": "55736572206472616d617469632057696e202121",
-                                      "id": 6825,
+                                      "id": 7109,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": true,
@@ -5023,7 +5023,7 @@ const FIGHT = {
                                     }
                                   }
                                 ],
-                                "id": 6828,
+                                "id": 7112,
                                 "isConstant": false,
                                 "isInlineArray": false,
                                 "isLValue": false,
@@ -5042,34 +5042,34 @@ const FIGHT = {
                                 "typeString": "string storage ref"
                               }
                             },
-                            "id": 6830,
+                            "id": 7114,
                             "nodeType": "ExpressionStatement",
                             "src": "1022:79:30"
                           }
                         ]
                       }
                     },
-                    "id": 6838,
+                    "id": 7122,
                     "nodeType": "IfStatement",
                     "src": "676:490:30",
                     "trueBody": {
-                      "id": 6817,
+                      "id": 7101,
                       "nodeType": "Block",
                       "src": "709:214:30",
                       "statements": [
                         {
                           "expression": {
-                            "id": 6805,
+                            "id": 7089,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftHandSide": {
-                              "id": 6801,
+                              "id": 7085,
                               "name": "_userstrength",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6771,
+                              "referencedDeclaration": 7055,
                               "src": "776:13:30",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -5083,17 +5083,17 @@ const FIGHT = {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 6804,
+                              "id": 7088,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
-                                "id": 6802,
+                                "id": 7086,
                                 "name": "_matchingstrength",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 6773,
+                                "referencedDeclaration": 7057,
                                 "src": "792:17:30",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -5104,7 +5104,7 @@ const FIGHT = {
                               "operator": "+",
                               "rightExpression": {
                                 "hexValue": "31",
-                                "id": 6803,
+                                "id": 7087,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -5130,23 +5130,23 @@ const FIGHT = {
                               "typeString": "uint256"
                             }
                           },
-                          "id": 6806,
+                          "id": 7090,
                           "nodeType": "ExpressionStatement",
                           "src": "776:37:30"
                         },
                         {
                           "expression": {
-                            "id": 6815,
+                            "id": 7099,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftHandSide": {
-                              "id": 6807,
+                              "id": 7091,
                               "name": "result",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6740,
+                              "referencedDeclaration": 7024,
                               "src": "827:6:30",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_storage",
@@ -5163,17 +5163,17 @@ const FIGHT = {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     },
-                                    "id": 6810,
+                                    "id": 7094,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
                                     "lValueRequested": false,
                                     "leftExpression": {
-                                      "id": 6808,
+                                      "id": 7092,
                                       "name": "_userstrength",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 6771,
+                                      "referencedDeclaration": 7055,
                                       "src": "837:13:30",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
@@ -5183,11 +5183,11 @@ const FIGHT = {
                                     "nodeType": "BinaryOperation",
                                     "operator": ">=",
                                     "rightExpression": {
-                                      "id": 6809,
+                                      "id": 7093,
                                       "name": "_matchingstrength",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 6773,
+                                      "referencedDeclaration": 7057,
                                       "src": "854:17:30",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
@@ -5202,7 +5202,7 @@ const FIGHT = {
                                   },
                                   "falseExpression": {
                                     "hexValue": "55736572204c6f73652e2e2e",
-                                    "id": 6812,
+                                    "id": 7096,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -5216,7 +5216,7 @@ const FIGHT = {
                                     },
                                     "value": "User Lose..."
                                   },
-                                  "id": 6813,
+                                  "id": 7097,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -5225,7 +5225,7 @@ const FIGHT = {
                                   "src": "837:74:30",
                                   "trueExpression": {
                                     "hexValue": "55736572206472616d617469632057696e202121",
-                                    "id": 6811,
+                                    "id": 7095,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -5245,7 +5245,7 @@ const FIGHT = {
                                   }
                                 }
                               ],
-                              "id": 6814,
+                              "id": 7098,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
@@ -5264,34 +5264,34 @@ const FIGHT = {
                               "typeString": "string storage ref"
                             }
                           },
-                          "id": 6816,
+                          "id": 7100,
                           "nodeType": "ExpressionStatement",
                           "src": "827:85:30"
                         }
                       ]
                     }
                   },
-                  "id": 6839,
+                  "id": 7123,
                   "nodeType": "IfStatement",
                   "src": "582:584:30",
                   "trueBody": {
-                    "id": 6797,
+                    "id": 7081,
                     "nodeType": "Block",
                     "src": "623:47:30",
                     "statements": [
                       {
                         "expression": {
-                          "id": 6795,
+                          "id": 7079,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 6793,
+                            "id": 7077,
                             "name": "result",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6740,
+                            "referencedDeclaration": 7024,
                             "src": "637:6:30",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_storage",
@@ -5302,7 +5302,7 @@ const FIGHT = {
                           "operator": "=",
                           "rightHandSide": {
                             "hexValue": "557365722057696e212121",
-                            "id": 6794,
+                            "id": 7078,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -5322,7 +5322,7 @@ const FIGHT = {
                             "typeString": "string storage ref"
                           }
                         },
-                        "id": 6796,
+                        "id": 7080,
                         "nodeType": "ExpressionStatement",
                         "src": "637:22:30"
                       }
@@ -5332,7 +5332,7 @@ const FIGHT = {
               ]
             },
             "functionSelector": "c4001e65",
-            "id": 6841,
+            "id": 7125,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -5340,17 +5340,17 @@ const FIGHT = {
             "nameLocation": "403:8:30",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 6774,
+              "id": 7058,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6769,
+                  "id": 7053,
                   "mutability": "mutable",
                   "name": "_addr",
                   "nameLocation": "420:5:30",
                   "nodeType": "VariableDeclaration",
-                  "scope": 6841,
+                  "scope": 7125,
                   "src": "412:13:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5359,7 +5359,7 @@ const FIGHT = {
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6768,
+                    "id": 7052,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "412:7:30",
@@ -5373,12 +5373,12 @@ const FIGHT = {
                 },
                 {
                   "constant": false,
-                  "id": 6771,
+                  "id": 7055,
                   "mutability": "mutable",
                   "name": "_userstrength",
                   "nameLocation": "432:13:30",
                   "nodeType": "VariableDeclaration",
-                  "scope": 6841,
+                  "scope": 7125,
                   "src": "427:18:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5387,7 +5387,7 @@ const FIGHT = {
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6770,
+                    "id": 7054,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "427:4:30",
@@ -5400,12 +5400,12 @@ const FIGHT = {
                 },
                 {
                   "constant": false,
-                  "id": 6773,
+                  "id": 7057,
                   "mutability": "mutable",
                   "name": "_matchingstrength",
                   "nameLocation": "452:17:30",
                   "nodeType": "VariableDeclaration",
-                  "scope": 6841,
+                  "scope": 7125,
                   "src": "447:22:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5414,7 +5414,7 @@ const FIGHT = {
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6772,
+                    "id": 7056,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "447:4:30",
@@ -5429,12 +5429,12 @@ const FIGHT = {
               "src": "411:59:30"
             },
             "returnParameters": {
-              "id": 6775,
+              "id": 7059,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "478:0:30"
             },
-            "scope": 6850,
+            "scope": 7134,
             "src": "394:778:30",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -5442,32 +5442,32 @@ const FIGHT = {
           },
           {
             "body": {
-              "id": 6848,
+              "id": 7132,
               "nodeType": "Block",
               "src": "1234:30:30",
               "statements": [
                 {
                   "expression": {
-                    "id": 6846,
+                    "id": 7130,
                     "name": "result",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 6740,
+                    "referencedDeclaration": 7024,
                     "src": "1251:6:30",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 6845,
-                  "id": 6847,
+                  "functionReturnParameters": 7129,
+                  "id": 7131,
                   "nodeType": "Return",
                   "src": "1244:13:30"
                 }
               ]
             },
             "functionSelector": "97548619",
-            "id": 6849,
+            "id": 7133,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -5475,23 +5475,23 @@ const FIGHT = {
             "nameLocation": "1188:8:30",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 6842,
+              "id": 7126,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1196:2:30"
             },
             "returnParameters": {
-              "id": 6845,
+              "id": 7129,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6844,
+                  "id": 7128,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 6849,
+                  "scope": 7133,
                   "src": "1219:13:30",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -5500,7 +5500,7 @@ const FIGHT = {
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6843,
+                    "id": 7127,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1219:6:30",
@@ -5514,14 +5514,14 @@ const FIGHT = {
               ],
               "src": "1218:15:30"
             },
-            "scope": 6850,
+            "scope": 7134,
             "src": "1179:85:30",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 6851,
+        "scope": 7135,
         "src": "57:1209:30",
         "usedErrors": []
       }
@@ -5533,15 +5533,21 @@ const FIGHT = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "5777": {
+    "1337": {
       "events": {},
       "links": {},
-      "address": "0xD485eC824d5c21514d35Fcbb74D028a37d538a70",
-      "transactionHash": "0xfa221071a3e2363dd27168a9ff11a7ddadf4483f117b2f4434780282ef1d9ff4"
+      "address": "0x37d3D92A971391C31C957c94f3C7A1b1Da084CFb",
+      "transactionHash": "0xa2214f024dbf51a8c55d8f4567ea788bbff6d0c6c608fcc3d95bc9eca8c50943"
+    },
+    "3989": {
+      "events": {},
+      "links": {},
+      "address": "0x78c4e9931568c7d30addb6E6D9235331fF620196",
+      "transactionHash": "0xc5305e1b488d827c7ae7b78e873a1dcfe00f02041fca9ef6b545c80d4b6d9ec4"
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T10:00:16.204Z",
+  "updatedAt": "2022-09-26T18:29:20.801Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
@@ -5554,5 +5560,4 @@ const FIGHT = {
     "version": 1
   }
 }
-
 module.exports = FIGHT;
