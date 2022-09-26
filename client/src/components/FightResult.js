@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { useRecoilValue , useSetRecoilState } from "recoil"
+import { useRecoilValue , useRecoilState, useSetRecoilState } from "recoil"
 import { backgroundAtom } from "../recoil/background/atom"
 import { accountAtom } from "../recoil/account/atom"
 import { matchingAtom, fightresultAtom } from '../recoil/matching/atom';
+import { modalAtom } from "../recoil/modal/atom";
 import { Link } from "react-router-dom";
 import '../pages/styles/Fight.css';
 import fightdataAPI from '../api/fightdata';
@@ -12,6 +13,7 @@ const FightResult = () => {
   const matchingdata = useRecoilValue(matchingAtom);
   const fightresultdata = useRecoilValue(fightresultAtom);
   const account = useRecoilValue(accountAtom)
+  const [modal, setModal] = useRecoilState(modalAtom);
   const [scrollselected, setScrollSelected] = useState(true);
   const [leftResult, setLeftResult] = useState();
   const [rightResult, setRightResult] = useState();
@@ -23,19 +25,27 @@ const FightResult = () => {
   const fightresult = async () => {
     if ( fightresultdata === "User Win!!!" || fightresultdata === "User dramatic Win !!") {
       setLeftResult(matchingdata.userWinImage);
-        setRightResult(matchingdata.MloseImage);
+      setRightResult(matchingdata.MloseImage);
     } else {
       setLeftResult(matchingdata.userLoseImage);
-        setRightResult(matchingdata.MwinImage);
+      setRightResult(matchingdata.MwinImage);
     }
   } 
 
-  const rewardResult = () => {
-    const scrollId = fightdataAPI.rewardScrollNFT(account.address);
-    const rewardtoken = fightdataAPI.rewardToken(account.address);
+
+  const rewardResult = async() => {
+    // 토큰 보상
+    setModal({...modal, open: true, type: 'fightTokenreward', data: {message: "JMT토큰 보상 확인중..."}});
+    let rewardtoken;
+    rewardtoken = await fightdataAPI.rewardToken(account.address);
+    setModal({...modal, open: true, type: 'fightTokenreward', data: {error: rewardtoken[0], fightTokenreward: rewardtoken[1], message: rewardtoken[2] }});
+
+    // 스크롤 보상
+    //setModal({...modal, open: true, type: 'fightScrollreward', data: {message: "스크롤 보상 확인중..."}});
+    let rewardscroll;
+    rewardscroll = await fightdataAPI.rewardScrollNFT(account.address);
+    setModal({...modal, open: true, type: 'fightScrollreward', data: {error: rewardscroll[0], fightScrollreward: rewardscroll[1] }});
     setScrollSelected(false);
-    console.log(scrollId);
-    console.log(rewardtoken);
   }
 
   useEffect(() => {
@@ -59,8 +69,8 @@ const FightResult = () => {
           <img className='fightresult-left-result' src ='../img/win.png' />
           <img className='fightresult-left-paper' src ='../img/weaponpaper.png' />
           <img className='fightresult-left-token' src ='../img/token.png' />
-          {scrollselected ? <div className='fightresult-scroll-rewardbutton' onClick={rewardResult} >보상 획득</div>
-          : <div className='fightresult-scroll-reward'>획득 완료</div>
+          {scrollselected ? <div className='fightresult-scroll-rewardbutton' onClick={rewardResult} >보상 확인</div>
+          : <div className='fightresult-scroll-reward'>확인 완료</div>
           }
           <img className='fightresult-right-result' src ='../img/lose.png' />
         </div>
@@ -69,8 +79,8 @@ const FightResult = () => {
           <img className='fightresult-left-result' src ='../img/win.png' />
           <img className='fightresult-left-paper' src ='../img/weaponpaper.png' />
           <img className='fightresult-left-token' src ='../img/token.png' />
-          {scrollselected ? <div className='fightresult-scroll-rewardbutton' onClick={rewardResult} >보상 획득</div>
-          : <div className='fightresult-scroll-reward'>획득 완료</div>
+          {scrollselected ? <div className='fightresult-scroll-rewardbutton' onClick={rewardResult} >보상 확인</div>
+          : <div className='fightresult-scroll-reward'>확인 완료</div>
           }
           <img className='fightresult-right-result' src ='../img/lose.png' />
         </div>)

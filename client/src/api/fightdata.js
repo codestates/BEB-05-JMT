@@ -30,7 +30,7 @@ const fightResult = async(address, userstrength, matchingstrength) => {
     return result;
 }
 
-const rewardScrollNFT = async(address) => {
+const rewardScrollNFT = async(address) => {     
     try {
         const scrollContract = await contractAPI.fetchItemsContract();
         const scroll = await scrollContract.methods.randRewardScroll().send(
@@ -41,18 +41,16 @@ const rewardScrollNFT = async(address) => {
         }
         );
         const scrollresult = scroll.events.Rewarded.returnValues.result;
-        const scrollId = scroll.events.TransferSingle.returnValues.id;
-        if ( scrollresult === true ) {
-            alert('스크롤을 획득 하였습니다.');
-        } else {
-            alert('스크롤을 획득하지 못하였습니다.');
-        }
-        console.log(scrollId);
+        //const scrollId = scroll.events.TransferSingle.returnValues.id;
         console.log("check");
-        return [scrollresult, scrollId];
+
+        if ( scrollresult === true ) {
+            return [true, scrollresult, "1"];
+        } else {
+            return [true, scrollresult];
+        }
     } catch (err) {
-        alert('스크롤을 획득하지 못하였습니다.!');
-        console.log(err);
+        return [false, false, "보상을 획득하지 못하였습니다."];
     }
 }
 
@@ -67,16 +65,14 @@ const rewardToken = async(address) => {
         );
         const token = await JMTContract.methods.randRewardToken(address, _amount).send({from:address});
         const tokenresult = token.events.TokenRewarded.returnValues.result;
-        if ( tokenresult === true ) {
-            alert('JMT 토큰을 획득하였습니다.');
-        } else {
-            alert('JMT 토큰을 획득하지 못하였습니다.');
-        }
         console.log("check");
-        return [tokenresult];
+        if ( tokenresult === true ) {
+            return [true, tokenresult, "1"];
+        } else {
+            return [true, tokenresult];
+        }
     } catch (err) {
-        alert('JMT 토큰을 획득하지 못하였습니다.!');
-        console.log(err);
+        return [false, false, "보상을 획득하지 못하였습니다."];
     }
 }
 
