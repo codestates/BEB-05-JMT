@@ -12,10 +12,24 @@ const routerContract = artifacts.require('../contracts/JMTRouter.sol');
 const stakingContract = artifacts.require('../contracts/Staking.sol');
 const vJmtokenContract = artifacts.require('../contracts/VJMToken.sol');
 
-//테스트
+//ganache
+// const Web3 = require('web3');
+// const web3 = new Web3();
+// web3.setProvider(new Web3.providers.HttpProvider('http://127.0.0.1:7545')); //테스트시 본인 가나치 포트에 맞추세요 10002
+
+//polygon
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
-const web3 = new Web3();
-web3.setProvider(new Web3.providers.HttpProvider('http://127.0.0.1:7545')); //테스트시 본인 가나치 포트에 맞추세요 10002
+const fs = require('fs');
+const mnemonic = fs.readFileSync("../.secret").toString().trim();
+const walletMnemonic = mnemonic; // Your mnemonic
+const walletAPIUrl = 'http://127.0.0.1:10002/'; // Your Infura URL
+const provider = new HDWalletProvider(
+    walletMnemonic,
+    walletAPIUrl
+);
+const web3 = new Web3(provider);
+
 
 module.exports = async function (deployer) {
 
@@ -87,17 +101,16 @@ module.exports = async function (deployer) {
     await vjmtCont.setLPAddress(lpCont.address); // lp어드레스 추가 
     await vjmtCont.MoveToTreasuryWallet(); // lp,재무 지갑 자산 이동
 
-    // 테스트용 토큰 자동 에어드랍 -> 펀딩 에어드랍 및 풀생성 자동이벤트 
-    const accounts = await web3.eth.getAccounts();
+    //Contribute
+    const accounts = await web3.eth.getAccounts()
     await jmtCont.contribute({ 
-        from: accounts[1],
+        from: accounts[0],
         value: web3.utils.toWei("1","ether") 
     });
     await jmtCont.claimTokens({
-        from: accounts[1]
+        from: accounts[0]
     });
     await jmtCont.sendLiquidityToLPContract(lpCont.address);
-
 
   })
 
