@@ -35,6 +35,14 @@ contract LiquidityPool is Ownable {
     event LiquidityAdded(address indexed _account);
     event LiquidityRemoved(address indexed _account);
     event TradedTokens(address indexed _account,uint256 _ethTraded,uint256 _jmtTraded);
+    event Claimed(address indexed _account, uint256 _amount);
+
+    struct DepositeInfo {        
+        uint256 claimedTime; 
+        uint256 amount; 
+        uint32 state;
+    }
+
 
     LPT lpToken; // 현재 lp풀 토큰 주소
     JMToken jmtToken;
@@ -45,6 +53,10 @@ contract LiquidityPool is Ownable {
     uint32 lastBlockTimestamp;
     uint256 totalReserve; // 총 리저브 
     uint256 public decimals = 10**18;
+    uint32 public APR = 571; // 이자율
+    uint32 private yearsDuration = 31536000;
+    uint32 private dayDuration = 86400;
+    mapping(address => DepositeInfo) public depositeInfos; 
 
     constructor () {
         ethReserve=0;
@@ -92,7 +104,8 @@ contract LiquidityPool is Ownable {
         uint256 Commission = decimals; //수수료
 
         // jmt -> eth, jmttoken == 0
-        if (msg.value == 0) {
+        if (msg.value == 0) 
+        {
             uint256 currentJMTBalance = jmtToken.balanceOf(address(this)); // 풀에 가지고있는 컨트랙트 코인 보유량 
             uint256 _jmtAmountMinusTax = _jmtAmount - ((2 * _jmtAmount) / 100); // (갖고싶은 토큰양 - 수수료) 
             uint256 addedBalance = jmtReserve + _jmtAmountMinusTax; // 현재 jmt보유량 + (갖고싶은 토큰양 - 수수료) = 추가된 총 밸런스
@@ -140,12 +153,25 @@ contract LiquidityPool is Ownable {
         }
 
         lpToken.mint(account, liquidity); // transfer user => 발행
+        if(depositeInfos[account].state == 1){
+            uint256 vjmtAomount = (depositeInfos[account].amount * APR / 100) / yearsDuration / dayDuration; 
+            uint256 claimableAmount = (block.timestamp - depositeInfos[account].claimedTime) * vjmtAomount;
+            vJmt.transfer(account , claimableAmount * 100);
+        }
+
+        depositeInfos[account] = DepositeInfo({
+            claimedTime: block.timestamp,
+            amount: (depositeInfos[account].amount + liquidity),
+            state: 1 
+        });
+
         emit LiquidityAdded(account);
         _update();
     }
 
     //lp토큰 출금
-    function withdraw(address account) external {
+    function withdraw(address account) external 
+    {
         uint256 liquidity = lpToken.balanceOf(account); // 유저의 lp토큰 보유량을 가져옴 
         require(liquidity != 0, "NO_AVAILABLE_TOKENS");
 
@@ -153,6 +179,13 @@ contract LiquidityPool is Ownable {
         //얼마 보내줄지 계산
         uint256 ethAmount = (ethReserve * liquidity) / totalSupply;
         uint256 jmtAmount = (jmtReserve * liquidity) / totalSupply;
+
+        if(depositeInfos[account].state == 1){
+            uint256 vjmtAomount = (depositeInfos[account].amount * APR / 100) / yearsDuration / dayDuration; 
+            uint256 claimableAmount = (block.timestamp - depositeInfos[account].claimedTime) * vjmtAomount;
+            vJmt.transfer(account , claimableAmount * 10000);
+            delete depositeInfos[msg.sender];
+        }
 
         // 소각
         lpToken.burn(account, liquidity); // account유저 토큰 제거, lpt토큰 양만큼 제거 
@@ -165,6 +198,39 @@ contract LiquidityPool is Ownable {
         emit LiquidityRemoved(account);
         _update();
     }
+
+    
+    function setDepositeInfo() public {
+        depositeInfos[msg.sender].claimedTime = block.timestamp;
+    }
+
+    // LP보상 수령
+    function claimReward() external returns (bool){
+        require(depositeInfos[msg.sender].state == 1, "You are not participated");
+
+        uint256 stakingDuration = block.timestamp - depositeInfos[msg.sender].claimedTime; // 마지막 클레임이후 스테이킹한 기간 
+        uint256 persecondAmount = (depositeInfos[msg.sender].amount * APR / 100) / yearsDuration / dayDuration; // 초당 리워드 
+        uint256 claimableAmount = persecondAmount * stakingDuration; // 최종 보상
+
+        vJmt.transfer(msg.sender, claimableAmount * 10000); //vjmt:jmt 
+        setDepositeInfo(); // 클레임시간 현재 시간으로 수정
+        emit Claimed(msg.sender, claimableAmount);
+        return true;
+    }
+
+    // LP보상 가능한 수량 
+    function claimableReward() public view returns(uint256) 
+    {
+        if(depositeInfos[msg.sender].state == 1){
+            uint256 stakingDuration = block.timestamp - depositeInfos[msg.sender].claimedTime; // 마지막 클레임이후 스테이킹한 기간 
+            uint256 persecondAmount = (depositeInfos[msg.sender].amount * APR / 100) / yearsDuration / dayDuration; // 초당 리워드 
+            uint256 claimableAmount = persecondAmount * stakingDuration; // 최종 보상
+            return (claimableAmount * 100);
+        }else{
+            return 0;
+        }
+    }
+
     // 동기화, 문제가 많아서 타임스탬프 제거 
     function _update() private 
     {

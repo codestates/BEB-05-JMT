@@ -16,6 +16,7 @@ function Liquidity() {
 	const ethRef = useRef()
 
 	const [lpToken,setLpToken] = useState(0);
+	const [lpClaimToken,setLpClaimToken] = useState(0); // 클레임 토큰 jmt
 	const decimals = 10**18;
 	
 	useEffect(() => {
@@ -58,6 +59,22 @@ function Liquidity() {
 			window.location.reload();
 		})
 	}
+	const getLPClaimable = () =>{
+		contractAPI.getLPClaimable(account.address).then((result) => {
+			console.log(parseFloat((result/decimals)).toFixed(12))
+			setLpClaimToken(parseFloat((result/decimals)).toFixed(12));
+			window.location.reload();
+		})
+		
+	}
+
+	const LPClaim = () =>{
+		contractAPI.LPClaim(account.address).then(() => {
+			alert("완료!")
+			window.location.reload();
+		})
+
+	}
 
 
 
@@ -88,10 +105,16 @@ function Liquidity() {
 			</div>
 
 			<div className="lp-ui">
+				
 				<div className="with-ui">
+				<div className="APR2">APR 573%</div>
 					<div className="text-size">LP 토큰</div>
 					<div className="text-size">{lpToken} LP</div>
-					<button className="with-btn" onClick={() => withdraw()}>회수</button>
+
+					<div className="text-size2">Claimable : {lpClaimToken} vJMT</div>
+					<button className="with-btn" onClick={()=>LPClaim()} >클레임</button>
+					<button className="with-btn2" onClick={()=>withdraw()} >회수</button>
+
 				</div>
 			</div>
 		</div>

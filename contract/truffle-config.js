@@ -45,6 +45,9 @@
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
 // const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -67,8 +70,17 @@ module.exports = {
     development: {
       host: "127.0.0.1",     // Localhost (default: none)
       port: 7545,            // Standard Ethereum port (default: none)
-      network_id: "5777",       // Any network (default: none)
-      from:"0x1bCBd5362075c540A0caCdc4f34a3c256787Ed7B" 
+      network_id: "1337",       // Any network (default: none)
+      from:"0x59dd7D8B4FD619Ef3e90924d5bC633b1277E4b5C",
+     },
+     polygon:{
+      provider: () => new HDWalletProvider(mnemonic,"http://127.0.0.1:10002"),
+      network_id: 3989,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      gas: 10000000,        
+
      },
     // ganache:{
     //    host: "127.0.0.1",     

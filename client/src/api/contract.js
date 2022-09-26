@@ -1,6 +1,5 @@
 import axios from "axios";
 import ROUTER from "../abi/router";
-import LP from "../abi/lp";
 import LPT from "../abi/lpt"
 
 const Web3 = require('web3');
@@ -18,6 +17,7 @@ const {
     LP_CONTRACT_ADDR,
     ROUTER_CONTRACT_ADDR,
     LPT_CONTRACT_ADDR,
+    LP_CONTRACT_ABI,
     FIGHT_CONTRACT_ADDR,
     FIGHT_CONTRACT_ABI
 } = require('../global_variables');
@@ -142,7 +142,7 @@ const SendJmtToken = async(to,address,amount) => {
 const GetReserve = async() => {
     const web3 = new Web3(window.ethereum);
     const lpContract = await new web3.eth.Contract(
-        LP,
+        LP_CONTRACT_ABI,
         LP_CONTRACT_ADDR
     );
     return await lpContract.methods.getReserves().call();
@@ -214,6 +214,33 @@ const withdrawToken = async(address) => {
     });
     console.log(aa)
     return aa;
+}
+
+
+const getLPClaimable = async(address) => {
+    const web3 = new Web3(window.ethereum);
+    const lpContract = await new web3.eth.Contract(
+        LP_CONTRACT_ABI,
+        LP_CONTRACT_ADDR
+    );
+    const result = await lpContract.methods.claimableReward().call({
+        from:address
+    });
+    return result;
+}
+
+const LPClaim = async(address) => {
+    const web3 = new Web3(window.ethereum);
+    const lpContract = await new web3.eth.Contract(
+        LP_CONTRACT_ABI,
+        LP_CONTRACT_ADDR
+    );
+    const result = await lpContract.methods.claimReward().send({
+        gas: 1500000,
+        gasPrice: '30000000',
+        from:address
+    });
+    return result;
 }
 
 
