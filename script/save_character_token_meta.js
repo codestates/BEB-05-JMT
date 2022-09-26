@@ -17,7 +17,7 @@ const main = async () => {
     fs.mkdirSync(metadataDir);
   }
 
-  for (let idx = 0; idx<100; idx++) {
+  for (let idx = 0; idx<5000; idx++) {
     const rawdata = fs.readFileSync(`${traitsDir}/${idx}.json`);
     const traits = JSON.parse(rawdata);
 
@@ -39,9 +39,8 @@ const main = async () => {
       })
     }
 
-
     metadata = {
-      image: `ipfs://QmU3P2xqb4TReaog4LjBuRyCkpYfCSBFz1vbZ6Ko233KjS/${idx}.png`,
+      image: `ipfs://QmexmVtwMtc4bp2sg33hmuNLc5YPp96thfFSxW14Pz19fX/${idx}.png`,
       name: `Maple #${idx}`,
       description: "CODESTATES BEB05 Project5 https://github.com/codestates/BEB-05-JMT",
       attributes: attributes

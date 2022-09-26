@@ -173,7 +173,6 @@ const main = async () => {
         console.log(`Saved ${traitsFilename} Completed`);
       }
     });
-
   }
 }
 

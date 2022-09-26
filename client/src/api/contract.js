@@ -236,12 +236,14 @@ const fetchItemsContract = async () => {
 }
 
 const _fetchCharacter = async (charId) => {
-    const NFTContract = await fetchNFTContract();
-    const tokenURI = await NFTContract.methods.tokenURI(charId).call();
-    const response = await axios.get(tokenURI);
-    const tokenMetadata = response.data;
-    tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
-    return tokenMetadata;
+    // const NFTContract = await fetchNFTContract();
+    // const tokenURI = await NFTContract.methods.tokenURI(charId).call();
+    // const response = await axios.get(tokenURI);
+    // const tokenMetadata = response.data;
+    // tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
+    const tokenMetadata = await axios.get(`http://localhost:4000/asset/character/metadata/${charId}`);
+    console.log(tokenMetadata.data);
+    return tokenMetadata.data;
 }
 const fetchCharacter = async (charId) => {
     try{
@@ -262,8 +264,7 @@ const fetchMyCharacter = async (address) => {
     }
     let myNFTs = [];
     for(const charId of arr) {
-        const tokenURI = await NFTContract.methods.tokenURI(charId).call();
-        const response = await axios.get(tokenURI);
+        const response = await axios.get(`http://localhost:4000/asset/character/metadata/${charId}`);
         const tokenMetadata = response.data;
         tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
         myNFTs.push([charId, tokenMetadata])

@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const User = require('./user');
+const CharacterMeta = require('./character.meta');
 
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
@@ -12,5 +13,6 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 // 연결된 객체 나중에 재사용 하기위해 db.sequelize에 넣기
 db.sequelize = sequelize;
 db.User = User(sequelize, Sequelize.DataTypes);
+db.CharacterMeta = CharacterMeta(sequelize, Sequelize.DataTypes);
 
 module.exports = db;

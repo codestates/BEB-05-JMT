@@ -31,7 +31,7 @@ contract MapleNFT is Ownable, ERC721Enumerable {
 
         marketContractAddress = _marketAddress;
         mintPrice = 1;
-        maxTokenNum = 50; // TODO: change to 10000 on live environment
+        maxTokenNum = 4999;
         _setToken(_tokenContractAddress);
         _setBaseURI(_MapleBaseURI);
         _generateMintArray();
@@ -39,7 +39,7 @@ contract MapleNFT is Ownable, ERC721Enumerable {
     }
 
     function _generateMintArray() private onlyOwner {
-        for (uint256 i = 1; i <= maxTokenNum; i++) {
+        for (uint256 i = 0; i <= maxTokenNum; i++) {
             waitForMint.push(i);
         }
     }
@@ -48,7 +48,7 @@ contract MapleNFT is Ownable, ERC721Enumerable {
     function mintMapleNFT() public payable returns (uint256)  {
         require(token.balanceOf(msg.sender) >= mintPrice, "ERC721: recipient lack of erc20 balance");
         require(maxTokenNum >= totalSupply(), "ERC721: all nfts are minted");
-        
+
         _shuffleMintArray();
         uint256 minted = waitForMint[waitForMint.length - 1];
         waitForMint.pop();
@@ -58,7 +58,7 @@ contract MapleNFT is Ownable, ERC721Enumerable {
 
         //재무 토큰 지갑으로 전송
         bool success = token.increaseContractAllowance(
-            msg.sender, 
+            msg.sender,
             address(this),
             mintPrice * decimals
         );

@@ -44,7 +44,7 @@ module.exports = async function (deployer) {
       MapleNFT,
       MapleMarket.address,
       jonMatangContract.address,
-      "https://ipfs.io/ipfs/QmVrTbBgFA36MW3KFArybwEZfFA99QwQWRExUc9n1D6ixM/", // 예시
+      "https://ipfs.io/ipfs/Qmb9C6BQg3CXYkDG3yeHGvStHMxjVxUdpK6mWiMCwz6WM8/", // 예시
       ContractOwner
     );
     await deployer.deploy(

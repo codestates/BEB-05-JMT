@@ -1,7 +1,7 @@
 node_modules
 characters_metadata
 characters_image
-characters_traits
+# characters_traits
 items_image
 items_traits
 items_metadata

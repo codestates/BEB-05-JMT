@@ -124,7 +124,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -137,7 +138,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -156,7 +158,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -169,7 +172,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -182,7 +186,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -233,7 +238,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -285,14 +291,16 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [],
       "name": "unStakingToken",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [],
@@ -310,7 +318,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [],
@@ -336,7 +345,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract VJMToken\",\"name\":\"_tokenAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Claimed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Staked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unStakedTime\",\"type\":\"uint256\"}],\"name\":\"UnStaked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unStakedTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"UnStakedClaimed\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"APR\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"Deploytime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"addressStaked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"claimReward\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"claimableReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract JMToken\",\"name\":\"_jmt\",\"type\":\"address\"}],\"name\":\"setJMTokenAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"setStakeInfo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"stakeInfos\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"startTS\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"claimedTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"unStakingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalClaimed\",\"type\":\"uint256\"},{\"internalType\":\"uint32\",\"name\":\"state\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"stakeAmount\",\"type\":\"uint256\"}],\"name\":\"stakeToken\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unStakingClaime\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unStakingToken\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Staking.sol\":\"Staking\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"@openzeppelin/contracts/security/Pausable.sol\":{\"keccak256\":\"0x0849d93b16c9940beb286a7864ed02724b248b93e0d80ef6355af5ef15c64773\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4ddabb16009cd17eaca3143feadf450ac13e72919ebe2ca50e00f61cb78bc004\",\"dweb:/ipfs/QmSPwPxX7d6TTWakN5jy5wsaGkS1y9TW8fuhGSraMkLk2B\"]},\"@openzeppelin/contracts/security/ReentrancyGuard.sol\":{\"keccak256\":\"0x0e9621f60b2faabe65549f7ed0f24e8853a45c1b7990d47e8160e523683f3935\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://287a2f8d5814dd0f05f22b740f18ca8321acc21c9bd03a6cb2203ea626e2f3f2\",\"dweb:/ipfs/QmZRQv9iuwU817VuqkA2WweiaibKii69x9QxYBBEfbNEud\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x24b04b8aacaaf1a4a0719117b29c9c3647b1f479c5ac2a60f5ff1bb6d839c238\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43e46da9d9f49741ecd876a269e71bc7494058d7a8e9478429998adb5bc3eaa0\",\"dweb:/ipfs/QmUtp4cqzf22C5rJ76AabKADquGWcjsc33yjYXxXC4sDvy\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]},\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd\",\"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6f2cf1c531122bc7ca96b8c8db6a60deae60441e5223065e792553d4849b5638\",\"dweb:/ipfs/QmPBdJmBBABMDCfyDjCbdxgiqRavgiSL88SYPGibgbPas9\"]},\"@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xd15c3e400531f00203839159b2b8e7209c5158b35618f570c695b7e47f12e9f0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b600b852e0597aa69989cc263111f02097e2827edc1bdc70306303e3af5e9929\",\"dweb:/ipfs/QmU4WfM28A1nDqghuuGeFmN3CnVrk6opWtiF65K4vhFPeC\"]},\"@uniswap/lib/contracts/libraries/Babylonian.sol\":{\"keccak256\":\"0xe20fc48e3575b4a2932e5d2dd53b6742e1ca96f652bd41038cb89d7f5d49a096\",\"urls\":[\"bzz-raw://6ba298d8e592d39960eabc2328b7d4a01ad6cf8b06366adc3ef0133d3b196a9f\",\"dweb:/ipfs/QmQgrNaHssJ8XVsPUCMHpyYRFLbBqNrumaoFgXHWdDiTyy\"]},\"project:/contracts/JMToken.sol\":{\"keccak256\":\"0x5ac24ee9d28244c27fe7607fd74f9712bb4c39b6b7c1b09f427c60c3a3f34903\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://9cf73304d3160b73cac46833df2e26ab6e3a0adad1c432e664d74ecdf0d1d7eb\",\"dweb:/ipfs/QmYginHntRFEMFLrcFiACEt2hvrhCrZb7Fv8vWCYXniQbQ\"]},\"project:/contracts/LPT.sol\":{\"keccak256\":\"0xed736abaceb3ae48c617e3f658e9b025d5b61ef8df551970899895432b0ec7b6\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://ad6919c26ab33a0f95936b6de5c1267e1a4ce2d41ef609c72be2ea63e39cf275\",\"dweb:/ipfs/QmVMZpeSSxWUxc9SME2pgQ3xwazzvdjRYGxF7sfMWGspwn\"]},\"project:/contracts/LiquidityPool.sol\":{\"keccak256\":\"0x7fd816e19e13f072ae235f4988026a8685c231f0e635d27feab19e6b9b59b27d\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://0713569f39944735b874b853183252b7251e6c7f72b8bfdb33432c9c2301a851\",\"dweb:/ipfs/QmeNCV83a4LBmLhpf1yRq59ChttyPzDUhKEjhWFnZo7tib\"]},\"project:/contracts/Staking.sol\":{\"keccak256\":\"0x710ebd15335631cc00d5b5f211dfcd90d819895d66555cc3a11fcc6a46706ac3\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://5563b27916283b171195095843bf28a321570eb7f50d8f63b5be8e9ed02086b3\",\"dweb:/ipfs/QmaMvKGeXkfZVnNDLkagqCKimpuq4pk8nuTRuTMC7t86hJ\"]},\"project:/contracts/VJMToken.sol\":{\"keccak256\":\"0xe2f8a326fd1fbe8e2bf0e7365ad261285fde71804fe77694ce986d47c106f061\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://f6ee599ebeff106e2eb9d3a6b0c01915cfc6f76e0916b4215e9c80c5c992e475\",\"dweb:/ipfs/QmXz1MZL3nGq7C8o1JW57rgYr6Z4iDV4Kba279dw4Smt4M\"]}},\"version\":1}",
@@ -6195,7 +6205,7 @@
   "sourceMap": "169:6596:34:-:0;;;554:6;528:32;;566:23;;;653:34;-1:-1:-1;;;;;;653:34:34;;;;;;;725:15;;653:34;725:11;;;566:23;725:11;;:15;:::i;:::-;693:47;;;;1491:254;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;936:32:0;719:10:19;936:18:0;:32::i;:::-;-1:-1:-1;;;;;1581:36:34;;1573:81;;;;-1:-1:-1;;;1573:81:34;;880:2:37;1573:81:34;;;862:21:37;919:2;899:18;;;892:30;958:34;938:18;;;931:62;-1:-1:-1;;;1009:18:37;;;1002:31;1050:19;;1573:81:34;;;;;;;;1680:4;:20;;-1:-1:-1;;;;;;1680:20:34;-1:-1:-1;;;;;1680:20:34;;;;;;;;;;1723:15;-1:-1:-1;1710:28:34;169:6596;;2433:187:0;2506:16;2525:6;;-1:-1:-1;;;;;2541:17:0;;;-1:-1:-1;;;;;;2541:17:0;;;;;;2573:40;;2525:6;;;;;;;2573:40;;2506:16;2573:40;2496:124;2433:187;:::o;14:346:37:-;85:10;127;;;139;;;123:27;170:20;;;;85:10;209:24;;;199:155;;276:10;271:3;267:20;264:1;257:31;311:4;308:1;301:15;339:4;336:1;329:15;199:155;;;14:346;;;;:::o;365:308::-;453:6;506:2;494:9;485:7;481:23;477:32;474:52;;;522:1;519;512:12;474:52;548:16;;-1:-1:-1;;;;;593:31:37;;583:42;;573:70;;639:1;636;629:12;573:70;662:5;365:308;-1:-1:-1;;;365:308:37:o;678:397::-;169:6596:34;;;;;;",
   "deployedSourceMap": "169:6596:34:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;528:32;;;;;;;;;;;;;;;;;;;160:25:37;;;148:2;133:18;528:32:34;;;;;;;;3451:991;;;:::i;:::-;;471:25;;;;;;;;;;;;;;;;1831:101:0;;;;;;;;;;;;;:::i;4488:929:34:-;;;:::i;:::-;;;;389:14:37;;382:22;364:41;;436:2;421:18;;414:34;;;;337:18;4488:929:34;196:258:37;2162:100:34;;;;;;;;;;;;2214:10;2203:22;;;;:10;:22;;;;;2240:15;2203:34;;;;:52;2162:100;1201:85:0;;;;;;;;;;-1:-1:-1;1247:7:0;1273:6;1201:85;;-1:-1:-1;;;;;1273:6:0;;;605:51:37;;593:2;578:18;1201:85:0;459:203:37;1926:161:34;;;;;;;;;;-1:-1:-1;1926:161:34;;;;;:::i;:::-;;:::i;5445:718::-;;;;;;;;;;;;;:::i;:::-;;;1254:14:37;;1247:22;1229:41;;1217:2;1202:18;5445:718:34;1089:187:37;566:23:34;;;;;;;;;;-1:-1:-1;566:23:34;;;;;;;;;;;1455:10:37;1443:23;;;1425:42;;1413:2;1398:18;566:23:34;1281:192:37;2295:1124:34;;;;;;:::i;:::-;;:::i;1312:47::-;;;;;;;;;;-1:-1:-1;1312:47:34;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2209:25:37;;;2265:2;2250:18;;2243:34;;;;2293:18;;;2286:34;;;;2351:2;2336:18;;2329:34;2394:3;2379:19;;2372:35;2456:10;2444:23;2438:3;2423:19;;2416:52;2196:3;2181:19;1312:47:34;1924:550:37;6201:562:34;;;;;;;;;;;;;:::i;1405:45::-;;;;;;;;;;-1:-1:-1;1405:45:34;;;;;:::i;:::-;;;;;;;;;;;;;;;;2081:198:0;;;;;;;;;;-1:-1:-1;2081:198:0;;;;;:::i;:::-;;:::i;3451:991:34:-;3524:10;3510:25;;;;:13;:25;;;;;;;;:33;;:25;:33;3502:70;;;;-1:-1:-1;;;3502:70:34;;2681:2:37;3502:70:34;;;2663:21:37;2720:2;2700:18;;;2693:30;-1:-1:-1;;;2739:18:37;;;2732:54;2803:18;;3502:70:34;;;;;;;;;3698:10;3643:23;3687:22;;;:10;:22;;;;;:34;;;3669:52;;:15;:52;:::i;:::-;3872:11;;;3822:10;3784:23;3811:22;;;:10;:22;;;;;:29;;;;3643:78;;-1:-1:-1;3784:23:34;;3872:11;-1:-1:-1;;;3872:11:34;;;;;3856:13;;;;;;3849:3;;3811:35;;3843:3;;3811:35;:::i;:::-;:41;;;;:::i;:::-;3810:59;;;;:::i;:::-;:73;;;;:::i;:::-;3784:99;-1:-1:-1;3914:23:34;3940:33;3958:15;3784:99;3940:33;:::i;:::-;4000:3;;3914:59;;-1:-1:-1;;;;;;4000:3:34;:12;4013:10;4025:20;4043:2;3914:59;4025:20;:::i;:::-;4000:46;;-1:-1:-1;;;;;;4000:46:34;;;;;;;-1:-1:-1;;;;;3684:32:37;;;4000:46:34;;;3666:51:37;3733:18;;;3726:34;3639:18;;4000:46:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;4091:10:34;4080:22;;;;:10;:22;;;;;;;;4119:15;4080:36;;;;:54;;;4174:13;:25;;;;;;:33;;-1:-1:-1;;4174:33:34;;;4241:22;;;:28;;:32;;-1:-1:-1;;4241:32:34;;;;;;;4332:37;;160:25:37;;;4332:37:34;;133:18:37;4332:37:34;;;;;;;4391:36;;160:25:37;;;4399:10:34;;4391:36;;148:2:37;133:18;4391:36:34;;;;;;;3492:950;;;3451:991::o;1831:101:0:-;1094:13;:11;:13::i;:::-;1895:30:::1;1922:1;1895:18;:30::i;:::-;1831:101::o:0;4488:929:34:-;4580:10;4538:4;4569:22;;;:10;:22;;;;;:28;;;4538:4;;4569:28;;4601:1;4569:33;4561:86;;;;-1:-1:-1;;;4561:86:34;;4255:2:37;4561:86:34;;;4237:21:37;4294:2;4274:18;;;4267:30;4333:34;4313:18;;;4306:62;-1:-1:-1;;;4384:18:37;;;4377:38;4432:19;;4561:86:34;4053:404:37;4561:86:34;4699:13;;4671:10;4660:22;;;;:10;:22;;;;;:36;;;4715:15;;4660:52;;;:::i;:::-;:70;4657:746;;;4793:10;4765:14;4782:22;;;:10;:22;;;;;;;:29;;;4852:4;;:32;;-1:-1:-1;;;4852:32:34;;;;;3666:51:37;;;;3733:18;;;3726:34;;;4782:29:34;-1:-1:-1;;;;;4852:4:34;;;;:13;;3639:18:37;;4852:32:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;4928:10:34;4917:22;;;;:10;:22;;;;;;;;4910:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;4910:29:34;;;4991:13;:25;;;;;;4984:32;;-1:-1:-1;;4984:32:34;;;5073:52;;5101:15;4766:25:37;;4807:18;;;4800:34;;;5073:52:34;;4739:18:37;5073:52:34;;;;;;;-1:-1:-1;5146:4:34;;5152:15;;-1:-1:-1;4488:929:34;-1:-1:-1;4488:929:34:o;4657:746::-;5282:13;;5254:10;5218:21;5243:22;;;:10;:22;;;;;:36;;;5218:21;;5299:15;;5243:52;;5282:13;5243:52;:::i;:::-;5242:72;;;;:::i;:::-;5371:5;;5218:96;;-1:-1:-1;4488:929:34;-1:-1:-1;;4488:929:34:o;1926:161::-;1094:13:0;:11;:13::i;:::-;2011:3:34::1;::::0;-1:-1:-1;;;;;2011:3:34::1;2003:26:::0;1995:65:::1;;;::::0;-1:-1:-1;;;1995:65:34;;5047:2:37;1995:65:34::1;::::0;::::1;5029:21:37::0;5086:2;5066:18;;;5059:30;5125:29;5105:18;;;5098:57;5172:18;;1995:65:34::1;4845:351:37::0;1995:65:34::1;2070:3;:10:::0;;-1:-1:-1;;;;;;2070:10:34::1;-1:-1:-1::0;;;;;2070:10:34;;;::::1;::::0;;;::::1;::::0;;1926:161::o;5445:718::-;5523:10;5486:4;5509:25;;;:13;:25;;;;;;;;:33;;:25;:33;5501:70;;;;-1:-1:-1;;;5501:70:34;;5403:2:37;5501:70:34;;;5385:21:37;5442:2;5422:18;;;5415:30;5481:26;5461:18;;;5454:54;5525:18;;5501:70:34;5201:348:37;5501:70:34;5637:10;5582:23;5626:22;;;:10;:22;;;;;:34;;;5608:52;;:15;:52;:::i;:::-;5811:11;;;5761:10;5723:23;5750:22;;;:10;:22;;;;;:29;;;;5582:78;;-1:-1:-1;5723:23:34;;5811:11;-1:-1:-1;;;5811:11:34;;;;;5795:13;;;;;;5788:3;;5750:35;;5782:3;;5750:35;:::i;:::-;:41;;;;:::i;:::-;5749:59;;;;:::i;:::-;:73;;;;:::i;:::-;5723:99;-1:-1:-1;5853:23:34;5879:33;5897:15;5723:99;5879:33;:::i;:::-;5940:3;;5853:59;;-1:-1:-1;;;;;;5940:3:34;:12;5953:10;5965:20;5983:2;5853:59;5965:20;:::i;:::-;5940:46;;-1:-1:-1;;;;;;5940:46:34;;;;;;;-1:-1:-1;;;;;3684:32:37;;;5940:46:34;;;3666:51:37;3733:18;;;3726:34;3639:18;;5940:46:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;6023:14;2214:10;2203:22;;;;:10;:22;;;;;2240:15;2203:34;;;;:52;2162:100;6023:14;6098:36;;160:25:37;;;6106:10:34;;6098:36;;148:2:37;133:18;6098:36:34;;;;;;;6152:4;6145:11;;;;;5445:718;:::o;2295:1124::-;1846:3;;:28;;-1:-1:-1;;;1846:28:34;;1868:4;1846:28;;;605:51:37;2382:4:34;;2361:11;;;;-1:-1:-1;;;;;1846:3:34;;:13;;578:18:37;;1846:28:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:37;1838:60;;;;-1:-1:-1;;;1838:60:34;;5945:2:37;1838:60:34;;;5927:21:37;5984:2;5964:18;;;5957:30;-1:-1:-1;;;6003:18:37;;;5996:40;6053:18;;1838:60:34;5743:334:37;1838:60:34;2419:1:::1;2405:11;:15;2397:58;;;::::0;-1:-1:-1;;;2397:58:34;;6284:2:37;2397:58:34::1;::::0;::::1;6266:21:37::0;6323:2;6303:18;;;6296:30;6362:32;6342:18;;;6335:60;6412:18;;2397:58:34::1;6082:354:37::0;2397:58:34::1;2501:10;2487:25;::::0;;;:13:::1;:25;::::0;;;;;::::1;;:34;2479:71;;;::::0;-1:-1:-1;;;2479:71:34;;2681:2:37;2479:71:34::1;::::0;::::1;2663:21:37::0;2720:2;2700:18;;;2693:30;-1:-1:-1;;;2739:18:37;;;2732:54;2803:18;;2479:71:34::1;:348:37::0;:71:34::1;2649:10;2638:22;::::0;;;:10:::1;:22;::::0;;;;:28:::1;;::::0;::::1;;2670:1;2638:33:::0;2635:74:::1;;2693:5;2686:12;;;;2635:74;2734:4;::::0;:117:::1;::::0;-1:-1:-1;;;2734:117:34;;2778:10:::1;2734:117;::::0;::::1;6681:34:37::0;2811:4:34::1;6731:18:37::0;;;6724:43;6783:18;;;6776:34;;;2719:12:34::1;::::0;-1:-1:-1;;;;;2734:4:34::1;::::0;:30:::1;::::0;6616:18:37;;2734:117:34::1;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2719:132;;2869:7;2861:40;;;::::0;-1:-1:-1;;;2861:40:34;;7023:2:37;2861:40:34::1;::::0;::::1;7005:21:37::0;7062:2;7042:18;;;7035:30;-1:-1:-1;;;7081:18:37;;;7074:51;7142:18;;2861:40:34::1;6821:345:37::0;2861:40:34::1;2911:4;::::0;:57:::1;::::0;-1:-1:-1;;;2911:57:34;;2929:10:::1;2911:57;::::0;::::1;6681:34:37::0;2949:4:34::1;6731:18:37::0;;;6724:43;6783:18;;;6776:34;;;-1:-1:-1;;;;;2911:4:34;;::::1;::::0;:17:::1;::::0;6616:18:37;;2911:57:34::1;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1::0;3013:10:34::1;2999:25;::::0;;;:13:::1;:25;::::0;;;;;;;:32;;3027:4:::1;-1:-1:-1::0;;2999:32:34;;::::1;::::0;::::1;::::0;;;3067:277;;::::1;::::0;::::1;::::0;;3116:15:::1;3067:277:::0;;;;;::::1;::::0;;;;;;;;;;;;;;;;;;;;;;;;;;;3042:22;;;:10:::1;:22:::0;;;;;;:302;;;;;;;;::::1;::::0;;;;;::::1;::::0;::::1;::::0;;;::::1;::::0;::::1;::::0;;;::::1;::::0;::::1;::::0;;;::::1;::::0;;::::1;::::0;;-1:-1:-1;;3042:302:34::1;3067:277;3042:302:::0;;::::1;::::0;;;::::1;::::0;;;3360:31;;160:25:37;;;3360:31:34::1;::::0;133:18:37;3360:31:34::1;;;;;;;3408:4;3401:11;;;1908:1;2295:1124:::0;;;;:::o;6201:562::-;6284:10;6248:7;6270:25;;;:13;:25;;;;;;;;:33;;:25;:33;6267:490;;6373:10;6318:23;6362:22;;;:10;:22;;;;;:34;;;6344:52;;:15;:52;:::i;:::-;6551:11;;;6501:10;6463:23;6490:22;;;:10;:22;;;;;:29;;;;6318:78;;-1:-1:-1;6463:23:34;;6551:11;-1:-1:-1;;;6551:11:34;;;;;6535:13;;;;;;6528:3;;6490:35;;6522:3;;6490:35;:::i;:::-;:41;;;;:::i;:::-;6489:59;;;;:::i;:::-;:73;;;;:::i;:::-;6463:99;-1:-1:-1;6597:23:34;6623:33;6641:15;6463:99;6623:33;:::i;:::-;6597:59;6201:562;-1:-1:-1;;;;6201:562:34:o;6267:490::-;-1:-1:-1;6745:1:34;;6201:562::o;2081:198:0:-;1094:13;:11;:13::i;:::-;-1:-1:-1;;;;;2169:22:0;::::1;2161:73;;;::::0;-1:-1:-1;;;2161:73:0;;7373:2:37;2161:73:0::1;::::0;::::1;7355:21:37::0;7412:2;7392:18;;;7385:30;7451:34;7431:18;;;7424:62;-1:-1:-1;;;7502:18:37;;;7495:36;7548:19;;2161:73:0::1;7171:402:37::0;2161:73:0::1;2244:28;2263:8;2244:18;:28::i;:::-;2081:198:::0;:::o;1359:130::-;1247:7;1273:6;-1:-1:-1;;;;;1273:6:0;719:10:19;1422:23:0;1414:68;;;;-1:-1:-1;;;1414:68:0;;7780:2:37;1414:68:0;;;7762:21:37;;;7799:18;;;7792:30;7858:34;7838:18;;;7831:62;7910:18;;1414:68:0;7578:356:37;2433:187:0;2506:16;2525:6;;-1:-1:-1;;;;;2541:17:0;;;-1:-1:-1;;;;;;2541:17:0;;;;;;2573:40;;2525:6;;;;;;;2573:40;;2506:16;2573:40;2496:124;2433:187;:::o;667:140:37:-;-1:-1:-1;;;;;751:31:37;;741:42;;731:70;;797:1;794;787:12;812:272;887:6;940:2;928:9;919:7;915:23;911:32;908:52;;;956:1;953;946:12;908:52;995:9;982:23;1014:40;1048:5;1014:40;:::i;:::-;1073:5;812:272;-1:-1:-1;;;812:272:37:o;1478:180::-;1537:6;1590:2;1578:9;1569:7;1565:23;1561:32;1558:52;;;1606:1;1603;1596:12;1558:52;-1:-1:-1;1629:23:37;;1478:180;-1:-1:-1;1478:180:37:o;2832:127::-;2893:10;2888:3;2884:20;2881:1;2874:31;2924:4;2921:1;2914:15;2948:4;2945:1;2938:15;2964:128;3031:9;;;3052:11;;;3049:37;;;3066:18;;:::i;:::-;2964:128;;;;:::o;3097:168::-;3170:9;;;3201;;3218:15;;;3212:22;;3198:37;3188:71;;3239:18;;:::i;3270:217::-;3310:1;3336;3326:132;;3380:10;3375:3;3371:20;3368:1;3361:31;3415:4;3412:1;3405:15;3443:4;3440:1;3433:15;3326:132;-1:-1:-1;3472:9:37;;3270:217::o;3771:277::-;3838:6;3891:2;3879:9;3870:7;3866:23;3862:32;3859:52;;;3907:1;3904;3897:12;3859:52;3939:9;3933:16;3992:5;3985:13;3978:21;3971:5;3968:32;3958:60;;4014:1;4011;4004:12;4462:125;4527:9;;;4548:10;;;4545:36;;;4561:18;;:::i;5554:184::-;5624:6;5677:2;5665:9;5656:7;5652:23;5648:32;5645:52;;;5693:1;5690;5683:12;5645:52;-1:-1:-1;5716:16:37;;5554:184;-1:-1:-1;5554:184:37:o",
   "source": "// SPDX-License-Identifier: GPL-3.0-only\npragma solidity ^0.8.0;\n\nimport \"./VJMToken.sol\";\nimport \"./JMToken.sol\";\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\n\ncontract Staking is Ownable {\n    event Staked(address indexed from, uint256 amount);\n    event UnStaked(address indexed from, uint256 unStakedTime);\n    event UnStakedClaimed(address indexed from, uint256 unStakedTime, uint256 amount);\n    event Claimed(address indexed from, uint256 amount);\n   \n    uint256 public Deploytime; // 프로제트 시작일\n    uint256 public decimals = 10**18;\n    uint32 public APR = 150; // 이자율\n    uint32 private yearsDuration = 31536000;\n    uint32 private dayDuration = 86400;\n    uint256 private stakingExpire = dayDuration * 3; // 스테이킹 종료 3일  // test = 180 -> 3분\n    VJMToken vJmt;  // 스테이킹 할 토큰\n    JMToken jmt; // 스테이킹 보상 토큰\n\n    struct StakeInfo {        \n        uint256 startTS; //스테이킹 시작 시간\n        uint256 claimedTime; // 마지막 으로클레임한 시간 \n        uint256 unStakingTime; // 언스테이킹한 시간\n        uint256 amount; // 스테이킹 양\n        uint256 totalClaimed; //클레임한 토큰 decimals적용하여 계산\n        uint32 state; // 스테이킹 상태 스테이킹==1, unstaking==2\n    }\n\n    mapping(address => StakeInfo) public stakeInfos; // 주소당 스테이킹 정보 저장\n    mapping(address => bool) public addressStaked;  // 주소당 스테이킹 상태\n\n    constructor(VJMToken _tokenAddress) { // staking 할 erc20  토큰 정보\n        require(address(_tokenAddress) != address(0),\"Token Address cannot be address 0\");                \n        vJmt = _tokenAddress;\n        Deploytime = block.timestamp;\n    }\n\n    // 현재 토큰 분배 가능한지 \n    modifier Claimable(uint256 amount) {\n        require(jmt.balanceOf(address(this)) > amount, \"TOKEN_LACK\");\n        _;\n    }\n    \n    function setJMTokenAddress(JMToken _jmt) external onlyOwner{\n        require(address(jmt) == address(0),\"ADDRESS IS NOT Zero Address\");\n        jmt = _jmt;\n    }\n\n    //set stakeInfoe startTime // get은 stakeinfos(address) 이용 \n    function setStakeInfo() public {\n        stakeInfos[msg.sender].claimedTime = block.timestamp;\n    }\n\n\n    //토큰 스테이킹\n    function stakeToken(uint256 stakeAmount) public payable Claimable(stakeAmount) returns(bool){\n        require(stakeAmount > 0, \"Stake amount should be correct\"); // 양 체크\n        require(addressStaked[msg.sender] == false, \"You already participated\"); // 스테이킹 여부\n        // 언스 상태에서 스테이킹 안댐 \n        if(stakeInfos[msg.sender].state == 2){\n            return false;\n        }\n\n        bool success = vJmt.increaseContractAllowance(\n            msg.sender, \n            address(this),\n            stakeAmount\n        );\n        require(success,\"IncreaseContract Fail\");\n        vJmt.transferFrom(msg.sender, address(this), stakeAmount); // vjmt토큰 전송\n        addressStaked[msg.sender] = true;\n\n        stakeInfos[msg.sender] = StakeInfo({                \n            startTS: block.timestamp,\n            claimedTime: block.timestamp, //클레임한 시간 \n            unStakingTime: 0,\n            amount: stakeAmount, // 스테이킹한 양\n            totalClaimed: 0,\n            state: 1\n        });\n\n        emit Staked(msg.sender, stakeAmount);\n        return true;\n    }   \n\n    //언스테이킹 \n    function unStakingToken() public payable {\n        require(addressStaked[msg.sender] == true, \"You already participated\"); // 스테이킹 여부\n    \n        // staking 보상 수령\n        uint256 stakingDuration = block.timestamp - stakeInfos[msg.sender].claimedTime; // 마지막 클레임이후 스테이킹한 기간 \n        uint256 persecondAmount = (stakeInfos[msg.sender].amount * APR / 100) / yearsDuration / dayDuration; // 초당 리워드 \n        uint256 claimableAmount = persecondAmount * stakingDuration; // 최종 보상\n        jmt.transfer(msg.sender, claimableAmount / 10); //vjmt:jmt1:10 비율 \n\n        stakeInfos[msg.sender].unStakingTime = block.timestamp; // 언스테이킹한 시점 \n        addressStaked[msg.sender] = false; // 스테이킹 종료 \n        stakeInfos[msg.sender].state = 2; // 언스테이킹 토큰 클레임 가능\n\n        emit UnStaked(msg.sender, block.timestamp); //jmt \n        emit Claimed(msg.sender, claimableAmount); // vjmt\n    }\n\n    //언스테이킹 토큰 클레임 \n    function unStakingClaime() public payable returns(bool,uint256){\n        require(stakeInfos[msg.sender].state == 2, \"now State is Staking, Please UnStaking!!\");\n        if(stakeInfos[msg.sender].unStakingTime + stakingExpire < block.timestamp){ //클레임 가능 \n            uint256 amount = stakeInfos[msg.sender].amount; // 스테이킹한 벨류 \n            vJmt.transfer(msg.sender,amount); // 전송 \n\n            delete stakeInfos[msg.sender]; // 스테이킹 정보 제거 \n            delete addressStaked[msg.sender]; // 스테이킹 상태 주소 제거 \n            emit UnStakedClaimed(msg.sender, block.timestamp, amount);\n            return(true, block.timestamp);\n        }else{ // 클레임 불가 \n            uint256 remainingTime = (stakeInfos[msg.sender].unStakingTime + stakingExpire) - block.timestamp; // 보상가능까지 남은 시간\n            return(false, remainingTime);\n        }\n       \n    }\n\n\n    // 보상 수령\n    function claimReward() external returns (bool){\n        require(addressStaked[msg.sender] == true, \"You are not participated\");\n\n        uint256 stakingDuration = block.timestamp - stakeInfos[msg.sender].claimedTime; // 마지막 클레임이후 스테이킹한 기간 \n        uint256 persecondAmount = (stakeInfos[msg.sender].amount * APR / 100) / yearsDuration / dayDuration; // 초당 리워드 \n        uint256 claimableAmount = persecondAmount * stakingDuration; // 최종 보상\n\n        jmt.transfer(msg.sender, claimableAmount / 10); //vjmt:jmt == 10:1 비율 \n        setStakeInfo(); // 클레임시간 현재 시간으로 수정\n        emit Claimed(msg.sender, claimableAmount);\n\n        return true;\n    }\n\n    // 보상 가능한 수량 \n    function claimableReward() public view returns(uint256) {\n        if(addressStaked[msg.sender] == true){\n            uint256 stakingDuration = block.timestamp - stakeInfos[msg.sender].claimedTime; // 마지막 클레임이후 스테이킹한 기간 \n            uint256 persecondAmount = (stakeInfos[msg.sender].amount * APR / 100) / yearsDuration / dayDuration; // 초당 리워드 \n            uint256 claimableAmount = persecondAmount * stakingDuration; // 최종 보상\n            return claimableAmount;\n        }else{\n            return 0;\n        }\n    }\n}",
-  "sourcePath": "/Users/hyenne/workspace/BEB-05-JMT/contract/contracts/Staking.sol",
+  "sourcePath": "/Users/rokrokss/workspace/hyein/BEB-05-JMT/contract/contracts/Staking.sol",
   "ast": {
     "absolutePath": "project:/contracts/Staking.sol",
     "exportedSymbols": {
@@ -13962,9 +13972,119 @@
     "name": "solc",
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {
+        "0xd8138f8a3f377c5259ca548e70e4c2de94f129f5a11036a15b69513cba2b426a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Claimed",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0x9e71bc8eea02a63969f509818f2dafb9254532904319f9dbda79b67bd34a5f3d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Staked",
+          "type": "event"
+        },
+        "0x79d3df6837cc49ff0e09fd3258e6e45594e0703445bb06825e9d75156eaee8f0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "unStakedTime",
+              "type": "uint256"
+            }
+          ],
+          "name": "UnStaked",
+          "type": "event"
+        },
+        "0xec4c5e119b3c2211affd553a6167326af1472cb3b7966b96b0f84a56d8d5317c": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "unStakedTime",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "UnStakedClaimed",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x4584639af49340Fce78FFC7435C62962B191819c",
+      "transactionHash": "0xbd0e4c7c0f76a6718818c959c2c43e2ee527b45d21cb839c0fca6796eb5a0f31"
+    }
+  },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-25T22:51:06.855Z",
+  "updatedAt": "2022-09-26T00:21:30.188Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {

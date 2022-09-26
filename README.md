@@ -43,6 +43,11 @@ npx sequelize db:migrate
 //npx sequelize db:migrate:undo
 ```
 
+- NFT 메타데이터 DB에 업로드
+```
+cd ./script
+node upload_character_attributes_db.js
+```
 
 - DB 재설정
 ```
