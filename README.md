@@ -6,26 +6,27 @@
 
 ## 환경 설정
 
-- npm install 명령어로 모듈 설치 
+### npm install 명령어로 모듈 설치 
 
 `client`, `contract`, `server`, `script` 폴더 하위
 
 ```
 npm install
 ```
-- 환경 변수 설정
+
+### 환경 변수 설정
 
 `client`, `contract`, `server` 폴더 하위에 `.env.example`을 참고하여 `.env`로 생성하고, 환경 변수들을 넣어준다.
 
-
-- 도커로 MySQL 서버 실행
+### 도커로 MySQL 서버 실행
 
 ```
 docker pull mysql:8
 docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=root -d -p 3306:3306 mysql:8
 ```
 
-- DDL/쿼리를 위한 접근
+### DDL/쿼리를 위한 접근
+
 ```
 docker exec -it mysql-container bash
 mysql -u root -p
@@ -35,7 +36,7 @@ mysql -u root -p
 create database jmt 
 ```
 
-- MYSQL Sequelize 사용법
+### MYSQL Sequelize 사용법
 
 mysql에 `jmt` 데이터베이스 생성 후 진행한다.
 ```
@@ -43,13 +44,15 @@ npx sequelize db:migrate
 //npx sequelize db:migrate:undo
 ```
 
-- NFT 메타데이터 DB에 업로드
+### NFT 메타데이터 DB에 업로드
+
 ```
 cd ./script
 node upload_character_attributes_db.js
 ```
 
-- DB 재설정
+### DB 재설정
+
 ```
 # db
 docker stop mysql-container
