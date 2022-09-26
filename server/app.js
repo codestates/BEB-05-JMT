@@ -35,6 +35,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-module.exports = app.listen(port, () => {
+module.exports = app.listen(port, '0.0.0.0', () => {
   console.log(`      🚀 Server is starting on ${port}`);
 })

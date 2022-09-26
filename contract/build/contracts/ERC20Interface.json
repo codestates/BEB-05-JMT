@@ -231,7 +231,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.0;\n\ninterface ERC20Interface {\n    function totalSupply() external view returns (uint256);\n    function balanceOf(address account) external view returns (uint256);\n    function transfer(address recipient, uint256 amount) external returns (bool);\n    function approve(address spender, uint256 amount) external returns (bool);\n    function allowance(address owner, address spender) external view returns (uint256);\n    function transferFrom(address spender, address recipient, uint256 amount) external returns (bool);\n    \n    event Transfer(address indexed from, address indexed to, uint256 amount);\n    event Transfer(address indexed spender, address indexed from, address indexed to, uint256 amount);\n    event Approval(address indexed owner, address indexed spender, uint256 oldAmount, uint256 amount);\n}\n",
-  "sourcePath": "/home/kbi/blockChain_part/bebpro_3/main3/BEB-05-JMT/contract/contracts/interfaces/ERC20Interface.sol",
+  "sourcePath": "/Users/rokrokss/workspace/hyein/BEB-05-JMT/contract/contracts/interfaces/ERC20Interface.sol",
   "ast": {
     "absolutePath": "project:/contracts/interfaces/ERC20Interface.sol",
     "exportedSymbols": {
@@ -1257,8 +1257,8 @@
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T17:49:54.001Z",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-27T01:24:43.826Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

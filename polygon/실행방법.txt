@@ -31,11 +31,11 @@ Node ID              = 16Uiu2HAmNg41zjmzBFyTxGLxTnk6NRbArqkodasGxkAo41Wc3vbe
 6-2. 체인 ID 설정: --chain-id 2999
 6-3. MATIC 얻는법 : --premine=<메타마스크 지갑주소>:5000000000000000000000
 6-4. 가스 제한 : --block-gas-limit 10000000
-ex) polygon-edge genesis --consensus ibft --ibft-validators-prefix-path test-chain- --bootnode /ip4/127.0.0.1/tcp/10001/p2p/16Uiu2HAmNg41zjmzBFyTxGLxTnk6NRbArqkodasGxkAo41Wc3vbe --bootnode /ip4/127.0.0.1/tcp/20001/p2p/16Uiu2HAm3n4KNqt18dBNPsHoPopegPWxc5MovMqnPUfuzgPmuAm2 --chain-id 3989 --premine=0x28dFA4E83C135CC2f06dA73713034cEEAfa85d5D:5000000000000000000000 --block-gas-limit 10000000
+ex) polygon-edge genesis --consensus ibft --ibft-validators-prefix-path test-chain- --bootnode /ip4/127.0.0.1/tcp/10001/p2p/16Uiu2HAmNg41zjmzBFyTxGLxTnk6NRbArqkodasGxkAo41Wc3vbe --bootnode /ip4/127.0.0.1/tcp/20001/p2p/16Uiu2HAm3n4KNqt18dBNPsHoPopegPWxc5MovMqnPUfuzgPmuAm2 --chain-id 3989 --premine=0x28dFA4E83C135CC2f06dA73713034cEEAfa85d5D:5000000000000000000000 --block-gas-limit 10000000000
 7. genesis.json 파일 생성되었는지 확인
 
 // 노드 실행 
-1. 터미널1 -> polyon-edge server --data-dir ./test-chain-1 --chain genesis.json --grpc-address :10000 --libp2p :10001 --jsonrpc :10002 --seal
+1. 터미널1 -> polygon-edge server --data-dir ./test-chain-1 --chain genesis.json --grpc-address :10000 --libp2p :10001 --jsonrpc :10002 --seal
 2. 터미널2 -> polygon-edge server --data-dir ./test-chain-2 --chain genesis.json --grpc-address :20000 --libp2p :20001 --jsonrpc :20002 --seal
 
 *주의 사항 

@@ -83,10 +83,10 @@ function Liquidity() {
 			<div className="deposit-ui">
 				<div className="deposit-input">
 					<div>
-						<span className="text-size">ETH</span>
+						<span className="text-size">MATIC</span>
 						<input 
 						type="text" 
-						placeholder="ETH amount..." 
+						placeholder="MATIC amount..." 
 						className="lp-input"
 						onChange={(e) => ethHandleInputChange(e.target.value)}
 						ref={ethRef}/>

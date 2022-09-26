@@ -1364,8 +1364,8 @@
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T17:49:53.814Z",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-27T01:24:43.654Z",
   "devdoc": {
     "details": "Extension of {ERC1155} that allows token holders to destroy both their own tokens and those that they have been approved to use. _Available since v3.1._",
     "kind": "dev",

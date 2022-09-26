@@ -6,12 +6,13 @@ const FIGHT = require ("./abi/fight");
 const VTOKEN = require ("./abi/vtoken");
 const STAKING = require ("./abi/staking");
 const LP = require ("./abi/lp");
+const LPT = require ("./abi/lpt");
+const ROUTER = require ("./abi/router");
 
 export const NFT_CONTRACT_ADDR = process.env.REACT_APP_NFT_CONTRACT_ADDR;
 export const MARKET_CONTRACT_ADDR = process.env.REACT_APP_MARKET_CONTRACT_ADDR;
 export const ITEMS_CONTRACT_ADDR = process.env.REACT_APP_ITEMS_CONTRACT_ADDR;
 export const FIGHT_CONTRACT_ADDR = process.env.REACT_APP_FIGHT_CONTRACT_ADDR;
-
 export const TOKEN_CONTRACT_ADDR = process.env.REACT_APP_TOKEN_CONTRACT_ADDR;
 export const VTOKEN_CONTRACT_ADDR = process.env.REACT_APP_VJMTOKEN_CONTRACT_ADDR;
 export const STAKING_CONTRACT_ADDR = process.env.REACT_APP_STAKING_CONTRACT_ADDR;
@@ -50,6 +51,12 @@ const getStakingContractABI = () => {
 const getLPContractABI = () => {
     return LP["abi"];
 }
+const getLPTContractABI = () => {
+    return LPT["abi"];
+}
+const getRouterContractABI = () => {
+    return ROUTER["abi"];
+}
 
 
 export const NFT_CONTRACT_ABI = getNFTContractABI();
@@ -60,3 +67,5 @@ export const FIGHT_CONTRACT_ABI = getFightContractABI();
 export const VTOKEN_CONTRACT_ABI = getVTokenContractABI();
 export const STAKING_CONTRACT_ABI = getStakingContractABI();
 export const LP_CONTRACT_ABI = getLPContractABI();
+export const LPT_CONTRACT_ABI = getLPTContractABI();
+export const ROUTER_CONTRACT_ABI = getRouterContractABI();

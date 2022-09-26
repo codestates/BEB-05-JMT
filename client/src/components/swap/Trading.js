@@ -66,7 +66,7 @@ function Trading({initialSwap}) {
 				<div className="exchange-rate">
 					<div>
 						<div className="exchange-rate-text">교환 비율</div>
-						<div className="text-size">ETH : {ethReserve}</div>
+						<div className="text-size">MATIC : {ethReserve}</div>
 						<div className="text-size">JMT : {jmtReserve}</div>
 					</div>
 				</div>
@@ -76,7 +76,7 @@ function Trading({initialSwap}) {
 						<input 
 						type="text" 
 						ref={ref}
-						placeholder={inputToken == 0 ? "ETH Input":"JMT Input"}
+						placeholder={inputToken == 0 ? "MATIC Input":"JMT Input"}
 						onChange={(e) => handleInputChange(e.target.value)} 
 						className="lp-input"
 						style={{"color":"rgba(0, 0, 0, 0.6)"}}/>
@@ -86,7 +86,7 @@ function Trading({initialSwap}) {
 						<input 
 						type="text" 
 						readOnly 
-						placeholder={inputToken == 0 ? "JMT Amount":"ETH Amount"} 
+						placeholder={inputToken == 0 ? "JMT Amount":"MATIC Amount"} 
 						value={toToken}
 						className="lp-input" 
 						style={{"color":"rgba(0, 0, 0, 0.6)"}}/>
