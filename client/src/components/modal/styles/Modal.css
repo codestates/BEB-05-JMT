@@ -29,3 +29,45 @@
 .upgrade-fail {
     background-color: #fe4727e7;
 }
+
+.fightScrollreward-modal {
+    display: flex;
+    flex-direction: column;
+    background-color: #fe7227e7;
+    width: calc(100vw * 250/620);
+    height: calc(100vw * 190/620);
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5vw;
+    flex-wrap : wrap;
+    color:  #ffffff;
+}
+
+.fightScrollreward-success {
+    background-color: #4f27fee7;
+}
+.fightScrollreward-fail {
+    background-color: #fe4727e7;
+}
+
+.fightTokenreward-modal {
+    display: flex;
+    flex-direction: column;
+    background-color: #fe7227e7;
+    width: calc(100vw * 250/620);
+    height: calc(100vw * 190/620);
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5vw;
+    flex-wrap : wrap;
+    color:  #ffffff;
+}
+
+.fightTokenreward-success {
+    background-color: #4f27fee7;
+}
+.fightTokenreward-fail {
+    background-color: #fe4727e7;
+}
