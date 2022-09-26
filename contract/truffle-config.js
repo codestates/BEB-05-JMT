@@ -70,12 +70,12 @@ module.exports = {
     development: {
       host: "127.0.0.1",     // Localhost (default: none)
       port: 7545,            // Standard Ethereum port (default: none)
-      network_id: "1337",       // Any network (default: none)
-      from:"0x59dd7D8B4FD619Ef3e90924d5bC633b1277E4b5C",
+      network_id: "5777",       // Any network (default: none)
+      from:"0x61aDA980c7D8a6Ef5113aA51919d89b1FD4f6669", 
      },
      polygon:{
       provider: () => new HDWalletProvider(mnemonic,"http://127.0.0.1:10002"),
-      network_id: 3989,
+      network_id: 2999,
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
@@ -129,7 +129,7 @@ module.exports = {
       settings: {          // See the solidity docs for advice about optimization and evmVersion
        optimizer: {
          enabled: true,
-         runs: 200
+         runs: 1000
        },
        evmVersion: "berlin"
       }
