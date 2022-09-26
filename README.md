@@ -67,7 +67,8 @@ create database jmt
 npx sequelize db:migrate
 ```
 
-- 컨트랙트 재설정
+### 컨트랙트 재설정
+
 ```
 # contract (from truffle)
 compile --all
