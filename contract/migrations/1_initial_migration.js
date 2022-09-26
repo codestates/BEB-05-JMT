@@ -17,20 +17,25 @@ const vJmtokenContract = artifacts.require('../contracts/VJMToken.sol');
 // const web3 = new Web3();
 // web3.setProvider(new Web3.providers.HttpProvider('http://127.0.0.1:7545')); //테스트시 본인 가나치 포트에 맞추세요 10002
 
-//polygon
-const HDWalletProvider = require('@truffle/hdwallet-provider');
-const Web3 = require('web3');
-const fs = require('fs');
-const mnemonic = fs.readFileSync("../.secret").toString().trim();
-const walletMnemonic = mnemonic; // Your mnemonic
-const walletAPIUrl = 'http://127.0.0.1:10002/'; // Your Infura URL
-const provider = new HDWalletProvider(
-    walletMnemonic,
-    walletAPIUrl
-);
-const web3 = new Web3(provider);
+// const HDWalletProvider = require('@truffle/hdwallet-provider');
+// const Web3 = require('web3');
+// const fs = require('fs');
+// const mnemonic = fs.readFileSync("../.secret").toString().trim();
+// const maticAPIKey = fs.readFileSync("../.secret.apikey").toString().trim();
+// const walletMnemonic = mnemonic; // Your mnemonic
+// //polygon local
+// // const walletAPIUrl = 'http://127.0.0.1:10002/'; // Your Infura URL
+// //polygon mumbai
+// const walletAPIUrl = `wss://rpc-mumbai.maticvigil.com/ws/v1/11e54611899cb7b5e8ca8e065baace37e7029595`;
+// const provider = new HDWalletProvider(
+//     walletMnemonic,
+//     walletAPIUrl
+// );
+// const web3 = new Web3(provider);
 
 module.exports = async function (deployer) {
+  // const testacc = await web3.eth.getAccounts();
+  // console.log(testacc[0]);
 
   deployer.then(async () => {
     let jmtCont,lpCont,lptCont,routerCont,mapleNFTCont,mapleItemsCont,vjmtCont,stakingCont;
@@ -54,6 +59,7 @@ module.exports = async function (deployer) {
     );
     mapleMarketCont = await mapleMarket.deployed();
 
+
     await deployer.deploy(
       mapleNFT,
       mapleMarketCont.address,
@@ -70,6 +76,11 @@ module.exports = async function (deployer) {
     //Maple NFT contract instance 
     mapleNFTCont = await mapleNFT.deployed();
     mapleItemsCont = await mapleItems.deployed();
+    await mapleNFTCont.generateMintArray();
+    await mapleItemsCont.generateWeaponArray();
+    await mapleItemsCont.generatefirstWeapon();
+    await mapleItemsCont.generateItemCheck();
+    await mapleItemsCont.generateScrollArray();
 
     // swap_pool
     await deployer.deploy(lpContract); // lp 디플로이
@@ -101,13 +112,13 @@ module.exports = async function (deployer) {
     await vjmtCont.MoveToTreasuryWallet(); // lp,재무 지갑 자산 이동
 
     // Contribute
-    const accounts = await web3.eth.getAccounts();
+    // const accounts = await web3.eth.getAccounts();
     await jmtCont.contribute({ 
-        from: accounts[0],
-        value: web3.utils.toWei("1","ether") 
+        from: "0x43112976696C2Cbc1dc89B8f805Fa3Db136898Ec",
+        value: Web3.utils.toWei("0.1","ether") 
     });
     await jmtCont.claimTokens({
-        from: accounts[0]
+        from: "0x43112976696C2Cbc1dc89B8f805Fa3Db136898Ec"
     });
     await jmtCont.sendLiquidityToLPContract(lpCont.address);
   })

@@ -48,6 +48,7 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
 const mnemonic = fs.readFileSync(".secret").toString().trim();
+const maticAPIKey = fs.readFileSync(".secret.apikey").toString().trim();
 
 module.exports = {
   /**
@@ -80,6 +81,16 @@ module.exports = {
       timeoutBlocks: 200,
       skipDryRun: true,
       gas: 10000000000
+     },
+     polygon_mumbai:{
+      provider: () => new HDWalletProvider(mnemonic, `wss://rpc-mumbai.maticvigil.com/ws/v1/11e54611899cb7b5e8ca8e065baace37e7029595`),
+      network_id: 80001,
+      gas: 20000000,
+      gasPrice: 40000000000,
+      confirmations: 2,
+      networkCheckTimeout: 9999999,
+      timeoutBlocks: 50000,
+      skipDryRun: true,
      },
     // ganache:{
     //    host: "127.0.0.1",     

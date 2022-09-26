@@ -58,10 +58,10 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         maxStrength = 2;
         marketContractAddress = _marketAddress;
         _setToken(_tokenContractAddress);
-        _generateWeaponArray();
-        _generatefirstWeapon();
-        _generateItemCheck();
-        _generateScrollArray();
+        // generateWeaponArray();
+        // generatefirstWeapon();
+        // generateItemCheck();
+        // generateScrollArray();
         
         treasuryWallet = _treasuryWallet;
     }
@@ -79,7 +79,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         _setURI(newuri);
     }
 
-    function _generateWeaponArray() private onlyOwner{
+    function generateWeaponArray() external onlyOwner{
         for (uint256 i = 0; i < 4; i++ ){
             waitForMint.push(SWORD0); 
         }
@@ -124,14 +124,14 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         }
     }
 
-    function _generatefirstWeapon() private onlyOwner{
+    function generatefirstWeapon() external onlyOwner{
         firstMint.push(SWORD0); 
         firstMint.push(BOW0); 
         firstMint.push(STAFF0); 
         firstMint.push(POLEARM0); 
     }
 
-    function _generateItemCheck() private onlyOwner{
+    function generateItemCheck() external onlyOwner{
         itemCheck.push(SWORD0);
         itemCheck.push(SWORD1);
         itemCheck.push(SWORD2);
@@ -156,7 +156,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         itemCheck.push(SCROLL10);
     }
 
-    function _generateScrollArray() private onlyOwner{
+    function generateScrollArray() external onlyOwner{
         for (uint256 i = 0; i < 1; i++ ){
             scrollMint.push(SCROLL100); 
         }
@@ -179,7 +179,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
 
         uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % (firstMint.length);
         uint id = firstMint[n];
-        
+
         _mint(msg.sender, id, 1, "");
         setApprovalForAll(marketContractAddress, true);
     }
