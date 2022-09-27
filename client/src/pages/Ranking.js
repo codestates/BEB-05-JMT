@@ -77,6 +77,15 @@ const Ranking = () => {
     }
   }
 
+  const shortenAddress = (address) => {
+      return address.substring(0, 6) + '...' + address.slice(-3)
+  }
+
+  const openScan = (address) => {
+      // 로컬환경은 안나옴
+      window.open(`https://mumbai.polygonscan.com/address/${address}`, '_blank').focus();
+  }
+
 	return (
 		<>
       {loading ? 
@@ -106,7 +115,13 @@ const Ranking = () => {
             <span className='desc'>내 캐릭터</span>
           </div>
           <div className= 'selectedUser'>
-            <div className='myname'>{account.username}</div>
+            <div
+              className="myname-container"
+              onClick={() => openScan(account.address)}
+            >
+              <div className='myname'>{account.username}</div>
+              <div className='myaddress'>{shortenAddress(account.address)}</div>
+            </div>
             <img className='myimg' src={myImg} />
             <div className='mystr'>Lv.{myStr}</div>
             <div className='myrank'>{myRank}위</div>
