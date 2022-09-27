@@ -88,7 +88,7 @@ const Fight = () => {
 
 	return (
 		<div className='fight-container'>
-            <img className='fight-title' src='../img/vs.png'/>
+            <div className='fight-title'>VS</div>
             <Link to='/fighting'>
               <img className='fight-fight' src='../img/fight.png' />
             </Link>

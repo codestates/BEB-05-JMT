@@ -17,17 +17,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1vw;
+  font-size: 2vw;
 }
 
 .background-default {
   background-image: url('./assets/background.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position-x: -95vw;
+  background-position-y: -80vw;
+  background-size: 330vw auto;
+}
+
+/* .background-default {
+  background-image: url('./assets/background2.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position-x: -40vw;
   background-position-y: -70vw;
   background-size: 330vw auto;
-}
+} */
+
+/* .background-default {
+  background-image: url('./assets/background3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: -55vw;
+  background-position-y: -88vw;
+  background-size: 250vw auto;
+} */
 
 .background-not-logged-in {
   background-image: url('./assets/login.png');
