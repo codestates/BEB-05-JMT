@@ -278,34 +278,6 @@ const LPClaim = async(address) => {
     }
 }
 
-
-const getLPClaimable = async(address) => {
-    const web3 = new Web3(window.ethereum);
-    const lpContract = await new web3.eth.Contract(
-        LP_CONTRACT_ABI,
-        LP_CONTRACT_ADDR
-    );
-    const result = await lpContract.methods.claimableReward().call({
-        from:address
-    });
-    return result;
-}
-
-const LPClaim = async(address) => {
-    const web3 = new Web3(window.ethereum);
-    const lpContract = await new web3.eth.Contract(
-        LP_CONTRACT_ABI,
-        LP_CONTRACT_ADDR
-    );
-    const result = await lpContract.methods.claimReward().send({
-        gas: 1500000,
-        gasPrice: '30000000',
-        from:address
-    });
-    return result;
-}
-
-
 // swap -->
 const fetchNFTContract = async () => {
     const web3 = new Web3(window.ethereum);

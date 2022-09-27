@@ -77,24 +77,6 @@ function Liquidity() {
 		result = await contractAPI.LPClaim(account.address);
 		setModal({...modal, open: true, type: 'send', data: {error: result[0], send: result[1], message: result[2]}});
 	}
-	const getLPClaimable = () =>{
-		contractAPI.getLPClaimable(account.address).then((result) => {
-			console.log(parseFloat((result/decimals)).toFixed(12))
-			setLpClaimToken(parseFloat((result/decimals)).toFixed(12));
-			window.location.reload();
-		})
-		
-	}
-
-	const LPClaim = () =>{
-		contractAPI.LPClaim(account.address).then(() => {
-			alert("완료!")
-			window.location.reload();
-		})
-
-	}
-
-
 
 	return (
 		<div className='Liquidity-tab'>
