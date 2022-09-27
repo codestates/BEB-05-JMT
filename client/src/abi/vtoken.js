@@ -79,8 +79,7 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -104,8 +103,7 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -148,8 +146,7 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -162,8 +159,7 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -224,8 +220,7 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -238,8 +233,7 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -252,8 +246,7 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -266,8 +259,7 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -333,8 +325,7 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -14873,7 +14864,7 @@ const VTOKEN = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "1337": {
+    "5777": {
       "events": {
         "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
           "anonymous": false,
@@ -14933,76 +14924,12 @@ const VTOKEN = {
         }
       },
       "links": {},
-      "address": "0xd9b98293c1155674aB1B0fa16a175DF3016C0cD6",
-      "transactionHash": "0xb591bb471343c3fff4832df904f72c3c8d8f5480a513d1bbf47eacc297b290f0"
-    },
-    "3989": {
-      "events": {
-        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "owner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "spender",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "value",
-              "type": "uint256"
-            }
-          ],
-          "name": "Approval",
-          "type": "event"
-        },
-        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "from",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "to",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "value",
-              "type": "uint256"
-            }
-          ],
-          "name": "Transfer",
-          "type": "event"
-        },
-        "0xede40e57f47ee7d3737450b9e0e25fc56b11ce89ebac5d06dd834fe351418fa7": {
-          "anonymous": false,
-          "inputs": [],
-          "name": "TreasuryMoved",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0x87A4AEeA309402f195CcE9dDE71C64cb44942737",
-      "transactionHash": "0x937a8ec0e2d5236f050972577332674287cf03d69ffd75372deacc0d13a86198"
+      "address": "0x9007EDf70BD1f5AbCF3f7376010EC195CD98F441",
+      "transactionHash": "0x933d08e1b60ff7d1f448f9e4113cd8855f606eb4db34ff5d8ab9c6e853c81f5a"
     }
   },
-  "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T18:29:20.846Z",
-  "networkType": "ethereum",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-27T01:24:43.818Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
@@ -15048,5 +14975,4 @@ const VTOKEN = {
     "version": 1
   }
 }
-
 module.exports = VTOKEN;

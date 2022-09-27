@@ -140,8 +140,7 @@ const MARKET = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -331,8 +330,7 @@ const MARKET = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -384,8 +382,7 @@ const MARKET = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -437,8 +434,7 @@ const MARKET = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -26338,22 +26334,15 @@ const MARKET = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "1337": {
+    "5777": {
       "events": {},
       "links": {},
-      "address": "0x74f5B82e61ce624cBb3a523E5601C9b7dF9BD499",
-      "transactionHash": "0xaa5e3ce7e8cceb46cb8f95884a20d36201fa1eeecb366117311e496337977d64"
-    },
-    "3989": {
-      "events": {},
-      "links": {},
-      "address": "0x3a58259F6A0592e664C77F9F8f332fAFEdA1b469",
-      "transactionHash": "0x1f06e1b65e6410d524bb57161c13db1b65eee1f775e832dd80c5af3449455ad9"
+      "address": "0x453F9d33D6a3b9cCcD19a6a7dEB6bf403A3bF7F0",
+      "transactionHash": "0x3b993f5930a3ad632b741386b5055e29f768d3b34abc80602a161b038340a276"
     }
   },
-  "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T18:29:20.779Z",
-  "networkType": "ethereum",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-27T01:24:43.795Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
