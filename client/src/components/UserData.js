@@ -15,6 +15,10 @@ function UserData({rankArr, userData, rank}) {
         metadata();
     }, []);
 
+    const shortenAddress = (address) => {
+        return address.substring(0, 6) + '...' + address.slice(-3)
+    }
+
     const metadata = async() => {
         const char = await contractAPI.fetchCharacter(userData.charId);
         const weapon = await contractAPI.fetchWeapon(userData.weaponId);
@@ -45,14 +49,27 @@ function UserData({rankArr, userData, rank}) {
         return result;
     }
 
+    const openScan = (address) => {
+        // 로컬환경은 안나옴
+        window.open(`https://mumbai.polygonscan.com/address/${address}`, '_blank').focus();
+    }
+
     return (
         <div className='userdata-container'>
             <div className='userdata-rank'>{realRank}위</div>
-            <div className='userdata-name'>{userData.username}</div>
+            <div className='userdata-name-container'>
+                <div
+                    onClick={() => openScan(userData.address)}
+                    className='userdata-name'
+                >{userData.username}</div>
+                <div
+                    className='userdata-address'
+                    onClick={() => openScan(userData.address)}
+                >{shortenAddress(userData.address)}</div>
+            </div>
             <img className='userdata-char' src={img} />
             <div className='userdata-str'>Lv.{str}</div>
         </div>
-                   
     );
 }
 export default UserData;

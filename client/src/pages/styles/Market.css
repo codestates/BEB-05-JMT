@@ -20,6 +20,12 @@
   border-color: hsla(224, 100%, 73%, 0.686); 
 }
 
+.inventory-container .market-scan {
+  font-size: 2vw;
+  background-color: #2955cdd3; 
+  border-color: hsla(224, 100%, 73%, 0.686); 
+}
+
 .lootbox:hover {
   background-color: #1c44b3e1;
 }

@@ -103,6 +103,27 @@
   border-radius: 0.5vw;
 }
 
+.inventory-container .scan {
+  z-index: 100;
+  position: absolute;
+  top: 39.8vw;
+  left: 48.4vw;
+  height: 3vw;
+  width: 8vw;
+  line-height: 3vw;
+
+  background-color: #fe7227e7; 
+  border-style: solid;
+  border-width: 0.5vw;
+  border-color: hsla(35, 100%, 64%, 0.686); 
+
+  color:  #ffffff;
+  border-radius: 0.8vw;
+  font-size: 1.8vw;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 .inventory-container .myinfo {
   flex-direction: row;
   position: absolute;

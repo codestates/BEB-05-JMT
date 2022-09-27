@@ -18,6 +18,10 @@ import metadataAPI from '../api/metadata';
 import UserData from '../components/UserData';
 import "./styles/Market.css";
 import marketAPI from "../api/market";
+const {
+  NFT_CONTRACT_ADDR,
+  ITEMS_CONTRACT_ADDR,
+} = require('../global_variables');
 
 const Market = () => {
   const [account, setAccount] = useRecoilState(accountAtom);
@@ -176,13 +180,22 @@ const Market = () => {
 
   const handleChangePrice = (value) => {
     setPrice(value);
-}
+  }
+
+  const openScan = () => {
+    // 로컬환경은 안나옴
+    if (!isClicked) {
+      window.open(`https://mumbai.polygonscan.com/token/${NFT_CONTRACT_ADDR}`, '_blank').focus();
+    } else {
+      window.open(`https://mumbai.polygonscan.com/token/${ITEMS_CONTRACT_ADDR}`, '_blank').focus();
+    }
+  }
 
   return (
     <div>
       {loading ?
       (<Spinner/>) : (
-        <>       
+        <>
           <span className={`market_button market_buy ${!isSell ? "market_clicked" : "market_notclicked"}`} 
           onClick={()=>{init(); 
             setIsSell(false);}}>
@@ -251,6 +264,7 @@ const Market = () => {
                 }        
               </div>
             :
+              <>
               <div className= 'market_pot'>
               {!isClicked ?
                 (charInfo ?
@@ -294,6 +308,13 @@ const Market = () => {
                 )
               }        
             </div>
+            <div
+              onClick={openScan}
+              className='scan market-scan'
+            >
+              scan
+            </div>
+            </>
             }            
             <div className={isSell? 'myinfo': 'market_info'}>
               상세 정보
