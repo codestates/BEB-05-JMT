@@ -79,7 +79,8 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -103,7 +104,8 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -146,7 +148,8 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -159,7 +162,8 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -220,7 +224,8 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -233,7 +238,8 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -246,7 +252,8 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -259,7 +266,8 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -325,7 +333,8 @@ const VTOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -14864,7 +14873,7 @@ const VTOKEN = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "5777": {
+    "80001": {
       "events": {
         "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
           "anonymous": false,
@@ -14924,12 +14933,13 @@ const VTOKEN = {
         }
       },
       "links": {},
-      "address": "0x9007EDf70BD1f5AbCF3f7376010EC195CD98F441",
-      "transactionHash": "0x933d08e1b60ff7d1f448f9e4113cd8855f606eb4db34ff5d8ab9c6e853c81f5a"
+      "address": "0xE93648f16Ff5a3c620346f2ce7A8384bCA6c86B8",
+      "transactionHash": "0x748fc29b236e1733d1e4af00c63e7874ed72fb0d5932b1422555e40896ab62c2"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-27T01:24:43.818Z",
+  "updatedAt": "2022-09-27T04:27:20.038Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {

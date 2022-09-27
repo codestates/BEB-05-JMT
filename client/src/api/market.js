@@ -65,7 +65,7 @@ const addCharOnSale = async (tokenId, myAddress, price) => {
             .send({
                 from: myAddress,
                 gas: 1500000,
-                gasPrice: '3000000'
+                gasPrice: '30000000000'
             });
         const result = '판매 등록';
         return result;
@@ -88,7 +88,7 @@ const addWeaponOnSale = async (tokenId, myAddress, price) => {
             .send({
                 from: myAddress,
                 gas: 1500000,
-                gasPrice: '3000000'
+                gasPrice: '30000000000'
             });
         const result = '판매 등록';
         return result;
@@ -110,7 +110,7 @@ const removeCharOnSale = async (myAddress, itemId) => {
             .send({
                 from: myAddress,
                 gas: 1500000,
-                gasPrice: '3000000'});
+                gasPrice: '30000000000'});
 
         const result = '판매 취소';
         return result;
@@ -132,7 +132,7 @@ const removeWeaponOnSale = async (myAddress, itemId) => {
             .send({
                 from: myAddress,
                 gas: 1500000,
-                gasPrice: '3000000'});
+                gasPrice: '30000000000'});
 
         const result = '판매 취소';
         return result;
@@ -154,7 +154,7 @@ const buyCharOnSale = async (myAddress, itemId, price) => {
             .send({
                 from: myAddress,
                 gas: 1500000,
-                gasPrice: '3000000'
+                gasPrice: '30000000000'
             });
             
         const result = '구매';
@@ -177,7 +177,7 @@ const buyWeaponOnSale = async (myAddress, itemId, price) => {
             .send({
                 from: myAddress,
                 gas: 1500000,
-                gasPrice: '3000000'
+                gasPrice: '30000000000'
             });
             
         const result = '구매';

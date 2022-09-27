@@ -140,7 +140,8 @@ const MARKET = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -330,7 +331,8 @@ const MARKET = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -382,7 +384,8 @@ const MARKET = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -434,7 +437,8 @@ const MARKET = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -26334,15 +26338,16 @@ const MARKET = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "5777": {
+    "80001": {
       "events": {},
       "links": {},
-      "address": "0x453F9d33D6a3b9cCcD19a6a7dEB6bf403A3bF7F0",
-      "transactionHash": "0x3b993f5930a3ad632b741386b5055e29f768d3b34abc80602a161b038340a276"
+      "address": "0xFC45956DaC1c87C385FEB4990CfF37ee25B6b148",
+      "transactionHash": "0xe3c9494cafe742738b1d7c1a3fa24ebba5a85b6db983872ae9e5a06c42a51cf9"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-27T01:24:43.795Z",
+  "updatedAt": "2022-09-27T04:27:19.975Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {
