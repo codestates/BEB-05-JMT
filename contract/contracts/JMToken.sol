@@ -22,6 +22,7 @@ contract JMToken is ERC20 {
     address public MapleNFT;
     address public MapleItems;
     address public MapleMarket;
+    address public MapleUser;
     address public winRewardAddr;
     uint winRewardAmount;
     uint randNum = 0;
@@ -53,7 +54,7 @@ contract JMToken is ERC20 {
     }
     // router 컨트랙트에서만 실행
     modifier routerOnly() {
-        require(msg.sender == Router || msg.sender == MapleNFT || msg.sender == MapleItems || msg.sender == MapleMarket, "ROUTER_OR_MAPLE_ONLY");
+        require(msg.sender == Router || msg.sender == MapleNFT || msg.sender == MapleItems || msg.sender == MapleMarket || msg.sender == MapleUser, "ROUTER_OR_MAPLE_ONLY");
         _;
     }
     // 펀딩 종료 체크 
@@ -85,6 +86,10 @@ contract JMToken is ERC20 {
     function setMapleMarketAddress(address _mapleMarket) external ownerOnly {
         require(address(MapleMarket) == address(0), "WRITE_ONCE!");
         MapleMarket = _mapleMarket;
+    }
+    function setMapleUserAddress(address _mapleUser) external ownerOnly {
+        require(address(MapleUser) == address(0), "WRITE_ONCE!");
+        MapleUser = _mapleUser;
     }
     function setStakingAddress(address _staking ) external  ownerOnly {
         require(address(Staking) == address(0), "WRITE_ONCE!");

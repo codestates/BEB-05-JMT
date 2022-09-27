@@ -34,6 +34,7 @@ const check = async(req, res, next) => {
     if(user){
         res.status(200).json({
             message: "true",
+            id: user.id,
             username: user.username,
             address: user.address,
             charId: user.charId,

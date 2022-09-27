@@ -8,7 +8,7 @@ const fetchAccount = async () => {
   return accounts[0].toLowerCase();
 }
 
-const fetchUsername = async (address) => {
+const fetchUser = async (address) => {
   const check = await axios.get(`http://localhost:4000/user/check/${address}`);
   return check.data;
 }
@@ -34,7 +34,7 @@ const userinfo = async () => {
 
 const accountAPI = {
   fetchAccount,
-  fetchUsername,
+  fetchUser,
   signUp,
   equip,
   userinfo

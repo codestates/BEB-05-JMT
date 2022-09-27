@@ -31,7 +31,7 @@ const Login = () => {
 
   const connectWallet = async () => {
     const address = await accountAPI.fetchAccount();
-    const check = await accountAPI.fetchUsername(address);
+    const check = await accountAPI.fetchUser(address);
 
     console.log(address);
     console.log(check.message);

@@ -8,6 +8,7 @@ const STAKING = require ("./abi/staking");
 const LP = require ("./abi/lp");
 const LPT = require ("./abi/lpt");
 const ROUTER = require ("./abi/router");
+const USER = require ("./abi/user");
 
 export const NFT_CONTRACT_ADDR = process.env.REACT_APP_NFT_CONTRACT_ADDR;
 export const MARKET_CONTRACT_ADDR = process.env.REACT_APP_MARKET_CONTRACT_ADDR;
@@ -19,6 +20,8 @@ export const STAKING_CONTRACT_ADDR = process.env.REACT_APP_STAKING_CONTRACT_ADDR
 export const ROUTER_CONTRACT_ADDR = process.env.REACT_APP_ROUTER_CONTRACT_ADDR;
 export const LPT_CONTRACT_ADDR = process.env.REACT_APP_LPT_CONTRACT_ADDR;
 export const LP_CONTRACT_ADDR = process.env.REACT_APP_LP_CONTRACT_ADDR;
+export const USER_CONTRACT_ADDR = process.env.REACT_APP_USER_CONTRACT_ADDR;
+
 export const version = '367';
 
 const getNFTContractABI = () => {
@@ -27,6 +30,10 @@ const getNFTContractABI = () => {
 
 const getMarketContractABI = () => {
     return MARKET["abi"];
+}
+
+const getUserContractABI = () => {
+    return USER["abi"];
 }
 
 const getItemsContractABI = () => {
@@ -69,3 +76,4 @@ export const STAKING_CONTRACT_ABI = getStakingContractABI();
 export const LP_CONTRACT_ABI = getLPContractABI();
 export const LPT_CONTRACT_ABI = getLPTContractABI();
 export const ROUTER_CONTRACT_ABI = getRouterContractABI();
+export const USER_CONTRACT_ABI = getUserContractABI();

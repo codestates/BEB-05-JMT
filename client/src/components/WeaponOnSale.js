@@ -42,7 +42,7 @@ function WeaponOnSale({itemData, selectedId, setSelectedImg, setSelectedItem, se
   }
 
   const ownerName= async(address) =>{
-    const check = await accountAPI.fetchUsername(address);
+    const check = await accountAPI.fetchUser(address);
     console.log(check);
     return check.username;
   }
