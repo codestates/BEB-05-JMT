@@ -123,15 +123,11 @@ const Ranking = () => {
               className="myname-container"
               onClick={() => openScan(account.address)}
             >
-              <div className='myname'>{account.username}</div>
+              <div className='myrank'>{myRank}위</div>
+              <div className='myname'>Lv.{myStr} {account.username}</div>
               <div className='myaddress'>{shortenAddress(account.address)}</div>
             </div>
             <img className='myimg' src={myImg} />
-            <div className='mystr'>Lv.{myStr}</div>
-            <div className='myrank'>{myRank}위</div>
-            <div className='myname'>Lv.{myStr} {account.username}</div>
-            <img className='myimg' src={myImg} />
-            {/* <div className='mystr'>Lv.{myStr}</div> */}
             <div className='reward'>5 JMT</div>
             <div className='reward-btn'>보상 수령</div>
           </div>

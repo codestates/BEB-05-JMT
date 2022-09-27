@@ -44,7 +44,6 @@ const Mint = () => {
     const collectAlreadyProcessedData = async () => {
         const res = await accountAPI.fetchUser(account.address);
         if (res.message == 'true') {
-            console.log(res);
             setUsername(res.username);
             setSignedUp(true);
             if (res.char) {
