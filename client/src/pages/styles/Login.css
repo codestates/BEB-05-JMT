@@ -9,4 +9,6 @@
     margin-top: calc(100vw * 215/620);
     background-color: #FE7427;
     cursor: pointer;
+    font-size: 2vw;
+    border-radius: 1.5vw;
 }
