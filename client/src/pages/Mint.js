@@ -14,13 +14,15 @@ import nobody from '../assets/nobody.png';
 const Mint = () => {
     const [account, setAccount] = useRecoilState(accountAtom);
     const setBackground = useSetRecoilState(backgroundAtom)
-    const [username, setUsername] = useState();
+    const [username, setUsername] = useState("");
     const [charImg, setCharImg] = useState();
     const [weaponImg, setWeaponImg] = useState();
     const [charName, setCharName] = useState();
     const [weaponName, setWeaponName] = useState();
     const [strength, setStrength] = useState();
     const [loading, setLoading] = useState(false);
+    const [signedUp, setSignedUp] = useState(false);
+    const [minted, setMinted] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -33,36 +35,89 @@ const Mint = () => {
                 }
             })
             setBackground({type: 'default'});
+            if (!charImg) {
+                collectAlreadyProcessedData();
+            }
         }
     }, [account, charImg]);
 
-    const mint = async () => {
+    const collectAlreadyProcessedData = async () => {
+        const res = await accountAPI.fetchUsername(account.address);
+        if (res.message == 'true') {
+            console.log(res);
+            setUsername(res.username);
+            setSignedUp(true);
+            if (res.char) {
+                setCharacter(res.char);
+                setWeapon(res.weaponId);
+                setMinted(true);
+            }
+            const itemBalance = await contractAPI.fetchMyItems(account.address);
+            if (itemBalance.length != 0) {
+                const charBalance = await contractAPI.fetchMyCharacter(account.address);
+                const charId = charBalance[0][0];
+                const weaponId = itemBalance[0][0];
+                await setWeapon(weaponId);
+                await accountAPI.equip(account.address, charId, weaponId);
+                setAccount({...account, username: res.username, charId: charId, weaponId: weaponId});
+            }
+        }
+    }
+
+    const mintTokens = async () => {
+        const [charId, weaponId] = await Promise.all([
+            mintCharacter(),
+            mintWeapon()
+        ]);
+        setAccount({...account, username: username, charId: charId, weaponId: weaponId});
+        return {charId, weaponId};
+    }
+
+    const mintCharacter = async () => {
+        const charId = await contractAPI.mintCharNFT(account.address);
+        await setCharacter(charId);
+        return charId;
+    }
+
+    const mintWeapon = async () => {
+        const weaponId = await contractAPI.mintFirstWeaponNFT(account.address);
+        await setWeapon(weaponId);
+        return weaponId;
+    }
+
+    const setCharacter = async (charId) => {
+        const result = await contractAPI.fetchCharacter(charId);
+        const char = await metadataAPI.fetchCharImage(result.attributes, '0');
+        setCharImg(char);
+        const attr= await metadataAPI.fetchCharName(result.attributes);
+        setCharName(attr);
+    }
+
+    const setWeapon = async (weaponId) => {
+        const weapon = await contractAPI.fetchWeapon(weaponId);
+        setWeaponImg(weapon.image);
+        const name = await metadataAPI.fetchItemName(weapon.attributes);
+        setWeaponName(name);
+        const str = await metadataAPI.fetchStrength(weapon.attributes);
+        setStrength(str);
+    }
+
+    const mintStart = () => {
         setLoading(true);
-        if(username) {
-            try {
+        mint();
+    }
+
+    const mint = async () => {
+        if (username) {
+            if (!signedUp) {
                 await accountAPI.signUp(account.address, username);
-            } catch {}
-            const charId = await contractAPI.mintCharNFT(account.address);
-            console.log(charId);
-            const weaponId = await contractAPI.mintFirstWeaponNFT(account.address);
-            console.log(weaponId);
-            setAccount({...account, username: username, charId:charId, weaponId: weaponId});
-
-            const result = await contractAPI.fetchCharacter(charId);
-            const char = await metadataAPI.fetchCharImage(result.attributes, '0');
-            setCharImg(char);
-            const attr= await metadataAPI.fetchCharName(result.attributes);
-            setCharName(attr);
-
-            const weapon = await contractAPI.fetchWeapon(weaponId);
-            setWeaponImg(weapon.image);
-            const name = await metadataAPI.fetchItemName(weapon.attributes);
-            setWeaponName(name);
-            const str = await metadataAPI.fetchStrength(weapon.attributes);
-            setStrength(str);
-
-            await accountAPI.equip(account.address, charId, weaponId);
-
+            }
+            if (!minted) {
+                const {charId, weaponId} = await mintTokens();
+                await setCharacter(charId);
+                await setWeapon(weaponId);
+                await accountAPI.equip(account.address, charId, weaponId);
+            }
             setLoading(false);
         }
     }
@@ -70,10 +125,11 @@ const Mint = () => {
     const handleChangeName = (value) => {
         setUsername(value);
     }
+
     return (
         <div className='mint-container'>
             {account.charId&&account.weaponId ? 
-                (loading ? 
+                (loading ?
                 <Spinner/> : 
                 <div className = 'mint-container2'> 
                     <span className="mint-result" onClick={()=>navigate('/home')}>
@@ -97,23 +153,32 @@ const Mint = () => {
                     </div>
                 </div>
                 ):
+                (loading ?
+                <Spinner/> :
                 <>
                     <h2 className="mint-label">
                         당신의 고유한 메이플스토리 NFT 캐릭터를 만들어 보세요
                     </h2>
                     <div className='mint-input-container'>
-                        <input
-                            type="text"
-                            className="mint-input"
-                            placeholder=""
-                            onChange={(e) => handleChangeName(e.target.value)}
-                        />
-                        <div className="mint-btn" onClick={mint}>
+                        {signedUp ?
+                            <input
+                                type="text"
+                                className="mint-input"
+                                defaultValue={username || ''}
+                                disabled
+                            />: <input
+                                type="text"
+                                className="mint-input"
+                                placeholder=""
+                                onChange={(e) => handleChangeName(e.target.value)}
+                            />
+                        }
+                        <div className="mint-btn" onClick={mintStart}>
                             MINT
                         </div>
                     </div>
                     <img className="nobody-character" src={nobody} />
-                </>
+                </>)
             }
         </div>
     );
