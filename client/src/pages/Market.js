@@ -85,10 +85,12 @@ const Market = () => {
         console.log(buy); 
     }
     init();   
-
   }
 
   const sellNFT = async() => {
+    if (!price) {
+      return;
+    }
     if(isClicked){
       const sell = await marketAPI.addWeaponOnSale(selectedId, account.address, price);
     } else{
@@ -107,8 +109,6 @@ const Market = () => {
     }
     init();
   };
-
-
 
   const charMarket = async() => {
     const result = await marketAPI.fetchMarketChar(account.address);

@@ -34,7 +34,7 @@ const Ranking = () => {
 
   const sortArr = async()=>{
     const result = await accountAPI.userinfo();
-    const orginalArr = result;
+    const orginalArr = result.filter(user => user.address && user.username && user.charId && user.weaponId);
     const comparableArr = await Promise.all(
       orginalArr.map(async (x)=> [
         await contractAPI.fetchStrength(x.weaponId),

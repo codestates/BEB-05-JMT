@@ -409,6 +409,7 @@ const upgradeWeapon = async(address, scrollId, weaponId) => {
 const fetchStrength = async(weaponId) => {
     const meta  = await fetchWeapon(weaponId);
     const weapon = await fetchAttributes(meta.attributes);
+    console.log(weapon.strength);
   
     return weapon.strength;
 }
