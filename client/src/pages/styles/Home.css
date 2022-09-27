@@ -50,12 +50,12 @@
 .home-fight{
     position: absolute;
     left: 84vw;
-    top: 32vw;
+    top: 41vw;
     transform: translate(-50%, -50%);
 }
 
 .home-fightimg{
-    width: 18vw;
+    width: 21vw;
 }
 
 .mydata {

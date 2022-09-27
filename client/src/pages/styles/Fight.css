@@ -1,9 +1,11 @@
 .fight-title {
     position: absolute;
-    left: 45vw;
-    top: 20vw;
-    width: 10vw;
-    height: 8vw;
+    left: 46vw;
+    top: 23vw;
+    font-size: 6vw;
+    font-weight: bold;
+    text-align: center;
+    color: #fe7227e7;
 }
 
 
@@ -14,15 +16,14 @@
     font-size: 2vw;
     left: 43vw;
     top: 32vw;
-    width: 13vw;
     height: 3.5vw;
+    width: 13vw;
     border-radius: 1vw;
     background-color: #fe7227e7;
     color:  #ffffff;
 }
 .fighting-spinner {
     margin-top: 10vw;
-    width: 20vw;
     height: 20vw;
 }
 
@@ -56,9 +57,8 @@
 
 .fight-fight{
     position: absolute;
-    left: 43vw;
+    left: 40vw;
     top: 32vw;
-    width: 15vw;
     height: 10vw;
 }
 
@@ -69,7 +69,6 @@
     font-size: 2vw;
     left: 43vw;
     top: 34vw;
-    width: 14vw;
     height: 3.5vw;
     border-radius: 1vw;
     background-color: #fe7227e7;
@@ -82,7 +81,6 @@
     font-size: 2vw;
     left: 43vw;
     top: 34vw;
-    width: 10vw;
     height: 3.5vw;
     border-radius: 1vw;
     background-color: #32d635e7;
@@ -93,7 +91,6 @@
     position: absolute;
     left: 14vw;
     top: 25vw;
-    width: 15vw;
     height: 18vw;
     transform: scaleX(-1);
 }
@@ -108,7 +105,6 @@
     position: absolute;
     left: 6vw;
     top: 19vw;
-    width: 28vw;
     height: 31vw;
     transform: scaleX(-1);
 }
@@ -117,7 +113,6 @@
     position: absolute;
     left: 12vw;
     top: 24vw;
-    width: 19vw;
     height: 20vw;
     transform: scaleX(-1);
 }
@@ -126,7 +121,6 @@
     position: absolute;
     left: 9vw;
     top: 21vw;
-    width: 24vw;
     height: 27vw;
     transform: scaleX(-1);
 }
@@ -135,7 +129,6 @@
     position: absolute;
     left: 10vw;
     top: 23vw;
-    width: 25vw;
     height: 25vw;
     transform: scaleX(-1);
 }
@@ -150,7 +143,6 @@
     position: absolute;
     left: 13vw;
     top: 25vw;
-    width: 15vw;
     height: 18vw;
     transform: scaleX(-1);
 }
@@ -165,13 +157,11 @@
     position: absolute;
     left: 14vw;
     top: 5vw;
-    width: 17vw;
     height: 7vw;
 }
 
 .fightresult-left-token {
     position: absolute;
-    width: 4vw;
     height: 4vw;
     left: 47vw;
     top: 26vw;
@@ -181,7 +171,6 @@
 
 .fightresult-left-paper {
     position: absolute;
-    width: 4vw;
     height: 4vw;
     left: 47vw;
     top: 33vw;
@@ -206,7 +195,6 @@
     position: absolute;
     left: 71vw;
     top: 25vw;
-    width: 15vw;
     height: 18vw;
 }
 
@@ -220,15 +208,13 @@
     position: absolute;
     left: 63vw;
     top: 19vw;
-    width: 27vw;
     height: 30vw;
 }
 
 .fighting-right-bowimage {
     position: absolute;
-    left: 67%;
-    top: 42%;
-    width: 18vw;
+    left: 70vw;
+    top: 24vw;
     height: 20vw;
 }
 
@@ -236,7 +222,6 @@
     position: absolute;
     left: 66vw;
     top: 21vw;
-    width: 23vw;
     height: 26vw;
 }
 
@@ -244,7 +229,6 @@
     position: absolute;
     left: 62vw;
     top: 23vw;
-    width: 25vw;
     height: 25vw;
 }
 
@@ -258,7 +242,6 @@
     position: absolute;
     left: 70vw;
     top: 25vw;
-    width: 15vw;
     height: 18vw;
 }
 
@@ -278,7 +261,6 @@
 
 .fightresult-right-token {
     position: absolute;
-    width: 4vw;
     height: 4vw;
     left: 47vw;
     top: 26vw;
@@ -288,7 +270,6 @@
 
 .fightresult-right-paper {
     position: absolute;
-    width: 4vw;
     height: 4vw;
     left: 47vw;
     top: 33vw;
