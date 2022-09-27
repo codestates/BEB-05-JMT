@@ -35,7 +35,7 @@ const signUp = async (address, charId, weaponId) => {
 const equipChar = async (address, charId) => {
     const userContract = await fetchUserContract();
     const userData = await fetchUser(address);
-    const userId = parseInt(userData.id)-8;
+    const userId = parseInt(userData.id)+1;
     console.log(userId);
     const user = await userContract.methods.updateChar(charId, userId).send(
         {
@@ -51,7 +51,7 @@ const equipChar = async (address, charId) => {
 const equipWeapon = async (address, weaponId) => {
     const userContract = await fetchUserContract();
     const userData = await fetchUser(address);
-    const userId = parseInt(userData.id)-8;
+    const userId = parseInt(userData.id)+1;
     const user = await userContract.methods.updateWeapon(weaponId, userId).send(
         {
             from: address,
