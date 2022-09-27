@@ -18,23 +18,27 @@ const Fighting = () => {
   const weapondata = useRecoilValue(weaponMetadataAtom); 
   const account = useRecoilValue(accountAtom)
   const matchingdata = useRecoilValue(matchingAtom);
-  const [userSwordImage, setUserSwordImage] = useState();
-  const [userBowImage, setUserBowImage] = useState();
-  const [userStaffImage, setUserStaffImage] = useState();
-  const [userPolearmImage, setUserPolearmImage] = useState();
+  const [userImage, setUserImage] = useState();
+  const [userSwordImage, setUserSwordImage] = useState(false);
+  const [userBowImage, setUserBowImage] = useState(false);
+  const [userStaffImage, setUserStaffImage] = useState(false);
+  const [userPolearmImage, setUserPolearmImage] = useState(false);
   const [userWeapon, setUserWeapon] = useState();
-  const [matchingSwordImage, setMatchingSwordImage] = useState();
-  const [matchingBowImage, setMatchingBowImage] = useState();
-  const [matchingStaffImage, setMatchingStaffImage] = useState();
-  const [matchingPolearmImage, setMatchingPolearmImage] = useState();
+  const [matchingImage, setMatchingImage] = useState();
+  const [matchingSwordImage, setMatchingSwordImage] = useState(false);
+  const [matchingBowImage, setMatchingBowImage] = useState(false);
+  const [matchingStaffImage, setMatchingStaffImage] = useState(false);
+  const [matchingPolearmImage, setMatchingPolearmImage] = useState(false);
   const setFightResult = useSetRecoilState(fightresultAtom);
   const setBackground = useSetRecoilState(backgroundAtom)
   const navigate = useNavigate();
   const userweapon = contractAPI.fetchAttributes(weapondata.attributes);
 
+
   const fighting = async() => {
     // user 캐릭터 정보
     const fightImage = await metadataAPI.fetchFightImage(chardata.attributes, weapondata.attributes, 'animated');
+    setUserImage(fightImage);
     setUserWeapon(userweapon.strength);
     console.log(account.weaponId);
     console.log(fightImage);
@@ -42,26 +46,27 @@ const Fighting = () => {
     const Mchardata = matchingdata.matchingChardata
     const Mweapondata = matchingdata.matchingWeapondata
     const MfightImage = await metadataAPI.fetchFightImage(Mchardata.attributes, Mweapondata.attributes, 'animated');
+    setMatchingImage(MfightImage);
     console.log(MfightImage);
     console.log(matchingdata);
     console.log(matchingdata.weaponId);
 
-    if ( account.weaponId === 0 || account.weaponId === 1 || account.weaponId === 2) {
-      setUserSwordImage(fightImage);
-    } if ( matchingdata.weaponId === 0 || matchingdata.weaponId === 1 || matchingdata.weaponId === 2 ) {
-      setMatchingSwordImage(MfightImage);
-    } if ( account.weaponId === 100 || account.weaponId === 101 || account.weaponId === 102 ) {
-      setUserBowImage(fightImage);
-    } if ( matchingdata.weaponId === 100 || matchingdata.weaponId === 101 || matchingdata.weaponId === 102) {
-      setMatchingBowImage(MfightImage);
-    } if ( account.weaponId === 200 || account.weaponId === 201 || account.weaponId === 202 ) {
-      setUserStaffImage(fightImage);
-    } if ( matchingdata.weaponId === 200 || matchingdata.weaponId === 201 || matchingdata.weaponId === 202) {
-      setMatchingStaffImage(MfightImage);
-    } if ( account.weaponId === 300 || account.weaponId === 301 || account.weaponId === 302 ) {
-      setUserPolearmImage(fightImage);
-    } if ( matchingdata.weaponId === 300 || matchingdata.weaponId === 301 || matchingdata.weaponId === 302) {
-      setMatchingPolearmImage(MfightImage);
+    if ( parseInt(account.weaponId / 100) === 0 ) {
+      setUserSwordImage(true);
+    } if ( parseInt(matchingdata.weaponId / 100) === 0 ) {
+      setMatchingSwordImage(true);
+    } if ( parseInt(account.weaponId / 100) === 1 ) {
+      setUserBowImage(true);
+    } if ( parseInt(matchingdata.weaponId / 100) / 100 === 1) {
+      setMatchingBowImage(true);
+    } if ( parseInt(account.weaponId / 100) === 2 ) {
+      setUserStaffImage(true);
+    } if ( parseInt(matchingdata.weaponId / 100) === 2 ) {
+      setMatchingStaffImage(true);
+    } if ( parseInt(account.weaponId / 100) === 3 ) {
+      setUserPolearmImage(true);
+    } if ( parseInt(matchingdata.weaponId / 100) === 3 ) {
+      setMatchingPolearmImage(true);
     }
 
   }
@@ -103,14 +108,14 @@ const fightLoading = async() => {
         <div className='fighting-left-name'>{account.username}</div>
         <div className='weapon-right'>무기 강화: {matchingdata.strength}</div>
         <div className='fighting-right-name'>{matchingdata.username}</div>
-        {userSwordImage? <img className='fighting-left-swordimage' src ={userSwordImage} /> : null}
-        {userBowImage? <img className='fighting-left-bowimage' src ={userBowImage} /> : null}
-        {userStaffImage? <img className='fighting-left-staffimage' src ={userStaffImage} /> : null}
-        {userPolearmImage? <img className='fighting-left-polearmimage' src ={userPolearmImage} /> : null}
-        {matchingSwordImage? <img className='fighting-right-swordimage' src ={matchingSwordImage} /> : null}
-        {matchingBowImage? <img className='fighting-right-bowimage' src ={matchingBowImage} /> : null}
-        {matchingStaffImage? <img className='fighting-right-staffimage' src ={matchingStaffImage} /> : null}
-        {matchingPolearmImage? <img className='fighting-right-polearmimage' src ={matchingPolearmImage} /> : null}
+        {userSwordImage? <img className='fighting-left-swordimage' src ={userImage} /> : null}
+        {userBowImage? <img className='fighting-left-bowimage' src ={userImage} /> : null}
+        {userStaffImage? <img className='fighting-left-staffimage' src ={userImage} /> : null}
+        {userPolearmImage? <img className='fighting-left-polearmimage' src ={userImage} /> : null}
+        {matchingSwordImage? <img className='fighting-right-swordimage' src ={matchingImage} /> : null}
+        {matchingBowImage? <img className='fighting-right-bowimage' src ={matchingImage} /> : null}
+        {matchingStaffImage? <img className='fighting-right-staffimage' src ={matchingImage} /> : null}
+        {matchingPolearmImage? <img className='fighting-right-polearmimage' src ={matchingImage} /> : null}
       </div>
       : 
       <div>
@@ -119,14 +124,14 @@ const fightLoading = async() => {
         <div className='fighting-left-name'>{account.username}</div>
         <div className='weapon-right'>무기 강화: {matchingdata.strength}</div>
         <div className='fighting-right-name'>{matchingdata.username}</div>
-        {userSwordImage? <img className='fighting-left-swordimage' src ={userSwordImage} /> : null}
-        {userBowImage? <img className='fighting-left-bowimage' src ={userBowImage} /> : null}
-        {userStaffImage? <img className='fighting-left-staffimage' src ={userStaffImage} /> : null}
-        {userPolearmImage? <img className='fighting-left-polearmimage' src ={userPolearmImage} /> : null}
-        {matchingSwordImage? <img className='fighting-right-swordimage' src ={matchingSwordImage} /> : null}
-        {matchingBowImage? <img className='fighting-right-bowimage' src ={matchingBowImage} /> : null}
-        {matchingStaffImage? <img className='fighting-right-staffimage' src ={matchingStaffImage} /> : null}
-        {matchingPolearmImage? <img className='fighting-right-polearmimage' src ={matchingPolearmImage} /> : null}
+        {userSwordImage? <img className='fighting-left-swordimage' src ={userImage} /> : null}
+        {userBowImage? <img className='fighting-left-bowimage' src ={userImage} /> : null}
+        {userStaffImage? <img className='fighting-left-staffimage' src ={userImage} /> : null}
+        {userPolearmImage? <img className='fighting-left-polearmimage' src ={userImage} /> : null}
+        {matchingSwordImage? <img className='fighting-right-swordimage' src ={matchingImage} /> : null}
+        {matchingBowImage? <img className='fighting-right-bowimage' src ={matchingImage} /> : null}
+        {matchingStaffImage? <img className='fighting-right-staffimage' src ={matchingImage} /> : null}
+        {matchingPolearmImage? <img className='fighting-right-polearmimage' src ={matchingImage} /> : null}
       </div>
       }
 		</div>
