@@ -5,6 +5,7 @@ import UpgradeModal from './UpgradeModal';
 import FightScrollModal from './FightScrollModal';
 import FightTokenModal from './FightTokenModal';
 import MarketModal from './MarketModal';
+import SendModal from './SendModal';
 import './styles/Modal.css';
 
 const Modal = () => {
@@ -30,6 +31,11 @@ const Modal = () => {
                 {
                     modal.type == 'fightTokenreward' ? 
                         <FightTokenModal />
+                        : null
+                },
+                {
+                    modal.type == 'send' ? 
+                        <SendModal/>
                         : null
                 }
             </div>
