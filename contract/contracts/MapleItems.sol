@@ -27,18 +27,45 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     uint256 public constant SWORD1 = 1;
     uint256 public constant SWORD2 = 2;
     uint256 public constant SWORD3 = 3;
+    uint256 public constant SWORD4 = 4;
+    uint256 public constant SWORD5 = 5;
+    uint256 public constant SWORD6 = 6;
+    uint256 public constant SWORD7 = 7;
+    uint256 public constant SWORD8 = 8;
+    uint256 public constant SWORD9 = 9;
 
     uint256 public constant BOW0 = 100;
     uint256 public constant BOW1 = 101;
     uint256 public constant BOW2 = 102;
+    uint256 public constant BOW3 = 103;
+    uint256 public constant BOW4 = 104;
+    uint256 public constant BOW5 = 105;
+    uint256 public constant BOW6 = 106;
+    uint256 public constant BOW7 = 107;
+    uint256 public constant BOW8 = 108;
+    uint256 public constant BOW9 = 109;
 
     uint256 public constant STAFF0 = 200;
     uint256 public constant STAFF1 = 201;
     uint256 public constant STAFF2 = 202;
+    uint256 public constant STAFF3 = 203;
+    uint256 public constant STAFF4 = 204;
+    uint256 public constant STAFF5 = 205;
+    uint256 public constant STAFF6 = 206;
+    uint256 public constant STAFF7 = 207;
+    uint256 public constant STAFF8 = 208;
+    uint256 public constant STAFF9 = 209;
 
     uint256 public constant POLEARM0 = 300;
     uint256 public constant POLEARM1 = 301;
     uint256 public constant POLEARM2 = 302;
+    uint256 public constant POLEARM3 = 303;
+    uint256 public constant POLEARM4 = 304;
+    uint256 public constant POLEARM5 = 305;
+    uint256 public constant POLEARM6 = 306;
+    uint256 public constant POLEARM7 = 307;
+    uint256 public constant POLEARM8 = 308;
+    uint256 public constant POLEARM9 = 309;
 
     uint256 public constant SCROLL100 = 400;
     uint256 public constant SCROLL90 = 401;
@@ -53,7 +80,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         address _marketAddress,
         address _tokenContractAddress,
         address payable _treasuryWallet) 
-        ERC1155("ipfs://QmUkUUWBisiFa9XUk4ucJiDr2fvk2tDr1xDrCkEF6FFCF8/{id}") {
+        ERC1155("ipfs://QmZGRpX2TAhsSCvBSZATFPViyzpXMdjKWcjCKf4j4Pfswa/{id}") {
         mintPrice = 1;
         maxStrength = 2;
         marketContractAddress = _marketAddress;
@@ -69,7 +96,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     function uri(uint256 _tokenid) override public pure returns (string memory) {
         return string(
             abi.encodePacked(
-                "https://ipfs.io/ipfs/QmUkUUWBisiFa9XUk4ucJiDr2fvk2tDr1xDrCkEF6FFCF8/",
+                "https://ipfs.io/ipfs/QmZGRpX2TAhsSCvBSZATFPViyzpXMdjKWcjCKf4j4Pfswa/",
                 Strings.toString(_tokenid)
             )
         );
@@ -80,47 +107,128 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     }
 
     function _generateWeaponArray() private onlyOwner{
-        for (uint256 i = 0; i < 4; i++ ){
+        for (uint256 i = 0; i < 5; i++ ){
             waitForMint.push(SWORD0); 
         }
-        for (uint256 i = 0; i < 3; i++ ){
+        for (uint256 i = 0; i < 9; i++ ){
             waitForMint.push(SWORD1);
         }
-        for (uint256 i = 0; i < 2; i++ ){
+        for (uint256 i = 0; i < 8; i++ ){
             waitForMint.push(SWORD2); 
         }
-        for (uint256 i = 0; i < 1; i++ ){
+        for (uint256 i = 0; i < 7; i++ ){
             waitForMint.push(SWORD3); 
         }
-        
+        for (uint256 i = 0; i < 6; i++ ){
+            waitForMint.push(SWORD4);
+        }
+        for (uint256 i = 0; i < 5; i++ ){
+            waitForMint.push(SWORD5); 
+        }
         for (uint256 i = 0; i < 4; i++ ){
+            waitForMint.push(SWORD6); 
+        }
+        for (uint256 i = 0; i < 3; i++ ){
+            waitForMint.push(SWORD7);
+        }
+        for (uint256 i = 0; i < 2; i++ ){
+            waitForMint.push(SWORD8); 
+        }
+        for (uint256 i = 0; i < 1; i++ ){
+            waitForMint.push(SWORD9); 
+        }
+
+        for (uint256 i = 0; i < 5; i++ ){
             waitForMint.push(BOW0); 
         }
-        for (uint256 i = 0; i < 3; i++ ){
+        for (uint256 i = 0; i < 9; i++ ){
             waitForMint.push(BOW1);
         }
-        for (uint256 i = 0; i < 2; i++ ){
+        for (uint256 i = 0; i < 8; i++ ){
             waitForMint.push(BOW2); 
         }
-
+        for (uint256 i = 0; i < 7; i++ ){
+            waitForMint.push(BOW3); 
+        }
+        for (uint256 i = 0; i < 6; i++ ){
+            waitForMint.push(BOW4);
+        }
+        for (uint256 i = 0; i < 5; i++ ){
+            waitForMint.push(BOW5); 
+        }
         for (uint256 i = 0; i < 4; i++ ){
+            waitForMint.push(BOW6); 
+        }
+        for (uint256 i = 0; i < 3; i++ ){
+            waitForMint.push(BOW7);
+        }
+        for (uint256 i = 0; i < 2; i++ ){
+            waitForMint.push(BOW8); 
+        }
+        for (uint256 i = 0; i < 1; i++ ){
+            waitForMint.push(BOW9); 
+        }
+
+        for (uint256 i = 0; i < 5; i++ ){
             waitForMint.push(STAFF0); 
         }
-        for (uint256 i = 0; i < 3; i++ ){
+        for (uint256 i = 0; i < 9; i++ ){
             waitForMint.push(STAFF1);
         }
-        for (uint256 i = 0; i < 2; i++ ){
+        for (uint256 i = 0; i < 8; i++ ){
             waitForMint.push(STAFF2); 
         }
-
+        for (uint256 i = 0; i < 7; i++ ){
+            waitForMint.push(STAFF3); 
+        }
+        for (uint256 i = 0; i < 6; i++ ){
+            waitForMint.push(STAFF4);
+        }
+        for (uint256 i = 0; i < 5; i++ ){
+            waitForMint.push(STAFF5); 
+        }
         for (uint256 i = 0; i < 4; i++ ){
-            waitForMint.push(POLEARM0); 
+            waitForMint.push(STAFF6); 
         }
         for (uint256 i = 0; i < 3; i++ ){
-            waitForMint.push(POLEARM1);
+            waitForMint.push(STAFF7);
         }
         for (uint256 i = 0; i < 2; i++ ){
+            waitForMint.push(STAFF8); 
+        }
+        for (uint256 i = 0; i < 1; i++ ){
+            waitForMint.push(STAFF9); 
+        }
+
+        for (uint256 i = 0; i < 5; i++ ){
+            waitForMint.push(POLEARM0); 
+        }
+        for (uint256 i = 0; i < 9; i++ ){
+            waitForMint.push(POLEARM1);
+        }
+        for (uint256 i = 0; i < 8; i++ ){
             waitForMint.push(POLEARM2); 
+        }
+        for (uint256 i = 0; i < 7; i++ ){
+            waitForMint.push(POLEARM3); 
+        }
+        for (uint256 i = 0; i < 6; i++ ){
+            waitForMint.push(POLEARM4);
+        }
+        for (uint256 i = 0; i < 5; i++ ){
+            waitForMint.push(POLEARM5); 
+        }
+        for (uint256 i = 0; i < 4; i++ ){
+            waitForMint.push(POLEARM6); 
+        }
+        for (uint256 i = 0; i < 3; i++ ){
+            waitForMint.push(POLEARM7);
+        }
+        for (uint256 i = 0; i < 2; i++ ){
+            waitForMint.push(POLEARM8); 
+        }
+        for (uint256 i = 0; i < 1; i++ ){
+            waitForMint.push(POLEARM9); 
         }
     }
 
@@ -136,18 +244,45 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         itemCheck.push(SWORD1);
         itemCheck.push(SWORD2);
         itemCheck.push(SWORD3);
+        itemCheck.push(SWORD4);
+        itemCheck.push(SWORD5);
+        itemCheck.push(SWORD6);
+        itemCheck.push(SWORD7);
+        itemCheck.push(SWORD8);
+        itemCheck.push(SWORD9);
 
         itemCheck.push(BOW0);
         itemCheck.push(BOW1);
         itemCheck.push(BOW2);
+        itemCheck.push(BOW3);
+        itemCheck.push(BOW4);
+        itemCheck.push(BOW5);
+        itemCheck.push(BOW6);
+        itemCheck.push(BOW7);
+        itemCheck.push(BOW8);
+        itemCheck.push(BOW9);
 
         itemCheck.push(STAFF0);
         itemCheck.push(STAFF1);
         itemCheck.push(STAFF2);
+        itemCheck.push(STAFF3);
+        itemCheck.push(STAFF4);
+        itemCheck.push(STAFF5);
+        itemCheck.push(STAFF6);
+        itemCheck.push(STAFF7);
+        itemCheck.push(STAFF8);
+        itemCheck.push(STAFF9);
 
         itemCheck.push(POLEARM0);
         itemCheck.push(POLEARM1);
         itemCheck.push(POLEARM2);
+        itemCheck.push(POLEARM3);
+        itemCheck.push(POLEARM4);
+        itemCheck.push(POLEARM5);
+        itemCheck.push(POLEARM6);
+        itemCheck.push(POLEARM7);
+        itemCheck.push(POLEARM8);
+        itemCheck.push(POLEARM9);
 
         itemCheck.push(SCROLL100);
         itemCheck.push(SCROLL90);
@@ -215,7 +350,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     function upgrade(uint256 scrollId, uint256 weaponId) public {
         require(balanceOf(msg.sender, scrollId)!=0, "ERC1155: this scroll is not yours");
         require(balanceOf(msg.sender, weaponId)!=0, "ERC1155: this weapon is not yours");
-        require(weaponId%100<2, "ERC1155: this weapon is fully upgraded");
+        require(weaponId%100<9, "ERC1155: this weapon is fully upgraded");
         uint256 scrollRate;
 
         if(scrollId%100==0){

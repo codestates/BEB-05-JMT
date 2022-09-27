@@ -57,7 +57,7 @@ function UserData({rankArr, userData, rank}) {
     return (
         <div className='userdata-container'>
             <div className='userdata-rank'>{realRank}위</div>
-            <div className='userdata-name-container'>
+            <div className='userdata-name-container' >
                 <div
                     onClick={() => openScan(userData.address)}
                     className='userdata-name'

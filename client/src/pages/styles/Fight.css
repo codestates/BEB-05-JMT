@@ -69,6 +69,7 @@
     font-size: 2vw;
     left: 46vw;
     top: 34vw;
+    width: 13vw;
     height: 3.5vw;
     border-radius: 1vw;
     background-color: #fe7227e7;
@@ -238,7 +239,7 @@
 
 .fighting-right-polearmimage {
     position: absolute;
-    left: 62vw;
+    right: 1vw;
     top: 23vw;
     height: 25vw;
 }
