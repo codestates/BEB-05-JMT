@@ -36,7 +36,7 @@ const App = () => {
         <Modal />
       </div>
       <footer className='App-footer'>
-        <p className='App-footer-text'>개발 중...</p>
+        <p className='App-footer-text'>© BEB 5조 JMT팀 🍄</p>
       </footer>
     </div>
   );

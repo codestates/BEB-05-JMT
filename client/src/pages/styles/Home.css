@@ -1,7 +1,7 @@
 .home-container {
     display: flex;
     justify-self: flex-end;
-    margin-top: calc(100vw * 76/620);
+    margin-top: calc(100vw * 73/620);
     height: calc(100vw * 110/620);
     flex-direction: column;
 }
