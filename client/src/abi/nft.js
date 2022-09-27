@@ -181,7 +181,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -200,7 +201,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -224,7 +226,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -237,7 +240,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -250,7 +254,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -269,7 +274,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -358,7 +364,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -377,7 +384,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -401,7 +409,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -414,7 +423,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -463,7 +473,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -476,7 +487,8 @@ const NFT = {
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -495,7 +507,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -514,7 +527,8 @@ const NFT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -21625,15 +21639,16 @@ const NFT = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "5777": {
+    "80001": {
       "events": {},
       "links": {},
-      "address": "0x4922f51ed1cE740F0DA7BA79FaE85f688e9f6715",
-      "transactionHash": "0x103a8cc282029c1f84efbeca7a86665445c6a3aa5e89031ddc59a324a8c7ecc0"
+      "address": "0x3209A4977C2646B71DfaD73065C0De6FE4E513Fa",
+      "transactionHash": "0xfb92b2282bbfdcba72cda2576463323c362a26f4367761c7abc87743257b4335"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-27T01:24:43.806Z",
+  "updatedAt": "2022-09-27T04:27:19.963Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {

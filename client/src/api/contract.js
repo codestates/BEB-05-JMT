@@ -44,7 +44,7 @@ const vJMTStaking = async(amount, address) => {
     const result = await StakingContract.methods.stakeToken(_amount).send({
         from:address,
         gas: 1500000,
-        gasPrice: '3000000'
+        gasPrice: '30000000000'
     });
     return result;
 }
@@ -59,7 +59,7 @@ const vJMTunStaking = async(address) => {
     const result = await StakingContract.methods.unStakingToken().send({
         from:address,
         gas: 1500000,
-        gasPrice: '3000000'
+        gasPrice: '30000000000'
     });
     return result;
 }
@@ -77,7 +77,7 @@ const vJMTunStakingClaime = async(address) => {
     const result = await StakingContract.methods.unStakingClaime().send({
         from:address,
         gas: 1500000,
-        gasPrice: '3000000'
+        gasPrice: '30000000000'
     });
     console.log(result);
     return result;
@@ -159,7 +159,7 @@ const SwapToken = async(eth,jmt,address,inputToken) =>{
             value : _ethAmount,
             from : address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         });
         return r;
     }else if(inputToken == 1) {// jmt -> eth 
@@ -167,7 +167,7 @@ const SwapToken = async(eth,jmt,address,inputToken) =>{
         const r =  await routerContract.methods.swapTokens(_jmtAmount).send({
             from : address,
             gas: 1500000,
-            gasPrice: '30000000'
+            gasPrice: '30000000000'
         });
         return r;
     }
@@ -196,7 +196,7 @@ const depositToken = async(jmtAmount,ethAmount,address) => {
         value: _ethAmount,
         from : address,
         gas: 1500000,
-        gasPrice: '30000000'
+        gasPrice: '30000000000'
     });
 }
 
@@ -208,7 +208,7 @@ const withdrawToken = async(address) => {
     );
     const aa = await routerContract.methods.pullLiquidity().send({
         gas: 1500000,
-        gasPrice: '30000000',
+        gasPrice: '30000000000',
         from:address
     });
     console.log(aa)
@@ -236,7 +236,7 @@ const LPClaim = async(address) => {
     );
     const result = await lpContract.methods.claimReward().send({
         gas: 1500000,
-        gasPrice: '30000000',
+        gasPrice: '30000000000',
         from:address
     });
     return result;
@@ -336,7 +336,7 @@ const mintCharNFT = async(address) => {
         {
             from: address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const charId = char.events.Minted.returnValues.tokenId;
@@ -350,7 +350,7 @@ const mintFirstWeaponNFT = async(address) => {
         {
             from: address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const weaponId = weapon.events.TransferSingle.returnValues.id;
@@ -363,7 +363,7 @@ const mintWeaponNFT = async(address) => {
         {
             from: address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const weaponId = weapon.events.TransferSingle.returnValues.id;
@@ -376,7 +376,7 @@ const mintScrollNFT = async(address) => {
         {
             from: address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const scrollId = scroll.events.TransferSingle.returnValues.id;
@@ -392,7 +392,7 @@ const upgradeWeapon = async(address, scrollId, weaponId) => {
             {
                 from: address,
                 gas: 1500000,
-                gasPrice: '3000000'
+                gasPrice: '30000000000'
             }
         );
         const result = upgrade.events.Upgraded.returnValues.result;

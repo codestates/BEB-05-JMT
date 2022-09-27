@@ -23,7 +23,7 @@ const fightResult = async(address, userstrength, matchingstrength) => {
     {
         from: address,
         gas: 1500000,
-        gasPrice: '3000000'
+        gasPrice: '30000000000'
     }
     );
     const result = await fightContract.methods.getFight().call();
@@ -37,7 +37,7 @@ const rewardScrollNFT = async(address) => {
         {
             from: address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
         );
         const scrollresult = scroll.events.Rewarded.returnValues.result;

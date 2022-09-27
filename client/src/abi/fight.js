@@ -35,7 +35,8 @@ const FIGHT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getFight\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_userstrength\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_matchingstrength\",\"type\":\"uint256\"}],\"name\":\"setFight\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/MapleFight.sol\":\"MapleFight\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/MapleFight.sol\":{\"keccak256\":\"0xc40fedf7d3053a5a2535c3d608278bb45a456217e9e61e4825ad256268580414\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b8792680e763b703bd3c6f30fe5909fd6700f13b267f2a7fa03a80537db5fb3e\",\"dweb:/ipfs/Qmf1J1pedXn8WJtbgdixfuyo1x8FVwWXcixpq6BoFL4zYz\"]}},\"version\":1}",
@@ -5532,15 +5533,16 @@ const FIGHT = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "5777": {
+    "80001": {
       "events": {},
       "links": {},
-      "address": "0x5e7b0061131577e412dE550fb7f30A1F3eA829F8",
-      "transactionHash": "0x654a6cf8bd89ef4b18105a84eff76bd820115f22eeab75e827f59d7077fafeb2"
+      "address": "0xE2AD87F7B9CD39b0e920bbf906F73AF942aA319D",
+      "transactionHash": "0x6f894d28ff7444741d406ec5790857d2d65e65205aebeccec0e388c47102c62d"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-27T01:24:43.763Z",
+  "updatedAt": "2022-09-27T04:27:19.998Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
