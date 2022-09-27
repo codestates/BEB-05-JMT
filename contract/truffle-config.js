@@ -81,7 +81,7 @@ module.exports = {
       gas: 10000000000
     },
     polygon_mumbai:{
-      provider: () => new HDWalletProvider({mnemonic: {phrase:mnemonic}, providerOrUrl: "https://polygon-mumbai.g.alchemy.com/v2/GLfsnBEH_aJxS2vlKQD1laFR1MP34AAI", pollingInterval: 60000}),
+      provider: () => new HDWalletProvider({mnemonic: {phrase:mnemonic}, providerOrUrl: "https://polygon-mumbai.g.alchemy.com/v2/GLfsnBEH_aJxS2vlKQD1laFR1MP34AAI", pollingInterval: 100000}),
       network_id: 80001,
       gas: 20000000,
       gasPrice: 30000000000,

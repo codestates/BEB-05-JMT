@@ -121,7 +121,7 @@ module.exports = async function (deployer) {
     );
     const web3 = new Web3(provider);
     const accounts = await web3.eth.getAccounts();
-    deployFunc(deployer, web3, accounts[0]);
+    await deployFunc(deployer, web3, accounts[0]);
 
   } else if (networkId == "polygon_mumbai") {
     const walletAPIUrl = "https://polygon-mumbai.g.alchemy.com/v2/GLfsnBEH_aJxS2vlKQD1laFR1MP34AAI";
@@ -130,7 +130,7 @@ module.exports = async function (deployer) {
       walletAPIUrl
     );
     const web3 = new Web3(provider);
-    deployFunc(deployer, web3, "0x43112976696C2Cbc1dc89B8f805Fa3Db136898Ec");
+    await deployFunc(deployer, web3, "0x43112976696C2Cbc1dc89B8f805Fa3Db136898Ec");
 
   } else if (networkId == "polygon_mainnet") {
     const walletAPIUrl = "https://polygon-mainnet.g.alchemy.com/v2/s6X3a36jtbvH1aXYzd1HXPSdX9FapzEC";
@@ -139,7 +139,6 @@ module.exports = async function (deployer) {
       walletAPIUrl
     );
     const web3 = new Web3(provider);
-    deployFunc(deployer, web3, "0x43112976696C2Cbc1dc89B8f805Fa3Db136898Ec");
-
+    await deployFunc(deployer, web3, "0x43112976696C2Cbc1dc89B8f805Fa3Db136898Ec");
   }
 };
