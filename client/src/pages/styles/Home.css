@@ -17,6 +17,13 @@
 .home-container .username-container {
     height: calc(100vw * 60/620);
 }
+/* 
+.home-container .username-container:hover {
+    background-color: rgba(250, 235, 215, 0.696);
+    border-radius: 2vw;
+    align-self: center;
+    width: 18vw;
+} */
 
 .home-container .username-container .username {
     font-size: calc(100vw * 12/620);
@@ -37,7 +44,6 @@
     color: #245effdd;
     text-decoration: underline;
     text-decoration-color: #245effdd;
-    text-decoration-thickness: 0.12vw;
 }
 
 .home-container .username-container:hover .address {
@@ -49,18 +55,18 @@
 
 .home-fight{
     position: absolute;
-    left: 84vw;
+    left: 83vw;
     top: 41vw;
     transform: translate(-50%, -50%);
 }
 
 .home-fightimg{
-    width: 21vw;
+    width: 22vw;
 }
 
 .mydata {
     position: absolute;
-    left: 5vw;
+    left: 3vw;
     top: 13vw;
     width: 24vw;
     height: 30vw;
@@ -68,15 +74,16 @@
     padding: 2vw;
     font-size: calc(100vw * 10/620);
     text-align: left;
-    background-color: rgba( 240, 190, 100, 0.7 );
+    background-color: rgba(255, 240, 212, 0.7);
 
     border-radius: 10%;
 }
 
+
 .metadata {
     word-wrap: break-word;
     opacity: 1;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
 }
 
 .line {
