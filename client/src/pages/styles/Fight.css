@@ -1,76 +1,74 @@
 .fight-title {
     position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 80px;
+    left: 45vw;
+    top: 20vw;
+    width: 10vw;
+    height: 8vw;
 }
 
-.fighting-title {
-    position: absolute;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 200px;
-}
 
 .fighting-result-text {
     position: absolute;
     cursor:pointer;
     padding-top: 1.5vw;
-    left: 45%;
-    top: 50%;
-    width: 12vw;
+    font-size: 2vw;
+    left: 43vw;
+    top: 32vw;
+    width: 13vw;
     height: 3.5vw;
     border-radius: 1vw;
     background-color: #fe7227e7;
     color:  #ffffff;
 }
 .fighting-spinner {
-    margin-top: 5em;
+    margin-top: 10vw;
+    width: 20vw;
+    height: 20vw;
 }
 
 .fighting-spinner-text {
-    margin-top: 1em;
+    margin-top: 1vw;
+    font-size: 2vw;
     display: block;
 }
 
 .fightresult-home {
     position: absolute;
-    left: 45%;
-    top: 15%;
+    left: 45vw;
+    top: 10vw;
     color: #fff;
+    font-size: 2vw;
     text-decoration: none;
     background-color: #FE7427;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    width: 8%;
-    height: 5%;
+    padding-top: 1.5vw;
+    padding-bottom: 0.5vw;
+    width: 8vw;
+    height: 4vw;
 }
 
 .fightresult-critical {
-    width: 40%;
-    margin-top: 7em;
-    margin-right: 18em;
+    position: absolute;
+    width: 30vw;
+    height: 25vw;
+    left: 17vw;
+    top: 16vw;
 }
 
 .fight-fight{
     position: absolute;
-    left: 50%;
-    top: 63%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 100px;
+    left: 43vw;
+    top: 32vw;
+    width: 15vw;
+    height: 10vw;
 }
 
 .fightresult-scroll-rewardbutton {
     position: absolute;
     cursor:pointer;
     padding-top: 1.5vw;
-    left: 43%;
-    top: 55%;
+    font-size: 2vw;
+    left: 43vw;
+    top: 34vw;
     width: 14vw;
     height: 3.5vw;
     border-radius: 1vw;
@@ -81,8 +79,9 @@
 .fightresult-scroll-reward{
     position: absolute;
     padding-top: 1.5vw;
-    left: 45%;
-    top: 55%;
+    font-size: 2vw;
+    left: 43vw;
+    top: 34vw;
     width: 10vw;
     height: 3.5vw;
     border-radius: 1vw;
@@ -92,8 +91,8 @@
 
 .fight-left-image {
     position: absolute;
-    left: 14%;
-    top: 44%;
+    left: 14vw;
+    top: 25vw;
     width: 15vw;
     height: 18vw;
     transform: scaleX(-1);
@@ -101,14 +100,14 @@
 
 .fight-left-name {
     position: absolute;
-    left: 16%;
-    top: 29%;
+    left: 15vw;
+    top: 17vw;
 }
 
 .fighting-left-swordimage {
     position: absolute;
-    left: 7%;
-    top: 32%;
+    left: 6vw;
+    top: 19vw;
     width: 28vw;
     height: 31vw;
     transform: scaleX(-1);
@@ -116,17 +115,17 @@
 
 .fighting-left-bowimage {
     position: absolute;
-    left: 13%;
-    top: 42%;
-    width: 18vw;
+    left: 12vw;
+    top: 24vw;
+    width: 19vw;
     height: 20vw;
     transform: scaleX(-1);
 }
 
 .fighting-left-staffimage {
     position: absolute;
-    left: 9%;
-    top: 36%;
+    left: 9vw;
+    top: 21vw;
     width: 24vw;
     height: 27vw;
     transform: scaleX(-1);
@@ -134,8 +133,8 @@
 
 .fighting-left-polearmimage {
     position: absolute;
-    left: 10%;
-    top: 40%;
+    left: 10vw;
+    top: 23vw;
     width: 25vw;
     height: 25vw;
     transform: scaleX(-1);
@@ -143,14 +142,14 @@
 
 .fighting-left-name {
     position: absolute;
-    left: 16%;
-    top: 29%;
+    left: 15vw;
+    top: 17vw;
 }
 
 .fightresult-left-image {
     position: absolute;
-    left: 13%;
-    top: 44%;
+    left: 13vw;
+    top: 25vw;
     width: 15vw;
     height: 18vw;
     transform: scaleX(-1);
@@ -158,24 +157,24 @@
 
 .fightresult-left-name {
     position: absolute;
-    left: 16%;
-    top: 29%;
+    left: 15vw;
+    top: 17vw;
 }
 
 .fightresult-left-result {
     position: absolute;
-    left: 14%;
-    top: 10%;
-    width: 180px;
-    height: 60px;
+    left: 14vw;
+    top: 5vw;
+    width: 17vw;
+    height: 7vw;
 }
 
 .fightresult-left-token {
     position: absolute;
     width: 4vw;
     height: 4vw;
-    left: 47%;
-    top: 45%;
+    left: 47vw;
+    top: 26vw;
     animation: left-item-ani 3s;
     animation-fill-mode: both;
 }
@@ -184,18 +183,18 @@
     position: absolute;
     width: 4vw;
     height: 4vw;
-    left: 47%;
-    top: 55%;
+    left: 47vw;
+    top: 33vw;
     animation: left-item-ani 3s;
     animation-fill-mode: both;
 }
 
 .weapon-left {
     position: absolute;
-    cursor:pointer;
     padding-top: 3vw;
-    left: 14%;
-    top: 10%;
+    font-size: 2vw;
+    left: 14vw;
+    top: 6vw;
     width: 15vw;
     height: 5vw;
     border-radius: 1vw;
@@ -205,24 +204,24 @@
 
 .fight-right-image {
     position: absolute;
-    left: 71%;
-    top: 44%;
+    left: 71vw;
+    top: 25vw;
     width: 15vw;
     height: 18vw;
 }
 
 .fight-right-name {
     position: absolute;
-    left: 71%;
-    top: 29%;
+    left: 69vw;
+    top: 17vw;
 }
 
 .fighting-right-swordimage {
     position: absolute;
-    left: 62%;
-    top: 32%;
-    width: 28vw;
-    height: 31vw;
+    left: 63vw;
+    top: 19vw;
+    width: 27vw;
+    height: 30vw;
 }
 
 .fighting-right-bowimage {
@@ -235,54 +234,54 @@
 
 .fighting-right-staffimage {
     position: absolute;
-    left: 64%;
-    top: 36%;
-    width: 24vw;
-    height: 27vw;
+    left: 66vw;
+    top: 21vw;
+    width: 23vw;
+    height: 26vw;
 }
 
 .fighting-right-polearmimage {
     position: absolute;
-    left: 64%;
-    top: 40%;
+    left: 62vw;
+    top: 23vw;
     width: 25vw;
     height: 25vw;
 }
 
 .fighting-right-name {
     position: absolute;
-    left: 71%;
-    top: 29%;
+    left: 69vw;
+    top: 17vw;
 }
 
 .fightresult-right-image {
     position: absolute;
-    left: 70%;
-    top: 44%;
+    left: 70vw;
+    top: 25vw;
     width: 15vw;
     height: 18vw;
 }
 
 .fightresult-right-name {
     position: absolute;
-    left: 71%;
-    top: 29%;
+    left: 69vw;
+    top: 17vw;
 }
 
 .fightresult-right-result {
     position: absolute;
-    left: 69%;
-    top: 10%;
-    width: 180px;
-    height: 60px;
+    left: 70vw;
+    top: 5vw;
+    width: 17vw;
+    height: 7vw;
 }
 
 .fightresult-right-token {
     position: absolute;
     width: 4vw;
     height: 4vw;
-    left: 47%;
-    top: 45%;
+    left: 47vw;
+    top: 26vw;
     animation: right-item-ani 3s;
     animation-fill-mode: both;
 }
@@ -291,8 +290,8 @@
     position: absolute;
     width: 4vw;
     height: 4vw;
-    left: 47%;
-    top: 55%;
+    left: 47vw;
+    top: 33vw;
     animation: right-item-ani 3s;
     animation-fill-mode: both;
 }
@@ -300,8 +299,9 @@
 .weapon-right {
     position: absolute;
     padding-top: 3vw;
-    left: 69%;
-    top: 10%;
+    font-size: 2vw;
+    left: 69vw;
+    top: 6vw;
     width: 15vw;
     height: 5vw;
     border-radius: 1vw;
@@ -311,10 +311,10 @@
 
 @keyframes left-item-ani {
     0% { transform: translate(0,0);}
-    100% { transform: translate(-200px, 0);}
+    100% { transform: translate(-17vw, 0);}
 }
 
 @keyframes right-item-ani {
     0% { transform: translate(0,0);}
-    100% { transform: translate(200px, 0);}
+    100% { transform: translate(17vw, 0);}
 }
