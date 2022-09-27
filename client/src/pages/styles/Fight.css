@@ -35,7 +35,7 @@
 
 .fightresult-home {
     position: absolute;
-    left: 45vw;
+    left: 46vw;
     top: 10vw;
     color: #fff;
     font-size: 2vw;
@@ -67,7 +67,7 @@
     cursor:pointer;
     padding-top: 1.5vw;
     font-size: 2vw;
-    left: 43vw;
+    left: 46vw;
     top: 34vw;
     height: 3.5vw;
     border-radius: 1vw;
@@ -79,7 +79,7 @@
     position: absolute;
     padding-top: 1.5vw;
     font-size: 2vw;
-    left: 43vw;
+    left: 46vw;
     top: 34vw;
     height: 3.5vw;
     border-radius: 1vw;
@@ -153,11 +153,22 @@
     top: 17vw;
 }
 
-.fightresult-left-result {
+.fightresult-left-win {
     position: absolute;
-    left: 14vw;
+    left: 13vw;
     top: 5vw;
-    height: 7vw;
+    font-size: 8vw;
+    font-weight: bold;
+    color: #32d635e7;
+}
+
+.fightresult-left-lose {
+    position: absolute;
+    left: 13vw;
+    top: 5vw;
+    font-size: 8vw;
+    font-weight: bold;
+    color: #fe7227e7;
 }
 
 .fightresult-left-token {
@@ -251,12 +262,22 @@
     top: 17vw;
 }
 
-.fightresult-right-result {
+.fightresult-right-win {
     position: absolute;
-    left: 70vw;
+    left: 65vw;
     top: 5vw;
-    width: 17vw;
-    height: 7vw;
+    font-size: 8vw;
+    font-weight: bold;
+    color: #32d635e7;
+}
+
+.fightresult-right-lose {
+    position: absolute;
+    left: 65vw;
+    top: 5vw;
+    font-size: 8vw;
+    font-weight: bold;
+    color: #fe7227e7;
 }
 
 .fightresult-right-token {
