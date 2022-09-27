@@ -78,8 +78,6 @@ function Liquidity() {
 		setModal({...modal, open: true, type: 'send', data: {error: result[0], send: result[1], message: result[2]}});
 	}
 
-
-
 	return (
 		<div className='Liquidity-tab'>
 			<div className="deposit-ui">

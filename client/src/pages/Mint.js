@@ -42,9 +42,8 @@ const Mint = () => {
     }, [account, charImg]);
 
     const collectAlreadyProcessedData = async () => {
-        const res = await accountAPI.fetchUsername(account.address);
+        const res = await accountAPI.fetchUser(account.address);
         if (res.message == 'true') {
-            console.log(res);
             setUsername(res.username);
             setSignedUp(true);
             if (res.char) {

@@ -9,6 +9,7 @@ import Spinner from "../components/Spinner";
 import './styles/Ranking.css';
 import contractAPI from '../api/contract';
 import accountAPI from '../api/account';
+import userAPI from '../api/user';
 
 const Ranking = () => {
   const account = useRecoilValue(accountAtom);
@@ -34,6 +35,10 @@ const Ranking = () => {
 
   const sortArr = async()=>{
     const result = await accountAPI.userinfo();
+    // const test1 = await userAPI.signUp(account.address, account.charId, account.weaponId);
+    // console.log(test1);
+    // const test = await userAPI.fetchUserList();
+    // console.log(test);
     const orginalArr = result.filter(user => user.address && user.username && user.charId && user.weaponId);
     const comparableArr = await Promise.all(
       orginalArr.map(async (x)=> [
@@ -56,7 +61,7 @@ const Ranking = () => {
       return x[1];
     });
 
-    const realArr = await asyncFilter(sortedArr, async(x)=>{
+      const realArr = await asyncFilter(sortedArr, async(x)=>{
       const hasChar = await contractAPI.isCharOwner(x.address, x.charId);
       const hasWeapon = await contractAPI.isWeaponOwner(x.address, x.weaponId);
       return hasChar&&hasWeapon;
@@ -108,8 +113,7 @@ const Ranking = () => {
               })
               :
               ""
-            }
-            
+            }            
           </div>
           <div className= 'mychar'>
             <span className='desc'>내 캐릭터</span>
@@ -119,12 +123,13 @@ const Ranking = () => {
               className="myname-container"
               onClick={() => openScan(account.address)}
             >
-              <div className='myname'>{account.username}</div>
+              <div className='myrank'>{myRank}위</div>
+              <div className='myname'>Lv.{myStr} {account.username}</div>
               <div className='myaddress'>{shortenAddress(account.address)}</div>
             </div>
             <img className='myimg' src={myImg} />
-            <div className='mystr'>Lv.{myStr}</div>
-            <div className='myrank'>{myRank}위</div>
+            <div className='reward'>5 JMT</div>
+            <div className='reward-btn'>보상 수령</div>
           </div>
         </div>
       )}

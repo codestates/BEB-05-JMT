@@ -2,6 +2,7 @@ const mapleNFT= artifacts.require("MapleNFT");
 const mapleMarket= artifacts.require("MapleMarket");
 const mapleItems = artifacts.require("MapleItems");
 const mapleFight = artifacts.require("MapleFight");
+const mapleUser = artifacts.require("MapleUser");
 
 const lpContract = artifacts.require('../contracts/LiquidityPool.sol');
 const jonMatangContract = artifacts.require('../contracts/JMToken.sol');
@@ -10,7 +11,6 @@ const routerContract = artifacts.require('../contracts/JMTRouter.sol');
 
 const stakingContract = artifacts.require('../contracts/Staking.sol');
 const vJmtokenContract = artifacts.require('../contracts/VJMToken.sol');
-
 
 module.exports = async function (deployer) {
 
@@ -57,6 +57,16 @@ module.exports = async function (deployer) {
       //Maple NFT contract instance 
       mapleNFTCont = await mapleNFT.deployed();
       mapleItemsCont = await mapleItems.deployed();
+      
+      await deployer.deploy(
+        mapleUser, 
+        jonMatangContract.address,
+        mapleNFTCont.address,
+        mapleItemsCont.address,
+        contributeAccount,
+        {from: contributeAccount}
+      );
+      mapleUserCont = await mapleUser.deployed();
   
       // swap_pool
       await deployer.deploy(lpContract, {from: contributeAccount}); // lp 디플로이
@@ -77,11 +87,13 @@ module.exports = async function (deployer) {
       );
   
       await deployer.deploy(mapleFight, {from: contributeAccount}); // 전투 컨트랙트
+
   
       routerCont = await routerContract.deployed();
       await jmtCont.setRouterAddress(routerCont.address);
       await jmtCont.setMapleNFTAddress(mapleNFTCont.address);
       await jmtCont.setMapleItemsAddress(mapleItemsCont.address);
+      await jmtCont.setMapleUserAddress(mapleUserCont.address);
       await jmtCont.setMapleMarketAddress(mapleMarketCont.address);
       await jmtCont.setStakingAddress(stakingCont.address);
       await stakingCont.setJMTokenAddress(jmtCont.address);

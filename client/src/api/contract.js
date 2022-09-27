@@ -278,7 +278,6 @@ const LPClaim = async(address) => {
     }
 }
 
-
 // swap -->
 const fetchNFTContract = async () => {
     const web3 = new Web3(window.ethereum);

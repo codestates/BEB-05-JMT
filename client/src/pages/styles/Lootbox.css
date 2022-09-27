@@ -24,6 +24,7 @@
     margin-left: auto; 
     margin-right: auto;
     opacity: 0.9;
+    font-size: 3vw;
 }
 .lootbox-container .lootbox-btn:hover {
     background-color: #81a2ffe1;

@@ -31,14 +31,11 @@ const Login = () => {
 
   const connectWallet = async () => {
     const address = await accountAPI.fetchAccount();
-    const check = await accountAPI.fetchUsername(address);
+    const check = await accountAPI.fetchUser(address);
 
-    console.log(address);
-    console.log(check.message);
     if(check.message === "false"){
       setAccount({address: address});
       contractAPI.getBalnceOfJmt(address).then((value)=>{
-        console.log(value)
         Number(value) === 0 ? navigate('/nonswap') : navigate('/mint');
       })
       
