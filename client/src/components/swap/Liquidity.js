@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRecoilState, useSetRecoilState, useRecoilValue} from "recoil";
 import { accountAtom } from "../../recoil/account/atom";
+import { modalAtom } from "../../recoil/modal/atom";
 import contractAPI from "../../api/contract";
 import '../styles/Token.css';
 
 function Liquidity() {
 
 	const account = useRecoilValue(accountAtom);
+	const [modal, setModal] = useRecoilState(modalAtom);
 	const [jmtReserve,setJmtReserve] = useState(0);
 	const [ethReserve,setEthReserve] = useState(0);
 
@@ -28,6 +30,7 @@ function Liquidity() {
 			setJmtReserve((jmtReserve/decimals))
 			setEthReserve((ethReserve/decimals))
 		})
+		getLPClaimable();
 	}, []);
 
 	const ethHandleInputChange = (value) => {
@@ -44,20 +47,35 @@ function Liquidity() {
 		setEthAmount(value/ratio);
 	}
 
-	const deposit = () => {
-		console.log(jmtAmount+"|||"+ethAmount)
-		contractAPI.depositToken(jmtAmount,ethAmount,account.address).then(() => {
-			alert("완료!")
-			window.location.reload();
-		})
+	const deposit = async () => {
+		setModal({...modal, open: true, type: 'send', data: {message: "전송중..."}});
+		let result
+		result = await contractAPI.depositToken(jmtAmount,ethAmount,account.address)
 
+		setModal({...modal, open: true, type: 'send', data: {error: result[0], send: result[1], message: result[2]}});
 	}
 
-	const withdraw = () => {
-		contractAPI.withdrawToken(account.address).then(() => {
-			alert("완료!")
-			window.location.reload();
+	const withdraw = async() => {
+		setModal({...modal, open: true, type: 'send', data: {message: "회수중..."}});
+		let result
+		result = await contractAPI.withdrawToken(account.address)
+
+		setModal({...modal, open: true, type: 'send', data: {error: result[0], send: result[1], message: result[2]}});
+	}
+
+	const getLPClaimable = async() =>{
+		await contractAPI.getLPClaimable(account.address).then((result) => {
+			console.log(parseFloat((result/decimals)).toFixed(12))
+			setLpClaimToken(parseFloat((result/decimals)).toFixed(12));
 		})
+	
+	}
+
+	const LPClaim = async() =>{
+		setModal({...modal, open: true, type: 'send', data: {message: "LP 클레임 회수중..."}});
+		let result
+		result = await contractAPI.LPClaim(account.address);
+		setModal({...modal, open: true, type: 'send', data: {error: result[0], send: result[1], message: result[2]}});
 	}
 	const getLPClaimable = () =>{
 		contractAPI.getLPClaimable(account.address).then((result) => {
@@ -100,7 +118,7 @@ function Liquidity() {
 						onChange={(e) => jmtHandleInputChange(e.target.value)} 
 						ref={jmtRef}/>
 					</div>
-					<button className="deposit-btn" onClick={()=> deposit()}>보증금</button>
+					<button className="deposit-btn" onClick={()=> deposit()}>예금</button>
 				</div>
 			</div>
 

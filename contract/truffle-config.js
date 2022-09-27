@@ -71,16 +71,38 @@ module.exports = {
       host: "127.0.0.1",     // Localhost (default: none)
       port: 7545,            // Standard Ethereum port (default: none)
       network_id: "5777",       // Any network (default: none)
-      from:"0x2EF3EA4722727b4302FCc6dc2E8C556FEEA1edcc", 
-     },
-     polygon:{
-      provider: () => new HDWalletProvider(mnemonic,"http://127.0.0.1:10002"),
-      network_id: 2999,
+    },
+    polygon_local:{
+      provider: () => new HDWalletProvider({mnemonic: {phrase:mnemonic}, providerOrUrl: "http://127.0.0.1:10002", pollingInterval: 60000}),
+      network_id: 3989,
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
       gas: 10000000000
-     },
+    },
+    polygon_mumbai:{
+      provider: () => new HDWalletProvider({mnemonic: {phrase:mnemonic}, providerOrUrl: "https://polygon-mumbai.g.alchemy.com/v2/GLfsnBEH_aJxS2vlKQD1laFR1MP34AAI", pollingInterval: 180000}),
+      network_id: 80001,
+      gas: 20000000,
+      gasPrice: 30000000000,
+      confirmations: 2,
+      networkCheckTimeout: 10000000,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      disableConfirmationListener: true,
+    },
+    polygon_mainnet:{
+      provider: () => new HDWalletProvider({mnemonic: {phrase:mnemonic}, providerOrUrl: "https://polygon-mainnet.g.alchemy.com/v2/s6X3a36jtbvH1aXYzd1HXPSdX9FapzEC", pollingInterval: 60000}),
+      network_id: 137,
+      gas: 20000000,
+      gasPrice: 50000000000,
+      confirmations: 2,
+      networkCheckTimeout: 10000000,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      disableConfirmationListener: true,
+      enableTimeouts:false
+    },
     // ganache:{
     //    host: "127.0.0.1",     
     //    port: 7545,       

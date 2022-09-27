@@ -1,4 +1,5 @@
 import axios from "axios";
+import { SERVER_ENDPOINT } from '../global_variables';
 
 const Web3 = require('web3');
 const {
@@ -33,53 +34,64 @@ const getBalnceOfvJmt = async(address) => {
 
 // <-- staking
 const vJMTStaking = async(amount, address) => {
-    const web3 = new Web3(window.ethereum);
-    var BN = web3.utils.BN;
-    const _amount = new BN(String(amount)).mul(new BN(String(10**18))).toString();
-    const StakingContract = await new web3.eth.Contract(
-        STAKING_CONTRACT_ABI,
-        STAKING_CONTRACT_ADDR
-    );
-    const result = await StakingContract.methods.stakeToken(_amount).send({
-        from:address,
-        gas: 1500000,
-        gasPrice: '3000000'
-    });
-    return result;
+    try{
+        const web3 = new Web3(window.ethereum);
+        var BN = web3.utils.BN;
+        const _amount = new BN(String(amount)).mul(new BN(String(10**18))).toString();
+        const StakingContract = await new web3.eth.Contract(
+            STAKING_CONTRACT_ABI,
+            STAKING_CONTRACT_ADDR
+        );
+        const result = await StakingContract.methods.stakeToken(_amount).send({
+            from:address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        });
+        return [true, result, true];
+    }catch(e){
+        return [false, false, "스테이킹 실패"];
+    } 
 }
 
 // <--unstaking
 const vJMTunStaking = async(address) => {
-    const web3 = new Web3(window.ethereum);
-    const StakingContract = await new web3.eth.Contract(
-        STAKING_CONTRACT_ABI,
-        STAKING_CONTRACT_ADDR
-    );
-    const result = await StakingContract.methods.unStakingToken().send({
-        from:address,
-        gas: 1500000,
-        gasPrice: '3000000'
-    });
-    return result;
+    try{
+        const web3 = new Web3(window.ethereum);
+        const StakingContract = await new web3.eth.Contract(
+            STAKING_CONTRACT_ABI,
+            STAKING_CONTRACT_ADDR
+        );
+        const result = await StakingContract.methods.unStakingToken().send({
+            from:address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        });
+        return [true, result, true];
+    }catch(e){
+        return [false, false, "언스테이킹 실패"];
+    } 
 }
 
 //<--unstakingclaime
 const vJMTunStakingClaime = async(address) => {
-    const web3 = new Web3(window.ethereum);
-    // web3.eth.getAccounts().then((result) => {
-    //     console.log(result)
-    // })
-    const StakingContract = await new web3.eth.Contract(
-        STAKING_CONTRACT_ABI,
-        STAKING_CONTRACT_ADDR
-    );
-    const result = await StakingContract.methods.unStakingClaime().send({
-        from:address,
-        gas: 1500000,
-        gasPrice: '3000000'
-    });
-    console.log(result);
-    return result;
+    try{
+        const web3 = new Web3(window.ethereum);
+        // web3.eth.getAccounts().then((result) => {
+        //     console.log(result)
+        // })
+        const StakingContract = await new web3.eth.Contract(
+            STAKING_CONTRACT_ABI,
+            STAKING_CONTRACT_ADDR
+        );
+        const result = await StakingContract.methods.unStakingClaime().send({
+            from:address,
+            gas: 1500000,
+            gasPrice: '3000000'
+        });
+        return [true, result, true];
+    }catch(e){
+        return [false, false, "클레임 실패"];
+    } 
 }
 
 //<--stakeinfo
@@ -95,13 +107,17 @@ const vJMTStakeinfo = async(address) => {
 
 // <--보상 수령 가능한가 확인
 const getReward = async(address) => {
-    const web3 = new Web3(window.ethereum);
-    const StakingContract = await new web3.eth.Contract(
-        STAKING_CONTRACT_ABI,
-        STAKING_CONTRACT_ADDR
-    );
-    const result = await StakingContract.methods.claimReward().send({from:address});
-    return result;
+    try{
+        const web3 = new Web3(window.ethereum);
+        const StakingContract = await new web3.eth.Contract(
+            STAKING_CONTRACT_ABI,
+            STAKING_CONTRACT_ADDR
+        );
+        const result = await StakingContract.methods.claimReward().send({from:address});
+        return [true, result, true];
+    }catch(e){
+        return [false, false, "보상받기 실패"];
+    } 
 }
 
 // <--보상 갯수 보기
@@ -127,14 +143,19 @@ const getBalnceOfJmt = async(address) => {
 }
 
 const SendJmtToken = async(to,address,amount) => {
-    const web3 = new Web3(window.ethereum);
-    var BN = web3.utils.BN;
-    const _amount = new BN(String(amount)).mul(new BN(String(10**18))).toString();
-    const JMTContract = await new web3.eth.Contract(
-        TOKEN_CONTRACT_ABI,
-        TOKEN_CONTRACT_ADDR
-    );
-    await JMTContract.methods.transfer(to,_amount).send({from:address});
+    try{
+        const web3 = new Web3(window.ethereum);
+        var BN = web3.utils.BN;
+        const _amount = new BN(String(amount)).mul(new BN(String(10**18))).toString();
+        const JMTContract = await new web3.eth.Contract(
+            TOKEN_CONTRACT_ABI,
+            TOKEN_CONTRACT_ADDR
+        );
+        const result = await JMTContract.methods.transfer(to,_amount).send({from:address});
+        return [true, result, "1"];
+    }catch(e){
+        return [false, false, "보내기 실패"];
+    }
 } 
 
 const GetReserve = async() => {
@@ -147,28 +168,32 @@ const GetReserve = async() => {
 }
 //toFixed(2); 고정 소수점, 지정된 숫자만큼 표시하고 나머지는 0으로 채움
 const SwapToken = async(eth,jmt,address,inputToken) =>{
-    const web3 = new Web3(window.ethereum);
-    const routerContract = await new web3.eth.Contract(
-        ROUTER_CONTRACT_ABI,
-        ROUTER_CONTRACT_ADDR
-    );
-    if(inputToken == 0){ // eth -> jmt
-        const _ethAmount = web3.utils.toWei(parseFloat(eth).toFixed(6),'ether'); // new BN(parseFloat(eth)) // new BigNumber(eth*10**18)
-        const r = await routerContract.methods.swapTokens(0).send({
-            value : _ethAmount,
-            from : address,
-            gas: 1500000,
-            gasPrice: '3000000'
-        });
-        return r;
-    }else if(inputToken == 1) {// jmt -> eth 
-        const _jmtAmount = web3.utils.toWei(parseFloat(jmt).toFixed(6),'ether');
-        const r =  await routerContract.methods.swapTokens(_jmtAmount).send({
-            from : address,
-            gas: 1500000,
-            gasPrice: '30000000'
-        });
-        return r;
+    try{
+        const web3 = new Web3(window.ethereum);
+        const routerContract = await new web3.eth.Contract(
+            ROUTER_CONTRACT_ABI,
+            ROUTER_CONTRACT_ADDR
+        );
+        if(inputToken == 0){ // eth -> jmt
+            const _ethAmount = web3.utils.toWei(parseFloat(eth).toFixed(6),'ether'); // new BN(parseFloat(eth)) // new BigNumber(eth*10**18)
+            const result = await routerContract.methods.swapTokens(0).send({
+                value : _ethAmount,
+                from : address,
+                gas: 1500000,
+                gasPrice: '3000000'
+            });
+            return [true, result, true];
+        }else if(inputToken == 1) {// jmt -> eth 
+            const _jmtAmount = web3.utils.toWei(parseFloat(jmt).toFixed(6),'ether');
+            const result =  await routerContract.methods.swapTokens(_jmtAmount).send({
+                from : address,
+                gas: 1500000,
+                gasPrice: '30000000'
+            });
+            return [true, result, true];
+        }
+    }catch(e){
+        return [false, false, "스왑 실패"];
     }
 } 
 
@@ -184,34 +209,73 @@ const getBalnceOfLpToken = async(address) => {
 }
 
 const depositToken = async(jmtAmount,ethAmount,address) => {
-    const web3 = new Web3(window.ethereum);
-    const routerContract = await new web3.eth.Contract(
-        ROUTER_CONTRACT_ABI,
-        ROUTER_CONTRACT_ADDR
-    );
-    const _ethAmount = web3.utils.toWei(parseFloat(ethAmount).toFixed(6),'ether');
-    const _jmtAmount = web3.utils.toWei(parseFloat(jmtAmount).toFixed(6),'ether');
-    return await routerContract.methods.addLiquidity(_jmtAmount).send({
-        value: _ethAmount,
-        from : address,
-        gas: 1500000,
-        gasPrice: '30000000'
-    });
+    try{
+        const web3 = new Web3(window.ethereum);
+        const routerContract = await new web3.eth.Contract(
+            ROUTER_CONTRACT_ABI,
+            ROUTER_CONTRACT_ADDR
+        );
+        const _ethAmount = web3.utils.toWei(parseFloat(ethAmount).toFixed(6),'ether');
+        const _jmtAmount = web3.utils.toWei(parseFloat(jmtAmount).toFixed(6),'ether');
+        const result = await routerContract.methods.addLiquidity(_jmtAmount).send({
+            value: _ethAmount,
+            from : address,
+            gas: 1500000,
+            gasPrice: '30000000'
+        });
+        return [true, result, "1"];
+    }catch(e){
+        return [false, false, "전송 실패"];
+    }
 }
 
 const withdrawToken = async(address) => {
+    try{
+        const web3 = new Web3(window.ethereum);
+        const routerContract = await new web3.eth.Contract(
+            ROUTER_CONTRACT_ABI,
+            ROUTER_CONTRACT_ADDR
+        );
+        const result = await routerContract.methods.pullLiquidity().send({
+            gas: 1500000,
+            gasPrice: '30000000',
+            from:address
+        });
+        return [true, result, true];
+    }catch(e){
+        return [false, false, "회수 실패"];
+    }
+}
+
+
+const getLPClaimable = async(address) => {
     const web3 = new Web3(window.ethereum);
-    const routerContract = await new web3.eth.Contract(
-        ROUTER_CONTRACT_ABI,
-        ROUTER_CONTRACT_ADDR
+    const lpContract = await new web3.eth.Contract(
+        LP_CONTRACT_ABI,
+        LP_CONTRACT_ADDR
     );
-    const aa = await routerContract.methods.pullLiquidity().send({
-        gas: 1500000,
-        gasPrice: '30000000',
+    const result = await lpContract.methods.claimableReward().call({
         from:address
     });
-    console.log(aa)
-    return aa;
+    return result;
+}
+
+const LPClaim = async(address) => {
+    try{
+        const web3 = new Web3(window.ethereum);
+        const lpContract = await new web3.eth.Contract(
+            LP_CONTRACT_ABI,
+            LP_CONTRACT_ADDR
+        );
+        const result = await lpContract.methods.claimReward().send({
+            gas: 1500000,
+            gasPrice: '30000000000',
+            from:address
+        });
+        return [true, result, true];
+    }catch(e){
+        return [false, false, "LP 클레임 실패"];
+    }
 }
 
 
@@ -261,7 +325,7 @@ const fetchItemsContract = async () => {
 }
 
 const _fetchCharacter = async (charId) => {
-    const tokenMetadata = await axios.get(`http://localhost:4000/asset/character/metadata/${charId}`);
+    const tokenMetadata = await axios.get(`${SERVER_ENDPOINT}/asset/character/metadata/${charId}`);
     console.log(tokenMetadata.data);
     return tokenMetadata.data;
 }
@@ -284,7 +348,7 @@ const fetchMyCharacter = async (address) => {
     }
     let myNFTs = [];
     for(const charId of arr) {
-        const response = await axios.get(`http://localhost:4000/asset/character/metadata/${charId}`);
+        const response = await axios.get(`${SERVER_ENDPOINT}/asset/character/metadata/${charId}`);
         const tokenMetadata = response.data;
         tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
         myNFTs.push([charId, tokenMetadata])
@@ -335,7 +399,7 @@ const mintCharNFT = async(address) => {
         {
             from: address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const charId = char.events.Minted.returnValues.tokenId;
@@ -349,7 +413,7 @@ const mintFirstWeaponNFT = async(address) => {
         {
             from: address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const weaponId = weapon.events.TransferSingle.returnValues.id;
@@ -362,7 +426,7 @@ const mintWeaponNFT = async(address) => {
         {
             from: address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const weaponId = weapon.events.TransferSingle.returnValues.id;
@@ -375,7 +439,7 @@ const mintScrollNFT = async(address) => {
         {
             from: address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const scrollId = scroll.events.TransferSingle.returnValues.id;
@@ -391,7 +455,7 @@ const upgradeWeapon = async(address, scrollId, weaponId) => {
             {
                 from: address,
                 gas: 1500000,
-                gasPrice: '3000000'
+                gasPrice: '30000000000'
             }
         );
         const result = upgrade.events.Upgraded.returnValues.result;
@@ -408,6 +472,7 @@ const upgradeWeapon = async(address, scrollId, weaponId) => {
 const fetchStrength = async(weaponId) => {
     const meta  = await fetchWeapon(weaponId);
     const weapon = await fetchAttributes(meta.attributes);
+    console.log(weapon.strength);
   
     return weapon.strength;
 }
@@ -451,7 +516,9 @@ const contractAPI = {
     vJMTunStakingClaime,
     vJMTStakeinfo,
     getReward,
-    viewReward
+    viewReward,
+    getLPClaimable,
+    LPClaim
 };
 
 export default contractAPI;

@@ -31,6 +31,24 @@
     text-align: center;
     margin-left: calc(100vw * 30/620);
     margin-right: auto;
+    cursor: pointer;
+}
+.userdata-container:hover .userdata-name {
+    text-decoration: underline;
+    text-decoration-thickness: 0.12vw;
+}
+.userdata-container .userdata-address {
+    margin-top: 0.4vw;
+    margin-left: calc(100vw * 30/620);
+    font-size: 1.3vw;
+    cursor: pointer;
+    color: #245effdd;
+    font-weight: 600;
+}
+.userdata-container:hover .userdata-address {
+    text-decoration: underline;
+    text-decoration-color: #245effdd;
+    text-decoration-thickness: 0.12vw;
 }
 .userdata-container .userdata-str {
     width: 3vw;

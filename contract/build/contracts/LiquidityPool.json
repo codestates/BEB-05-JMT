@@ -16158,111 +16158,15 @@
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "2999": {
+    "5777": {
       "events": {},
       "links": {},
-      "address": "0x6B1a1EbEe432901eAA473f66Bd9259d75D52fBD5",
-      "transactionHash": "0x37ef09181da521010fd3bbb863ee887c644a6dc0d594cca4056f2627e810c63f"
-    },
-    "5777": {
-      "events": {
-        "0xd8138f8a3f377c5259ca548e70e4c2de94f129f5a11036a15b69513cba2b426a": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "_account",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "_amount",
-              "type": "uint256"
-            }
-          ],
-          "name": "Claimed",
-          "type": "event"
-        },
-        "0x88bbeecffcce070d5609ad08df49df93f0d53002ef3544dd5287e6b621eaff6f": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "_account",
-              "type": "address"
-            }
-          ],
-          "name": "LiquidityAdded",
-          "type": "event"
-        },
-        "0x5dab48db0770e220c3226a459b19d38e7438c27b1b8dac1fab1434686d2319cd": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "_account",
-              "type": "address"
-            }
-          ],
-          "name": "LiquidityRemoved",
-          "type": "event"
-        },
-        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "previousOwner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "OwnershipTransferred",
-          "type": "event"
-        },
-        "0x967ed1bc358366a7e3e3031a0fbee32b45feb1c201d99d020380f99d03d932d1": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "_account",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "_ethTraded",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "_jmtTraded",
-              "type": "uint256"
-            }
-          ],
-          "name": "TradedTokens",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0xF3a3De474F7BB21f442123faBc328cfeB3af727f",
-      "transactionHash": "0x5a14fe71b0b39f609639c35cee9c4630424e2152437e08af7f4bf7be3189b7df"
+      "address": "0x46dfCFC0e3c0Ca47Ac8d3F99eE695Ea8eb0a3Db0",
+      "transactionHash": "0x27db32dc8691a5e7c564b78203ee8d0615981224ec0f42d29d1b570fe9a3d147"
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T21:45:18.125Z",
+  "updatedAt": "2022-09-27T15:27:01.575Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

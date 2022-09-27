@@ -14,6 +14,10 @@ import accountAPI from '../api/account';
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 import marketAPI from '../api/market';
+const {
+  NFT_CONTRACT_ADDR,
+  ITEMS_CONTRACT_ADDR,
+} = require('../global_variables');
 
 const Inventory = () => {
   const [account, setAccount] = useRecoilState(accountAtom);
@@ -146,6 +150,15 @@ const Inventory = () => {
     setOnUpgrade(false);
   }
 
+  const openScan = () => {
+      // 로컬환경은 안나옴
+      if (!isClicked) {
+        window.open(`https://mumbai.polygonscan.com/token/${NFT_CONTRACT_ADDR}?a=${account.address}`, '_blank').focus();
+      } else {
+        window.open(`https://mumbai.polygonscan.com/token/${ITEMS_CONTRACT_ADDR}?a=${account.address}`, '_blank').focus();
+      }
+  }
+
 	return (
     <>
       {loading ?
@@ -204,7 +217,13 @@ const Inventory = () => {
                 :
                 ""
               )
-            }        
+            }
+          </div>
+          <div
+            onClick={openScan}
+            className='scan'
+          >
+            history
           </div>
           <div className={`myinfo ${onUpgrade ? 'desc-upgrade' : ''}`}>
             {onUpgrade? '강화중' : '상세 정보'}

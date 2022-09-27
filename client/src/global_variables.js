@@ -24,6 +24,8 @@ export const USER_CONTRACT_ADDR = process.env.REACT_APP_USER_CONTRACT_ADDR;
 
 export const version = '367';
 
+export const SERVER_ENDPOINT = process.env.REACT_APP_SERVER_ENDPOINT;
+
 const getNFTContractABI = () => {
     return NFT["abi"];
 }

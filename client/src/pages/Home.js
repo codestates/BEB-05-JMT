@@ -65,13 +65,26 @@ const Home = () => {
     }
   }
 
+  const openScan = (address) => {
+      // 로컬환경은 안나옴
+      window.open(`https://mumbai.polygonscan.com/address/${address}`, '_blank').focus();
+  }
+  const shortenAddress = (address) => {
+      return address.substring(0, 6) + '...' + address.slice(-3)
+  }
+
 	return (
 		<>
       {loading ?
       (<Spinner/>) : (
         <div className='home-container'>
-          <div className='username'>
-            {account?.username}
+          <div className='username-container'>
+            <div className='username' onClick={() => openScan(account.address)}>
+              {account?.username}
+            </div>
+            <div className='address' onClick={() => openScan(account.address)}>
+              {shortenAddress(account?.address)}
+            </div>
           </div>
           <img className="my-character" src={image} />
           <div className='mydata'>

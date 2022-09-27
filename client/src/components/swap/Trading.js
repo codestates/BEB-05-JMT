@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRecoilState, useSetRecoilState, useRecoilValue} from "recoil";
 import { accountAtom } from "../../recoil/account/atom";
+import { modalAtom } from "../../recoil/modal/atom";
 import contractAPI from "../../api/contract";
 import { useNavigate } from 'react-router-dom';
 import '../styles/Token.css';
@@ -8,6 +9,7 @@ import '../styles/Token.css';
 function Trading({initialSwap}) {
 	const navigate = useNavigate();
 	const account = useRecoilValue(accountAtom);
+	const [modal, setModal] = useRecoilState(modalAtom);
 	const [jmtReserve,setJmtReserve] = useState(0);
 	const [ethReserve,setEthReserve] = useState(0);
 	const [inputToken,setInputToken] = useState(0);
@@ -15,7 +17,7 @@ function Trading({initialSwap}) {
 	const [toToken,setToToken] = useState(""); // 교환후 
 	const [jmtAmount,setJmtAmount] = useState("");
 	const [ethAmount,setEthAmount] = useState("");
-  	const decimals = 10**18;
+  const decimals = 10**18;
 	let ref = useRef()
 
 	useEffect(() => {
@@ -49,15 +51,19 @@ function Trading({initialSwap}) {
 	}
 
 	const SwapToken = async () => {
-		//console.log(parseFloat(jmtAmount).toFixed(6) +"||||"+ parseFloat(ethAmount).toFixed(6));
-		if(inputToken == 0){ 
-			await contractAPI.SwapToken(ethAmount,0,account.address,inputToken)
-			if (initialSwap) {
-				navigate('/mint');
+		setModal({...modal, open: true, type: 'send', data: {message: "토큰 스왑중..."}});
+		let result;
+
+			if(inputToken == 0){ 
+				result = await contractAPI.SwapToken(ethAmount,0,account.address,inputToken)
+				if (initialSwap) {
+					navigate('/mint');
+				}
+			}else if(inputToken == 1){
+				result = await contractAPI.SwapToken(0,jmtAmount,account.address,inputToken)
 			}
-		}else if(inputToken == 1){
-			await contractAPI.SwapToken(0,jmtAmount,account.address,inputToken)
-		}
+
+		setModal({...modal, open: true, type: 'send', data: {error: result[0], send: result[1], message: result[2]}});
 	}
 
 	return (

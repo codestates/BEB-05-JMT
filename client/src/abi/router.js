@@ -1,4 +1,4 @@
-const ROUTER ={
+const ROUTER = {
   "contractName": "JMTRouter",
   "abi": [
     {
@@ -33,8 +33,7 @@ const ROUTER ={
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -47,8 +46,7 @@ const ROUTER ={
       "name": "addLiquidity",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -68,34 +66,33 @@ const ROUTER ={
       "name": "swapTokens",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract LiquidityPool\",\"name\":\"_liquidityPool\",\"type\":\"address\"},{\"internalType\":\"contract JMToken\",\"name\":\"_jonMatang\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"_getAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_jmtAmount\",\"type\":\"uint256\"}],\"name\":\"addLiquidity\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pullLiquidity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_jmtAmount\",\"type\":\"uint256\"}],\"name\":\"swapTokens\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/JMTRouter.sol\":\"JMTRouter\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"@openzeppelin/contracts/security/Pausable.sol\":{\"keccak256\":\"0x0849d93b16c9940beb286a7864ed02724b248b93e0d80ef6355af5ef15c64773\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4ddabb16009cd17eaca3143feadf450ac13e72919ebe2ca50e00f61cb78bc004\",\"dweb:/ipfs/QmSPwPxX7d6TTWakN5jy5wsaGkS1y9TW8fuhGSraMkLk2B\"]},\"@openzeppelin/contracts/security/ReentrancyGuard.sol\":{\"keccak256\":\"0x0e9621f60b2faabe65549f7ed0f24e8853a45c1b7990d47e8160e523683f3935\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://287a2f8d5814dd0f05f22b740f18ca8321acc21c9bd03a6cb2203ea626e2f3f2\",\"dweb:/ipfs/QmZRQv9iuwU817VuqkA2WweiaibKii69x9QxYBBEfbNEud\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x24b04b8aacaaf1a4a0719117b29c9c3647b1f479c5ac2a60f5ff1bb6d839c238\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43e46da9d9f49741ecd876a269e71bc7494058d7a8e9478429998adb5bc3eaa0\",\"dweb:/ipfs/QmUtp4cqzf22C5rJ76AabKADquGWcjsc33yjYXxXC4sDvy\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]},\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd\",\"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6f2cf1c531122bc7ca96b8c8db6a60deae60441e5223065e792553d4849b5638\",\"dweb:/ipfs/QmPBdJmBBABMDCfyDjCbdxgiqRavgiSL88SYPGibgbPas9\"]},\"@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xd15c3e400531f00203839159b2b8e7209c5158b35618f570c695b7e47f12e9f0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b600b852e0597aa69989cc263111f02097e2827edc1bdc70306303e3af5e9929\",\"dweb:/ipfs/QmU4WfM28A1nDqghuuGeFmN3CnVrk6opWtiF65K4vhFPeC\"]},\"@uniswap/lib/contracts/libraries/Babylonian.sol\":{\"keccak256\":\"0xe20fc48e3575b4a2932e5d2dd53b6742e1ca96f652bd41038cb89d7f5d49a096\",\"urls\":[\"bzz-raw://6ba298d8e592d39960eabc2328b7d4a01ad6cf8b06366adc3ef0133d3b196a9f\",\"dweb:/ipfs/QmQgrNaHssJ8XVsPUCMHpyYRFLbBqNrumaoFgXHWdDiTyy\"]},\"project:/contracts/JMTRouter.sol\":{\"keccak256\":\"0x9975b201a81374cf2416fc0b4b6ef11f482c1fc640b733e5cb2cc0250026ba18\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://2c9ea6c40b65056a37ae1b7cf4899ddd2c4bfad064a4256d4063fa728383c7f5\",\"dweb:/ipfs/QmbDnkahFH9rj4CSkCDqAtMpAY7gV3bCmTy8cZEdBGiVzX\"]},\"project:/contracts/JMToken.sol\":{\"keccak256\":\"0x5ac24ee9d28244c27fe7607fd74f9712bb4c39b6b7c1b09f427c60c3a3f34903\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://9cf73304d3160b73cac46833df2e26ab6e3a0adad1c432e664d74ecdf0d1d7eb\",\"dweb:/ipfs/QmYginHntRFEMFLrcFiACEt2hvrhCrZb7Fv8vWCYXniQbQ\"]},\"project:/contracts/LPT.sol\":{\"keccak256\":\"0xed736abaceb3ae48c617e3f658e9b025d5b61ef8df551970899895432b0ec7b6\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://ad6919c26ab33a0f95936b6de5c1267e1a4ce2d41ef609c72be2ea63e39cf275\",\"dweb:/ipfs/QmVMZpeSSxWUxc9SME2pgQ3xwazzvdjRYGxF7sfMWGspwn\"]},\"project:/contracts/LiquidityPool.sol\":{\"keccak256\":\"0x02add59a18b8f9012f2043575b93d04fde563e3b940ccf50b5358e1cbe9e6ebd\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://feb1b5de36d206ec0be059e8e5110936a9a5e13f73b0cb375b3a35e87819ebd0\",\"dweb:/ipfs/QmSX53o3uqjeSaaDofNKswHREGfbf13CXXfnsxye1yHF68\"]},\"project:/contracts/VJMToken.sol\":{\"keccak256\":\"0xe2f8a326fd1fbe8e2bf0e7365ad261285fde71804fe77694ce986d47c106f061\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://f6ee599ebeff106e2eb9d3a6b0c01915cfc6f76e0916b4215e9c80c5c992e475\",\"dweb:/ipfs/QmXz1MZL3nGq7C8o1JW57rgYr6Z4iDV4Kba279dw4Smt4M\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506040516105e73803806105e783398101604081905261002f91610078565b600080546001600160a01b039384166001600160a01b031991821617909155600180549290931691161790556100b2565b6001600160a01b038116811461007557600080fd5b50565b6000806040838503121561008b57600080fd5b825161009681610060565b60208401519092506100a781610060565b809150509250929050565b610526806100c16000396000f3fe60806040526004361061003f5760003560e01c806351c6590a14610044578063b2ceaa0114610059578063f8e35be714610090578063fe784eaa146100a5575b600080fd5b610057610052366004610471565b6100b8565b005b34801561006557600080fd5b50600054600154604080516001600160a01b0393841681529290911660208301528051918290030190f35b34801561009c57600080fd5b506100576102d8565b6100576100b3366004610471565b610337565b6001546040516370a0823160e01b81523360048201526000916001600160a01b0316906370a0823190602401602060405180830381865afa158015610101573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610125919061048a565b1161016c5760405162461bcd60e51b81526020600482015260136024820152724e4f5f415641494c41424c455f544f4b454e5360681b604482015260640160405180910390fd5b60015460405163d83a2bf360e01b81526000916001600160a01b03169063d83a2bf3906101a1903390309087906004016104a3565b6020604051808303816000875af11580156101c0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101e491906104c7565b9050806101f057600080fd5b6001546000546040516323b872dd60e01b81526001600160a01b03928316926323b872dd926102299233929091169087906004016104a3565b6020604051808303816000875af1158015610248573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061026c91906104c7565b50600054604051636e553f6560e01b8152600481018490523360248201526001600160a01b0390911690636e553f659034906044015b6000604051808303818588803b1580156102bb57600080fd5b505af11580156102cf573d6000803e3d6000fd5b50505050505050565b6000546040516351cff8d960e01b81523360048201526001600160a01b03909116906351cff8d990602401600060405180830381600087803b15801561031d57600080fd5b505af1158015610331573d6000803e3d6000fd5b50505050565b60015460405163d83a2bf360e01b81526000916001600160a01b03169063d83a2bf39061036c903390309087906004016104a3565b6020604051808303816000875af115801561038b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103af91906104c7565b9050806103bb57600080fd5b6001546000546040516323b872dd60e01b81526001600160a01b03928316926323b872dd926103f49233929091169087906004016104a3565b6020604051808303816000875af1158015610413573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061043791906104c7565b5060005460405163d004f0f760e01b8152336004820152602481018490526001600160a01b039091169063d004f0f79034906044016102a2565b60006020828403121561048357600080fd5b5035919050565b60006020828403121561049c57600080fd5b5051919050565b6001600160a01b039384168152919092166020820152604081019190915260600190565b6000602082840312156104d957600080fd5b815180151581146104e957600080fd5b939250505056fea2646970667358221220c729f635167febceb64ec60282c719c4a42e5ed6cb82ed406d599156f6b5da1d64736f6c63430008110033",
-  "deployedBytecode": "0x60806040526004361061003f5760003560e01c806351c6590a14610044578063b2ceaa0114610059578063f8e35be714610090578063fe784eaa146100a5575b600080fd5b610057610052366004610471565b6100b8565b005b34801561006557600080fd5b50600054600154604080516001600160a01b0393841681529290911660208301528051918290030190f35b34801561009c57600080fd5b506100576102d8565b6100576100b3366004610471565b610337565b6001546040516370a0823160e01b81523360048201526000916001600160a01b0316906370a0823190602401602060405180830381865afa158015610101573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610125919061048a565b1161016c5760405162461bcd60e51b81526020600482015260136024820152724e4f5f415641494c41424c455f544f4b454e5360681b604482015260640160405180910390fd5b60015460405163d83a2bf360e01b81526000916001600160a01b03169063d83a2bf3906101a1903390309087906004016104a3565b6020604051808303816000875af11580156101c0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101e491906104c7565b9050806101f057600080fd5b6001546000546040516323b872dd60e01b81526001600160a01b03928316926323b872dd926102299233929091169087906004016104a3565b6020604051808303816000875af1158015610248573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061026c91906104c7565b50600054604051636e553f6560e01b8152600481018490523360248201526001600160a01b0390911690636e553f659034906044015b6000604051808303818588803b1580156102bb57600080fd5b505af11580156102cf573d6000803e3d6000fd5b50505050505050565b6000546040516351cff8d960e01b81523360048201526001600160a01b03909116906351cff8d990602401600060405180830381600087803b15801561031d57600080fd5b505af1158015610331573d6000803e3d6000fd5b50505050565b60015460405163d83a2bf360e01b81526000916001600160a01b03169063d83a2bf39061036c903390309087906004016104a3565b6020604051808303816000875af115801561038b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103af91906104c7565b9050806103bb57600080fd5b6001546000546040516323b872dd60e01b81526001600160a01b03928316926323b872dd926103f49233929091169087906004016104a3565b6020604051808303816000875af1158015610413573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061043791906104c7565b5060005460405163d004f0f760e01b8152336004820152602481018490526001600160a01b039091169063d004f0f79034906044016102a2565b60006020828403121561048357600080fd5b5035919050565b60006020828403121561049c57600080fd5b5051919050565b6001600160a01b039384168152919092166020820152604081019190915260600190565b6000602082840312156104d957600080fd5b815180151581146104e957600080fd5b939250505056fea2646970667358221220c729f635167febceb64ec60282c719c4a42e5ed6cb82ed406d599156f6b5da1d64736f6c63430008110033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract LiquidityPool\",\"name\":\"_liquidityPool\",\"type\":\"address\"},{\"internalType\":\"contract JMToken\",\"name\":\"_jonMatang\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"_getAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_jmtAmount\",\"type\":\"uint256\"}],\"name\":\"addLiquidity\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pullLiquidity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_jmtAmount\",\"type\":\"uint256\"}],\"name\":\"swapTokens\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/JMTRouter.sol\":\"JMTRouter\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1000},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"@openzeppelin/contracts/security/Pausable.sol\":{\"keccak256\":\"0x0849d93b16c9940beb286a7864ed02724b248b93e0d80ef6355af5ef15c64773\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4ddabb16009cd17eaca3143feadf450ac13e72919ebe2ca50e00f61cb78bc004\",\"dweb:/ipfs/QmSPwPxX7d6TTWakN5jy5wsaGkS1y9TW8fuhGSraMkLk2B\"]},\"@openzeppelin/contracts/security/ReentrancyGuard.sol\":{\"keccak256\":\"0x0e9621f60b2faabe65549f7ed0f24e8853a45c1b7990d47e8160e523683f3935\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://287a2f8d5814dd0f05f22b740f18ca8321acc21c9bd03a6cb2203ea626e2f3f2\",\"dweb:/ipfs/QmZRQv9iuwU817VuqkA2WweiaibKii69x9QxYBBEfbNEud\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x24b04b8aacaaf1a4a0719117b29c9c3647b1f479c5ac2a60f5ff1bb6d839c238\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43e46da9d9f49741ecd876a269e71bc7494058d7a8e9478429998adb5bc3eaa0\",\"dweb:/ipfs/QmUtp4cqzf22C5rJ76AabKADquGWcjsc33yjYXxXC4sDvy\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]},\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd\",\"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6f2cf1c531122bc7ca96b8c8db6a60deae60441e5223065e792553d4849b5638\",\"dweb:/ipfs/QmPBdJmBBABMDCfyDjCbdxgiqRavgiSL88SYPGibgbPas9\"]},\"@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xd15c3e400531f00203839159b2b8e7209c5158b35618f570c695b7e47f12e9f0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b600b852e0597aa69989cc263111f02097e2827edc1bdc70306303e3af5e9929\",\"dweb:/ipfs/QmU4WfM28A1nDqghuuGeFmN3CnVrk6opWtiF65K4vhFPeC\"]},\"@uniswap/lib/contracts/libraries/Babylonian.sol\":{\"keccak256\":\"0xe20fc48e3575b4a2932e5d2dd53b6742e1ca96f652bd41038cb89d7f5d49a096\",\"urls\":[\"bzz-raw://6ba298d8e592d39960eabc2328b7d4a01ad6cf8b06366adc3ef0133d3b196a9f\",\"dweb:/ipfs/QmQgrNaHssJ8XVsPUCMHpyYRFLbBqNrumaoFgXHWdDiTyy\"]},\"project:/contracts/JMTRouter.sol\":{\"keccak256\":\"0x9975b201a81374cf2416fc0b4b6ef11f482c1fc640b733e5cb2cc0250026ba18\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://2c9ea6c40b65056a37ae1b7cf4899ddd2c4bfad064a4256d4063fa728383c7f5\",\"dweb:/ipfs/QmbDnkahFH9rj4CSkCDqAtMpAY7gV3bCmTy8cZEdBGiVzX\"]},\"project:/contracts/JMToken.sol\":{\"keccak256\":\"0x6d46ba35a03980a62eb23b06bc1c9b4c381fb5cec22d24e22ef99187254378c3\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://89f07d0c627d6a08242969b011154e7620ff962753b147e64dc3b0870832db30\",\"dweb:/ipfs/Qmcdew5EtewTCyojfBihLYMB1Lge8Si9PSugNDyiofp1HY\"]},\"project:/contracts/LPT.sol\":{\"keccak256\":\"0xed736abaceb3ae48c617e3f658e9b025d5b61ef8df551970899895432b0ec7b6\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://ad6919c26ab33a0f95936b6de5c1267e1a4ce2d41ef609c72be2ea63e39cf275\",\"dweb:/ipfs/QmVMZpeSSxWUxc9SME2pgQ3xwazzvdjRYGxF7sfMWGspwn\"]},\"project:/contracts/LiquidityPool.sol\":{\"keccak256\":\"0x02add59a18b8f9012f2043575b93d04fde563e3b940ccf50b5358e1cbe9e6ebd\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://feb1b5de36d206ec0be059e8e5110936a9a5e13f73b0cb375b3a35e87819ebd0\",\"dweb:/ipfs/QmSX53o3uqjeSaaDofNKswHREGfbf13CXXfnsxye1yHF68\"]},\"project:/contracts/VJMToken.sol\":{\"keccak256\":\"0xe2f8a326fd1fbe8e2bf0e7365ad261285fde71804fe77694ce986d47c106f061\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://f6ee599ebeff106e2eb9d3a6b0c01915cfc6f76e0916b4215e9c80c5c992e475\",\"dweb:/ipfs/QmXz1MZL3nGq7C8o1JW57rgYr6Z4iDV4Kba279dw4Smt4M\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161065938038061065983398101604081905261002f91610078565b600080546001600160a01b039384166001600160a01b031991821617909155600180549290931691161790556100b2565b6001600160a01b038116811461007557600080fd5b50565b6000806040838503121561008b57600080fd5b825161009681610060565b60208401519092506100a781610060565b809150509250929050565b610598806100c16000396000f3fe60806040526004361061003f5760003560e01c806351c6590a14610044578063b2ceaa0114610059578063f8e35be714610090578063fe784eaa146100a5575b600080fd5b610057610052366004610507565b6100b8565b005b34801561006557600080fd5b50600054600154604080516001600160a01b0393841681529290911660208301528051918290030190f35b34801561009c57600080fd5b50610057610335565b6100576100b3366004610507565b6103ad565b6001546040517f70a082310000000000000000000000000000000000000000000000000000000081523360048201526000916001600160a01b0316906370a0823190602401602060405180830381865afa15801561011a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061013e9190610520565b116101a9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601360248201527f4e4f5f415641494c41424c455f544f4b454e5300000000000000000000000000604482015260640160405180910390fd5b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610201573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102259190610539565b90508061023157600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af115801561028c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b09190610539565b506000546040517f6e553f65000000000000000000000000000000000000000000000000000000008152600481018490523360248201526001600160a01b0390911690636e553f659034906044015b6000604051808303818588803b15801561031857600080fd5b505af115801561032c573d6000803e3d6000fd5b50505050505050565b6000546040517f51cff8d90000000000000000000000000000000000000000000000000000000081523360048201526001600160a01b03909116906351cff8d990602401600060405180830381600087803b15801561039357600080fd5b505af11580156103a7573d6000803e3d6000fd5b50505050565b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610405573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104299190610539565b90508061043557600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af1158015610490573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104b49190610539565b506000546040517fd004f0f7000000000000000000000000000000000000000000000000000000008152336004820152602481018490526001600160a01b039091169063d004f0f79034906044016102ff565b60006020828403121561051957600080fd5b5035919050565b60006020828403121561053257600080fd5b5051919050565b60006020828403121561054b57600080fd5b8151801515811461055b57600080fd5b939250505056fea26469706673582212208bf402ed078786c8e56144d3c3aa16af8286539db1dbf4fcfd5bee4293319e2564736f6c63430008110033",
+  "deployedBytecode": "0x60806040526004361061003f5760003560e01c806351c6590a14610044578063b2ceaa0114610059578063f8e35be714610090578063fe784eaa146100a5575b600080fd5b610057610052366004610507565b6100b8565b005b34801561006557600080fd5b50600054600154604080516001600160a01b0393841681529290911660208301528051918290030190f35b34801561009c57600080fd5b50610057610335565b6100576100b3366004610507565b6103ad565b6001546040517f70a082310000000000000000000000000000000000000000000000000000000081523360048201526000916001600160a01b0316906370a0823190602401602060405180830381865afa15801561011a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061013e9190610520565b116101a9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601360248201527f4e4f5f415641494c41424c455f544f4b454e5300000000000000000000000000604482015260640160405180910390fd5b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610201573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102259190610539565b90508061023157600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af115801561028c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b09190610539565b506000546040517f6e553f65000000000000000000000000000000000000000000000000000000008152600481018490523360248201526001600160a01b0390911690636e553f659034906044015b6000604051808303818588803b15801561031857600080fd5b505af115801561032c573d6000803e3d6000fd5b50505050505050565b6000546040517f51cff8d90000000000000000000000000000000000000000000000000000000081523360048201526001600160a01b03909116906351cff8d990602401600060405180830381600087803b15801561039357600080fd5b505af11580156103a7573d6000803e3d6000fd5b50505050565b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610405573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104299190610539565b90508061043557600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af1158015610490573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104b49190610539565b506000546040517fd004f0f7000000000000000000000000000000000000000000000000000000008152336004820152602481018490526001600160a01b039091169063d004f0f79034906044016102ff565b60006020828403121561051957600080fd5b5035919050565b60006020828403121561053257600080fd5b5051919050565b60006020828403121561054b57600080fd5b8151801515811461055b57600080fd5b939250505056fea26469706673582212208bf402ed078786c8e56144d3c3aa16af8286539db1dbf4fcfd5bee4293319e2564736f6c63430008110033",
   "immutableReferences": {},
   "generatedSources": [
     {
       "ast": {
         "nodeType": "YulBlock",
-        "src": "0:620:37",
+        "src": "0:620:38",
         "statements": [
           {
             "nodeType": "YulBlock",
-            "src": "6:3:37",
+            "src": "6:3:38",
             "statements": []
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "74:86:37",
+              "src": "74:86:38",
               "statements": [
                 {
                   "body": {
                     "nodeType": "YulBlock",
-                    "src": "138:16:37",
+                    "src": "138:16:38",
                     "statements": [
                       {
                         "expression": {
@@ -103,14 +100,14 @@ const ROUTER ={
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "147:1:37",
+                              "src": "147:1:38",
                               "type": "",
                               "value": "0"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "150:1:37",
+                              "src": "150:1:38",
                               "type": "",
                               "value": "0"
                             }
@@ -118,13 +115,13 @@ const ROUTER ={
                           "functionName": {
                             "name": "revert",
                             "nodeType": "YulIdentifier",
-                            "src": "140:6:37"
+                            "src": "140:6:38"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "140:12:37"
+                          "src": "140:12:38"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "140:12:37"
+                        "src": "140:12:38"
                       }
                     ]
                   },
@@ -135,14 +132,14 @@ const ROUTER ={
                           {
                             "name": "value",
                             "nodeType": "YulIdentifier",
-                            "src": "97:5:37"
+                            "src": "97:5:38"
                           },
                           {
                             "arguments": [
                               {
                                 "name": "value",
                                 "nodeType": "YulIdentifier",
-                                "src": "108:5:37"
+                                "src": "108:5:38"
                               },
                               {
                                 "arguments": [
@@ -151,14 +148,14 @@ const ROUTER ={
                                       {
                                         "kind": "number",
                                         "nodeType": "YulLiteral",
-                                        "src": "123:3:37",
+                                        "src": "123:3:38",
                                         "type": "",
                                         "value": "160"
                                       },
                                       {
                                         "kind": "number",
                                         "nodeType": "YulLiteral",
-                                        "src": "128:1:37",
+                                        "src": "128:1:38",
                                         "type": "",
                                         "value": "1"
                                       }
@@ -166,15 +163,15 @@ const ROUTER ={
                                     "functionName": {
                                       "name": "shl",
                                       "nodeType": "YulIdentifier",
-                                      "src": "119:3:37"
+                                      "src": "119:3:38"
                                     },
                                     "nodeType": "YulFunctionCall",
-                                    "src": "119:11:37"
+                                    "src": "119:11:38"
                                   },
                                   {
                                     "kind": "number",
                                     "nodeType": "YulLiteral",
-                                    "src": "132:1:37",
+                                    "src": "132:1:38",
                                     "type": "",
                                     "value": "1"
                                   }
@@ -182,40 +179,40 @@ const ROUTER ={
                                 "functionName": {
                                   "name": "sub",
                                   "nodeType": "YulIdentifier",
-                                  "src": "115:3:37"
+                                  "src": "115:3:38"
                                 },
                                 "nodeType": "YulFunctionCall",
-                                "src": "115:19:37"
+                                "src": "115:19:38"
                               }
                             ],
                             "functionName": {
                               "name": "and",
                               "nodeType": "YulIdentifier",
-                              "src": "104:3:37"
+                              "src": "104:3:38"
                             },
                             "nodeType": "YulFunctionCall",
-                            "src": "104:31:37"
+                            "src": "104:31:38"
                           }
                         ],
                         "functionName": {
                           "name": "eq",
                           "nodeType": "YulIdentifier",
-                          "src": "94:2:37"
+                          "src": "94:2:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "94:42:37"
+                        "src": "94:42:38"
                       }
                     ],
                     "functionName": {
                       "name": "iszero",
                       "nodeType": "YulIdentifier",
-                      "src": "87:6:37"
+                      "src": "87:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "87:50:37"
+                    "src": "87:50:38"
                   },
                   "nodeType": "YulIf",
-                  "src": "84:70:37"
+                  "src": "84:70:38"
                 }
               ]
             },
@@ -225,21 +222,21 @@ const ROUTER ={
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-                "src": "63:5:37",
+                "src": "63:5:38",
                 "type": ""
               }
             ],
-            "src": "14:146:37"
+            "src": "14:146:38"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "301:317:37",
+              "src": "301:317:38",
               "statements": [
                 {
                   "body": {
                     "nodeType": "YulBlock",
-                    "src": "347:16:37",
+                    "src": "347:16:38",
                     "statements": [
                       {
                         "expression": {
@@ -247,14 +244,14 @@ const ROUTER ={
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "356:1:37",
+                              "src": "356:1:38",
                               "type": "",
                               "value": "0"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "359:1:37",
+                              "src": "359:1:38",
                               "type": "",
                               "value": "0"
                             }
@@ -262,13 +259,13 @@ const ROUTER ={
                           "functionName": {
                             "name": "revert",
                             "nodeType": "YulIdentifier",
-                            "src": "349:6:37"
+                            "src": "349:6:38"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "349:12:37"
+                          "src": "349:12:38"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "349:12:37"
+                        "src": "349:12:38"
                       }
                     ]
                   },
@@ -279,26 +276,26 @@ const ROUTER ={
                           {
                             "name": "dataEnd",
                             "nodeType": "YulIdentifier",
-                            "src": "322:7:37"
+                            "src": "322:7:38"
                           },
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "331:9:37"
+                            "src": "331:9:38"
                           }
                         ],
                         "functionName": {
                           "name": "sub",
                           "nodeType": "YulIdentifier",
-                          "src": "318:3:37"
+                          "src": "318:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "318:23:37"
+                        "src": "318:23:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "343:2:37",
+                        "src": "343:2:38",
                         "type": "",
                         "value": "64"
                       }
@@ -306,38 +303,38 @@ const ROUTER ={
                     "functionName": {
                       "name": "slt",
                       "nodeType": "YulIdentifier",
-                      "src": "314:3:37"
+                      "src": "314:3:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "314:32:37"
+                    "src": "314:32:38"
                   },
                   "nodeType": "YulIf",
-                  "src": "311:52:37"
+                  "src": "311:52:38"
                 },
                 {
                   "nodeType": "YulVariableDeclaration",
-                  "src": "372:29:37",
+                  "src": "372:29:38",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "391:9:37"
+                        "src": "391:9:38"
                       }
                     ],
                     "functionName": {
                       "name": "mload",
                       "nodeType": "YulIdentifier",
-                      "src": "385:5:37"
+                      "src": "385:5:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "385:16:37"
+                    "src": "385:16:38"
                   },
                   "variables": [
                     {
                       "name": "value",
                       "nodeType": "YulTypedName",
-                      "src": "376:5:37",
+                      "src": "376:5:38",
                       "type": ""
                     }
                   ]
@@ -348,39 +345,39 @@ const ROUTER ={
                       {
                         "name": "value",
                         "nodeType": "YulIdentifier",
-                        "src": "450:5:37"
+                        "src": "450:5:38"
                       }
                     ],
                     "functionName": {
                       "name": "validator_revert_contract_LiquidityPool",
                       "nodeType": "YulIdentifier",
-                      "src": "410:39:37"
+                      "src": "410:39:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "410:46:37"
+                    "src": "410:46:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "410:46:37"
+                  "src": "410:46:38"
                 },
                 {
                   "nodeType": "YulAssignment",
-                  "src": "465:15:37",
+                  "src": "465:15:38",
                   "value": {
                     "name": "value",
                     "nodeType": "YulIdentifier",
-                    "src": "475:5:37"
+                    "src": "475:5:38"
                   },
                   "variableNames": [
                     {
                       "name": "value0",
                       "nodeType": "YulIdentifier",
-                      "src": "465:6:37"
+                      "src": "465:6:38"
                     }
                   ]
                 },
                 {
                   "nodeType": "YulVariableDeclaration",
-                  "src": "489:40:37",
+                  "src": "489:40:38",
                   "value": {
                     "arguments": [
                       {
@@ -388,12 +385,12 @@ const ROUTER ={
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "514:9:37"
+                            "src": "514:9:38"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "525:2:37",
+                            "src": "525:2:38",
                             "type": "",
                             "value": "32"
                           }
@@ -401,25 +398,25 @@ const ROUTER ={
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "510:3:37"
+                          "src": "510:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "510:18:37"
+                        "src": "510:18:38"
                       }
                     ],
                     "functionName": {
                       "name": "mload",
                       "nodeType": "YulIdentifier",
-                      "src": "504:5:37"
+                      "src": "504:5:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "504:25:37"
+                    "src": "504:25:38"
                   },
                   "variables": [
                     {
                       "name": "value_1",
                       "nodeType": "YulTypedName",
-                      "src": "493:7:37",
+                      "src": "493:7:38",
                       "type": ""
                     }
                   ]
@@ -430,51 +427,51 @@ const ROUTER ={
                       {
                         "name": "value_1",
                         "nodeType": "YulIdentifier",
-                        "src": "578:7:37"
+                        "src": "578:7:38"
                       }
                     ],
                     "functionName": {
                       "name": "validator_revert_contract_LiquidityPool",
                       "nodeType": "YulIdentifier",
-                      "src": "538:39:37"
+                      "src": "538:39:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "538:48:37"
+                    "src": "538:48:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "538:48:37"
+                  "src": "538:48:38"
                 },
                 {
                   "nodeType": "YulAssignment",
-                  "src": "595:17:37",
+                  "src": "595:17:38",
                   "value": {
                     "name": "value_1",
                     "nodeType": "YulIdentifier",
-                    "src": "605:7:37"
+                    "src": "605:7:38"
                   },
                   "variableNames": [
                     {
                       "name": "value1",
                       "nodeType": "YulIdentifier",
-                      "src": "595:6:37"
+                      "src": "595:6:38"
                     }
                   ]
                 }
               ]
             },
-            "name": "abi_decode_tuple_t_contract$_LiquidityPool_$7011t_contract$_JMToken_$6142_fromMemory",
+            "name": "abi_decode_tuple_t_contract$_LiquidityPool_$7043t_contract$_JMToken_$6174_fromMemory",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "259:9:37",
+                "src": "259:9:38",
                 "type": ""
               },
               {
                 "name": "dataEnd",
                 "nodeType": "YulTypedName",
-                "src": "270:7:37",
+                "src": "270:7:38",
                 "type": ""
               }
             ],
@@ -482,22 +479,22 @@ const ROUTER ={
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-                "src": "282:6:37",
+                "src": "282:6:38",
                 "type": ""
               },
               {
                 "name": "value1",
                 "nodeType": "YulTypedName",
-                "src": "290:6:37",
+                "src": "290:6:38",
                 "type": ""
               }
             ],
-            "src": "165:453:37"
+            "src": "165:453:38"
           }
         ]
       },
-      "contents": "{\n    { }\n    function validator_revert_contract_LiquidityPool(value)\n    {\n        if iszero(eq(value, and(value, sub(shl(160, 1), 1)))) { revert(0, 0) }\n    }\n    function abi_decode_tuple_t_contract$_LiquidityPool_$7011t_contract$_JMToken_$6142_fromMemory(headStart, dataEnd) -> value0, value1\n    {\n        if slt(sub(dataEnd, headStart), 64) { revert(0, 0) }\n        let value := mload(headStart)\n        validator_revert_contract_LiquidityPool(value)\n        value0 := value\n        let value_1 := mload(add(headStart, 32))\n        validator_revert_contract_LiquidityPool(value_1)\n        value1 := value_1\n    }\n}",
-      "id": 37,
+      "contents": "{\n    { }\n    function validator_revert_contract_LiquidityPool(value)\n    {\n        if iszero(eq(value, and(value, sub(shl(160, 1), 1)))) { revert(0, 0) }\n    }\n    function abi_decode_tuple_t_contract$_LiquidityPool_$7043t_contract$_JMToken_$6174_fromMemory(headStart, dataEnd) -> value0, value1\n    {\n        if slt(sub(dataEnd, headStart), 64) { revert(0, 0) }\n        let value := mload(headStart)\n        validator_revert_contract_LiquidityPool(value)\n        value0 := value\n        let value_1 := mload(add(headStart, 32))\n        validator_revert_contract_LiquidityPool(value_1)\n        value1 := value_1\n    }\n}",
+      "id": 38,
       "language": "Yul",
       "name": "#utility.yul"
     }
@@ -506,22 +503,22 @@ const ROUTER ={
     {
       "ast": {
         "nodeType": "YulBlock",
-        "src": "0:2470:37",
+        "src": "0:2585:38",
         "statements": [
           {
             "nodeType": "YulBlock",
-            "src": "6:3:37",
+            "src": "6:3:38",
             "statements": []
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "84:110:37",
+              "src": "84:110:38",
               "statements": [
                 {
                   "body": {
                     "nodeType": "YulBlock",
-                    "src": "130:16:37",
+                    "src": "130:16:38",
                     "statements": [
                       {
                         "expression": {
@@ -529,14 +526,14 @@ const ROUTER ={
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "139:1:37",
+                              "src": "139:1:38",
                               "type": "",
                               "value": "0"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "142:1:37",
+                              "src": "142:1:38",
                               "type": "",
                               "value": "0"
                             }
@@ -544,13 +541,13 @@ const ROUTER ={
                           "functionName": {
                             "name": "revert",
                             "nodeType": "YulIdentifier",
-                            "src": "132:6:37"
+                            "src": "132:6:38"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "132:12:37"
+                          "src": "132:12:38"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "132:12:37"
+                        "src": "132:12:38"
                       }
                     ]
                   },
@@ -561,26 +558,26 @@ const ROUTER ={
                           {
                             "name": "dataEnd",
                             "nodeType": "YulIdentifier",
-                            "src": "105:7:37"
+                            "src": "105:7:38"
                           },
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "114:9:37"
+                            "src": "114:9:38"
                           }
                         ],
                         "functionName": {
                           "name": "sub",
                           "nodeType": "YulIdentifier",
-                          "src": "101:3:37"
+                          "src": "101:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "101:23:37"
+                        "src": "101:23:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "126:2:37",
+                        "src": "126:2:38",
                         "type": "",
                         "value": "32"
                       }
@@ -588,38 +585,38 @@ const ROUTER ={
                     "functionName": {
                       "name": "slt",
                       "nodeType": "YulIdentifier",
-                      "src": "97:3:37"
+                      "src": "97:3:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "97:32:37"
+                    "src": "97:32:38"
                   },
                   "nodeType": "YulIf",
-                  "src": "94:52:37"
+                  "src": "94:52:38"
                 },
                 {
                   "nodeType": "YulAssignment",
-                  "src": "155:33:37",
+                  "src": "155:33:38",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "178:9:37"
+                        "src": "178:9:38"
                       }
                     ],
                     "functionName": {
                       "name": "calldataload",
                       "nodeType": "YulIdentifier",
-                      "src": "165:12:37"
+                      "src": "165:12:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "165:23:37"
+                    "src": "165:23:38"
                   },
                   "variableNames": [
                     {
                       "name": "value0",
                       "nodeType": "YulIdentifier",
-                      "src": "155:6:37"
+                      "src": "155:6:38"
                     }
                   ]
                 }
@@ -631,13 +628,13 @@ const ROUTER ={
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "50:9:37",
+                "src": "50:9:38",
                 "type": ""
               },
               {
                 "name": "dataEnd",
                 "nodeType": "YulTypedName",
-                "src": "61:7:37",
+                "src": "61:7:38",
                 "type": ""
               }
             ],
@@ -645,31 +642,31 @@ const ROUTER ={
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-                "src": "73:6:37",
+                "src": "73:6:38",
                 "type": ""
               }
             ],
-            "src": "14:180:37"
+            "src": "14:180:38"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "328:175:37",
+              "src": "328:198:38",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "338:26:37",
+                  "src": "338:26:38",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "350:9:37"
+                        "src": "350:9:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "361:2:37",
+                        "src": "361:2:38",
                         "type": "",
                         "value": "64"
                       }
@@ -677,70 +674,34 @@ const ROUTER ={
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "346:3:37"
+                      "src": "346:3:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "346:18:37"
+                    "src": "346:18:38"
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
-                      "src": "338:4:37"
+                      "src": "338:4:38"
                     }
                   ]
                 },
                 {
                   "nodeType": "YulVariableDeclaration",
-                  "src": "373:29:37",
+                  "src": "373:52:38",
                   "value": {
-                    "arguments": [
-                      {
-                        "arguments": [
-                          {
-                            "kind": "number",
-                            "nodeType": "YulLiteral",
-                            "src": "391:3:37",
-                            "type": "",
-                            "value": "160"
-                          },
-                          {
-                            "kind": "number",
-                            "nodeType": "YulLiteral",
-                            "src": "396:1:37",
-                            "type": "",
-                            "value": "1"
-                          }
-                        ],
-                        "functionName": {
-                          "name": "shl",
-                          "nodeType": "YulIdentifier",
-                          "src": "387:3:37"
-                        },
-                        "nodeType": "YulFunctionCall",
-                        "src": "387:11:37"
-                      },
-                      {
-                        "kind": "number",
-                        "nodeType": "YulLiteral",
-                        "src": "400:1:37",
-                        "type": "",
-                        "value": "1"
-                      }
-                    ],
-                    "functionName": {
-                      "name": "sub",
-                      "nodeType": "YulIdentifier",
-                      "src": "383:3:37"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "383:19:37"
+                    "kind": "number",
+                    "nodeType": "YulLiteral",
+                    "src": "383:42:38",
+                    "type": "",
+                    "value": "0xffffffffffffffffffffffffffffffffffffffff"
                   },
                   "variables": [
                     {
                       "name": "_1",
                       "nodeType": "YulTypedName",
-                      "src": "377:2:37",
+                      "src": "377:2:38",
                       "type": ""
                     }
                   ]
@@ -751,40 +712,40 @@ const ROUTER ={
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "418:9:37"
+                        "src": "441:9:38"
                       },
                       {
                         "arguments": [
                           {
                             "name": "value0",
                             "nodeType": "YulIdentifier",
-                            "src": "433:6:37"
+                            "src": "456:6:38"
                           },
                           {
                             "name": "_1",
                             "nodeType": "YulIdentifier",
-                            "src": "441:2:37"
+                            "src": "464:2:38"
                           }
                         ],
                         "functionName": {
                           "name": "and",
                           "nodeType": "YulIdentifier",
-                          "src": "429:3:37"
+                          "src": "452:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "429:15:37"
+                        "src": "452:15:38"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "411:6:37"
+                      "src": "434:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "411:34:37"
+                    "src": "434:34:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "411:34:37"
+                  "src": "434:34:38"
                 },
                 {
                   "expression": {
@@ -794,12 +755,12 @@ const ROUTER ={
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "465:9:37"
+                            "src": "488:9:38"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "476:2:37",
+                            "src": "499:2:38",
                             "type": "",
                             "value": "32"
                           }
@@ -807,43 +768,43 @@ const ROUTER ={
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "461:3:37"
+                          "src": "484:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "461:18:37"
+                        "src": "484:18:38"
                       },
                       {
                         "arguments": [
                           {
                             "name": "value1",
                             "nodeType": "YulIdentifier",
-                            "src": "485:6:37"
+                            "src": "508:6:38"
                           },
                           {
                             "name": "_1",
                             "nodeType": "YulIdentifier",
-                            "src": "493:2:37"
+                            "src": "516:2:38"
                           }
                         ],
                         "functionName": {
                           "name": "and",
                           "nodeType": "YulIdentifier",
-                          "src": "481:3:37"
+                          "src": "504:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "481:15:37"
+                        "src": "504:15:38"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "454:6:37"
+                      "src": "477:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "454:43:37"
+                    "src": "477:43:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "454:43:37"
+                  "src": "477:43:38"
                 }
               ]
             },
@@ -853,19 +814,19 @@ const ROUTER ={
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "289:9:37",
+                "src": "289:9:38",
                 "type": ""
               },
               {
                 "name": "value1",
                 "nodeType": "YulTypedName",
-                "src": "300:6:37",
+                "src": "300:6:38",
                 "type": ""
               },
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-                "src": "308:6:37",
+                "src": "308:6:38",
                 "type": ""
               }
             ],
@@ -873,31 +834,31 @@ const ROUTER ={
               {
                 "name": "tail",
                 "nodeType": "YulTypedName",
-                "src": "319:4:37",
+                "src": "319:4:38",
                 "type": ""
               }
             ],
-            "src": "199:304:37"
+            "src": "199:327:38"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "609:102:37",
+              "src": "632:125:38",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "619:26:37",
+                  "src": "642:26:38",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "631:9:37"
+                        "src": "654:9:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "642:2:37",
+                        "src": "665:2:38",
                         "type": "",
                         "value": "32"
                       }
@@ -905,16 +866,16 @@ const ROUTER ={
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "627:3:37"
+                      "src": "650:3:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "627:18:37"
+                    "src": "650:18:38"
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
-                      "src": "619:4:37"
+                      "src": "642:4:38"
                     }
                   ]
                 },
@@ -924,78 +885,42 @@ const ROUTER ={
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "661:9:37"
+                        "src": "684:9:38"
                       },
                       {
                         "arguments": [
                           {
                             "name": "value0",
                             "nodeType": "YulIdentifier",
-                            "src": "676:6:37"
+                            "src": "699:6:38"
                           },
                           {
-                            "arguments": [
-                              {
-                                "arguments": [
-                                  {
-                                    "kind": "number",
-                                    "nodeType": "YulLiteral",
-                                    "src": "692:3:37",
-                                    "type": "",
-                                    "value": "160"
-                                  },
-                                  {
-                                    "kind": "number",
-                                    "nodeType": "YulLiteral",
-                                    "src": "697:1:37",
-                                    "type": "",
-                                    "value": "1"
-                                  }
-                                ],
-                                "functionName": {
-                                  "name": "shl",
-                                  "nodeType": "YulIdentifier",
-                                  "src": "688:3:37"
-                                },
-                                "nodeType": "YulFunctionCall",
-                                "src": "688:11:37"
-                              },
-                              {
-                                "kind": "number",
-                                "nodeType": "YulLiteral",
-                                "src": "701:1:37",
-                                "type": "",
-                                "value": "1"
-                              }
-                            ],
-                            "functionName": {
-                              "name": "sub",
-                              "nodeType": "YulIdentifier",
-                              "src": "684:3:37"
-                            },
-                            "nodeType": "YulFunctionCall",
-                            "src": "684:19:37"
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "707:42:38",
+                            "type": "",
+                            "value": "0xffffffffffffffffffffffffffffffffffffffff"
                           }
                         ],
                         "functionName": {
                           "name": "and",
                           "nodeType": "YulIdentifier",
-                          "src": "672:3:37"
+                          "src": "695:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "672:32:37"
+                        "src": "695:55:38"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "654:6:37"
+                      "src": "677:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "654:51:37"
+                    "src": "677:74:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "654:51:37"
+                  "src": "677:74:38"
                 }
               ]
             },
@@ -1005,13 +930,13 @@ const ROUTER ={
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "578:9:37",
+                "src": "601:9:38",
                 "type": ""
               },
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-                "src": "589:6:37",
+                "src": "612:6:38",
                 "type": ""
               }
             ],
@@ -1019,21 +944,21 @@ const ROUTER ={
               {
                 "name": "tail",
                 "nodeType": "YulTypedName",
-                "src": "600:4:37",
+                "src": "623:4:38",
                 "type": ""
               }
             ],
-            "src": "508:203:37"
+            "src": "531:226:38"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "797:103:37",
+              "src": "843:103:38",
               "statements": [
                 {
                   "body": {
                     "nodeType": "YulBlock",
-                    "src": "843:16:37",
+                    "src": "889:16:38",
                     "statements": [
                       {
                         "expression": {
@@ -1041,14 +966,14 @@ const ROUTER ={
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "852:1:37",
+                              "src": "898:1:38",
                               "type": "",
                               "value": "0"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "855:1:37",
+                              "src": "901:1:38",
                               "type": "",
                               "value": "0"
                             }
@@ -1056,13 +981,13 @@ const ROUTER ={
                           "functionName": {
                             "name": "revert",
                             "nodeType": "YulIdentifier",
-                            "src": "845:6:37"
+                            "src": "891:6:38"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "845:12:37"
+                          "src": "891:12:38"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "845:12:37"
+                        "src": "891:12:38"
                       }
                     ]
                   },
@@ -1073,26 +998,26 @@ const ROUTER ={
                           {
                             "name": "dataEnd",
                             "nodeType": "YulIdentifier",
-                            "src": "818:7:37"
+                            "src": "864:7:38"
                           },
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "827:9:37"
+                            "src": "873:9:38"
                           }
                         ],
                         "functionName": {
                           "name": "sub",
                           "nodeType": "YulIdentifier",
-                          "src": "814:3:37"
+                          "src": "860:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "814:23:37"
+                        "src": "860:23:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "839:2:37",
+                        "src": "885:2:38",
                         "type": "",
                         "value": "32"
                       }
@@ -1100,38 +1025,38 @@ const ROUTER ={
                     "functionName": {
                       "name": "slt",
                       "nodeType": "YulIdentifier",
-                      "src": "810:3:37"
+                      "src": "856:3:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "810:32:37"
+                    "src": "856:32:38"
                   },
                   "nodeType": "YulIf",
-                  "src": "807:52:37"
+                  "src": "853:52:38"
                 },
                 {
                   "nodeType": "YulAssignment",
-                  "src": "868:26:37",
+                  "src": "914:26:38",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "884:9:37"
+                        "src": "930:9:38"
                       }
                     ],
                     "functionName": {
                       "name": "mload",
                       "nodeType": "YulIdentifier",
-                      "src": "878:5:37"
+                      "src": "924:5:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "878:16:37"
+                    "src": "924:16:38"
                   },
                   "variableNames": [
                     {
                       "name": "value0",
                       "nodeType": "YulIdentifier",
-                      "src": "868:6:37"
+                      "src": "914:6:38"
                     }
                   ]
                 }
@@ -1143,13 +1068,13 @@ const ROUTER ={
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "763:9:37",
+                "src": "809:9:38",
                 "type": ""
               },
               {
                 "name": "dataEnd",
                 "nodeType": "YulTypedName",
-                "src": "774:7:37",
+                "src": "820:7:38",
                 "type": ""
               }
             ],
@@ -1157,16 +1082,16 @@ const ROUTER ={
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-                "src": "786:6:37",
+                "src": "832:6:38",
                 "type": ""
               }
             ],
-            "src": "716:184:37"
+            "src": "762:184:38"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "1079:169:37",
+              "src": "1125:169:38",
               "statements": [
                 {
                   "expression": {
@@ -1174,12 +1099,12 @@ const ROUTER ={
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "1096:9:37"
+                        "src": "1142:9:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "1107:2:37",
+                        "src": "1153:2:38",
                         "type": "",
                         "value": "32"
                       }
@@ -1187,13 +1112,13 @@ const ROUTER ={
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "1089:6:37"
+                      "src": "1135:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1089:21:37"
+                    "src": "1135:21:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "1089:21:37"
+                  "src": "1135:21:38"
                 },
                 {
                   "expression": {
@@ -1203,12 +1128,12 @@ const ROUTER ={
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "1130:9:37"
+                            "src": "1176:9:38"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "1141:2:37",
+                            "src": "1187:2:38",
                             "type": "",
                             "value": "32"
                           }
@@ -1216,15 +1141,15 @@ const ROUTER ={
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "1126:3:37"
+                          "src": "1172:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1126:18:37"
+                        "src": "1172:18:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "1146:2:37",
+                        "src": "1192:2:38",
                         "type": "",
                         "value": "19"
                       }
@@ -1232,13 +1157,13 @@ const ROUTER ={
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "1119:6:37"
+                      "src": "1165:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1119:30:37"
+                    "src": "1165:30:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "1119:30:37"
+                  "src": "1165:30:38"
                 },
                 {
                   "expression": {
@@ -1248,12 +1173,12 @@ const ROUTER ={
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "1169:9:37"
+                            "src": "1215:9:38"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "1180:2:37",
+                            "src": "1226:2:38",
                             "type": "",
                             "value": "64"
                           }
@@ -1261,16 +1186,16 @@ const ROUTER ={
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "1165:3:37"
+                          "src": "1211:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1165:18:37"
+                        "src": "1211:18:38"
                       },
                       {
                         "hexValue": "4e4f5f415641494c41424c455f544f4b454e53",
                         "kind": "string",
                         "nodeType": "YulLiteral",
-                        "src": "1185:21:37",
+                        "src": "1231:21:38",
                         "type": "",
                         "value": "NO_AVAILABLE_TOKENS"
                       }
@@ -1278,28 +1203,28 @@ const ROUTER ={
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "1158:6:37"
+                      "src": "1204:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1158:49:37"
+                    "src": "1204:49:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "1158:49:37"
+                  "src": "1204:49:38"
                 },
                 {
                   "nodeType": "YulAssignment",
-                  "src": "1216:26:37",
+                  "src": "1262:26:38",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "1228:9:37"
+                        "src": "1274:9:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "1239:2:37",
+                        "src": "1285:2:38",
                         "type": "",
                         "value": "96"
                       }
@@ -1307,16 +1232,16 @@ const ROUTER ={
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "1224:3:37"
+                      "src": "1270:3:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1224:18:37"
+                    "src": "1270:18:38"
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
-                      "src": "1216:4:37"
+                      "src": "1262:4:38"
                     }
                   ]
                 }
@@ -1328,7 +1253,7 @@ const ROUTER ={
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "1056:9:37",
+                "src": "1102:9:38",
                 "type": ""
               }
             ],
@@ -1336,31 +1261,31 @@ const ROUTER ={
               {
                 "name": "tail",
                 "nodeType": "YulTypedName",
-                "src": "1070:4:37",
+                "src": "1116:4:38",
                 "type": ""
               }
             ],
-            "src": "905:343:37"
+            "src": "951:343:38"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "1410:218:37",
+              "src": "1456:241:38",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "1420:26:37",
+                  "src": "1466:26:38",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "1432:9:37"
+                        "src": "1478:9:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "1443:2:37",
+                        "src": "1489:2:38",
                         "type": "",
                         "value": "96"
                       }
@@ -1368,70 +1293,34 @@ const ROUTER ={
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "1428:3:37"
+                      "src": "1474:3:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1428:18:37"
+                    "src": "1474:18:38"
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
-                      "src": "1420:4:37"
+                      "src": "1466:4:38"
                     }
                   ]
                 },
                 {
                   "nodeType": "YulVariableDeclaration",
-                  "src": "1455:29:37",
+                  "src": "1501:52:38",
                   "value": {
-                    "arguments": [
-                      {
-                        "arguments": [
-                          {
-                            "kind": "number",
-                            "nodeType": "YulLiteral",
-                            "src": "1473:3:37",
-                            "type": "",
-                            "value": "160"
-                          },
-                          {
-                            "kind": "number",
-                            "nodeType": "YulLiteral",
-                            "src": "1478:1:37",
-                            "type": "",
-                            "value": "1"
-                          }
-                        ],
-                        "functionName": {
-                          "name": "shl",
-                          "nodeType": "YulIdentifier",
-                          "src": "1469:3:37"
-                        },
-                        "nodeType": "YulFunctionCall",
-                        "src": "1469:11:37"
-                      },
-                      {
-                        "kind": "number",
-                        "nodeType": "YulLiteral",
-                        "src": "1482:1:37",
-                        "type": "",
-                        "value": "1"
-                      }
-                    ],
-                    "functionName": {
-                      "name": "sub",
-                      "nodeType": "YulIdentifier",
-                      "src": "1465:3:37"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "1465:19:37"
+                    "kind": "number",
+                    "nodeType": "YulLiteral",
+                    "src": "1511:42:38",
+                    "type": "",
+                    "value": "0xffffffffffffffffffffffffffffffffffffffff"
                   },
                   "variables": [
                     {
                       "name": "_1",
                       "nodeType": "YulTypedName",
-                      "src": "1459:2:37",
+                      "src": "1505:2:38",
                       "type": ""
                     }
                   ]
@@ -1442,40 +1331,40 @@ const ROUTER ={
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "1500:9:37"
+                        "src": "1569:9:38"
                       },
                       {
                         "arguments": [
                           {
                             "name": "value0",
                             "nodeType": "YulIdentifier",
-                            "src": "1515:6:37"
+                            "src": "1584:6:38"
                           },
                           {
                             "name": "_1",
                             "nodeType": "YulIdentifier",
-                            "src": "1523:2:37"
+                            "src": "1592:2:38"
                           }
                         ],
                         "functionName": {
                           "name": "and",
                           "nodeType": "YulIdentifier",
-                          "src": "1511:3:37"
+                          "src": "1580:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1511:15:37"
+                        "src": "1580:15:38"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "1493:6:37"
+                      "src": "1562:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1493:34:37"
+                    "src": "1562:34:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "1493:34:37"
+                  "src": "1562:34:38"
                 },
                 {
                   "expression": {
@@ -1485,12 +1374,12 @@ const ROUTER ={
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "1547:9:37"
+                            "src": "1616:9:38"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "1558:2:37",
+                            "src": "1627:2:38",
                             "type": "",
                             "value": "32"
                           }
@@ -1498,43 +1387,43 @@ const ROUTER ={
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "1543:3:37"
+                          "src": "1612:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1543:18:37"
+                        "src": "1612:18:38"
                       },
                       {
                         "arguments": [
                           {
                             "name": "value1",
                             "nodeType": "YulIdentifier",
-                            "src": "1567:6:37"
+                            "src": "1636:6:38"
                           },
                           {
                             "name": "_1",
                             "nodeType": "YulIdentifier",
-                            "src": "1575:2:37"
+                            "src": "1644:2:38"
                           }
                         ],
                         "functionName": {
                           "name": "and",
                           "nodeType": "YulIdentifier",
-                          "src": "1563:3:37"
+                          "src": "1632:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1563:15:37"
+                        "src": "1632:15:38"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "1536:6:37"
+                      "src": "1605:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1536:43:37"
+                    "src": "1605:43:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "1536:43:37"
+                  "src": "1605:43:38"
                 },
                 {
                   "expression": {
@@ -1544,12 +1433,12 @@ const ROUTER ={
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "1599:9:37"
+                            "src": "1668:9:38"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "1610:2:37",
+                            "src": "1679:2:38",
                             "type": "",
                             "value": "64"
                           }
@@ -1557,27 +1446,27 @@ const ROUTER ={
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "1595:3:37"
+                          "src": "1664:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1595:18:37"
+                        "src": "1664:18:38"
                       },
                       {
                         "name": "value2",
                         "nodeType": "YulIdentifier",
-                        "src": "1615:6:37"
+                        "src": "1684:6:38"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "1588:6:37"
+                      "src": "1657:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1588:34:37"
+                    "src": "1657:34:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "1588:34:37"
+                  "src": "1657:34:38"
                 }
               ]
             },
@@ -1587,25 +1476,25 @@ const ROUTER ={
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "1363:9:37",
+                "src": "1409:9:38",
                 "type": ""
               },
               {
                 "name": "value2",
                 "nodeType": "YulTypedName",
-                "src": "1374:6:37",
+                "src": "1420:6:38",
                 "type": ""
               },
               {
                 "name": "value1",
                 "nodeType": "YulTypedName",
-                "src": "1382:6:37",
+                "src": "1428:6:38",
                 "type": ""
               },
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-                "src": "1390:6:37",
+                "src": "1436:6:38",
                 "type": ""
               }
             ],
@@ -1613,21 +1502,21 @@ const ROUTER ={
               {
                 "name": "tail",
                 "nodeType": "YulTypedName",
-                "src": "1401:4:37",
+                "src": "1447:4:38",
                 "type": ""
               }
             ],
-            "src": "1253:375:37"
+            "src": "1299:398:38"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "1711:199:37",
+              "src": "1780:199:38",
               "statements": [
                 {
                   "body": {
                     "nodeType": "YulBlock",
-                    "src": "1757:16:37",
+                    "src": "1826:16:38",
                     "statements": [
                       {
                         "expression": {
@@ -1635,14 +1524,14 @@ const ROUTER ={
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "1766:1:37",
+                              "src": "1835:1:38",
                               "type": "",
                               "value": "0"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "1769:1:37",
+                              "src": "1838:1:38",
                               "type": "",
                               "value": "0"
                             }
@@ -1650,13 +1539,13 @@ const ROUTER ={
                           "functionName": {
                             "name": "revert",
                             "nodeType": "YulIdentifier",
-                            "src": "1759:6:37"
+                            "src": "1828:6:38"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "1759:12:37"
+                          "src": "1828:12:38"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "1759:12:37"
+                        "src": "1828:12:38"
                       }
                     ]
                   },
@@ -1667,26 +1556,26 @@ const ROUTER ={
                           {
                             "name": "dataEnd",
                             "nodeType": "YulIdentifier",
-                            "src": "1732:7:37"
+                            "src": "1801:7:38"
                           },
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "1741:9:37"
+                            "src": "1810:9:38"
                           }
                         ],
                         "functionName": {
                           "name": "sub",
                           "nodeType": "YulIdentifier",
-                          "src": "1728:3:37"
+                          "src": "1797:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1728:23:37"
+                        "src": "1797:23:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "1753:2:37",
+                        "src": "1822:2:38",
                         "type": "",
                         "value": "32"
                       }
@@ -1694,38 +1583,38 @@ const ROUTER ={
                     "functionName": {
                       "name": "slt",
                       "nodeType": "YulIdentifier",
-                      "src": "1724:3:37"
+                      "src": "1793:3:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1724:32:37"
+                    "src": "1793:32:38"
                   },
                   "nodeType": "YulIf",
-                  "src": "1721:52:37"
+                  "src": "1790:52:38"
                 },
                 {
                   "nodeType": "YulVariableDeclaration",
-                  "src": "1782:29:37",
+                  "src": "1851:29:38",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "1801:9:37"
+                        "src": "1870:9:38"
                       }
                     ],
                     "functionName": {
                       "name": "mload",
                       "nodeType": "YulIdentifier",
-                      "src": "1795:5:37"
+                      "src": "1864:5:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1795:16:37"
+                    "src": "1864:16:38"
                   },
                   "variables": [
                     {
                       "name": "value",
                       "nodeType": "YulTypedName",
-                      "src": "1786:5:37",
+                      "src": "1855:5:38",
                       "type": ""
                     }
                   ]
@@ -1733,7 +1622,7 @@ const ROUTER ={
                 {
                   "body": {
                     "nodeType": "YulBlock",
-                    "src": "1864:16:37",
+                    "src": "1933:16:38",
                     "statements": [
                       {
                         "expression": {
@@ -1741,14 +1630,14 @@ const ROUTER ={
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "1873:1:37",
+                              "src": "1942:1:38",
                               "type": "",
                               "value": "0"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "1876:1:37",
+                              "src": "1945:1:38",
                               "type": "",
                               "value": "0"
                             }
@@ -1756,13 +1645,13 @@ const ROUTER ={
                           "functionName": {
                             "name": "revert",
                             "nodeType": "YulIdentifier",
-                            "src": "1866:6:37"
+                            "src": "1935:6:38"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "1866:12:37"
+                          "src": "1935:12:38"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "1866:12:37"
+                        "src": "1935:12:38"
                       }
                     ]
                   },
@@ -1773,7 +1662,7 @@ const ROUTER ={
                           {
                             "name": "value",
                             "nodeType": "YulIdentifier",
-                            "src": "1833:5:37"
+                            "src": "1902:5:38"
                           },
                           {
                             "arguments": [
@@ -1782,60 +1671,60 @@ const ROUTER ={
                                   {
                                     "name": "value",
                                     "nodeType": "YulIdentifier",
-                                    "src": "1854:5:37"
+                                    "src": "1923:5:38"
                                   }
                                 ],
                                 "functionName": {
                                   "name": "iszero",
                                   "nodeType": "YulIdentifier",
-                                  "src": "1847:6:37"
+                                  "src": "1916:6:38"
                                 },
                                 "nodeType": "YulFunctionCall",
-                                "src": "1847:13:37"
+                                "src": "1916:13:38"
                               }
                             ],
                             "functionName": {
                               "name": "iszero",
                               "nodeType": "YulIdentifier",
-                              "src": "1840:6:37"
+                              "src": "1909:6:38"
                             },
                             "nodeType": "YulFunctionCall",
-                            "src": "1840:21:37"
+                            "src": "1909:21:38"
                           }
                         ],
                         "functionName": {
                           "name": "eq",
                           "nodeType": "YulIdentifier",
-                          "src": "1830:2:37"
+                          "src": "1899:2:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1830:32:37"
+                        "src": "1899:32:38"
                       }
                     ],
                     "functionName": {
                       "name": "iszero",
                       "nodeType": "YulIdentifier",
-                      "src": "1823:6:37"
+                      "src": "1892:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1823:40:37"
+                    "src": "1892:40:38"
                   },
                   "nodeType": "YulIf",
-                  "src": "1820:60:37"
+                  "src": "1889:60:38"
                 },
                 {
                   "nodeType": "YulAssignment",
-                  "src": "1889:15:37",
+                  "src": "1958:15:38",
                   "value": {
                     "name": "value",
                     "nodeType": "YulIdentifier",
-                    "src": "1899:5:37"
+                    "src": "1968:5:38"
                   },
                   "variableNames": [
                     {
                       "name": "value0",
                       "nodeType": "YulIdentifier",
-                      "src": "1889:6:37"
+                      "src": "1958:6:38"
                     }
                   ]
                 }
@@ -1847,13 +1736,13 @@ const ROUTER ={
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "1677:9:37",
+                "src": "1746:9:38",
                 "type": ""
               },
               {
                 "name": "dataEnd",
                 "nodeType": "YulTypedName",
-                "src": "1688:7:37",
+                "src": "1757:7:38",
                 "type": ""
               }
             ],
@@ -1861,31 +1750,31 @@ const ROUTER ={
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-                "src": "1700:6:37",
+                "src": "1769:6:38",
                 "type": ""
               }
             ],
-            "src": "1633:277:37"
+            "src": "1702:277:38"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "2044:145:37",
+              "src": "2113:168:38",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "2054:26:37",
+                  "src": "2123:26:38",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "2066:9:37"
+                        "src": "2135:9:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "2077:2:37",
+                        "src": "2146:2:38",
                         "type": "",
                         "value": "64"
                       }
@@ -1893,16 +1782,16 @@ const ROUTER ={
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "2062:3:37"
+                      "src": "2131:3:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "2062:18:37"
+                    "src": "2131:18:38"
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
-                      "src": "2054:4:37"
+                      "src": "2123:4:38"
                     }
                   ]
                 },
@@ -1912,24 +1801,24 @@ const ROUTER ={
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "2096:9:37"
+                        "src": "2165:9:38"
                       },
                       {
                         "name": "value0",
                         "nodeType": "YulIdentifier",
-                        "src": "2107:6:37"
+                        "src": "2176:6:38"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "2089:6:37"
+                      "src": "2158:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "2089:25:37"
+                    "src": "2158:25:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "2089:25:37"
+                  "src": "2158:25:38"
                 },
                 {
                   "expression": {
@@ -1939,12 +1828,12 @@ const ROUTER ={
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "2134:9:37"
+                            "src": "2203:9:38"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "2145:2:37",
+                            "src": "2214:2:38",
                             "type": "",
                             "value": "32"
                           }
@@ -1952,81 +1841,45 @@ const ROUTER ={
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "2130:3:37"
+                          "src": "2199:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "2130:18:37"
+                        "src": "2199:18:38"
                       },
                       {
                         "arguments": [
                           {
                             "name": "value1",
                             "nodeType": "YulIdentifier",
-                            "src": "2154:6:37"
+                            "src": "2223:6:38"
                           },
                           {
-                            "arguments": [
-                              {
-                                "arguments": [
-                                  {
-                                    "kind": "number",
-                                    "nodeType": "YulLiteral",
-                                    "src": "2170:3:37",
-                                    "type": "",
-                                    "value": "160"
-                                  },
-                                  {
-                                    "kind": "number",
-                                    "nodeType": "YulLiteral",
-                                    "src": "2175:1:37",
-                                    "type": "",
-                                    "value": "1"
-                                  }
-                                ],
-                                "functionName": {
-                                  "name": "shl",
-                                  "nodeType": "YulIdentifier",
-                                  "src": "2166:3:37"
-                                },
-                                "nodeType": "YulFunctionCall",
-                                "src": "2166:11:37"
-                              },
-                              {
-                                "kind": "number",
-                                "nodeType": "YulLiteral",
-                                "src": "2179:1:37",
-                                "type": "",
-                                "value": "1"
-                              }
-                            ],
-                            "functionName": {
-                              "name": "sub",
-                              "nodeType": "YulIdentifier",
-                              "src": "2162:3:37"
-                            },
-                            "nodeType": "YulFunctionCall",
-                            "src": "2162:19:37"
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "2231:42:38",
+                            "type": "",
+                            "value": "0xffffffffffffffffffffffffffffffffffffffff"
                           }
                         ],
                         "functionName": {
                           "name": "and",
                           "nodeType": "YulIdentifier",
-                          "src": "2150:3:37"
+                          "src": "2219:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "2150:32:37"
+                        "src": "2219:55:38"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "2123:6:37"
+                      "src": "2192:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "2123:60:37"
+                    "src": "2192:83:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "2123:60:37"
+                  "src": "2192:83:38"
                 }
               ]
             },
@@ -2036,19 +1889,19 @@ const ROUTER ={
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "2005:9:37",
+                "src": "2074:9:38",
                 "type": ""
               },
               {
                 "name": "value1",
                 "nodeType": "YulTypedName",
-                "src": "2016:6:37",
+                "src": "2085:6:38",
                 "type": ""
               },
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-                "src": "2024:6:37",
+                "src": "2093:6:38",
                 "type": ""
               }
             ],
@@ -2056,31 +1909,31 @@ const ROUTER ={
               {
                 "name": "tail",
                 "nodeType": "YulTypedName",
-                "src": "2035:4:37",
+                "src": "2104:4:38",
                 "type": ""
               }
             ],
-            "src": "1915:274:37"
+            "src": "1984:297:38"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "2323:145:37",
+              "src": "2415:168:38",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "2333:26:37",
+                  "src": "2425:26:38",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "2345:9:37"
+                        "src": "2437:9:38"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "2356:2:37",
+                        "src": "2448:2:38",
                         "type": "",
                         "value": "64"
                       }
@@ -2088,16 +1941,16 @@ const ROUTER ={
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "2341:3:37"
+                      "src": "2433:3:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "2341:18:37"
+                    "src": "2433:18:38"
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
-                      "src": "2333:4:37"
+                      "src": "2425:4:38"
                     }
                   ]
                 },
@@ -2107,78 +1960,42 @@ const ROUTER ={
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "2375:9:37"
+                        "src": "2467:9:38"
                       },
                       {
                         "arguments": [
                           {
                             "name": "value0",
                             "nodeType": "YulIdentifier",
-                            "src": "2390:6:37"
+                            "src": "2482:6:38"
                           },
                           {
-                            "arguments": [
-                              {
-                                "arguments": [
-                                  {
-                                    "kind": "number",
-                                    "nodeType": "YulLiteral",
-                                    "src": "2406:3:37",
-                                    "type": "",
-                                    "value": "160"
-                                  },
-                                  {
-                                    "kind": "number",
-                                    "nodeType": "YulLiteral",
-                                    "src": "2411:1:37",
-                                    "type": "",
-                                    "value": "1"
-                                  }
-                                ],
-                                "functionName": {
-                                  "name": "shl",
-                                  "nodeType": "YulIdentifier",
-                                  "src": "2402:3:37"
-                                },
-                                "nodeType": "YulFunctionCall",
-                                "src": "2402:11:37"
-                              },
-                              {
-                                "kind": "number",
-                                "nodeType": "YulLiteral",
-                                "src": "2415:1:37",
-                                "type": "",
-                                "value": "1"
-                              }
-                            ],
-                            "functionName": {
-                              "name": "sub",
-                              "nodeType": "YulIdentifier",
-                              "src": "2398:3:37"
-                            },
-                            "nodeType": "YulFunctionCall",
-                            "src": "2398:19:37"
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "2490:42:38",
+                            "type": "",
+                            "value": "0xffffffffffffffffffffffffffffffffffffffff"
                           }
                         ],
                         "functionName": {
                           "name": "and",
                           "nodeType": "YulIdentifier",
-                          "src": "2386:3:37"
+                          "src": "2478:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "2386:32:37"
+                        "src": "2478:55:38"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "2368:6:37"
+                      "src": "2460:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "2368:51:37"
+                    "src": "2460:74:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "2368:51:37"
+                  "src": "2460:74:38"
                 },
                 {
                   "expression": {
@@ -2188,12 +2005,12 @@ const ROUTER ={
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "2439:9:37"
+                            "src": "2554:9:38"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "2450:2:37",
+                            "src": "2565:2:38",
                             "type": "",
                             "value": "32"
                           }
@@ -2201,27 +2018,27 @@ const ROUTER ={
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "2435:3:37"
+                          "src": "2550:3:38"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "2435:18:37"
+                        "src": "2550:18:38"
                       },
                       {
                         "name": "value1",
                         "nodeType": "YulIdentifier",
-                        "src": "2455:6:37"
+                        "src": "2570:6:38"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "2428:6:37"
+                      "src": "2543:6:38"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "2428:34:37"
+                    "src": "2543:34:38"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "2428:34:37"
+                  "src": "2543:34:38"
                 }
               ]
             },
@@ -2231,19 +2048,19 @@ const ROUTER ={
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "2284:9:37",
+                "src": "2376:9:38",
                 "type": ""
               },
               {
                 "name": "value1",
                 "nodeType": "YulTypedName",
-                "src": "2295:6:37",
+                "src": "2387:6:38",
                 "type": ""
               },
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-                "src": "2303:6:37",
+                "src": "2395:6:38",
                 "type": ""
               }
             ],
@@ -2251,24 +2068,24 @@ const ROUTER ={
               {
                 "name": "tail",
                 "nodeType": "YulTypedName",
-                "src": "2314:4:37",
+                "src": "2406:4:38",
                 "type": ""
               }
             ],
-            "src": "2194:274:37"
+            "src": "2286:297:38"
           }
         ]
       },
-      "contents": "{\n    { }\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := calldataload(headStart)\n    }\n    function abi_encode_tuple_t_address_t_address__to_t_address_t_address__fromStack_reversed(headStart, value1, value0) -> tail\n    {\n        tail := add(headStart, 64)\n        let _1 := sub(shl(160, 1), 1)\n        mstore(headStart, and(value0, _1))\n        mstore(add(headStart, 32), and(value1, _1))\n    }\n    function abi_encode_tuple_t_address__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, sub(shl(160, 1), 1)))\n    }\n    function abi_decode_tuple_t_uint256_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := mload(headStart)\n    }\n    function abi_encode_tuple_t_stringliteral_f794614507589c64e4caeb4c21a3a53766343898d684121f31df5d2a819f76dd__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 19)\n        mstore(add(headStart, 64), \"NO_AVAILABLE_TOKENS\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_address_t_address_t_uint256__to_t_address_t_address_t_uint256__fromStack_reversed(headStart, value2, value1, value0) -> tail\n    {\n        tail := add(headStart, 96)\n        let _1 := sub(shl(160, 1), 1)\n        mstore(headStart, and(value0, _1))\n        mstore(add(headStart, 32), and(value1, _1))\n        mstore(add(headStart, 64), value2)\n    }\n    function abi_decode_tuple_t_bool_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := mload(headStart)\n        if iszero(eq(value, iszero(iszero(value)))) { revert(0, 0) }\n        value0 := value\n    }\n    function abi_encode_tuple_t_uint256_t_address__to_t_uint256_t_address__fromStack_reversed(headStart, value1, value0) -> tail\n    {\n        tail := add(headStart, 64)\n        mstore(headStart, value0)\n        mstore(add(headStart, 32), and(value1, sub(shl(160, 1), 1)))\n    }\n    function abi_encode_tuple_t_address_t_uint256__to_t_address_t_uint256__fromStack_reversed(headStart, value1, value0) -> tail\n    {\n        tail := add(headStart, 64)\n        mstore(headStart, and(value0, sub(shl(160, 1), 1)))\n        mstore(add(headStart, 32), value1)\n    }\n}",
-      "id": 37,
+      "contents": "{\n    { }\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := calldataload(headStart)\n    }\n    function abi_encode_tuple_t_address_t_address__to_t_address_t_address__fromStack_reversed(headStart, value1, value0) -> tail\n    {\n        tail := add(headStart, 64)\n        let _1 := 0xffffffffffffffffffffffffffffffffffffffff\n        mstore(headStart, and(value0, _1))\n        mstore(add(headStart, 32), and(value1, _1))\n    }\n    function abi_encode_tuple_t_address__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, 0xffffffffffffffffffffffffffffffffffffffff))\n    }\n    function abi_decode_tuple_t_uint256_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := mload(headStart)\n    }\n    function abi_encode_tuple_t_stringliteral_f794614507589c64e4caeb4c21a3a53766343898d684121f31df5d2a819f76dd__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 19)\n        mstore(add(headStart, 64), \"NO_AVAILABLE_TOKENS\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_address_t_address_t_uint256__to_t_address_t_address_t_uint256__fromStack_reversed(headStart, value2, value1, value0) -> tail\n    {\n        tail := add(headStart, 96)\n        let _1 := 0xffffffffffffffffffffffffffffffffffffffff\n        mstore(headStart, and(value0, _1))\n        mstore(add(headStart, 32), and(value1, _1))\n        mstore(add(headStart, 64), value2)\n    }\n    function abi_decode_tuple_t_bool_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := mload(headStart)\n        if iszero(eq(value, iszero(iszero(value)))) { revert(0, 0) }\n        value0 := value\n    }\n    function abi_encode_tuple_t_uint256_t_address__to_t_uint256_t_address__fromStack_reversed(headStart, value1, value0) -> tail\n    {\n        tail := add(headStart, 64)\n        mstore(headStart, value0)\n        mstore(add(headStart, 32), and(value1, 0xffffffffffffffffffffffffffffffffffffffff))\n    }\n    function abi_encode_tuple_t_address_t_uint256__to_t_address_t_uint256__fromStack_reversed(headStart, value1, value0) -> tail\n    {\n        tail := add(headStart, 64)\n        mstore(headStart, and(value0, 0xffffffffffffffffffffffffffffffffffffffff))\n        mstore(add(headStart, 32), value1)\n    }\n}",
+      "id": 38,
       "language": "Yul",
       "name": "#utility.yul"
     }
   ],
-  "sourceMap": "117:1470:26:-:0;;;199:146;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;276:13;:30;;-1:-1:-1;;;;;276:30:26;;;-1:-1:-1;;;;;;276:30:26;;;;;;;;316:22;;;;;;;;;;;117:1470;;14:146:37;-1:-1:-1;;;;;104:31:37;;94:42;;84:70;;150:1;147;140:12;84:70;14:146;:::o;165:453::-;282:6;290;343:2;331:9;322:7;318:23;314:32;311:52;;;359:1;356;349:12;311:52;391:9;385:16;410:46;450:5;410:46;:::i;:::-;525:2;510:18;;504:25;475:5;;-1:-1:-1;538:48:37;504:25;538:48;:::i;:::-;605:7;595:17;;;165:453;;;;;:::o;:::-;117:1470:26;;;;;;",
-  "deployedSourceMap": "117:1470:26:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;486:550;;;;;;:::i;:::-;;:::i;:::-;;351:129;;;;;;;;;;-1:-1:-1;395:7:26;438:13;;462:9;351:129;;;-1:-1:-1;;;;;438:13:26;;;411:34:37;;462:9:26;;;;476:2:37;461:18;;454:43;351:129:26;;;;;;;;;1042:85;;;;;;;;;;;;;:::i;1133:452::-;;;;;;:::i;:::-;;:::i;486:550::-;563:9;;:31;;-1:-1:-1;;;563:31:26;;583:10;563:31;;;654:51:37;597:1:26;;-1:-1:-1;;;;;563:9:26;;:19;;627:18:37;;563:31:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:35;555:67;;;;-1:-1:-1;;;555:67:26;;1107:2:37;555:67:26;;;1089:21:37;1146:2;1126:18;;;1119:30;-1:-1:-1;;;1165:18:37;;;1158:49;1224:18;;555:67:26;;;;;;;;676:9;;:136;;-1:-1:-1;;;676:136:26;;661:12;;-1:-1:-1;;;;;676:9:26;;:35;;:136;;725:10;;766:4;;791:10;;676:136;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;661:151;;830:7;822:16;;;;;;857:9;;;900:13;857:70;;-1:-1:-1;;;857:70:26;;-1:-1:-1;;;;;857:9:26;;;;:22;;:70;;880:10;;900:13;;;;916:10;;857:70;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;938:13:26;;:63;;-1:-1:-1;;;938:63:26;;;;;2089:25:37;;;990:10:26;2130:18:37;;;2123:60;-1:-1:-1;;;;;938:13:26;;;;:21;;967:9;;2062:18:37;;938:63:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;545:491;486:550;:::o;1042:85::-;1086:13;;:34;;-1:-1:-1;;;1086:34:26;;1109:10;1086:34;;;654:51:37;-1:-1:-1;;;;;1086:13:26;;;;:22;;627:18:37;;1086:34:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1042:85::o;1133:452::-;1215:9;;:120;;-1:-1:-1;;;1215:120:26;;1200:12;;-1:-1:-1;;;;;1215:9:26;;:35;;:120;;1264:10;;1296:4;;1315:10;;1215:120;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1200:135;;1353:7;1345:16;;;;;;1438:9;;;1481:13;1438:70;;-1:-1:-1;;;1438:70:26;;-1:-1:-1;;;;;1438:9:26;;;;:22;;:70;;1461:10;;1481:13;;;;1497:10;;1438:70;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;1518:13:26;;:60;;-1:-1:-1;;;1518:60:26;;1555:10;1518:60;;;2368:51:37;2435:18;;;2428:34;;;-1:-1:-1;;;;;1518:13:26;;;;:18;;1544:9;;2341:18:37;;1518:60:26;2194:274:37;14:180;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:37;;14:180;-1:-1:-1;14:180:37:o;716:184::-;786:6;839:2;827:9;818:7;814:23;810:32;807:52;;;855:1;852;845:12;807:52;-1:-1:-1;878:16:37;;716:184;-1:-1:-1;716:184:37:o;1253:375::-;-1:-1:-1;;;;;1511:15:37;;;1493:34;;1563:15;;;;1558:2;1543:18;;1536:43;1610:2;1595:18;;1588:34;;;;1443:2;1428:18;;1253:375::o;1633:277::-;1700:6;1753:2;1741:9;1732:7;1728:23;1724:32;1721:52;;;1769:1;1766;1759:12;1721:52;1801:9;1795:16;1854:5;1847:13;1840:21;1833:5;1830:32;1820:60;;1876:1;1873;1866:12;1820:60;1899:5;1633:277;-1:-1:-1;;;1633:277:37:o",
+  "sourceMap": "117:1470:26:-:0;;;199:146;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;276:13;:30;;-1:-1:-1;;;;;276:30:26;;;-1:-1:-1;;;;;;276:30:26;;;;;;;;316:22;;;;;;;;;;;117:1470;;14:146:38;-1:-1:-1;;;;;104:31:38;;94:42;;84:70;;150:1;147;140:12;84:70;14:146;:::o;165:453::-;282:6;290;343:2;331:9;322:7;318:23;314:32;311:52;;;359:1;356;349:12;311:52;391:9;385:16;410:46;450:5;410:46;:::i;:::-;525:2;510:18;;504:25;475:5;;-1:-1:-1;538:48:38;504:25;538:48;:::i;:::-;605:7;595:17;;;165:453;;;;;:::o;:::-;117:1470:26;;;;;;",
+  "deployedSourceMap": "117:1470:26:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;486:550;;;;;;:::i;:::-;;:::i;:::-;;351:129;;;;;;;;;;-1:-1:-1;395:7:26;438:13;;462:9;351:129;;;-1:-1:-1;;;;;438:13:26;;;434:34:38;;462:9:26;;;;499:2:38;484:18;;477:43;351:129:26;;;;;;;;;1042:85;;;;;;;;;;;;;:::i;1133:452::-;;;;;;:::i;:::-;;:::i;486:550::-;563:9;;:31;;;;;583:10;563:31;;;677:74:38;597:1:26;;-1:-1:-1;;;;;563:9:26;;:19;;650:18:38;;563:31:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:35;555:67;;;;;;;1153:2:38;555:67:26;;;1135:21:38;1192:2;1172:18;;;1165:30;1231:21;1211:18;;;1204:49;1270:18;;555:67:26;;;;;;;;676:9;;:136;;-1:-1:-1;;;676:136:26;;725:10;676:136;;;1562:34:38;766:4:26;1612:18:38;;;1605:43;1664:18;;;1657:34;;;661:12:26;;-1:-1:-1;;;;;676:9:26;;:35;;1474:18:38;;676:136:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;661:151;;830:7;822:16;;;;;;857:9;;;900:13;857:70;;-1:-1:-1;;;857:70:26;;880:10;857:70;;;1562:34:38;-1:-1:-1;;;;;900:13:26;;;1612:18:38;;;1605:43;1664:18;;;1657:34;;;857:9:26;;;:22;;1474:18:38;;857:70:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;938:13:26;;:63;;;;;;;;2158:25:38;;;990:10:26;2199:18:38;;;2192:83;-1:-1:-1;;;;;938:13:26;;;;:21;;967:9;;2131:18:38;;938:63:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;545:491;486:550;:::o;1042:85::-;1086:13;;:34;;;;;1109:10;1086:34;;;677:74:38;-1:-1:-1;;;;;1086:13:26;;;;:22;;650:18:38;;1086:34:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1042:85::o;1133:452::-;1215:9;;:120;;-1:-1:-1;;;1215:120:26;;1264:10;1215:120;;;1562:34:38;1296:4:26;1612:18:38;;;1605:43;1664:18;;;1657:34;;;1200:12:26;;-1:-1:-1;;;;;1215:9:26;;:35;;1474:18:38;;1215:120:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1200:135;;1353:7;1345:16;;;;;;1438:9;;;1481:13;1438:70;;-1:-1:-1;;;1438:70:26;;1461:10;1438:70;;;1562:34:38;-1:-1:-1;;;;;1481:13:26;;;1612:18:38;;;1605:43;1664:18;;;1657:34;;;1438:9:26;;;:22;;1474:18:38;;1438:70:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;1518:13:26;;:60;;;;;1555:10;1518:60;;;2460:74:38;2550:18;;;2543:34;;;-1:-1:-1;;;;;1518:13:26;;;;:18;;1544:9;;2433:18:38;;1518:60:26;2286:297:38;14:180;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:38;;14:180;-1:-1:-1;14:180:38:o;762:184::-;832:6;885:2;873:9;864:7;860:23;856:32;853:52;;;901:1;898;891:12;853:52;-1:-1:-1;924:16:38;;762:184;-1:-1:-1;762:184:38:o;1702:277::-;1769:6;1822:2;1810:9;1801:7;1797:23;1793:32;1790:52;;;1838:1;1835;1828:12;1790:52;1870:9;1864:16;1923:5;1916:13;1909:21;1902:5;1899:32;1889:60;;1945:1;1942;1935:12;1889:60;1968:5;1702:277;-1:-1:-1;;;1702:277:38:o",
   "source": "//SPDX-License-Identifier: Unlicense\npragma solidity ^0.8.0;\n\nimport \"./JMToken.sol\";\nimport \"./LiquidityPool.sol\";\n\ncontract JMTRouter {\n    LiquidityPool liquidityPool;\n    JMToken jonMatang;\n\n    constructor(LiquidityPool _liquidityPool, JMToken _jonMatang) \n    {\n        liquidityPool = _liquidityPool;\n        jonMatang = _jonMatang;\n    }\n\n    function _getAddress() public view returns (address, address){\n        return (address(liquidityPool), address(jonMatang));\n    }\n\n    function addLiquidity(uint256 _jmtAmount) external payable {\n        require(jonMatang.balanceOf(msg.sender) > 0, \"NO_AVAILABLE_TOKENS\"); // 토큰 보유량 체크 \n\n        bool success = jonMatang.increaseContractAllowance(\n            msg.sender, // from \n            address(this), // to\n            _jmtAmount \n        );\n        require(success);\n        \n        jonMatang.transferFrom(msg.sender, address(liquidityPool), _jmtAmount); \n        liquidityPool.deposit{value: msg.value}(_jmtAmount, msg.sender); // value:이더, token:jmt \n    }\n\n    function pullLiquidity() external {\n        liquidityPool.withdraw(msg.sender);\n    }\n\n    function swapTokens(uint256 _jmtAmount) external payable {\n        bool success = jonMatang.increaseContractAllowance(\n            msg.sender,\n            address(this),\n            _jmtAmount\n        );\n        require(success);\n\n        // 요청자의 jmttoken: 0 or 0이상 을 pool로 전송\n        jonMatang.transferFrom(msg.sender, address(liquidityPool), _jmtAmount);\n        liquidityPool.swap{value: msg.value}(msg.sender, _jmtAmount);\n    }\n}",
-  "sourcePath": "/Users/rokrokss/workspace/hyein/BEB-05-JMT/contract/contracts/JMTRouter.sol",
+  "sourcePath": "/Users/hyenne/workspace/BEB-05-JMT/contract/contracts/JMTRouter.sol",
   "ast": {
     "absolutePath": "project:/contracts/JMTRouter.sol",
     "exportedSymbols": {
@@ -2291,13 +2108,13 @@ const ROUTER ={
         5348
       ],
       "JMToken": [
-        6142
+        6174
       ],
       "LPT": [
-        6195
+        6227
       ],
       "LiquidityPool": [
-        7011
+        7043
       ],
       "Math": [
         5130
@@ -2315,7 +2132,7 @@ const ROUTER ={
         4590
       ],
       "VJMToken": [
-        10764
+        11290
       ]
     },
     "id": 5349,
@@ -2340,7 +2157,7 @@ const ROUTER ={
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 5349,
-        "sourceUnit": 6143,
+        "sourceUnit": 6175,
         "src": "62:23:26",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2352,7 +2169,7 @@ const ROUTER ={
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 5349,
-        "sourceUnit": 7012,
+        "sourceUnit": 7044,
         "src": "86:29:26",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2384,7 +2201,7 @@ const ROUTER ={
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
               "typeString": "contract LiquidityPool"
             },
             "typeName": {
@@ -2397,13 +2214,13 @@ const ROUTER ={
                   "142:13:26"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 7011,
+                "referencedDeclaration": 7043,
                 "src": "142:13:26"
               },
-              "referencedDeclaration": 7011,
+              "referencedDeclaration": 7043,
               "src": "142:13:26",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                 "typeString": "contract LiquidityPool"
               }
             },
@@ -2421,7 +2238,7 @@ const ROUTER ={
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_JMToken_$6142",
+              "typeIdentifier": "t_contract$_JMToken_$6174",
               "typeString": "contract JMToken"
             },
             "typeName": {
@@ -2434,13 +2251,13 @@ const ROUTER ={
                   "175:7:26"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 6142,
+                "referencedDeclaration": 6174,
                 "src": "175:7:26"
               },
-              "referencedDeclaration": 6142,
+              "referencedDeclaration": 6174,
               "src": "175:7:26",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_JMToken_$6142",
+                "typeIdentifier": "t_contract$_JMToken_$6174",
                 "typeString": "contract JMToken"
               }
             },
@@ -2467,7 +2284,7 @@ const ROUTER ={
                       "referencedDeclaration": 5194,
                       "src": "276:13:26",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                        "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                         "typeString": "contract LiquidityPool"
                       }
                     },
@@ -2481,13 +2298,13 @@ const ROUTER ={
                       "referencedDeclaration": 5200,
                       "src": "292:14:26",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                        "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                         "typeString": "contract LiquidityPool"
                       }
                     },
                     "src": "276:30:26",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                      "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                       "typeString": "contract LiquidityPool"
                     }
                   },
@@ -2510,7 +2327,7 @@ const ROUTER ={
                       "referencedDeclaration": 5197,
                       "src": "316:9:26",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_JMToken_$6142",
+                        "typeIdentifier": "t_contract$_JMToken_$6174",
                         "typeString": "contract JMToken"
                       }
                     },
@@ -2524,13 +2341,13 @@ const ROUTER ={
                       "referencedDeclaration": 5203,
                       "src": "328:10:26",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_JMToken_$6142",
+                        "typeIdentifier": "t_contract$_JMToken_$6174",
                         "typeString": "contract JMToken"
                       }
                     },
                     "src": "316:22:26",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_JMToken_$6142",
+                      "typeIdentifier": "t_contract$_JMToken_$6174",
                       "typeString": "contract JMToken"
                     }
                   },
@@ -2563,7 +2380,7 @@ const ROUTER ={
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                    "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                     "typeString": "contract LiquidityPool"
                   },
                   "typeName": {
@@ -2576,13 +2393,13 @@ const ROUTER ={
                         "211:13:26"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 7011,
+                      "referencedDeclaration": 7043,
                       "src": "211:13:26"
                     },
-                    "referencedDeclaration": 7011,
+                    "referencedDeclaration": 7043,
                     "src": "211:13:26",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                      "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                       "typeString": "contract LiquidityPool"
                     }
                   },
@@ -2600,7 +2417,7 @@ const ROUTER ={
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_JMToken_$6142",
+                    "typeIdentifier": "t_contract$_JMToken_$6174",
                     "typeString": "contract JMToken"
                   },
                   "typeName": {
@@ -2613,13 +2430,13 @@ const ROUTER ={
                         "241:7:26"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 6142,
+                      "referencedDeclaration": 6174,
                       "src": "241:7:26"
                     },
-                    "referencedDeclaration": 6142,
+                    "referencedDeclaration": 6174,
                     "src": "241:7:26",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_JMToken_$6142",
+                      "typeIdentifier": "t_contract$_JMToken_$6174",
                       "typeString": "contract JMToken"
                     }
                   },
@@ -2659,7 +2476,7 @@ const ROUTER ={
                             "referencedDeclaration": 5194,
                             "src": "438:13:26",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                               "typeString": "contract LiquidityPool"
                             }
                           }
@@ -2667,7 +2484,7 @@ const ROUTER ={
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                               "typeString": "contract LiquidityPool"
                             }
                           ],
@@ -2716,7 +2533,7 @@ const ROUTER ={
                             "referencedDeclaration": 5197,
                             "src": "462:9:26",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_JMToken_$6142",
+                              "typeIdentifier": "t_contract$_JMToken_$6174",
                               "typeString": "contract JMToken"
                             }
                           }
@@ -2724,7 +2541,7 @@ const ROUTER ={
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_JMToken_$6142",
+                              "typeIdentifier": "t_contract$_JMToken_$6174",
                               "typeString": "contract JMToken"
                             }
                           ],
@@ -2931,7 +2748,7 @@ const ROUTER ={
                               "referencedDeclaration": 5197,
                               "src": "563:9:26",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_JMToken_$6142",
+                                "typeIdentifier": "t_contract$_JMToken_$6174",
                                 "typeString": "contract JMToken"
                               }
                             },
@@ -3208,7 +3025,7 @@ const ROUTER ={
                         "referencedDeclaration": 5197,
                         "src": "676:9:26",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_JMToken_$6142",
+                          "typeIdentifier": "t_contract$_JMToken_$6174",
                           "typeString": "contract JMToken"
                         }
                       },
@@ -3220,7 +3037,7 @@ const ROUTER ={
                       "memberLocation": "686:25:26",
                       "memberName": "increaseContractAllowance",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5949,
+                      "referencedDeclaration": 5981,
                       "src": "676:35:26",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -3343,7 +3160,7 @@ const ROUTER ={
                             "referencedDeclaration": 5194,
                             "src": "900:13:26",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                               "typeString": "contract LiquidityPool"
                             }
                           }
@@ -3351,7 +3168,7 @@ const ROUTER ={
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                               "typeString": "contract LiquidityPool"
                             }
                           ],
@@ -3426,7 +3243,7 @@ const ROUTER ={
                         "referencedDeclaration": 5197,
                         "src": "857:9:26",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_JMToken_$6142",
+                          "typeIdentifier": "t_contract$_JMToken_$6174",
                           "typeString": "contract JMToken"
                         }
                       },
@@ -3538,7 +3355,7 @@ const ROUTER ={
                           "referencedDeclaration": 5194,
                           "src": "938:13:26",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                            "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                             "typeString": "contract LiquidityPool"
                           }
                         },
@@ -3550,7 +3367,7 @@ const ROUTER ={
                         "memberLocation": "952:7:26",
                         "memberName": "deposit",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 6712,
+                        "referencedDeclaration": 6744,
                         "src": "938:21:26",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_external_payable$_t_uint256_$_t_address_$returns$__$",
@@ -3729,7 +3546,7 @@ const ROUTER ={
                         "referencedDeclaration": 5194,
                         "src": "1086:13:26",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                          "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                           "typeString": "contract LiquidityPool"
                         }
                       },
@@ -3741,7 +3558,7 @@ const ROUTER ={
                       "memberLocation": "1100:8:26",
                       "memberName": "withdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6846,
+                      "referencedDeclaration": 6878,
                       "src": "1086:22:26",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -3958,7 +3775,7 @@ const ROUTER ={
                         "referencedDeclaration": 5197,
                         "src": "1215:9:26",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_JMToken_$6142",
+                          "typeIdentifier": "t_contract$_JMToken_$6174",
                           "typeString": "contract JMToken"
                         }
                       },
@@ -3970,7 +3787,7 @@ const ROUTER ={
                       "memberLocation": "1225:25:26",
                       "memberName": "increaseContractAllowance",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5949,
+                      "referencedDeclaration": 5981,
                       "src": "1215:35:26",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -4093,7 +3910,7 @@ const ROUTER ={
                             "referencedDeclaration": 5194,
                             "src": "1481:13:26",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                               "typeString": "contract LiquidityPool"
                             }
                           }
@@ -4101,7 +3918,7 @@ const ROUTER ={
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                               "typeString": "contract LiquidityPool"
                             }
                           ],
@@ -4176,7 +3993,7 @@ const ROUTER ={
                         "referencedDeclaration": 5197,
                         "src": "1438:9:26",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_JMToken_$6142",
+                          "typeIdentifier": "t_contract$_JMToken_$6174",
                           "typeString": "contract JMToken"
                         }
                       },
@@ -4288,7 +4105,7 @@ const ROUTER ={
                           "referencedDeclaration": 5194,
                           "src": "1518:13:26",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_LiquidityPool_$7011",
+                            "typeIdentifier": "t_contract$_LiquidityPool_$7043",
                             "typeString": "contract LiquidityPool"
                           }
                         },
@@ -4300,7 +4117,7 @@ const ROUTER ={
                         "memberLocation": "1532:4:26",
                         "memberName": "swap",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 6580,
+                        "referencedDeclaration": 6612,
                         "src": "1518:18:26",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_external_payable$_t_address_$_t_uint256_$returns$__$",
@@ -4439,23 +4256,9 @@ const ROUTER ={
     "name": "solc",
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
-  "networks": {
-    "1337": {
-      "events": {},
-      "links": {},
-      "address": "0x1A151b1ebb4e25fE094a2d9Db3ef312791b46285",
-      "transactionHash": "0x52dfaf043c69c7329b8e86b30a91eff7ea0c913d973b33563150e85c4b7a29fa"
-    },
-    "3989": {
-      "events": {},
-      "links": {},
-      "address": "0x9C37b5Ba9Fe1EFFE17811f9F46384a2EdE690cDe",
-      "transactionHash": "0x6b7cf3507f4c2ef6362261ee79ef5decdee59e5d14ab063a3ff9da15374835d9"
-    }
-  },
+  "networks": {},
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T18:29:20.836Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-09-27T15:21:47.084Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -1,7 +1,7 @@
 .home-container {
     display: flex;
     justify-self: flex-end;
-    margin-top: calc(100vw * 76/620);
+    margin-top: calc(100vw * 73/620);
     height: calc(100vw * 110/620);
     flex-direction: column;
 }
@@ -14,22 +14,48 @@
     transform: scaleX(-1) scale(1);
 }
 
-.username {
-    font-size: calc(100vw * 12/620);
+.home-container .username-container {
     height: calc(100vw * 60/620);
+}
+
+.home-container .username-container .username {
+    font-size: calc(100vw * 12/620);
     font-weight: bold;
+    cursor: pointer;
+    font-size: 2.4vw;
+}
+
+.home-container .username-container .address {
+    color: #245effdd;
+    font-size: calc(100vw * 12/620);
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.1vw;
+}
+
+.home-container .username-container:hover .username {
+    color: #245effdd;
+    text-decoration: underline;
+    text-decoration-color: #245effdd;
+    text-decoration-thickness: 0.12vw;
+}
+
+.home-container .username-container:hover .address {
+    color: #245effdd;
+    text-decoration: underline;
+    text-decoration-color: #245effdd;
+    text-decoration-thickness: 0.12vw;
 }
 
 .home-fight{
     position: absolute;
-    left: 80%;
-    top: 60%;
+    left: 84vw;
+    top: 32vw;
     transform: translate(-50%, -50%);
 }
 
 .home-fightimg{
-    width: 250px;
-    height: 110px;
+    width: 18vw;
 }
 
 .mydata {
