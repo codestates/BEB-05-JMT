@@ -84,12 +84,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         mintPrice = 1;
         maxStrength = 2;
         marketContractAddress = _marketAddress;
-        _setToken(_tokenContractAddress);
-        _generateWeaponArray();
-        _generatefirstWeapon();
-        _generateItemCheck();
-        _generateScrollArray();
-        
+        _setToken(_tokenContractAddress);        
         treasuryWallet = _treasuryWallet;
     }
 
@@ -106,7 +101,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         _setURI(newuri);
     }
 
-    function _generateWeaponArray() private onlyOwner{
+    function generateWeaponArray() public onlyOwner{
         for (uint256 i = 0; i < 5; i++ ){
             waitForMint.push(SWORD0); 
         }
@@ -232,14 +227,14 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         }
     }
 
-    function _generatefirstWeapon() private onlyOwner{
+    function generatefirstWeapon() public onlyOwner{
         firstMint.push(SWORD0); 
         firstMint.push(BOW0); 
         firstMint.push(STAFF0); 
         firstMint.push(POLEARM0); 
     }
 
-    function _generateItemCheck() private onlyOwner{
+    function generateItemCheck() public onlyOwner{
         itemCheck.push(SWORD0);
         itemCheck.push(SWORD1);
         itemCheck.push(SWORD2);
@@ -291,7 +286,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         itemCheck.push(SCROLL10);
     }
 
-    function _generateScrollArray() private onlyOwner{
+    function generateScrollArray() public onlyOwner{
         for (uint256 i = 0; i < 1; i++ ){
             scrollMint.push(SCROLL100); 
         }

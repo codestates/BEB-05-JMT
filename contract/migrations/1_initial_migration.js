@@ -57,6 +57,11 @@ module.exports = async function (deployer) {
       //Maple NFT contract instance 
       mapleNFTCont = await mapleNFT.deployed();
       mapleItemsCont = await mapleItems.deployed();
+
+      await mapleItemsCont.generateWeaponArray();
+      await mapleItemsCont.generatefirstWeapon();
+      await mapleItemsCont.generateItemCheck();
+      await mapleItemsCont.generateScrollArray();
       
       await deployer.deploy(
         mapleUser, 
