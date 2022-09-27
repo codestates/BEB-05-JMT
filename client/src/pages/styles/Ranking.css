@@ -98,8 +98,8 @@
     font-size: 2.5vw;
 }
 .ranking-container .selectedUser .myname {
-    font-size: 2.3vw;
-    margin-top: 1vw;
+    font-size: 1.8vw;
+    margin-top: 0.5vw;
     cursor: pointer;
 }
 .ranking-container .selectedUser .myaddress {
@@ -121,7 +121,7 @@
 
 .ranking-container .selectedUser .myimg {
     /* display:flex; */
-    margin-top: -5.5vw;
+    margin-top: -6.5vw;
     /* height: 16vw; */
     /* align-self: center; */
     min-height: 100%;
@@ -134,31 +134,33 @@
 }
 .ranking-container .selectedUser .myrank {
     font-size: 2.5vw;
-    margin-top: 0.5vw;
+    margin-top: 1vw;
     color:  #FE7427;
     font-weight: bold;
 }
 
 .ranking-container .selectedUser .reward {
+    font-size: 2vw;
     position: absolute;
     right: 16vw;
     bottom: 1vw;
-    height: 4vw;
+    height: 3vw;
     color:  #000000;
-    line-height: 4vw;
+    line-height: 3vw;
     width: 12vw;
-    background-color: #ffffff;
+    background-color: #ffffffe3;
     border-radius: 1vw;
 }
 
 .ranking-container .selectedUser .reward-btn {
+    font-size: 2vw;
     position: absolute;
     cursor:pointer;
     right: 3vw;
     bottom: 1vw;
     width: 12vw;
-    height: 4vw;
-    line-height: 4vw;
+    height: 3vw;
+    line-height: 3vw;
     border-radius: 1vw;
     background-color: #fe7227e7;
     color:  #ffffff;
