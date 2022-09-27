@@ -350,7 +350,7 @@ contract MapleItems is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     function upgrade(uint256 scrollId, uint256 weaponId) public {
         require(balanceOf(msg.sender, scrollId)!=0, "ERC1155: this scroll is not yours");
         require(balanceOf(msg.sender, weaponId)!=0, "ERC1155: this weapon is not yours");
-        require(weaponId%100<2, "ERC1155: this weapon is fully upgraded");
+        require(weaponId%100<9, "ERC1155: this weapon is fully upgraded");
         uint256 scrollRate;
 
         if(scrollId%100==0){

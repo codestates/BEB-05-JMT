@@ -34,7 +34,7 @@ const Mint = () => {
                     navigate('/nonswap');
                 }
             })
-            setBackground({type: 'default'});
+            setBackground({type: 'mint'});
             if (!charImg) {
                 collectAlreadyProcessedData();
             }

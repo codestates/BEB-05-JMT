@@ -56,9 +56,9 @@ function Item({itemData, onUpgrade, selectedId, selectedId2, isScroll, setSelect
     }else{
       setIsScroll(false);
       console.log('weapon');
-      const img = await metadataAPI.fetchWeaponImage(item.attributes);
+      const img = await metadataAPI.fetchWeaponImage(item?.attributes);
       setSelectedImg(img);
-      name = await metadataAPI.fetchItemName(item.attributes);
+      name = await metadataAPI.fetchItemName(item?.attributes);
     }
 
     setItemName(name);

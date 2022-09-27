@@ -16,6 +16,10 @@
     font-size: calc(100vw * 15/620);
 }
 
+.userdata-container:hover {
+    background-color: rgba(255, 192, 90, 0.702);
+}
+
 .userdata-container .userdata-char {
     /* position: relative; */
     left:auto;
@@ -34,8 +38,9 @@
     cursor: pointer;
 }
 .userdata-container:hover .userdata-name {
-    text-decoration: underline;
-    text-decoration-thickness: 0.12vw;
+    font-weight: bold;
+    /* text-decoration: underline;
+    text-decoration-thickness: 0.12vw; */
 }
 .userdata-container .userdata-address {
     margin-top: 0.4vw;
@@ -46,6 +51,7 @@
     font-weight: 600;
 }
 .userdata-container:hover .userdata-address {
+    font-weight: bold;
     text-decoration: underline;
     text-decoration-color: #245effdd;
     text-decoration-thickness: 0.12vw;

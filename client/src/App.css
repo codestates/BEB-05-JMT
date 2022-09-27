@@ -29,14 +29,14 @@
   background-size: 330vw auto;
 }
 
-/* .background-default {
+.background-mint {
   background-image: url('./assets/background2.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position-x: -40vw;
   background-position-y: -70vw;
   background-size: 330vw auto;
-} */
+}
 
 /* .background-default {
   background-image: url('./assets/background3.jpg');
