@@ -49,14 +49,13 @@
 
 .home-fight{
     position: absolute;
-    left: 80%;
-    top: 60%;
+    left: 84vw;
+    top: 32vw;
     transform: translate(-50%, -50%);
 }
 
 .home-fightimg{
-    width: 250px;
-    height: 110px;
+    width: 18vw;
 }
 
 .mydata {
