@@ -42,10 +42,11 @@ const Mint = () => {
             await accountAPI.signUp(account.address, username);
 
             const charId = await contractAPI.mintCharNFT(account.address);
-            console.log(charId);
             const weaponId = await contractAPI.mintFirstWeaponNFT(account.address);
-            console.log(weaponId);
             setAccount({...account, username: username, charId:charId, weaponId: weaponId});
+
+            console.log(charId);
+            console.log(weaponId);
 
             const result = await contractAPI.fetchCharacter(charId);
             const char = await metadataAPI.fetchCharImage(result.attributes, '0');

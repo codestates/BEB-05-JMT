@@ -35,8 +35,8 @@ const Ranking = () => {
 
   const sortArr = async()=>{
     const result = await accountAPI.userinfo();
-    // const test1 = await userAPI.signUp(account.address, account.charId, account.weaponId);
-    // console.log(test1);
+    const test1 = await userAPI.signUp(account.address, account.charId, account.weaponId);
+    console.log(test1);
     const test = await userAPI.fetchUserList();
     console.log(test);
     const orginalArr = result;
@@ -61,7 +61,7 @@ const Ranking = () => {
       return x[1];
     });
 
-    const realArr = await asyncFilter(sortedArr, async(x)=>{
+      const realArr = await asyncFilter(sortedArr, async(x)=>{
       const hasChar = await contractAPI.isCharOwner(x.address, x.charId);
       const hasWeapon = await contractAPI.isWeaponOwner(x.address, x.weaponId);
       return hasChar&&hasWeapon;
