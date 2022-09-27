@@ -4,56 +4,56 @@
     "items": {
         "sword": [
             {
-                "itemId": "1402001",
-                "type": "sword",
-                "stand":"stand1",
-                "fight":"swingT1",
-                "strength":1
-            },
-            {
                 "itemId": "1402000",
                 "type": "sword",
                 "stand":"stand1",
-                "fight":"swingT1",
+                "fight":"swingT2",
+                "strength":1
+            },
+            {
+                "itemId": "1402039",
+                "type": "sword",
+                "stand":"stand1",
+                "fight":"swingT2",
                 "strength":2
             },
             {
-                "itemId": "1402213",
+                "itemId": "1402107",
                 "type": "sword",
                 "stand":"stand1",
-                "fight":"swingT3",
+                "fight":"swingT2",
                 "strength":3
             },
             {
-                "itemId": "1402229",
+                "itemId": "1402145",
                 "type": "sword",
                 "stand":"stand1",
                 "fight":"swingT2",
                 "strength":4
             },
             {
-                "itemId": "1402177",
+                "itemId": "1402273",
                 "type": "sword",
                 "stand":"stand1",
-                "fight":"swingT1",
+                "fight":"swingT2",
                 "strength":5
             },
             {
-                "itemId": "1402179",
+                "itemId": "1402259",
                 "type": "sword",
                 "stand":"stand1",
-                "fight":"swingT1",
+                "fight":"swingT2",
                 "strength":6
             },
             {
-                "itemId": "1402273", 
+                "itemId": "1402202", 
                 "type": "sword",
                 "stand":"stand1",
                 "fight":"swingT2",
                 "strength":7
             },
             {
-                "itemId": "1402259", 
+                "itemId": "1402229", 
                 "type": "sword",
                 "stand":"stand1",
                 "fight":"swingT2",
@@ -63,7 +63,7 @@
                 "itemId": "1402267", 
                 "type": "sword",
                 "stand":"stand1",
-                "fight":"swingT1",
+                "fight":"swingT2",
                 "strength":9
             },
             {
@@ -77,56 +77,56 @@
         ],
         "bow": [
             {
-                "itemId": "1452000",
+                "itemId": "1452003",
                 "type": "bow",
                 "stand":"stand1",
                 "fight":"shoot1",
                 "strength":1
             },
             {
-                "itemId": "1452219",
+                "itemId": "1452016",
                 "type": "bow",
                 "stand":"stand1",
                 "fight":"shoot1",
                 "strength":2
             },
             {
-                "itemId": "1452232",
+                "itemId": "1452126",
                 "type": "bow",
                 "stand":"stand1",
                 "fight":"shoot1",
                 "strength":3
             },
             {
-                "itemId": "1452259",
+                "itemId": "1452170",
                 "type": "bow",
                 "stand":"stand1",
                 "fight":"shoot1",
                 "strength":4
             },
             {
-                "itemId": "1452126",
+                "itemId": "1452267",
                 "type": "bow",
                 "stand":"stand1",
                 "fight":"shoot1",
                 "strength":5
             },
             {
-                "itemId": "1452218",
+                "itemId": "1452257",
                 "type": "bow",
                 "stand":"stand1",
                 "fight":"shoot1",
                 "strength":6
             },
             {
-                "itemId": "1452205",
+                "itemId": "1452209",
                 "type": "bow",
                 "stand":"stand1",
                 "fight":"shoot1",
                 "strength":7
             },
             {
-                "itemId": "1452252",
+                "itemId": "1452232",
                 "type": "bow",
                 "stand":"stand1",
                 "fight":"shoot1",
@@ -156,66 +156,66 @@
                 "strength":1
             },
             {
-                "itemId": "1382225",
+                "itemId": "1382074",
                 "type": "staff",
                 "stand":"stand1",
-                "fight":"swingO3",
+                "fight":"swingO1",
                 "strength":2
-            },
-            {
-                "itemId": "1382239",
-                "type": "staff",
-                "stand":"stand1",
-                "fight":"swingO3",
-                "strength":3
             },
             {
                 "itemId": "1382121",
                 "type": "staff",
                 "stand":"stand1",
-                "fight":"swing01",
+                "fight":"swingO1",
+                "strength":3
+            },
+            {
+                "itemId": "1382160",
+                "type": "staff",
+                "stand":"stand1",
+                "fight":"swingO1",
                 "strength":4
             },
             {
-                "itemId": "1382207",
+                "itemId": "1382278",
                 "type": "staff",
                 "stand":"stand1",
                 "fight":"swing01",
                 "strength":5
             },
             {
-                "itemId": "1382278",
-                "type": "staff",
-                "stand":"stand1",
-                "fight":"swing02",
-                "strength":6
-            },
-            {
-                "itemId": "1382266",
-                "type": "staff",
-                "stand":"stand1",
-                "fight":"swing02",
-                "strength":7
-            },
-            {
                 "itemId": "1382276",
                 "type": "staff",
                 "stand":"stand1",
-                "fight":"swing02",
+                "fight":"swingO1",
+                "strength":6
+            },
+            {
+                "itemId": "1382212",
+                "type": "staff",
+                "stand":"stand1",
+                "fight":"swingO1",
+                "strength":7
+            },
+            {
+                "itemId": "1382239",
+                "type": "staff",
+                "stand":"stand1",
+                "fight":"swingO1",
                 "strength":8
             },
             {
                 "itemId": "1382273",
                 "type": "staff",
                 "stand":"stand1",
-                "fight":"swing02",
+                "fight":"swingO1",
                 "strength":9
             },
             {
                 "itemId": "1382274",
                 "type": "staff",
                 "stand":"stand1",
-                "fight":"swing02",
+                "fight":"swingO1",
                 "strength":10
             }
         ],
@@ -224,53 +224,53 @@
                 "itemId": "1442000",
                 "type": "polearm",
                 "stand":"stand2",
-                "fight":"stabT1",
+                "fight":"stabTF",
                 "strength":1
             },
             {
-                "itemId": "1442140",
+                "itemId": "1442024",
                 "type": "polearm",
                 "stand":"stand2",
                 "fight":"stabTF",
                 "strength":2
             },
             {
-                "itemId": "1442248",
-                "type": "polearm",
-                "stand":"stand2",
-                "fight":"swingO1",
-                "strength":3
-            },
-            {
-                "itemId": "1442164",
+                "itemId": "1442133",
                 "type": "polearm",
                 "stand":"stand2",
                 "fight":"stabTF",
-                "strength":4
+                "strength":3
             },
             {
                 "itemId": "1442173",
                 "type": "polearm",
                 "stand":"stand2",
                 "fight":"stabTF",
-                "strength":5
+                "strength":4
             },
             {
                 "itemId": "1442289",
                 "type": "polearm",
                 "stand":"stand2",
                 "fight":"stabTF",
+                "strength":5
+            },
+            {
+                "itemId": "1442287",
+                "type": "polearm",
+                "stand":"stand2",
+                "fight":"stabTF",
                 "strength":6
             },
             {
-                "itemId": "1442276",
+                "itemId": "1442227",
                 "type": "polearm",
                 "stand":"stand2",
                 "fight":"stabTF",
                 "strength":7
             },
             {
-                "itemId": "1442287",
+                "itemId": "1442248",
                 "type": "polearm",
                 "stand":"stand2",
                 "fight":"stabTF",
