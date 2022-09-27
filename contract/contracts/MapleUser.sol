@@ -152,6 +152,11 @@ contract MapleUser is Ownable {
         }
     }
 
+    function fetchUser(uint256 _userId) public view returns (UserInfo memory) {
+        require(_userIds.current()!=0, "no user info added to this contract");
+        return idUserInfo[_userId];
+    }
+
     function fetchUsers() public view returns (UserInfo[] memory) {
         uint userCount = _userIds.current();
         UserInfo[] memory users =  new UserInfo[](userCount);

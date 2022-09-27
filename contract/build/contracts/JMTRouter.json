@@ -2135,7 +2135,7 @@
         4590
       ],
       "VJMToken": [
-        12019
+        12041
       ]
     },
     "id": 5349,
@@ -4263,12 +4263,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xfdb6169f5Bd22B06dC333537FC0C5f2Cf0c724cF",
-      "transactionHash": "0x4c30642df9cbb7c0802ae4345036c4024472aa9542ac0894686155f9772bfde4"
+      "address": "0x13530B7Bb57e44866cE33E6c68E5F0D13FB4f46d",
+      "transactionHash": "0x64a5bab7885933f6115da8f0078c7c0e7c38294e34b82a858fa18adf7b22336a"
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-27T19:29:05.345Z",
+  "updatedAt": "2022-09-27T22:37:05.196Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

@@ -83,7 +83,7 @@
   bottom: 10vw;
   width: 8vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   background-color: #fe7227e7;
   border-color: #fe7227e7;
@@ -129,7 +129,7 @@
   bottom: 10vw;
   width: 8vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   background-color: #fe7227e7;
   border-color: #fe7227e7;
@@ -187,7 +187,7 @@
   bottom: 14.5vw;
   width: 8vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   background-color: #3945ece7;
   border-color: #3945ece7;
@@ -205,7 +205,7 @@
   bottom: 11vw;
   width: 15vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   background-color: #fe7227e7;
   border-color: #fe7227e7;
@@ -250,9 +250,9 @@
 
 .Trading-tab .Trading-ui .swap-btn-container .change-btn {
   cursor:pointer;
-  width: 8vw;
+  width: 9vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   background-color: #3945ece7;
   border-color: #3945ece7;
@@ -267,9 +267,9 @@
 
 .Trading-tab .Trading-ui .swap-btn {
   cursor:pointer;
-  width: 8vw;
+  width: 9vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   margin-top: 1.5vw;
   background-color: #fe7227e7;
@@ -355,7 +355,7 @@ font-size: 1.5vw; */
   bottom: 10vw;
   width: 8vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   background-color: #fe7227e7;
   border-color: #fe7227e7;
@@ -373,7 +373,7 @@ font-size: 1.5vw; */
   bottom: 10vw;
   width: 8vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   background-color: #555454e7;
   border-color: #555454e7;
@@ -436,7 +436,7 @@ font-size: 1.5vw; */
   bottom: 14vw;
   width: 9vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   background-color: #fe7227e7;
   border-color: #fe7227e7;
@@ -454,7 +454,7 @@ font-size: 1.5vw; */
   bottom: 14vw;
   width: 8vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   background-color: #fe7227e7;
   border-color: #fe7227e7;
@@ -472,7 +472,7 @@ font-size: 1.5vw; */
   bottom: 14vw;
   width: 8vw;
   height: 3vw;
-  line-height: 2.5vw;
+  line-height: 3vw;
   border-radius: 1vw;
   background-color: #555454e7;
   border-color: #555454e7;
