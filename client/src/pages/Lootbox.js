@@ -48,10 +48,11 @@ const Lootbox = () => {
         if(!weaponImg){
             const weaponId = await contractAPI.mintWeaponNFT(account.address);
             console.log(weaponId);
+            const scroll = await contractAPI.mintScrollNFT(account.address);
+            console.log(scroll);
             const weapon = await contractAPI.fetchWeapon(weaponId);
             console.log(weapon.image);
             setWeaponImg(weapon.image);
-            const scroll = await contractAPI.mintScrollNFT(account.address);
 
             const name = await metadataAPI.fetchItemName(weapon.attributes);
             setWeaponName(name);

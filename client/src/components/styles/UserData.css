@@ -58,7 +58,7 @@
 }
 .userdata-container .userdata-str {
     width: 3vw;
-    margin-left: calc(100vw * 30/620);
+    margin-left: calc(100vw * 20/620);
     margin-right: calc(100vw * 30/620);
 
 }

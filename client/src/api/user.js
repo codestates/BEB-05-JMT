@@ -34,7 +34,9 @@ const signUp = async (address, charId, weaponId) => {
 
 const equipChar = async (address, charId) => {
     const userContract = await fetchUserContract();
-    const userId = parseInt(await fetchUser(address).id)+1;
+    const userData = await fetchUser(address);
+    const userId = parseInt(userData.id)-8;
+    console.log(userId);
     const user = await userContract.methods.updateChar(charId, userId).send(
         {
             from: address,
@@ -48,8 +50,9 @@ const equipChar = async (address, charId) => {
 
 const equipWeapon = async (address, weaponId) => {
     const userContract = await fetchUserContract();
-    const userId = parseInt(await fetchUser(address).id)+1;
-    const user = await userContract.methods.updateChar(weaponId, userId).send(
+    const userData = await fetchUser(address);
+    const userId = parseInt(userData.id)-8;
+    const user = await userContract.methods.updateWeapon(weaponId, userId).send(
         {
             from: address,
             gas: 1500000,
@@ -64,8 +67,15 @@ const fetchUserList = async (address, weaponId) => {
     const userContract = await fetchUserContract();
     const user = await userContract.methods.fetchUsers().call();
     console.log(user);
+    return user;
 }
 
+const matchUser = async (address) => {
+    const userContract = await fetchUserContract();
+    const user = await userContract.methods.matchUser(address).call();
+    console.log(user);
+    return user;
+}
 
 const userAPI = {
   fetchUserContract,
@@ -73,7 +83,8 @@ const userAPI = {
   signUp,
   equipChar,
   equipWeapon,
-  fetchUserList
+  fetchUserList,
+  matchUser
 };
 
 export default userAPI;

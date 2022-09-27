@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 import { strengthAtom, equipImgAtom } from '../recoil/tokenMetadata/atom';
 import { backgroundAtom } from "../recoil/background/atom";
 import { accountAtom } from "../recoil/account/atom";
@@ -8,13 +8,14 @@ import UserData from '../components/UserData';
 import Spinner from "../components/Spinner";
 import './styles/Ranking.css';
 import contractAPI from '../api/contract';
+import metadataAPI from '../api/metadata';
 import accountAPI from '../api/account';
 import userAPI from '../api/user';
 
 const Ranking = () => {
   const account = useRecoilValue(accountAtom);
   const setBackground = useSetRecoilState(backgroundAtom);
-  const myImg = useRecoilValue(equipImgAtom);
+  const [myImg, setImage] = useRecoilState(equipImgAtom);
   const navigate = useNavigate();
   const [rankInfo, setRankInfo] = useState();
   const [myRank, setmyRank] = useState();
@@ -28,6 +29,7 @@ const Ranking = () => {
         navigate('/mint');
     } else {
       setBackground({type: 'ranking'});
+      imageSet();
       sortArr();
       setLoading(true);
     }
@@ -35,13 +37,11 @@ const Ranking = () => {
 
   const sortArr = async()=>{
     const result = await accountAPI.userinfo();
-    // const test1 = await userAPI.signUp(account.address, account.charId, account.weaponId);
-    // console.log(test1);
-    // const test = await userAPI.fetchUserList();
-    // console.log(test);
-    const orginalArr = result.filter(user => user.address && user.username && user.charId && user.weaponId);
+    const test = await userAPI.fetchUserList();
+    console.log(test);
+    const originalArr = result.filter(user => user.address && user.username);
     const comparableArr = await Promise.all(
-      orginalArr.map(async (x)=> [
+      originalArr.map(async (x)=> [
         await contractAPI.fetchStrength(x.weaponId),
         x
       ])
@@ -71,6 +71,13 @@ const Ranking = () => {
     console.log(realArr);
     setRankInfo(realArr);
     setLoading(false);
+  }
+
+  const imageSet = async() =>{
+    const char = await contractAPI.fetchCharacter(account.charId);
+    const weapon = await contractAPI.fetchWeapon(account.weaponId);
+    const standImage = await metadataAPI.fetchStandImage(char.attributes, weapon.attributes, 'animated');
+    setImage(standImage);
   }
 
   const myrank = async(arr) => {

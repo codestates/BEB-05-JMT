@@ -13,7 +13,7 @@ import './styles/Inventory.css';
 import accountAPI from '../api/account';
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
-import marketAPI from '../api/market';
+import userAPI from '../api/user';
 const {
   NFT_CONTRACT_ADDR,
   ITEMS_CONTRACT_ADDR,
@@ -100,15 +100,21 @@ const Inventory = () => {
   const equip = async() => {
     console.log("장착 신청");
     if(!isClicked){
-      const charId=parseInt(selectedChar?.name.replace("Maple #", ""));
+      const charId=parseInt(selectedId);
       await accountAPI.equip(account.address, charId, account.weaponId);
       setAccount({...account, charId: charId, weaponId: account.weaponId});
+      await userAPI.equipChar(account.address, charId);
     } else{
       const weaponId=parseInt(selectedId);
-      await accountAPI.equip(account.address, account.charId, weaponId);
-      setAccount({...account, charId: account.charId, weaponId: weaponId});
+      await equip_weapon(weaponId);      
     }
     setEquipped(true);
+  }
+
+  const equip_weapon = async(weaponId)=>{
+    await accountAPI.equip(account.address, account.charId, weaponId);
+    setAccount({...account, charId: account.charId, weaponId: weaponId});
+    await userAPI.equipWeapon(account.address, weaponId);
   }
 
   const upgrade = async() => {
@@ -116,17 +122,20 @@ const Inventory = () => {
       setModal({...modal, open: true, type: 'upgrade', data: {message: "강화중..."}});
       let result;
       if(isScroll){
-        result = await contractAPI.upgradeWeapon(account.address, selectedId2, selectedId);        
+        result = await contractAPI.upgradeWeapon(account.address, selectedId2, selectedId);
+        if(account.weaponId==selectedId&&account.weaponId!= result[2]){
+          console.log("updated!")
+          equip_weapon(result[2]);
+        }        
       }else{
         result = await contractAPI.upgradeWeapon(account.address, selectedId, selectedId2);
+        if(account.weaponId==selectedId2&&account.weaponId!= result[2]){
+          console.log("updated!")
+          equip_weapon(result[2]);
+        }        
       }
       console.log(result);
-
-      if(account.weaponId!= result[2]){
-        console.log("updated!")
-        await accountAPI.equip(account.address, account.charId, result[2]);
-        setAccount({...account, charId: account.charId, weaponId: result[2]});
-      }
+      
       setModal({...modal, open: true, type: 'upgrade', data: {error: result[0], upgrade: result[1], message: result[2]}});
       setSelectedId();
       setSelectedId2();

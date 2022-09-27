@@ -9,6 +9,7 @@ import accountAPI from '../api/account';
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 import nobody from '../assets/nobody.png';
+import userAPI from '../api/user';
 
 
 const Mint = () => {
@@ -69,6 +70,7 @@ const Mint = () => {
             mintWeapon()
         ]);
         setAccount({...account, username: username, charId: charId, weaponId: weaponId});
+        const equipContract = await userAPI.signUp(account.address, charId, weaponId);
         return {charId, weaponId};
     }
 
