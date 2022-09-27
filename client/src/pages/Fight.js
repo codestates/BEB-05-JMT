@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import './styles/Fight.css';
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
+import accountAPI from '../api/account';
+import userAPI from '../api/user';
 
 const Fight = () => {
   const [userWeapon, setUserWeapon] = useState();
@@ -38,14 +40,22 @@ const Fight = () => {
       const userLoseImage = await metadataAPI.fetchLoseImage(chardata.attributes, weapondata.attributes, 'animated');
  
       // 매칭 캐릭터 정보
-      const RData = Math.floor(Math.random() * (addrdata.length));
-      const Raddrdata = addrdata[RData];
-      console.log(Raddrdata);
+      // const RData = Math.floor(Math.random() * (addrdata.length));
+      // const Raddrdata = addrdata[RData];
+      // console.log(Raddrdata);
 
-      const matchingChardata = await contractAPI.fetchCharacter(Raddrdata.charId);
+      const matchedUser = await userAPI.matchUser(account.address);
+      console.log(matchedUser);
+      const matchedChar = matchedUser.charToken.tokenId;
+      const matchedWeapon = matchedUser.weaponToken.tokenId;
+      const matchedAddr = matchedUser.user;
+      const check = await accountAPI.fetchUser(matchedAddr);
+      const matchedName = check.username;
+
+      const matchingChardata = await contractAPI.fetchCharacter(matchedChar);
       console.log(matchingChardata.attributes);
 
-      const matchingWeapondata = await contractAPI.fetchWeapon(Raddrdata.weaponId);
+      const matchingWeapondata = await contractAPI.fetchWeapon(matchedWeapon);
       console.log(matchingWeapondata.attributes);
 
       const MwinImage = await metadataAPI.fetchWinImage(matchingChardata.attributes, matchingWeapondata.attributes, 'animated');
@@ -55,13 +65,13 @@ const Fight = () => {
       const MstandImage = await metadataAPI.fetchStandImage(matchingChardata.attributes, matchingWeapondata.attributes, 'animated');
       console.log(MstandImage);
       setMatchingWeapon(matchingweapon.strength);
-      setMatchingName(Raddrdata.username);
+      setMatchingName(matchedName);
       setMatchingImage(MstandImage);
       setMatchingData({
-        address: Raddrdata.address,
-        username: Raddrdata.username,
-        charId: Raddrdata.charId,
-        weaponId: Raddrdata.weaponId,
+        address: matchedAddr,
+        username: matchedName,
+        charId: matchedChar,
+        weaponId: matchedWeapon,
         matchingChardata: matchingChardata,
         matchingWeapondata: matchingWeapondata,
         strength: matchingweapon.strength,

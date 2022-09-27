@@ -50,6 +50,8 @@ function WeaponOnSale({itemData, selectedId, setSelectedImg, setSelectedItem, se
   return (
     <div className={`weapon-container ${isSelected() ? 'weapon-clicked' : ''} weapon-opaque`} onClick={selected}>
       <img className='weapon-img' src={image? image:null}/>
+      <div className='weapon-amount'>{attr? attr.type:null}</div>
+      <div className='weapon-amount'>Lv. {attr? attr.strength:null}</div>
       <div className='weapon-amount'>{itemData.price} JMT</div>
     </div>
   )

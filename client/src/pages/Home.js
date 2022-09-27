@@ -11,6 +11,7 @@ import './styles/Home.css';
 import accountAPI from '../api/account';
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
+import userAPI from '../api/user';
 
 const Home = () => {
   const account = useRecoilValue(accountAtom);
@@ -36,10 +37,11 @@ const Home = () => {
       addrinfo();
       setLoading(false);
     }
-  }, []);
+  }, [account]);
 
   const mychar = async() =>{
-    console.log('check');
+    const test = await userAPI.fetchUserList(account.address);
+    console.log(test);
     const char = await contractAPI.fetchCharacter(account.charId);
     setCharMetadata(char);
     const weapon = await contractAPI.fetchWeapon(account.weaponId);

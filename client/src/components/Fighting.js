@@ -104,9 +104,9 @@ const fightLoading = async() => {
         <div className='fighting-spinner-text'>
           전투 결과 가져오는 중...
         </div>
-        <div className='weapon-left'>무기 강화: {userWeapon}</div>
+        <div className='weapon-left'>Lv. {userWeapon}</div>
         <div className='fighting-left-name'>{account.username}</div>
-        <div className='weapon-right'>무기 강화: {matchingdata.strength}</div>
+        <div className='weapon-right'>Lv. {matchingdata.strength}</div>
         <div className='fighting-right-name'>{matchingdata.username}</div>
         {userSwordImage? <img className='fighting-left-swordimage' src ={userImage} /> : null}
         {userBowImage? <img className='fighting-left-bowimage' src ={userImage} /> : null}
