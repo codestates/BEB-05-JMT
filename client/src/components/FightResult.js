@@ -66,30 +66,30 @@ const FightResult = () => {
         (fightresultdata === "User dramatic Win !!"?
         <div>
           <img className='fightresult-critical' src ='../img/critical.gif' />
-          <img className='fightresult-left-result' src ='../img/win.png' />
+          <div className='fightresult-left-win'>Win!!</div>
           <img className='fightresult-left-paper' src ='../img/weaponpaper.png' />
           <img className='fightresult-left-token' src ='../img/token.png' />
           {scrollselected ? <div className='fightresult-scroll-rewardbutton' onClick={rewardResult} >보상 확인</div>
           : <div className='fightresult-scroll-reward'>확인 완료</div>
           }
-          <img className='fightresult-right-result' src ='../img/lose.png' />
+          <div className='fightresult-right-lose'>Lose..</div>
         </div>
         :
         <div>
-          <img className='fightresult-left-result' src ='../img/win.png' />
+          <div className='fightresult-left-win'>Win!!</div>
           <img className='fightresult-left-paper' src ='../img/weaponpaper.png' />
           <img className='fightresult-left-token' src ='../img/token.png' />
           {scrollselected ? <div className='fightresult-scroll-rewardbutton' onClick={rewardResult} >보상 확인</div>
           : <div className='fightresult-scroll-reward'>확인 완료</div>
           }
-          <img className='fightresult-right-result' src ='../img/lose.png' />
+          <div className='fightresult-right-lose'>Lose..</div>
         </div>)
         :
         <div> 
-          <img className='fightresult-left-result' src ='../img/lose.png' />
+          <div className='fightresult-left-lose'>Lose..</div>
           <img className='fightresult-right-paper' src ='../img/weaponpaper.png' />
           <img className='fightresult-right-token' src ='../img/token.png' />
-          <img className='fightresult-right-result' src ='../img/win.png' />
+          <div className='fightresult-right-win'>Win!!</div>
         </div>
         }
 
