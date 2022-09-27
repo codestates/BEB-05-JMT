@@ -39,8 +39,9 @@ const Mint = () => {
     const mint = async () => {
         setLoading(true);
         if(username) {
-            await accountAPI.signUp(account.address, username);
-
+            try {
+                await accountAPI.signUp(account.address, username);
+            } catch {}
             const charId = await contractAPI.mintCharNFT(account.address);
             console.log(charId);
             const weaponId = await contractAPI.mintFirstWeaponNFT(account.address);
