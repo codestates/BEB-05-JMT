@@ -33,7 +33,7 @@ mysql -u root -p
 {패스워드 입력}
 
 //jmt 데이터베이스를 생성하지 않았다면 생성!
-create database jmt 
+create database jmt;
 ```
 
 ### MYSQL Sequelize 사용법
