@@ -35,8 +35,7 @@ const FIGHT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getFight\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_userstrength\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_matchingstrength\",\"type\":\"uint256\"}],\"name\":\"setFight\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/MapleFight.sol\":\"MapleFight\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/MapleFight.sol\":{\"keccak256\":\"0xc40fedf7d3053a5a2535c3d608278bb45a456217e9e61e4825ad256268580414\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b8792680e763b703bd3c6f30fe5909fd6700f13b267f2a7fa03a80537db5fb3e\",\"dweb:/ipfs/Qmf1J1pedXn8WJtbgdixfuyo1x8FVwWXcixpq6BoFL4zYz\"]}},\"version\":1}",
@@ -5533,22 +5532,15 @@ const FIGHT = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "1337": {
+    "5777": {
       "events": {},
       "links": {},
-      "address": "0x37d3D92A971391C31C957c94f3C7A1b1Da084CFb",
-      "transactionHash": "0xa2214f024dbf51a8c55d8f4567ea788bbff6d0c6c608fcc3d95bc9eca8c50943"
-    },
-    "3989": {
-      "events": {},
-      "links": {},
-      "address": "0x78c4e9931568c7d30addb6E6D9235331fF620196",
-      "transactionHash": "0xc5305e1b488d827c7ae7b78e873a1dcfe00f02041fca9ef6b545c80d4b6d9ec4"
+      "address": "0x5e7b0061131577e412dE550fb7f30A1F3eA829F8",
+      "transactionHash": "0x654a6cf8bd89ef4b18105a84eff76bd820115f22eeab75e827f59d7077fafeb2"
     }
   },
-  "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T18:29:20.801Z",
-  "networkType": "ethereum",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-27T01:24:43.763Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

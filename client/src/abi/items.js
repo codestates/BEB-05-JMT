@@ -202,8 +202,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -216,8 +215,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -230,8 +228,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -244,8 +241,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -258,8 +254,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -272,8 +267,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -286,8 +280,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -300,8 +293,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -314,8 +306,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -328,8 +319,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -342,8 +332,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -356,8 +345,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -370,8 +358,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -384,8 +371,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -398,8 +384,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -412,8 +397,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -426,8 +410,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -440,8 +423,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -465,8 +447,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -490,8 +471,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -556,8 +536,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -581,8 +560,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -595,8 +573,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -706,8 +683,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -726,8 +702,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -753,8 +728,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -773,8 +747,7 @@ const ITEMS = {
         }
       ],
       "stateMutability": "pure",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -41093,22 +41066,15 @@ const ITEMS = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "1337": {
+    "5777": {
       "events": {},
       "links": {},
-      "address": "0x256C27BD03Fcc44b78819d15Eb3684cDc8Ce28BF",
-      "transactionHash": "0x4ab6d3f664727c4c3cb62d8c0f4fd62f88102e807ff0a9960b6bcf6422af0d03"
-    },
-    "3989": {
-      "events": {},
-      "links": {},
-      "address": "0xBfF4eb6CDA6dB3730f7Ed97875d6B324eAC8EF67",
-      "transactionHash": "0xee40e31865a879c38212378dccecfdca20e21a460b35ba49e30e083a9f8dc3b0"
+      "address": "0xDB8772fe1C5BaBaD774FA595B8C8BA978CD8D16E",
+      "transactionHash": "0x13632449ed58e6c0a30e55631311e6a24d0bd2db03865bcaf92c0df188626617"
     }
   },
-  "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T18:29:20.789Z",
-  "networkType": "ethereum",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-27T01:24:43.781Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

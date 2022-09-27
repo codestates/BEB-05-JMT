@@ -103,8 +103,7 @@ const LPT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -147,8 +146,7 @@ const LPT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -161,8 +159,7 @@ const LPT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -223,8 +220,7 @@ const LPT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -237,8 +233,7 @@ const LPT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -258,8 +253,7 @@ const LPT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -272,8 +266,7 @@ const LPT = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -8934,22 +8927,15 @@ const LPT = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "1337": {
+    "5777": {
       "events": {},
       "links": {},
-      "address": "0x2ea15d698BFE7b101FB319214017e9E4b71BAba4",
-      "transactionHash": "0x062939a52c9d396d0b33f31146d12110b1aa1a0e0ff8da4d4844504f0c9ace25"
-    },
-    "3989": {
-      "events": {},
-      "links": {},
-      "address": "0x6cce7f03592D71D6d15CC11F9eE956ad5c424960",
-      "transactionHash": "0x8c23846adb861d115b1bd26f87d4165307b52a8ca740f70d96f1cebbfced2239"
+      "address": "0xc3d641eCd0E1b847C5681E8aDd5476FA85a2f774",
+      "transactionHash": "0x3fc25f66f2751c04c681153f918f6af6d1c6449743c2d0de1d74414411a9010e"
     }
   },
-  "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T18:29:20.833Z",
-  "networkType": "ethereum",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-27T01:24:43.710Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

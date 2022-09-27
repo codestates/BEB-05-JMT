@@ -123,8 +123,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -137,8 +136,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -151,8 +149,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -165,8 +162,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -179,8 +175,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -193,8 +188,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -207,8 +201,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -232,8 +225,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -276,8 +268,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -296,8 +287,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -316,8 +306,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -330,8 +319,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -368,8 +356,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -406,8 +393,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -420,8 +406,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -440,8 +425,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -454,8 +438,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -468,8 +451,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -482,8 +464,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -496,8 +477,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -510,8 +490,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -577,8 +556,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -591,8 +569,7 @@ const TOKEN = {
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -664,8 +641,7 @@ const TOKEN = {
       "name": "contribute",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -23754,7 +23730,7 @@ const TOKEN = {
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
   "networks": {
-    "1337": {
+    "5777": {
       "events": {
         "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
           "anonymous": false,
@@ -23858,120 +23834,12 @@ const TOKEN = {
         }
       },
       "links": {},
-      "address": "0xf0b010de9Be2D31AB6b29f6A4992483C939fD420",
-      "transactionHash": "0x8ee9f04f9c11534dfc508f88dac00c2cb42d619fe76326e6c371e93c3d50cfdb"
-    },
-    "3989": {
-      "events": {
-        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "owner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "spender",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "value",
-              "type": "uint256"
-            }
-          ],
-          "name": "Approval",
-          "type": "event"
-        },
-        "0xa01103220c31ee0c47e79a81104a3e82740390c1d918ad5638190cc185bd92e1": {
-          "anonymous": false,
-          "inputs": [],
-          "name": "FundsMoved",
-          "type": "event"
-        },
-        "0xe454716ccd4789e6869664dc631a651dcb83a4552bfdf7afda42167120c356d3": {
-          "anonymous": false,
-          "inputs": [],
-          "name": "OwnerAction",
-          "type": "event"
-        },
-        "0xe3bf9628d38f54d735cbc07db121eaef41935c08353bba9b8c8772d4ebba2d99": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "result",
-              "type": "bool"
-            }
-          ],
-          "name": "TokenRewarded",
-          "type": "event"
-        },
-        "0x745f661b8143944fb883f50694ebed3a871e43c451d9d4bf4648a9d551d7e47a": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "_account",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "amount",
-              "type": "uint256"
-            }
-          ],
-          "name": "TokensBought",
-          "type": "event"
-        },
-        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "from",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "to",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "value",
-              "type": "uint256"
-            }
-          ],
-          "name": "Transfer",
-          "type": "event"
-        },
-        "0x780220331cfc54e96b64b4846ee1b9c079d282c095d2823c41de6cfeeadb9c2b": {
-          "anonymous": false,
-          "inputs": [],
-          "name": "_MovedStakingReward",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0xabFa7C7664aB503baAc50547167DFbFE3b604F97",
-      "transactionHash": "0x9f0e3aceffd770dd3df06a0a376676470e3d252fb0afe241d375ca9584ecab29"
+      "address": "0x981837dab0b7cAc298ef580cF0a45EF48865Cf5a",
+      "transactionHash": "0x14cd6af8039a55f2d512f65b9fb0bdff560b3b5d84b0a86e3efc5a13b236c76e"
     }
   },
-  "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-26T18:52:27.291Z",
-  "networkType": "ethereum",
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-09-27T01:24:43.696Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
