@@ -21,6 +21,8 @@ export const LPT_CONTRACT_ADDR = process.env.REACT_APP_LPT_CONTRACT_ADDR;
 export const LP_CONTRACT_ADDR = process.env.REACT_APP_LP_CONTRACT_ADDR;
 export const version = '367';
 
+export const SERVER_ENDPOINT = process.env.REACT_APP_SERVER_ENDPOINT;
+
 const getNFTContractABI = () => {
     return NFT["abi"];
 }

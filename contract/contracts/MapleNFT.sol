@@ -31,14 +31,14 @@ contract MapleNFT is Ownable, ERC721Enumerable {
 
         marketContractAddress = _marketAddress;
         mintPrice = 1;
-        maxTokenNum = 50; // 로컬에서는 5000
+        maxTokenNum = 100; // 5000개까지 만들었지만 constructor의 가스비 절약을 위해
         _setToken(_tokenContractAddress);
         _setBaseURI(_MapleBaseURI);
-        // generateMintArray();
+        _generateMintArray();
         treasuryWallet = _treasuryWallet;
     }
 
-    function generateMintArray() external onlyOwner {
+    function _generateMintArray() private onlyOwner {
         for (uint256 i = 0; i <= maxTokenNum; i++) {
             waitForMint.push(i);
         }

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { SERVER_ENDPOINT } from '../global_variables';
 
 const Web3 = require('web3');
 const {
@@ -261,7 +262,7 @@ const fetchItemsContract = async () => {
 }
 
 const _fetchCharacter = async (charId) => {
-    const tokenMetadata = await axios.get(`http://localhost:4000/asset/character/metadata/${charId}`);
+    const tokenMetadata = await axios.get(`${SERVER_ENDPOINT}/asset/character/metadata/${charId}`);
     console.log(tokenMetadata.data);
     return tokenMetadata.data;
 }
@@ -284,7 +285,7 @@ const fetchMyCharacter = async (address) => {
     }
     let myNFTs = [];
     for(const charId of arr) {
-        const response = await axios.get(`http://localhost:4000/asset/character/metadata/${charId}`);
+        const response = await axios.get(`${SERVER_ENDPOINT}/asset/character/metadata/${charId}`);
         const tokenMetadata = response.data;
         tokenMetadata.image = tokenMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
         myNFTs.push([charId, tokenMetadata])

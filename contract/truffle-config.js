@@ -48,7 +48,6 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
 const mnemonic = fs.readFileSync(".secret").toString().trim();
-const maticAPIKey = fs.readFileSync(".secret.apikey").toString().trim();
 
 module.exports = {
   /**
@@ -71,27 +70,39 @@ module.exports = {
     development: {
       host: "127.0.0.1",     // Localhost (default: none)
       port: 7545,            // Standard Ethereum port (default: none)
-      network_id: "1337",       // Any network (default: none)
-      from:"0x59dd7D8B4FD619Ef3e90924d5bC633b1277E4b5C",
-     },
-     polygon:{
-      provider: () => new HDWalletProvider(mnemonic,"http://127.0.0.1:10002"),
+      network_id: "5777",       // Any network (default: none)
+    },
+    polygon_local:{
+      provider: () => new HDWalletProvider({mnemonic: {phrase:mnemonic}, providerOrUrl: "http://127.0.0.1:10002", pollingInterval: 60000}),
       network_id: 3989,
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
       gas: 10000000000
-     },
-     polygon_mumbai:{
-      provider: () => new HDWalletProvider(mnemonic, `wss://rpc-mumbai.maticvigil.com/ws/v1/11e54611899cb7b5e8ca8e065baace37e7029595`),
+    },
+    polygon_mumbai:{
+      provider: () => new HDWalletProvider({mnemonic: {phrase:mnemonic}, providerOrUrl: "https://polygon-mumbai.g.alchemy.com/v2/GLfsnBEH_aJxS2vlKQD1laFR1MP34AAI", pollingInterval: 60000}),
       network_id: 80001,
       gas: 20000000,
-      gasPrice: 40000000000,
+      gasPrice: 30000000000,
       confirmations: 2,
-      networkCheckTimeout: 9999999,
-      timeoutBlocks: 50000,
+      networkCheckTimeout: 10000000,
+      timeoutBlocks: 200,
       skipDryRun: true,
-     },
+      disableConfirmationListener: true,
+    },
+    polygon_mainnet:{
+      provider: () => new HDWalletProvider({mnemonic: {phrase:mnemonic}, providerOrUrl: "https://polygon-mainnet.g.alchemy.com/v2/s6X3a36jtbvH1aXYzd1HXPSdX9FapzEC", pollingInterval: 60000}),
+      network_id: 137,
+      gas: 20000000,
+      gasPrice: 50000000000,
+      confirmations: 2,
+      networkCheckTimeout: 10000000,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      disableConfirmationListener: true,
+      enableTimeouts:false
+    },
     // ganache:{
     //    host: "127.0.0.1",     
     //    port: 7545,       
