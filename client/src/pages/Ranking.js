@@ -32,9 +32,10 @@ const Ranking = () => {
       setBackground({type: 'ranking'});
       imageSet();
       sortArr();
+      checkReward();
       setLoading(true);
     }
-  }, []);
+  }, [rankReward]);
 
   const sortArr = async()=>{
     const result = await accountAPI.userinfo();
@@ -81,6 +82,12 @@ const Ranking = () => {
     setImage(standImage);
   }
 
+  const checkReward = async()=>{
+    if(myRank){
+      const myReward = await userAPI.fetchUserReward(myRank);
+      setRankReward(myReward);
+    }
+  }
   const myrank = async(arr) => {
     for(const idx in arr){
       if(arr[idx].username == account.username){

@@ -36,9 +36,7 @@ const signUp = async (address, charId, weaponId) => {
 const equipChar = async (address, charId) => {
     const userContract = await fetchUserContract();
     const userData = await fetchUser(address);
-    const userId = parseInt(userData.id);
-    console.log(userId);
-    const user = await userContract.methods.updateChar(charId, userId).send(
+    const user = await userContract.methods.updateChar(charId).send(
         {
             from: address,
             gas: 1500000,
@@ -51,9 +49,7 @@ const equipChar = async (address, charId) => {
 
 const equipWeapon = async (address, weaponId) => {
     const userContract = await fetchUserContract();
-    const userData = await fetchUser(address);
-    const userId = parseInt(userData.id);
-    const user = await userContract.methods.updateWeapon(weaponId, userId).send(
+    const user = await userContract.methods.updateWeapon(weaponId).send(
         {
             from: address,
             gas: 1500000,
@@ -64,7 +60,7 @@ const equipWeapon = async (address, weaponId) => {
     return result;  
 }
 
-const fetchUserList = async (address, weaponId) => {
+const fetchUserList = async () => {
     const userContract = await fetchUserContract();
     const user = await userContract.methods.fetchUsers().call();
     console.log(user);
@@ -73,9 +69,7 @@ const fetchUserList = async (address, weaponId) => {
 
 const fetchUserInfo = async (address) => {
     const userContract = await fetchUserContract();
-    const userData = await fetchUser(address);
-    const userId = parseInt(userData.id);
-    const user = await userContract.methods.fetchUser(userId).call();
+    const user = await userContract.methods.fetchUser(address).call();
     console.log(user);
     return user;
 }
@@ -99,9 +93,7 @@ const fetchUserReward = async (rank) => {
 
 const requestUserReward = async (address, rank) => {
     const userContract = await fetchUserContract();
-    const userData = await fetchUser(address);
-    const userId = parseInt(userData.id);
-    const reward = await userContract.methods.requestReward(rank, userId).send(
+    const reward = await userContract.methods.requestReward(rank).send(
         {
             from: address,
             gas: 1500000,

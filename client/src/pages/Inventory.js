@@ -103,7 +103,7 @@ const Inventory = () => {
       const charId=parseInt(selectedId);
       await accountAPI.equip(account.address, charId, account.weaponId);
       setAccount({...account, charId: charId, weaponId: account.weaponId});
-      await userAPI.equipChar(account.address, charId);
+      await userAPI.equipChar(charId);
     } else{
       const weaponId=parseInt(selectedId);
       await equip_weapon(weaponId);      
@@ -114,7 +114,7 @@ const Inventory = () => {
   const equip_weapon = async(weaponId)=>{
     await accountAPI.equip(account.address, account.charId, weaponId);
     setAccount({...account, charId: account.charId, weaponId: weaponId});
-    await userAPI.equipWeapon(account.address, weaponId);
+    await userAPI.equipWeapon(weaponId);
   }
 
   const upgrade = async() => {
