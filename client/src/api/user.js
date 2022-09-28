@@ -24,7 +24,7 @@ const signUp = async (address, charId, weaponId) => {
     const userContract = await fetchUserContract();
     const user = await userContract.methods.signUp(charId, weaponId).send(
         {
-            from: address,
+            from: address.toLowerCase(),
             gas: 1500000,
             gasPrice: '3000000'
         }
@@ -38,7 +38,7 @@ const equipChar = async (address, charId) => {
     const userData = await fetchUser(address);
     const user = await userContract.methods.updateChar(charId).send(
         {
-            from: address,
+            from: address.toLowerCase(),
             gas: 1500000,
             gasPrice: '3000000'
         }
@@ -51,7 +51,7 @@ const equipWeapon = async (address, weaponId) => {
     const userContract = await fetchUserContract();
     const user = await userContract.methods.updateWeapon(weaponId).send(
         {
-            from: address,
+            from: address.toLowerCase(),
             gas: 1500000,
             gasPrice: '3000000'
         }
@@ -95,7 +95,7 @@ const requestUserReward = async (address, rank) => {
     const userContract = await fetchUserContract();
     const reward = await userContract.methods.requestReward(rank).send(
         {
-            from: address,
+            from: address.toLowerCase(),
             gas: 1500000,
             gasPrice: '3000000'
         }
