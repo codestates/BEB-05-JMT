@@ -11,6 +11,7 @@ import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
 import accountAPI from '../api/account';
 import userAPI from '../api/user';
+import { jmtAtom } from "../recoil/jmt/atom"
 
 const Ranking = () => {
   const account = useRecoilValue(accountAtom);
@@ -22,6 +23,7 @@ const Ranking = () => {
   const [rankReward, setRankReward] = useState();
   const [loading, setLoading] = useState(false);
   const myStr = useRecoilValue(strengthAtom);
+  const setJmt = useSetRecoilState(jmtAtom);
 
   useEffect(() => {
     if (!account.address) {
@@ -103,6 +105,10 @@ const Ranking = () => {
   const receiveReward = async() => {
     const request  = await userAPI.requestUserReward(account.address, myRank);
     console.log(request);
+    contractAPI.getBalnceOfJmt(account.address).then((result)=>{
+      setJmt({amount: result})
+    })
+    checkReward();
   }
 
   const shortenAddress = (address) => {

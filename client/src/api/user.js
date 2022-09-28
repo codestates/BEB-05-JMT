@@ -87,7 +87,7 @@ const fetchUserReward = async (rank) => {
     console.log("check");
     let reward = await userContract.methods.checkReward(rank).call();
     console.log(reward);
-    reward=reward/(10**15);
+    reward=reward/decimals;
     return reward;
 }
 
