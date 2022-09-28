@@ -130,7 +130,7 @@ const Mint = () => {
 
     return (
         <div className='mint-container'>
-            {account.charId&&account.weaponId ? 
+            {(account.charId||account.charId===0)&&(account.weaponId||account.weaponId===0) ? 
                 (loading ?
                 <Spinner/> : 
                 <div className = 'mint-container2'> 

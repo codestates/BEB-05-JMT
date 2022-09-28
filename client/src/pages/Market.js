@@ -18,6 +18,7 @@ import metadataAPI from '../api/metadata';
 import UserData from '../components/UserData';
 import "./styles/Market.css";
 import marketAPI from "../api/market";
+import { jmtAtom } from "../recoil/jmt/atom"
 const {
   NFT_CONTRACT_ADDR,
   ITEMS_CONTRACT_ADDR,
@@ -26,6 +27,7 @@ const {
 const Market = () => {
   const [account, setAccount] = useRecoilState(accountAtom);
   const setBackground = useSetRecoilState(backgroundAtom);
+  const setJmt = useSetRecoilState(jmtAtom);
   const navigate = useNavigate();
   // const [matketplaceAtom, setMatketplaceAtom] = useRecoilState(matketplaceAtom); 
   const [isSell, setIsSell] = useState(false);
@@ -68,7 +70,7 @@ const Market = () => {
     if (!account.address) {
       navigate('/login');
     } else if(!account.charId){
-        navigate('/mint');
+      navigate('/mint');
     } else {
     setBackground({ type: "market" });
     myChar();
@@ -88,7 +90,10 @@ const Market = () => {
         const buy = await marketAPI.buyCharOnSale(account.address, charOnSale.itemId, charOnSale.price);
         console.log(buy); 
     }
-    init();   
+    contractAPI.getBalnceOfJmt(account.address).then((result)=>{
+      setJmt({amount: result})
+    })
+    init();
   }
 
   const sellNFT = async() => {

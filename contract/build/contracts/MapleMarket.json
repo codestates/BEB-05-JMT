@@ -140,8 +140,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -344,8 +343,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -397,8 +395,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -450,8 +447,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -26838,130 +26834,9 @@
     "name": "solc",
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
-  "networks": {
-    "5777": {
-      "events": {
-        "0x8b583604758a4c6c995171787709d2caa670e019b68bfb687d2c9fa77e538059": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "tokenId",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "itemId",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "seller",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "price",
-              "type": "uint256"
-            }
-          ],
-          "name": "ItemCreated",
-          "type": "event"
-        },
-        "0x636c891e1c595c5879015e9f0767c0138ec002c115fa5425d3a585252e13a1ed": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "tokenId",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "itemId",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "seller",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "buyer",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "price",
-              "type": "uint256"
-            }
-          ],
-          "name": "ItemSold",
-          "type": "event"
-        },
-        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "previousOwner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "OwnershipTransferred",
-          "type": "event"
-        },
-        "0xd3bffea3a9501b0422f789f4c0797d9cdcb9e89dd65de11b04e9b0079ea4e2a7": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "tokenId",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "itemId",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "seller",
-              "type": "address"
-            }
-          ],
-          "name": "SaleCanceled",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0x10FFC830E96A2FCBf1e496E99B0B96133388aF6E",
-      "transactionHash": "0xdd08194dfa68bab0e3db35e24ade45536d82a3487c86ea2aebf812b9c70b8780"
-    }
-  },
+  "networks": {},
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-28T01:57:09.520Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-09-28T02:00:00.667Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

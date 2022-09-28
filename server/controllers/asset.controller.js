@@ -1,4 +1,4 @@
-const {CharacterMeta} = require('../models');
+const {CharacterMeta, WeaponMeta} = require('../models');
 
 const characterMetadata = async(req, res, next) => {
   const token = await CharacterMeta.findOne({
@@ -42,6 +42,38 @@ const characterMetadata = async(req, res, next) => {
   }
 }
 
+const weaponMeta = async(req, res, next) => {
+  const token = await WeaponMeta.findOne({
+    where: {
+      tokenId: req.params.tokenId
+    }
+  });
+  let attributes = [];
+  for(const [key, value] of Object.entries(token.dataValues)) {
+    if (value == "" || value == null || key == "id" || key == "createdAt" || key == "updatedAt" || key == "tokenId") {
+      continue;
+    }
+    attributes.push({
+      "trait_type": key,
+      "value": value
+    });
+  }
+  if (token) {
+    const uri = `https://maplestory.io/api/KMS/367/item/${token.dataValues.itemId}/icon?resize=3`;
+    res.status(200).json({
+      image: uri,
+      name: `Maple Item #${token.tokenId}`,
+      description: "CODESTATES BEB05 Project5 https://github.com/codestates/BEB-05-JMT",
+      attributes: attributes
+    })
+  } else {
+    res.status(200).json({
+      message: 'false'
+    })
+  }
+}
+
 module.exports = {
-  characterMetadata
+  characterMetadata,
+  weaponMeta
 };
