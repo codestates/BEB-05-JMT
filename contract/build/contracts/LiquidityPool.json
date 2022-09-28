@@ -1754,7 +1754,7 @@
                 }
               ]
             },
-            "name": "abi_decode_tuple_t_contract$_VJMToken_$12282",
+            "name": "abi_decode_tuple_t_contract$_VJMToken_$12262",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -5296,7 +5296,7 @@
           }
         ]
       },
-      "contents": "{\n    { }\n    function abi_encode_tuple_t_uint256_t_uint256__to_t_uint256_t_uint256__fromStack_reversed(headStart, value1, value0) -> tail\n    {\n        tail := add(headStart, 64)\n        mstore(headStart, value0)\n        mstore(add(headStart, 32), value1)\n    }\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, value0)\n    }\n    function validator_revert_address(value)\n    {\n        if iszero(eq(value, and(value, 0xffffffffffffffffffffffffffffffffffffffff))) { revert(0, 0) }\n    }\n    function abi_decode_tuple_t_address(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := calldataload(headStart)\n        validator_revert_address(value)\n        value0 := value\n    }\n    function abi_decode_tuple_t_uint256t_address(headStart, dataEnd) -> value0, value1\n    {\n        if slt(sub(dataEnd, headStart), 64) { revert(0, 0) }\n        value0 := calldataload(headStart)\n        let value := calldataload(add(headStart, 32))\n        validator_revert_address(value)\n        value1 := value\n    }\n    function abi_decode_tuple_t_contract$_JMToken_$6174(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := calldataload(headStart)\n        validator_revert_address(value)\n        value0 := value\n    }\n    function abi_encode_tuple_t_address__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, 0xffffffffffffffffffffffffffffffffffffffff))\n    }\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, iszero(iszero(value0)))\n    }\n    function abi_encode_tuple_t_uint32__to_t_uint32__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, 0xffffffff))\n    }\n    function abi_decode_tuple_t_contract$_VJMToken_$12282(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := calldataload(headStart)\n        validator_revert_address(value)\n        value0 := value\n    }\n    function abi_decode_tuple_t_addresst_uint256(headStart, dataEnd) -> value0, value1\n    {\n        if slt(sub(dataEnd, headStart), 64) { revert(0, 0) }\n        let value := calldataload(headStart)\n        validator_revert_address(value)\n        value0 := value\n        value1 := calldataload(add(headStart, 32))\n    }\n    function abi_encode_tuple_t_uint256_t_uint256_t_uint32__to_t_uint256_t_uint256_t_uint32__fromStack_reversed(headStart, value2, value1, value0) -> tail\n    {\n        tail := add(headStart, 96)\n        mstore(headStart, value0)\n        mstore(add(headStart, 32), value1)\n        mstore(add(headStart, 64), and(value2, 0xffffffff))\n    }\n    function abi_decode_tuple_t_contract$_LPT_$6227(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := calldataload(headStart)\n        validator_revert_address(value)\n        value0 := value\n    }\n    function abi_encode_tuple_t_stringliteral_40991d5f13be97e6cac3e22297fa5cf5b9807e76a0214246634c4e2c9f465f47__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 13)\n        mstore(add(headStart, 64), \"JonMatng_ONLY\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_975d8a01069118393c92ad887663c5a73adbdc90210e1dbd7e787b4419867fbf__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 20)\n        mstore(add(headStart, 64), \"RESERVE AMOUNT EMPTY\")\n        tail := add(headStart, 96)\n    }\n    function panic_error_0x11()\n    {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n    function checked_mul_t_uint256(x, y) -> product\n    {\n        product := mul(x, y)\n        if iszero(or(iszero(x), eq(y, div(product, x)))) { panic_error_0x11() }\n    }\n    function abi_decode_tuple_t_uint256_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := mload(headStart)\n    }\n    function abi_encode_tuple_t_stringliteral_f794614507589c64e4caeb4c21a3a53766343898d684121f31df5d2a819f76dd__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 19)\n        mstore(add(headStart, 64), \"NO_AVAILABLE_TOKENS\")\n        tail := add(headStart, 96)\n    }\n    function checked_div_t_uint256(x, y) -> r\n    {\n        if iszero(y)\n        {\n            mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n            mstore(4, 0x12)\n            revert(0, 0x24)\n        }\n        r := div(x, y)\n    }\n    function checked_sub_t_uint256(x, y) -> diff\n    {\n        diff := sub(x, y)\n        if gt(diff, x) { panic_error_0x11() }\n    }\n    function abi_encode_tuple_t_address_t_uint256__to_t_address_t_uint256__fromStack_reversed(headStart, value1, value0) -> tail\n    {\n        tail := add(headStart, 64)\n        mstore(headStart, and(value0, 0xffffffffffffffffffffffffffffffffffffffff))\n        mstore(add(headStart, 32), value1)\n    }\n    function abi_decode_tuple_t_bool_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := mload(headStart)\n        if iszero(eq(value, iszero(iszero(value)))) { revert(0, 0) }\n        value0 := value\n    }\n    function abi_encode_tuple_packed_t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470__to_t_bytes_memory_ptr__nonPadded_inplace_fromStack_reversed(pos) -> end\n    { end := pos }\n    function abi_encode_tuple_t_stringliteral_8064604abfc3f0434a0b9cdec7fde4b422552d167d317002e25be65843a79f20__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 15)\n        mstore(add(headStart, 64), \"FAILED_TRANSFER\")\n        tail := add(headStart, 96)\n    }\n    function checked_add_t_uint256(x, y) -> sum\n    {\n        sum := add(x, y)\n        if gt(x, sum) { panic_error_0x11() }\n    }\n    function abi_encode_tuple_t_stringliteral_b2a82e4e45b336ce6c44d9804b6c2ced0fb24d6ef1a76c7dfe3cfb5d8d132923__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 10)\n        mstore(add(headStart, 64), \"WRITE_ONCE\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_14e119e374624bd5141fb3d3b6f1df053339f5b657ddfe13cf912bfd50e9b8af__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 24)\n        mstore(add(headStart, 64), \"You are not participated\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_8bf8f0d780f13740660fe63233b17f96cb1813889e7dce4121e55b817b367b72__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 15)\n        mstore(add(headStart, 64), \"TRANSFER_FAILED\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 38)\n        mstore(add(headStart, 64), \"Ownable: new owner is the zero a\")\n        mstore(add(headStart, 96), \"ddress\")\n        tail := add(headStart, 128)\n    }\n    function abi_encode_tuple_t_stringliteral_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 32)\n        mstore(add(headStart, 64), \"Ownable: caller is not the owner\")\n        tail := add(headStart, 96)\n    }\n}",
+      "contents": "{\n    { }\n    function abi_encode_tuple_t_uint256_t_uint256__to_t_uint256_t_uint256__fromStack_reversed(headStart, value1, value0) -> tail\n    {\n        tail := add(headStart, 64)\n        mstore(headStart, value0)\n        mstore(add(headStart, 32), value1)\n    }\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, value0)\n    }\n    function validator_revert_address(value)\n    {\n        if iszero(eq(value, and(value, 0xffffffffffffffffffffffffffffffffffffffff))) { revert(0, 0) }\n    }\n    function abi_decode_tuple_t_address(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := calldataload(headStart)\n        validator_revert_address(value)\n        value0 := value\n    }\n    function abi_decode_tuple_t_uint256t_address(headStart, dataEnd) -> value0, value1\n    {\n        if slt(sub(dataEnd, headStart), 64) { revert(0, 0) }\n        value0 := calldataload(headStart)\n        let value := calldataload(add(headStart, 32))\n        validator_revert_address(value)\n        value1 := value\n    }\n    function abi_decode_tuple_t_contract$_JMToken_$6174(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := calldataload(headStart)\n        validator_revert_address(value)\n        value0 := value\n    }\n    function abi_encode_tuple_t_address__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, 0xffffffffffffffffffffffffffffffffffffffff))\n    }\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, iszero(iszero(value0)))\n    }\n    function abi_encode_tuple_t_uint32__to_t_uint32__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, 0xffffffff))\n    }\n    function abi_decode_tuple_t_contract$_VJMToken_$12262(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := calldataload(headStart)\n        validator_revert_address(value)\n        value0 := value\n    }\n    function abi_decode_tuple_t_addresst_uint256(headStart, dataEnd) -> value0, value1\n    {\n        if slt(sub(dataEnd, headStart), 64) { revert(0, 0) }\n        let value := calldataload(headStart)\n        validator_revert_address(value)\n        value0 := value\n        value1 := calldataload(add(headStart, 32))\n    }\n    function abi_encode_tuple_t_uint256_t_uint256_t_uint32__to_t_uint256_t_uint256_t_uint32__fromStack_reversed(headStart, value2, value1, value0) -> tail\n    {\n        tail := add(headStart, 96)\n        mstore(headStart, value0)\n        mstore(add(headStart, 32), value1)\n        mstore(add(headStart, 64), and(value2, 0xffffffff))\n    }\n    function abi_decode_tuple_t_contract$_LPT_$6227(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := calldataload(headStart)\n        validator_revert_address(value)\n        value0 := value\n    }\n    function abi_encode_tuple_t_stringliteral_40991d5f13be97e6cac3e22297fa5cf5b9807e76a0214246634c4e2c9f465f47__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 13)\n        mstore(add(headStart, 64), \"JonMatng_ONLY\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_975d8a01069118393c92ad887663c5a73adbdc90210e1dbd7e787b4419867fbf__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 20)\n        mstore(add(headStart, 64), \"RESERVE AMOUNT EMPTY\")\n        tail := add(headStart, 96)\n    }\n    function panic_error_0x11()\n    {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n    function checked_mul_t_uint256(x, y) -> product\n    {\n        product := mul(x, y)\n        if iszero(or(iszero(x), eq(y, div(product, x)))) { panic_error_0x11() }\n    }\n    function abi_decode_tuple_t_uint256_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := mload(headStart)\n    }\n    function abi_encode_tuple_t_stringliteral_f794614507589c64e4caeb4c21a3a53766343898d684121f31df5d2a819f76dd__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 19)\n        mstore(add(headStart, 64), \"NO_AVAILABLE_TOKENS\")\n        tail := add(headStart, 96)\n    }\n    function checked_div_t_uint256(x, y) -> r\n    {\n        if iszero(y)\n        {\n            mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n            mstore(4, 0x12)\n            revert(0, 0x24)\n        }\n        r := div(x, y)\n    }\n    function checked_sub_t_uint256(x, y) -> diff\n    {\n        diff := sub(x, y)\n        if gt(diff, x) { panic_error_0x11() }\n    }\n    function abi_encode_tuple_t_address_t_uint256__to_t_address_t_uint256__fromStack_reversed(headStart, value1, value0) -> tail\n    {\n        tail := add(headStart, 64)\n        mstore(headStart, and(value0, 0xffffffffffffffffffffffffffffffffffffffff))\n        mstore(add(headStart, 32), value1)\n    }\n    function abi_decode_tuple_t_bool_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := mload(headStart)\n        if iszero(eq(value, iszero(iszero(value)))) { revert(0, 0) }\n        value0 := value\n    }\n    function abi_encode_tuple_packed_t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470__to_t_bytes_memory_ptr__nonPadded_inplace_fromStack_reversed(pos) -> end\n    { end := pos }\n    function abi_encode_tuple_t_stringliteral_8064604abfc3f0434a0b9cdec7fde4b422552d167d317002e25be65843a79f20__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 15)\n        mstore(add(headStart, 64), \"FAILED_TRANSFER\")\n        tail := add(headStart, 96)\n    }\n    function checked_add_t_uint256(x, y) -> sum\n    {\n        sum := add(x, y)\n        if gt(x, sum) { panic_error_0x11() }\n    }\n    function abi_encode_tuple_t_stringliteral_b2a82e4e45b336ce6c44d9804b6c2ced0fb24d6ef1a76c7dfe3cfb5d8d132923__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 10)\n        mstore(add(headStart, 64), \"WRITE_ONCE\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_14e119e374624bd5141fb3d3b6f1df053339f5b657ddfe13cf912bfd50e9b8af__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 24)\n        mstore(add(headStart, 64), \"You are not participated\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_8bf8f0d780f13740660fe63233b17f96cb1813889e7dce4121e55b817b367b72__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 15)\n        mstore(add(headStart, 64), \"TRANSFER_FAILED\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 38)\n        mstore(add(headStart, 64), \"Ownable: new owner is the zero a\")\n        mstore(add(headStart, 96), \"ddress\")\n        tail := add(headStart, 128)\n    }\n    function abi_encode_tuple_t_stringliteral_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 32)\n        mstore(add(headStart, 64), \"Ownable: caller is not the owner\")\n        tail := add(headStart, 96)\n    }\n}",
       "id": 38,
       "language": "Yul",
       "name": "#utility.yul"
@@ -5349,7 +5349,7 @@
         4590
       ],
       "VJMToken": [
-        12282
+        12262
       ]
     },
     "id": 7044,
@@ -5398,7 +5398,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 7044,
-        "sourceUnit": 12283,
+        "sourceUnit": 12263,
         "src": "106:24:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -5915,7 +5915,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VJMToken_$12282",
+              "typeIdentifier": "t_contract$_VJMToken_$12262",
               "typeString": "contract VJMToken"
             },
             "typeName": {
@@ -5928,13 +5928,13 @@
                   "2451:8:29"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 12282,
+                "referencedDeclaration": 12262,
                 "src": "2451:8:29"
               },
-              "referencedDeclaration": 12282,
+              "referencedDeclaration": 12262,
               "src": "2451:8:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VJMToken_$12282",
+                "typeIdentifier": "t_contract$_VJMToken_$12262",
                 "typeString": "contract VJMToken"
               }
             },
@@ -7628,7 +7628,7 @@
                               "referencedDeclaration": 6275,
                               "src": "3786:4:29",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VJMToken_$12282",
+                                "typeIdentifier": "t_contract$_VJMToken_$12262",
                                 "typeString": "contract VJMToken"
                               }
                             }
@@ -7636,7 +7636,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_contract$_VJMToken_$12282",
+                                "typeIdentifier": "t_contract$_VJMToken_$12262",
                                 "typeString": "contract VJMToken"
                               }
                             ],
@@ -7821,7 +7821,7 @@
                       "referencedDeclaration": 6275,
                       "src": "3830:4:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VJMToken_$12282",
+                        "typeIdentifier": "t_contract$_VJMToken_$12262",
                         "typeString": "contract VJMToken"
                       }
                     },
@@ -7835,13 +7835,13 @@
                       "referencedDeclaration": 6407,
                       "src": "3837:5:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VJMToken_$12282",
+                        "typeIdentifier": "t_contract$_VJMToken_$12262",
                         "typeString": "contract VJMToken"
                       }
                     },
                     "src": "3830:12:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VJMToken_$12282",
+                      "typeIdentifier": "t_contract$_VJMToken_$12262",
                       "typeString": "contract VJMToken"
                     }
                   },
@@ -7893,7 +7893,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_VJMToken_$12282",
+                    "typeIdentifier": "t_contract$_VJMToken_$12262",
                     "typeString": "contract VJMToken"
                   },
                   "typeName": {
@@ -7906,13 +7906,13 @@
                         "3724:8:29"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 12282,
+                      "referencedDeclaration": 12262,
                       "src": "3724:8:29"
                     },
-                    "referencedDeclaration": 12282,
+                    "referencedDeclaration": 12262,
                     "src": "3724:8:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VJMToken_$12282",
+                      "typeIdentifier": "t_contract$_VJMToken_$12262",
                       "typeString": "contract VJMToken"
                     }
                   },
@@ -9053,7 +9053,7 @@
                               "referencedDeclaration": 6275,
                               "src": "6003:4:29",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VJMToken_$12282",
+                                "typeIdentifier": "t_contract$_VJMToken_$12262",
                                 "typeString": "contract VJMToken"
                               }
                             },
@@ -11669,7 +11669,7 @@
                               "referencedDeclaration": 6275,
                               "src": "7062:4:29",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VJMToken_$12282",
+                                "typeIdentifier": "t_contract$_VJMToken_$12262",
                                 "typeString": "contract VJMToken"
                               }
                             },
@@ -13277,7 +13277,7 @@
                               "referencedDeclaration": 6275,
                               "src": "8115:4:29",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VJMToken_$12282",
+                                "typeIdentifier": "t_contract$_VJMToken_$12262",
                                 "typeString": "contract VJMToken"
                               }
                             },
@@ -14883,7 +14883,7 @@
                         "referencedDeclaration": 6275,
                         "src": "9331:4:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VJMToken_$12282",
+                          "typeIdentifier": "t_contract$_VJMToken_$12262",
                           "typeString": "contract VJMToken"
                         }
                       },
@@ -16159,14 +16159,104 @@
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0xd8138f8a3f377c5259ca548e70e4c2de94f129f5a11036a15b69513cba2b426a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_account",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Claimed",
+          "type": "event"
+        },
+        "0x88bbeecffcce070d5609ad08df49df93f0d53002ef3544dd5287e6b621eaff6f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_account",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidityAdded",
+          "type": "event"
+        },
+        "0x5dab48db0770e220c3226a459b19d38e7438c27b1b8dac1fab1434686d2319cd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_account",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidityRemoved",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0x967ed1bc358366a7e3e3031a0fbee32b45feb1c201d99d020380f99d03d932d1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_account",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_ethTraded",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_jmtTraded",
+              "type": "uint256"
+            }
+          ],
+          "name": "TradedTokens",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0xEADFc5D1a85E857bf8D0D08658158EfcD295f451",
-      "transactionHash": "0x3776380e0a94e5aecced18403872681582bc49191fb400c795b709169be3eab6"
+      "address": "0xB43c17C377534CF81002418870B76505a246Bd85",
+      "transactionHash": "0x18766405e7c52a21d3ba7866302a135575cd76440500fc7ae9bb57f2a6a54418"
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-28T02:02:02.463Z",
+  "updatedAt": "2022-09-28T03:01:24.152Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

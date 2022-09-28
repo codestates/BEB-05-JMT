@@ -40,7 +40,7 @@ const Home = () => {
   }, [account]);
 
   const mychar = async() =>{
-    const test = await userAPI.fetchUserList(account.address);
+    const test = await userAPI.fetchUserList();
     console.log(test);
     const char = await contractAPI.fetchCharacter(account.charId);
     setCharMetadata(char);

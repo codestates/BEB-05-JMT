@@ -20,6 +20,7 @@ contract MapleUser is Ownable {
     address payable private treasuryWallet;
     address private nftContractAddress;
     address private itemContractAddress;
+    address[] private addrList;
 
     constructor (
         address _tokenContractAddress,
@@ -33,7 +34,7 @@ contract MapleUser is Ownable {
         treasuryWallet = _treasuryWallet;
     }
 
-    mapping(uint256 => UserInfo) idUserInfo;
+    mapping(address => UserInfo) idUserInfo;
 
     struct Token {
         address contractAddr;
@@ -57,21 +58,18 @@ contract MapleUser is Ownable {
     event UserUpdated (
         uint256 charId,
         uint256 weaponId,
-        uint256 userId,
         address user
     );
 
     event UserMatching (
         uint256 charId,
         uint256 weaponId,
-        uint256 userId,
         address user
     );
 
     event UserDeleated (
         uint256 charId,
         uint256 weaponId,
-        uint256 userId,
         address user
     );
 
@@ -95,8 +93,8 @@ contract MapleUser is Ownable {
 
         _userIds.increment();
         uint256 userId = _userIds.current();
-
-        idUserInfo[userId] = UserInfo({
+        addrList.push(msg.sender);
+        idUserInfo[msg.sender] = UserInfo({
             userId: userId,
             charToken: Token({
                 contractAddr: nftContractAddress,
@@ -118,33 +116,29 @@ contract MapleUser is Ownable {
     }
 
     function updateChar(
-        uint256 _charId,
-        uint256 _userId
+        uint256 _charId
     ) public {
         require(msg.sender == ERC721(nftContractAddress).ownerOf(_charId),  "only character owners can sign up");
 
-        idUserInfo[_userId].charToken.tokenId = _charId;
+        idUserInfo[msg.sender].charToken.tokenId = _charId;
 
         emit UserUpdated(
             _charId,
-            idUserInfo[_userId].weaponToken.tokenId,
-            _userId,
+            idUserInfo[msg.sender].weaponToken.tokenId,
             msg.sender
         );
     }
 
     function updateWeapon(
-        uint256 _weaponId,
-        uint256 _userId
+        uint256 _weaponId
     ) public {
         require(ERC1155(itemContractAddress).balanceOf(msg.sender, _weaponId)!=0,  "only weapon owners can update userInfo");
 
-        idUserInfo[_userId].weaponToken.tokenId = _weaponId;
+        idUserInfo[msg.sender].weaponToken.tokenId = _weaponId;
 
         emit UserUpdated(
-            idUserInfo[_userId].charToken.tokenId,
+            idUserInfo[msg.sender].charToken.tokenId,
             _weaponId,
-            _userId,
             msg.sender
         );
     }
@@ -176,12 +170,10 @@ contract MapleUser is Ownable {
     }
 
     function requestReward(
-        uint256 _rank,
-        uint256 _userId
+        uint256 _rank
     ) public {
         //TODO: 보안을 위해 컨트랙트 내에서 랭크를 저장하고 불러와야 함.
         require(_rank<4&&_rank>0,  "you need to rank up for the reward");
-        require(idUserInfo[_userId].user == msg.sender,  "you are not the user for the rank reward");
         
         uint256 reward = 0;
         if(_rank==1){
@@ -216,27 +208,27 @@ contract MapleUser is Ownable {
         require(_userIds.current()!=1, "you are the only one player");
         uint userCount = _userIds.current();
         uint256 n = uint256(keccak256(abi.encodePacked(block.timestamp))) % (userCount);
-        if(idUserInfo[n+1].user != _user){
-            UserInfo memory opponent =  idUserInfo[n+1];
+        address matchUserAddr = addrList[n];
+        if(idUserInfo[matchUserAddr].user != _user){
+            UserInfo memory opponent =  idUserInfo[matchUserAddr];
             return opponent;
         }else{
             return matchUser(_user);
         }
     }
 
-    function fetchUser(uint256 _userId) public view returns (UserInfo memory) {
-        require(_userIds.current()!=0, "no user info added to this contract");
-        return idUserInfo[_userId];
+    function fetchUser(address _user) public view returns (UserInfo memory) {
+        return idUserInfo[_user];
     }
 
     function fetchUsers() public view returns (UserInfo[] memory) {
         uint userCount = _userIds.current();
         UserInfo[] memory users =  new UserInfo[](userCount);
 
-        for (uint i = 1; i <= userCount; i++) {
-            uint currentId = idUserInfo[i].userId;
-            UserInfo storage currentUser = idUserInfo[currentId];
-            users[i-1] = currentUser;
+        for (uint i = 0; i < userCount; i++) {
+            address currentAddr = addrList[i];
+            UserInfo storage currentUser = idUserInfo[currentAddr];
+            users[i] = currentUser;
         }
         return users;
     }
