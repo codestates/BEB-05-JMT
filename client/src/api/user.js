@@ -26,7 +26,7 @@ const signUp = async (address, charId, weaponId) => {
         {
             from: address.toLowerCase(),
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const result = user.events.UserCreated.returnValues;
@@ -40,7 +40,7 @@ const equipChar = async (address, charId) => {
         {
             from: address.toLowerCase(),
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const result = user.events.UserUpdated.returnValues;
@@ -53,7 +53,7 @@ const equipWeapon = async (address, weaponId) => {
         {
             from: address.toLowerCase(),
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     const result = user.events.UserUpdated.returnValues;
@@ -97,7 +97,7 @@ const requestUserReward = async (address, rank) => {
         {
             from: address.toLowerCase(),
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         }
     );
     console.log(reward);

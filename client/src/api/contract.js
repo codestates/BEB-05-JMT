@@ -45,7 +45,7 @@ const vJMTStaking = async(amount, address) => {
         const result = await StakingContract.methods.stakeToken(_amount).send({
             from:address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         });
         return [true, result, true];
     }catch(e){
@@ -64,7 +64,7 @@ const vJMTunStaking = async(address) => {
         const result = await StakingContract.methods.unStakingToken().send({
             from:address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         });
         return [true, result, true];
     }catch(e){
@@ -86,7 +86,7 @@ const vJMTunStakingClaime = async(address) => {
         const result = await StakingContract.methods.unStakingClaime().send({
             from:address,
             gas: 1500000,
-            gasPrice: '3000000'
+            gasPrice: '30000000000'
         });
         return [true, result, true];
     }catch(e){
@@ -180,7 +180,7 @@ const SwapToken = async(eth,jmt,address,inputToken) =>{
                 value : _ethAmount,
                 from : address,
                 gas: 1500000,
-                gasPrice: '3000000'
+                gasPrice: '30000000000'
             });
             return [true, result, true];
         }else if(inputToken == 1) {// jmt -> eth 
@@ -188,7 +188,7 @@ const SwapToken = async(eth,jmt,address,inputToken) =>{
             const result =  await routerContract.methods.swapTokens(_jmtAmount).send({
                 from : address,
                 gas: 1500000,
-                gasPrice: '30000000'
+                gasPrice: '30000000000'
             });
             return [true, result, true];
         }
@@ -221,7 +221,7 @@ const depositToken = async(jmtAmount,ethAmount,address) => {
             value: _ethAmount,
             from : address,
             gas: 1500000,
-            gasPrice: '30000000'
+            gasPrice: '30000000000'
         });
         return [true, result, "1"];
     }catch(e){
@@ -238,7 +238,7 @@ const withdrawToken = async(address) => {
         );
         const result = await routerContract.methods.pullLiquidity().send({
             gas: 1500000,
-            gasPrice: '30000000',
+            gasPrice: '30000000000',
             from:address
         });
         return [true, result, true];
