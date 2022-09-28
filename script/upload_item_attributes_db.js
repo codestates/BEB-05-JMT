@@ -18,7 +18,7 @@ const main = async () => {
     const sql = `
       INSERT INTO WeaponMeta(tokenId, itemId, type, stand, fight, strength, successRate, createdAt, updatedAt)
       VALUE(
-        "${idx}",
+        "${files[idx].replace('.json', '')}",
         "${traits["itemId"]}",
         "${traits["type"]}",
         "${traits["stand"] || ''}",

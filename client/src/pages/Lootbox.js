@@ -7,6 +7,7 @@ import './styles/Lootbox.css';
 import Spinner from "../components/Spinner";
 import contractAPI from '../api/contract';
 import metadataAPI from '../api/metadata';
+import { jmtAtom } from "../recoil/jmt/atom"
 
 const Lootbox = () => {
     const account = useRecoilValue(accountAtom);
@@ -17,6 +18,7 @@ const Lootbox = () => {
     const [charName, setCharName] = useState();
     const [weaponName, setWeaponName] = useState();
     const [loading, setLoading] = useState(true);
+    const setJmt = useSetRecoilState(jmtAtom);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -31,6 +33,9 @@ const Lootbox = () => {
         if(!charImg){
             const charId = await contractAPI.mintCharNFT(account.address);
             console.log(charId);
+            contractAPI.getBalnceOfJmt(account.address).then((result)=>{
+              setJmt({amount: result})
+            })
             const result = await contractAPI.fetchCharacter(charId);
             const char = await metadataAPI.fetchCharImage(result.attributes, '0');
             console.log(char);
@@ -48,6 +53,9 @@ const Lootbox = () => {
         if(!weaponImg){
             const weaponId = await contractAPI.mintWeaponNFT(account.address);
             console.log(weaponId);
+            contractAPI.getBalnceOfJmt(account.address).then((result)=>{
+              setJmt({amount: result})
+            })
             const scroll = await contractAPI.mintScrollNFT(account.address);
             console.log(scroll);
             const weapon = await contractAPI.fetchWeapon(weaponId);
