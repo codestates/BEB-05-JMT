@@ -35,7 +35,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getFight\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_userstrength\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_matchingstrength\",\"type\":\"uint256\"}],\"name\":\"setFight\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/MapleFight.sol\":\"MapleFight\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1000},\"remappings\":[]},\"sources\":{\"project:/contracts/MapleFight.sol\":{\"keccak256\":\"0xc40fedf7d3053a5a2535c3d608278bb45a456217e9e61e4825ad256268580414\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b8792680e763b703bd3c6f30fe5909fd6700f13b267f2a7fa03a80537db5fb3e\",\"dweb:/ipfs/Qmf1J1pedXn8WJtbgdixfuyo1x8FVwWXcixpq6BoFL4zYz\"]}},\"version\":1}",
@@ -5423,9 +5424,17 @@
     "name": "solc",
     "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x176f0f03D5244DBe9A1375e902eba9dC69E47e51",
+      "transactionHash": "0x851d68f46014773c604db395ce1fa7065253cc71accda6f58cc765bbf9bb7b63"
+    }
+  },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-28T02:00:00.646Z",
+  "updatedAt": "2022-09-28T02:02:02.444Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

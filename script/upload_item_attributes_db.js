@@ -13,6 +13,9 @@ const main = async () => {
   const traitsDir = './items_traits';
   const files = fs.readdirSync(traitsDir);
   for (let idx = 0; idx<files.length; idx++) {
+    if(files[idx]=='.DS_Store'){
+      continue;
+    }
     const rawdata = fs.readFileSync(traitsDir + '/' + files[idx]);
     const traits = JSON.parse(rawdata);
     const sql = `
