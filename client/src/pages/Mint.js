@@ -71,6 +71,7 @@ const Mint = () => {
         ]);
         setAccount({...account, username: username, charId: charId, weaponId: weaponId});
         const equipContract = await userAPI.signUp(account.address, charId, weaponId);
+        console.log(equipContract);
         return {charId, weaponId};
     }
 
