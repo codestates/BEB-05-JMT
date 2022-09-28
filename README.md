@@ -44,11 +44,12 @@ npx sequelize db:migrate
 //npx sequelize db:migrate:undo
 ```
 
-### NFT 메타데이터 DB에 업로드
+### ERC721, 1155 메타데이터 DB에 업로드
 
 ```
 cd ./script
 node upload_character_attributes_db.js
+node upload_item_attributes_db.js
 ```
 
 ### DB 재설정
@@ -68,6 +69,7 @@ npx sequelize db:migrate
 
 # script 폴더에서
 node upload_character_attributes_db.js
+node upload_item_attributes_db.js
 ```
 
 ### 컨트랙트 재설정
