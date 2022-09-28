@@ -7,6 +7,7 @@ import "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "./JMToken.sol";
+import "./MapleUser.sol";
 
 contract MapleMarket is Ownable {
     using Counters for Counters.Counter;
@@ -17,7 +18,7 @@ contract MapleMarket is Ownable {
     uint256 decimals = 10**18;
     JMToken private token;
     address payable private treasuryWallet;
-
+    address payable private userContract;
     constructor (
         address _tokenContractAddress,
         address payable _treasuryWallet
@@ -66,6 +67,11 @@ contract MapleMarket is Ownable {
         uint256 itemId,
         address seller
     );
+
+    function setUserContractAddress(address _userContract) external onlyOwner {
+        require(address(userContract) == address(0), "WRITE_ONCE!");
+        userContract = payable(_userContract);
+    }
 
     function _setToken(address _tokenAddress) private onlyOwner returns (bool) {
         require(_tokenAddress != address(0x0));
@@ -199,6 +205,7 @@ contract MapleMarket is Ownable {
         // treasury
         token.transferFrom(msg.sender, treasuryWallet, fee);
         token.marketBurn(treasuryWallet, fee/2);
+        MapleUser(userContract).setRankReward(fee/2*10/100);
         // grant seller
         token.transferFrom(msg.sender, idMarketChar[_itemId].seller, grant);
 
@@ -233,6 +240,7 @@ contract MapleMarket is Ownable {
         // treasury
         token.transferFrom(msg.sender, treasuryWallet, fee);
         token.marketBurn(treasuryWallet, fee/2);
+        MapleUser(userContract).setRankReward(fee/2*10/100);
         // grant seller
         token.transferFrom(msg.sender, idMarketWeapon[_itemId].seller, grant);
 

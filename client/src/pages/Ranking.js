@@ -19,6 +19,7 @@ const Ranking = () => {
   const navigate = useNavigate();
   const [rankInfo, setRankInfo] = useState();
   const [myRank, setmyRank] = useState();
+  const [rankReward, setRankReward] = useState();
   const [loading, setLoading] = useState(false);
   const myStr = useRecoilValue(strengthAtom);
 
@@ -85,8 +86,16 @@ const Ranking = () => {
       if(arr[idx].username == account.username){
         const rank = parseInt(idx)+1;
         setmyRank(rank);
+        console.log(rank);
+        const myReward = await userAPI.fetchUserReward(rank);
+        setRankReward(myReward);
       }
     }
+  }
+
+  const receiveReward = async() => {
+    const request  = await userAPI.requestUserReward(account.address, myRank);
+    console.log(request);
   }
 
   const shortenAddress = (address) => {
@@ -135,8 +144,8 @@ const Ranking = () => {
               <div className='myaddress'>{shortenAddress(account.address)}</div>
             </div>
             <img className='myimg' src={myImg} />
-            <div className='reward'>5 JMT</div>
-            <div className='reward-btn'>보상 수령</div>
+            <div className='reward'>{rankReward} JMT</div>
+            <div className='reward-btn' onClick={receiveReward}>보상 수령</div>
           </div>
         </div>
       )}

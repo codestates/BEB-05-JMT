@@ -72,6 +72,7 @@ module.exports = async function (deployer) {
         {from: contributeAccount}
       );
       mapleUserCont = await mapleUser.deployed();
+      await mapleMarketCont.setUserContractAddress(mapleUserCont.address);
   
       // swap_pool
       await deployer.deploy(lpContract, {from: contributeAccount}); // lp 디플로이

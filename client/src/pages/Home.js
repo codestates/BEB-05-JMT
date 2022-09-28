@@ -61,7 +61,6 @@ const Home = () => {
       const result = await accountAPI.userinfo();
       const checkAddr = result.filter(el => el.username !== account.username)
       setAddrInfo(checkAddr);
-      console.log(checkAddr);
     } catch (err) {
         console.log(err);
     }

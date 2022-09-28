@@ -12,9 +12,9 @@ contract MapleUser is Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _userIds;
     uint256 decimals = 10**18;
-    uint256 firstReward = 10;
-    uint256 secondReward = 5;
-    uint256 thirdReward = 1;
+    uint256 firstReward = 0;
+    uint256 secondReward = 0;
+    uint256 thirdReward = 0;
 
     JMToken private token;
     address payable private treasuryWallet;
@@ -72,6 +72,11 @@ contract MapleUser is Ownable {
         uint256 charId,
         uint256 weaponId,
         uint256 userId,
+        address user
+    );
+
+    event rewardTransferred (
+        uint256 reward,
         address user
     );
 
@@ -146,9 +151,10 @@ contract MapleUser is Ownable {
 
     function checkReward(
         uint256 _rank
-    ) public view returns (uint256 reward) {
+    ) public view returns (uint256) {
         //TODO: 보안을 위해 컨트랙트 내에서 랭크를 저장하고 불러와야 함.
         // require(_rank<4,  "you need to rank up for the reward");
+        uint256 reward = 0;
         if(_rank==1){
             reward = firstReward;
         }
@@ -161,6 +167,12 @@ contract MapleUser is Ownable {
             reward = 0;
         }
         return reward;
+    }
+
+    function setRankReward(uint256 reward) public{
+        firstReward+=reward*5/10;
+        secondReward+=reward*3/10;
+        thirdReward+=reward*2/10;
     }
 
     function requestReward(
@@ -184,8 +196,20 @@ contract MapleUser is Ownable {
             reward = thirdReward;
             thirdReward = 0;
         }
-        reward = reward*decimals;
+
+        bool success = token.increaseContractAllowance(
+            treasuryWallet,
+            address(this),
+            reward
+        );
+        require(success, "IncreaseContract Fail");
         token.transferFrom(treasuryWallet, msg.sender, reward);
+
+        emit rewardTransferred (
+        reward,
+        msg.sender
+        );
+
     }
 
     function matchUser(address _user) public view returns (UserInfo memory) {
