@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const User = require('./user');
 const CharacterMeta = require('./character.meta');
+const WeaponMeta = require('./weapon.meta');
 
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
@@ -14,5 +15,6 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 db.sequelize = sequelize;
 db.User = User(sequelize, Sequelize.DataTypes);
 db.CharacterMeta = CharacterMeta(sequelize, Sequelize.DataTypes);
+db.WeaponMeta = WeaponMeta(sequelize, Sequelize.DataTypes);
 
 module.exports = db;

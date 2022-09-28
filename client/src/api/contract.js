@@ -331,8 +331,7 @@ const fetchMyCharacter = async (address) => {
 
 const _fetchWeapon = async (weaponId) =>{
     const itemsContract = await fetchItemsContract();
-    const weaponURI = await itemsContract.methods.uri(parseInt(weaponId)).call();
-    const response = await axios.get(weaponURI);
+    const response = await axios.get(`${SERVER_ENDPOINT}/asset/weapon/metadata/${weaponId}`);
     const weaponMetadata = response.data;
     weaponMetadata.image = weaponMetadata.image.replace("ipfs://", "https://ipfs.io/ipfs/");
     return weaponMetadata;
