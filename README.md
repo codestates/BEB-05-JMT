@@ -1,4 +1,4 @@
-# BEB-05-Joyful Maplestory NFT (wip)
+# BEB-05-Joyful Maplestory NFT
 
 ## 프로젝트 소개
 
