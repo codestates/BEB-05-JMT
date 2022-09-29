@@ -107,7 +107,7 @@ contract LiquidityPool is Ownable {
         if (msg.value == 0) 
         {
             uint256 currentJMTBalance = jmtToken.balanceOf(address(this)); // 풀에 가지고있는 컨트랙트 코인 보유량 
-            uint256 _jmtAmountMinusTax = _jmtAmount - ((2 * _jmtAmount) / 100); // (갖고싶은 토큰양 - 수수료) 
+            uint256 _jmtAmountMinusTax = _jmtAmount - ((1 * _jmtAmount) / 100); // (갖고싶은 토큰양 - 트랜스퍼수수료) 
             uint256 addedBalance = jmtReserve + _jmtAmountMinusTax; // 현재 jmt보유량 + (갖고싶은 토큰양 - 수수료) = 추가된 총 밸런스
             //require(addedBalance == currentJMTBalance, "DID_NOT_TRANSFER");
 
@@ -184,9 +184,9 @@ contract LiquidityPool is Ownable {
             uint256 vjmtAomount = (depositeInfos[account].amount * APR / 100) / yearsDuration / dayDuration; 
             uint256 claimableAmount = (block.timestamp - depositeInfos[account].claimedTime) * vjmtAomount;
             vJmt.transfer(account , claimableAmount * 10000);
-            delete depositeInfos[msg.sender];
+          
         }
-
+        delete depositeInfos[account];
         // 소각
         lpToken.burn(account, liquidity); // account유저 토큰 제거, lpt토큰 양만큼 제거 
 

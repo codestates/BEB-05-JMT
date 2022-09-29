@@ -17,12 +17,13 @@ function Trading({initialSwap}) {
 	const [toToken,setToToken] = useState(""); // 교환후 
 	const [jmtAmount,setJmtAmount] = useState("");
 	const [ethAmount,setEthAmount] = useState("");
-  const decimals = 10**18;
+  	const decimals = 10**18;
 	let ref = useRef()
 
 	useEffect(() => {
 		contractAPI.GetReserve().then((result)=>{
 			const {0: ethReserve, 1:jmtReserve} = result;
+			console.log(jmtReserve + "|| "+ethReserve)
 			setJmtReserve((jmtReserve/decimals))
 			setEthReserve((ethReserve/decimals))
 		})
@@ -37,16 +38,30 @@ function Trading({initialSwap}) {
 	};
 
 	const handleInputChange = (value) =>{
-		const ratio = jmtReserve/ethReserve;
+		const _jmtReserve = jmtReserve.toFixed(6);
+		const _ethReserve = ethReserve.toFixed(6);
+		const product = _jmtReserve * _ethReserve;
 		if(inputToken == 0) // eth input
 		{
+			const y = product / (parseFloat(_ethReserve) + parseFloat(value));
+			const result = jmtReserve -y;
+			const tx = result - ((1 *result) / 100); // tx 
+			const amount = tx - ((1 *result) / 100); // transfer tx 
+
 			setEthAmount(value);
-			setJmtAmount(ratio*value);
-			setToToken(ratio*value);
+			setJmtAmount(amount.toFixed(6));
+			setToToken(amount.toFixed(6));
 		} else{ // jmt input
-			setEthAmount(value/ratio);
+
+			const transTx = parseFloat(value) - (1 * parseFloat(value) / 100);
+			const x = product / (parseFloat(_jmtReserve) + parseFloat(transTx));
+			const amount = ethReserve - x;
+			const resultTx = amount - (1 * amount / 100); 
+
+			setEthAmount(resultTx.toFixed(6));
 			setJmtAmount(value);
-			setToToken(value/ratio);
+			setToToken(resultTx.toFixed(6));
+		
 		}
 	}
 
