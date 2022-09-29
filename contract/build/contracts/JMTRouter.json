@@ -33,8 +33,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -47,8 +46,7 @@
       "name": "addLiquidity",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -68,13 +66,12 @@
       "name": "swapTokens",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract LiquidityPool\",\"name\":\"_liquidityPool\",\"type\":\"address\"},{\"internalType\":\"contract JMToken\",\"name\":\"_jonMatang\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"_getAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_jmtAmount\",\"type\":\"uint256\"}],\"name\":\"addLiquidity\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pullLiquidity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_jmtAmount\",\"type\":\"uint256\"}],\"name\":\"swapTokens\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/JMTRouter.sol\":\"JMTRouter\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1000},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"@openzeppelin/contracts/security/Pausable.sol\":{\"keccak256\":\"0x0849d93b16c9940beb286a7864ed02724b248b93e0d80ef6355af5ef15c64773\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4ddabb16009cd17eaca3143feadf450ac13e72919ebe2ca50e00f61cb78bc004\",\"dweb:/ipfs/QmSPwPxX7d6TTWakN5jy5wsaGkS1y9TW8fuhGSraMkLk2B\"]},\"@openzeppelin/contracts/security/ReentrancyGuard.sol\":{\"keccak256\":\"0x0e9621f60b2faabe65549f7ed0f24e8853a45c1b7990d47e8160e523683f3935\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://287a2f8d5814dd0f05f22b740f18ca8321acc21c9bd03a6cb2203ea626e2f3f2\",\"dweb:/ipfs/QmZRQv9iuwU817VuqkA2WweiaibKii69x9QxYBBEfbNEud\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x24b04b8aacaaf1a4a0719117b29c9c3647b1f479c5ac2a60f5ff1bb6d839c238\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43e46da9d9f49741ecd876a269e71bc7494058d7a8e9478429998adb5bc3eaa0\",\"dweb:/ipfs/QmUtp4cqzf22C5rJ76AabKADquGWcjsc33yjYXxXC4sDvy\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]},\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd\",\"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6f2cf1c531122bc7ca96b8c8db6a60deae60441e5223065e792553d4849b5638\",\"dweb:/ipfs/QmPBdJmBBABMDCfyDjCbdxgiqRavgiSL88SYPGibgbPas9\"]},\"@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xd15c3e400531f00203839159b2b8e7209c5158b35618f570c695b7e47f12e9f0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b600b852e0597aa69989cc263111f02097e2827edc1bdc70306303e3af5e9929\",\"dweb:/ipfs/QmU4WfM28A1nDqghuuGeFmN3CnVrk6opWtiF65K4vhFPeC\"]},\"@uniswap/lib/contracts/libraries/Babylonian.sol\":{\"keccak256\":\"0xe20fc48e3575b4a2932e5d2dd53b6742e1ca96f652bd41038cb89d7f5d49a096\",\"urls\":[\"bzz-raw://6ba298d8e592d39960eabc2328b7d4a01ad6cf8b06366adc3ef0133d3b196a9f\",\"dweb:/ipfs/QmQgrNaHssJ8XVsPUCMHpyYRFLbBqNrumaoFgXHWdDiTyy\"]},\"project:/contracts/JMTRouter.sol\":{\"keccak256\":\"0x9975b201a81374cf2416fc0b4b6ef11f482c1fc640b733e5cb2cc0250026ba18\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://2c9ea6c40b65056a37ae1b7cf4899ddd2c4bfad064a4256d4063fa728383c7f5\",\"dweb:/ipfs/QmbDnkahFH9rj4CSkCDqAtMpAY7gV3bCmTy8cZEdBGiVzX\"]},\"project:/contracts/JMToken.sol\":{\"keccak256\":\"0x6d46ba35a03980a62eb23b06bc1c9b4c381fb5cec22d24e22ef99187254378c3\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://89f07d0c627d6a08242969b011154e7620ff962753b147e64dc3b0870832db30\",\"dweb:/ipfs/Qmcdew5EtewTCyojfBihLYMB1Lge8Si9PSugNDyiofp1HY\"]},\"project:/contracts/LPT.sol\":{\"keccak256\":\"0xed736abaceb3ae48c617e3f658e9b025d5b61ef8df551970899895432b0ec7b6\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://ad6919c26ab33a0f95936b6de5c1267e1a4ce2d41ef609c72be2ea63e39cf275\",\"dweb:/ipfs/QmVMZpeSSxWUxc9SME2pgQ3xwazzvdjRYGxF7sfMWGspwn\"]},\"project:/contracts/LiquidityPool.sol\":{\"keccak256\":\"0x02add59a18b8f9012f2043575b93d04fde563e3b940ccf50b5358e1cbe9e6ebd\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://feb1b5de36d206ec0be059e8e5110936a9a5e13f73b0cb375b3a35e87819ebd0\",\"dweb:/ipfs/QmSX53o3uqjeSaaDofNKswHREGfbf13CXXfnsxye1yHF68\"]},\"project:/contracts/VJMToken.sol\":{\"keccak256\":\"0xe2f8a326fd1fbe8e2bf0e7365ad261285fde71804fe77694ce986d47c106f061\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://f6ee599ebeff106e2eb9d3a6b0c01915cfc6f76e0916b4215e9c80c5c992e475\",\"dweb:/ipfs/QmXz1MZL3nGq7C8o1JW57rgYr6Z4iDV4Kba279dw4Smt4M\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405161065938038061065983398101604081905261002f91610078565b600080546001600160a01b039384166001600160a01b031991821617909155600180549290931691161790556100b2565b6001600160a01b038116811461007557600080fd5b50565b6000806040838503121561008b57600080fd5b825161009681610060565b60208401519092506100a781610060565b809150509250929050565b610598806100c16000396000f3fe60806040526004361061003f5760003560e01c806351c6590a14610044578063b2ceaa0114610059578063f8e35be714610090578063fe784eaa146100a5575b600080fd5b610057610052366004610507565b6100b8565b005b34801561006557600080fd5b50600054600154604080516001600160a01b0393841681529290911660208301528051918290030190f35b34801561009c57600080fd5b50610057610335565b6100576100b3366004610507565b6103ad565b6001546040517f70a082310000000000000000000000000000000000000000000000000000000081523360048201526000916001600160a01b0316906370a0823190602401602060405180830381865afa15801561011a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061013e9190610520565b116101a9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601360248201527f4e4f5f415641494c41424c455f544f4b454e5300000000000000000000000000604482015260640160405180910390fd5b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610201573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102259190610539565b90508061023157600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af115801561028c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b09190610539565b506000546040517f6e553f65000000000000000000000000000000000000000000000000000000008152600481018490523360248201526001600160a01b0390911690636e553f659034906044015b6000604051808303818588803b15801561031857600080fd5b505af115801561032c573d6000803e3d6000fd5b50505050505050565b6000546040517f51cff8d90000000000000000000000000000000000000000000000000000000081523360048201526001600160a01b03909116906351cff8d990602401600060405180830381600087803b15801561039357600080fd5b505af11580156103a7573d6000803e3d6000fd5b50505050565b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610405573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104299190610539565b90508061043557600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af1158015610490573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104b49190610539565b506000546040517fd004f0f7000000000000000000000000000000000000000000000000000000008152336004820152602481018490526001600160a01b039091169063d004f0f79034906044016102ff565b60006020828403121561051957600080fd5b5035919050565b60006020828403121561053257600080fd5b5051919050565b60006020828403121561054b57600080fd5b8151801515811461055b57600080fd5b939250505056fea26469706673582212208bf402ed078786c8e56144d3c3aa16af8286539db1dbf4fcfd5bee4293319e2564736f6c63430008110033",
-  "deployedBytecode": "0x60806040526004361061003f5760003560e01c806351c6590a14610044578063b2ceaa0114610059578063f8e35be714610090578063fe784eaa146100a5575b600080fd5b610057610052366004610507565b6100b8565b005b34801561006557600080fd5b50600054600154604080516001600160a01b0393841681529290911660208301528051918290030190f35b34801561009c57600080fd5b50610057610335565b6100576100b3366004610507565b6103ad565b6001546040517f70a082310000000000000000000000000000000000000000000000000000000081523360048201526000916001600160a01b0316906370a0823190602401602060405180830381865afa15801561011a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061013e9190610520565b116101a9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601360248201527f4e4f5f415641494c41424c455f544f4b454e5300000000000000000000000000604482015260640160405180910390fd5b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610201573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102259190610539565b90508061023157600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af115801561028c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b09190610539565b506000546040517f6e553f65000000000000000000000000000000000000000000000000000000008152600481018490523360248201526001600160a01b0390911690636e553f659034906044015b6000604051808303818588803b15801561031857600080fd5b505af115801561032c573d6000803e3d6000fd5b50505050505050565b6000546040517f51cff8d90000000000000000000000000000000000000000000000000000000081523360048201526001600160a01b03909116906351cff8d990602401600060405180830381600087803b15801561039357600080fd5b505af11580156103a7573d6000803e3d6000fd5b50505050565b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610405573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104299190610539565b90508061043557600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af1158015610490573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104b49190610539565b506000546040517fd004f0f7000000000000000000000000000000000000000000000000000000008152336004820152602481018490526001600160a01b039091169063d004f0f79034906044016102ff565b60006020828403121561051957600080fd5b5035919050565b60006020828403121561053257600080fd5b5051919050565b60006020828403121561054b57600080fd5b8151801515811461055b57600080fd5b939250505056fea26469706673582212208bf402ed078786c8e56144d3c3aa16af8286539db1dbf4fcfd5bee4293319e2564736f6c63430008110033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract LiquidityPool\",\"name\":\"_liquidityPool\",\"type\":\"address\"},{\"internalType\":\"contract JMToken\",\"name\":\"_jonMatang\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"_getAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_jmtAmount\",\"type\":\"uint256\"}],\"name\":\"addLiquidity\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pullLiquidity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_jmtAmount\",\"type\":\"uint256\"}],\"name\":\"swapTokens\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/JMTRouter.sol\":\"JMTRouter\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1000},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"@openzeppelin/contracts/security/Pausable.sol\":{\"keccak256\":\"0x0849d93b16c9940beb286a7864ed02724b248b93e0d80ef6355af5ef15c64773\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4ddabb16009cd17eaca3143feadf450ac13e72919ebe2ca50e00f61cb78bc004\",\"dweb:/ipfs/QmSPwPxX7d6TTWakN5jy5wsaGkS1y9TW8fuhGSraMkLk2B\"]},\"@openzeppelin/contracts/security/ReentrancyGuard.sol\":{\"keccak256\":\"0x0e9621f60b2faabe65549f7ed0f24e8853a45c1b7990d47e8160e523683f3935\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://287a2f8d5814dd0f05f22b740f18ca8321acc21c9bd03a6cb2203ea626e2f3f2\",\"dweb:/ipfs/QmZRQv9iuwU817VuqkA2WweiaibKii69x9QxYBBEfbNEud\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x24b04b8aacaaf1a4a0719117b29c9c3647b1f479c5ac2a60f5ff1bb6d839c238\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43e46da9d9f49741ecd876a269e71bc7494058d7a8e9478429998adb5bc3eaa0\",\"dweb:/ipfs/QmUtp4cqzf22C5rJ76AabKADquGWcjsc33yjYXxXC4sDvy\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]},\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd\",\"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6f2cf1c531122bc7ca96b8c8db6a60deae60441e5223065e792553d4849b5638\",\"dweb:/ipfs/QmPBdJmBBABMDCfyDjCbdxgiqRavgiSL88SYPGibgbPas9\"]},\"@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xd15c3e400531f00203839159b2b8e7209c5158b35618f570c695b7e47f12e9f0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b600b852e0597aa69989cc263111f02097e2827edc1bdc70306303e3af5e9929\",\"dweb:/ipfs/QmU4WfM28A1nDqghuuGeFmN3CnVrk6opWtiF65K4vhFPeC\"]},\"@uniswap/lib/contracts/libraries/Babylonian.sol\":{\"keccak256\":\"0xe20fc48e3575b4a2932e5d2dd53b6742e1ca96f652bd41038cb89d7f5d49a096\",\"urls\":[\"bzz-raw://6ba298d8e592d39960eabc2328b7d4a01ad6cf8b06366adc3ef0133d3b196a9f\",\"dweb:/ipfs/QmQgrNaHssJ8XVsPUCMHpyYRFLbBqNrumaoFgXHWdDiTyy\"]},\"project:/contracts/JMTRouter.sol\":{\"keccak256\":\"0x9975b201a81374cf2416fc0b4b6ef11f482c1fc640b733e5cb2cc0250026ba18\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://2c9ea6c40b65056a37ae1b7cf4899ddd2c4bfad064a4256d4063fa728383c7f5\",\"dweb:/ipfs/QmbDnkahFH9rj4CSkCDqAtMpAY7gV3bCmTy8cZEdBGiVzX\"]},\"project:/contracts/JMToken.sol\":{\"keccak256\":\"0x6d46ba35a03980a62eb23b06bc1c9b4c381fb5cec22d24e22ef99187254378c3\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://89f07d0c627d6a08242969b011154e7620ff962753b147e64dc3b0870832db30\",\"dweb:/ipfs/Qmcdew5EtewTCyojfBihLYMB1Lge8Si9PSugNDyiofp1HY\"]},\"project:/contracts/LPT.sol\":{\"keccak256\":\"0xed736abaceb3ae48c617e3f658e9b025d5b61ef8df551970899895432b0ec7b6\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://ad6919c26ab33a0f95936b6de5c1267e1a4ce2d41ef609c72be2ea63e39cf275\",\"dweb:/ipfs/QmVMZpeSSxWUxc9SME2pgQ3xwazzvdjRYGxF7sfMWGspwn\"]},\"project:/contracts/LiquidityPool.sol\":{\"keccak256\":\"0x0a579a0ee7480b24fdd7cdaaa94bbaefac7d4cdda5958efb9cd8347d1ee38e51\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://402e00abb73e9889c2e515f8ce2cca860f0d13e75413c52b1de22da036c58f9b\",\"dweb:/ipfs/Qma7yKdC9sj8UPBXdjgQt7DUEGN4j1T8FzZvDhSR161SQD\"]},\"project:/contracts/VJMToken.sol\":{\"keccak256\":\"0xe2f8a326fd1fbe8e2bf0e7365ad261285fde71804fe77694ce986d47c106f061\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://f6ee599ebeff106e2eb9d3a6b0c01915cfc6f76e0916b4215e9c80c5c992e475\",\"dweb:/ipfs/QmXz1MZL3nGq7C8o1JW57rgYr6Z4iDV4Kba279dw4Smt4M\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161065938038061065983398101604081905261002f91610078565b600080546001600160a01b039384166001600160a01b031991821617909155600180549290931691161790556100b2565b6001600160a01b038116811461007557600080fd5b50565b6000806040838503121561008b57600080fd5b825161009681610060565b60208401519092506100a781610060565b809150509250929050565b610598806100c16000396000f3fe60806040526004361061003f5760003560e01c806351c6590a14610044578063b2ceaa0114610059578063f8e35be714610090578063fe784eaa146100a5575b600080fd5b610057610052366004610507565b6100b8565b005b34801561006557600080fd5b50600054600154604080516001600160a01b0393841681529290911660208301528051918290030190f35b34801561009c57600080fd5b50610057610335565b6100576100b3366004610507565b6103ad565b6001546040517f70a082310000000000000000000000000000000000000000000000000000000081523360048201526000916001600160a01b0316906370a0823190602401602060405180830381865afa15801561011a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061013e9190610520565b116101a9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601360248201527f4e4f5f415641494c41424c455f544f4b454e5300000000000000000000000000604482015260640160405180910390fd5b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610201573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102259190610539565b90508061023157600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af115801561028c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b09190610539565b506000546040517f6e553f65000000000000000000000000000000000000000000000000000000008152600481018490523360248201526001600160a01b0390911690636e553f659034906044015b6000604051808303818588803b15801561031857600080fd5b505af115801561032c573d6000803e3d6000fd5b50505050505050565b6000546040517f51cff8d90000000000000000000000000000000000000000000000000000000081523360048201526001600160a01b03909116906351cff8d990602401600060405180830381600087803b15801561039357600080fd5b505af11580156103a7573d6000803e3d6000fd5b50505050565b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610405573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104299190610539565b90508061043557600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af1158015610490573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104b49190610539565b506000546040517fd004f0f7000000000000000000000000000000000000000000000000000000008152336004820152602481018490526001600160a01b039091169063d004f0f79034906044016102ff565b60006020828403121561051957600080fd5b5035919050565b60006020828403121561053257600080fd5b5051919050565b60006020828403121561054b57600080fd5b8151801515811461055b57600080fd5b939250505056fea264697066735822122066ea9d3ba44b64710669bddf3e0be30b498bde7dbc5bc32e5dd8a521914873c764736f6c63430008110033",
+  "deployedBytecode": "0x60806040526004361061003f5760003560e01c806351c6590a14610044578063b2ceaa0114610059578063f8e35be714610090578063fe784eaa146100a5575b600080fd5b610057610052366004610507565b6100b8565b005b34801561006557600080fd5b50600054600154604080516001600160a01b0393841681529290911660208301528051918290030190f35b34801561009c57600080fd5b50610057610335565b6100576100b3366004610507565b6103ad565b6001546040517f70a082310000000000000000000000000000000000000000000000000000000081523360048201526000916001600160a01b0316906370a0823190602401602060405180830381865afa15801561011a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061013e9190610520565b116101a9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601360248201527f4e4f5f415641494c41424c455f544f4b454e5300000000000000000000000000604482015260640160405180910390fd5b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610201573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102259190610539565b90508061023157600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af115801561028c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b09190610539565b506000546040517f6e553f65000000000000000000000000000000000000000000000000000000008152600481018490523360248201526001600160a01b0390911690636e553f659034906044015b6000604051808303818588803b15801561031857600080fd5b505af115801561032c573d6000803e3d6000fd5b50505050505050565b6000546040517f51cff8d90000000000000000000000000000000000000000000000000000000081523360048201526001600160a01b03909116906351cff8d990602401600060405180830381600087803b15801561039357600080fd5b505af11580156103a7573d6000803e3d6000fd5b50505050565b60015460405163d83a2bf360e01b8152336004820152306024820152604481018390526000916001600160a01b03169063d83a2bf3906064016020604051808303816000875af1158015610405573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104299190610539565b90508061043557600080fd5b6001546000546040516323b872dd60e01b81523360048201526001600160a01b039182166024820152604481018590529116906323b872dd906064016020604051808303816000875af1158015610490573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104b49190610539565b506000546040517fd004f0f7000000000000000000000000000000000000000000000000000000008152336004820152602481018490526001600160a01b039091169063d004f0f79034906044016102ff565b60006020828403121561051957600080fd5b5035919050565b60006020828403121561053257600080fd5b5051919050565b60006020828403121561054b57600080fd5b8151801515811461055b57600080fd5b939250505056fea264697066735822122066ea9d3ba44b64710669bddf3e0be30b498bde7dbc5bc32e5dd8a521914873c764736f6c63430008110033",
   "immutableReferences": {},
   "generatedSources": [
     {
@@ -462,7 +459,7 @@
                 }
               ]
             },
-            "name": "abi_decode_tuple_t_contract$_LiquidityPool_$7043t_contract$_JMToken_$6174_fromMemory",
+            "name": "abi_decode_tuple_t_contract$_LiquidityPool_$7042t_contract$_JMToken_$6174_fromMemory",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -496,7 +493,7 @@
           }
         ]
       },
-      "contents": "{\n    { }\n    function validator_revert_contract_LiquidityPool(value)\n    {\n        if iszero(eq(value, and(value, sub(shl(160, 1), 1)))) { revert(0, 0) }\n    }\n    function abi_decode_tuple_t_contract$_LiquidityPool_$7043t_contract$_JMToken_$6174_fromMemory(headStart, dataEnd) -> value0, value1\n    {\n        if slt(sub(dataEnd, headStart), 64) { revert(0, 0) }\n        let value := mload(headStart)\n        validator_revert_contract_LiquidityPool(value)\n        value0 := value\n        let value_1 := mload(add(headStart, 32))\n        validator_revert_contract_LiquidityPool(value_1)\n        value1 := value_1\n    }\n}",
+      "contents": "{\n    { }\n    function validator_revert_contract_LiquidityPool(value)\n    {\n        if iszero(eq(value, and(value, sub(shl(160, 1), 1)))) { revert(0, 0) }\n    }\n    function abi_decode_tuple_t_contract$_LiquidityPool_$7042t_contract$_JMToken_$6174_fromMemory(headStart, dataEnd) -> value0, value1\n    {\n        if slt(sub(dataEnd, headStart), 64) { revert(0, 0) }\n        let value := mload(headStart)\n        validator_revert_contract_LiquidityPool(value)\n        value0 := value\n        let value_1 := mload(add(headStart, 32))\n        validator_revert_contract_LiquidityPool(value_1)\n        value1 := value_1\n    }\n}",
       "id": 38,
       "language": "Yul",
       "name": "#utility.yul"
@@ -2117,7 +2114,7 @@
         6227
       ],
       "LiquidityPool": [
-        7043
+        7042
       ],
       "Math": [
         5130
@@ -2135,7 +2132,7 @@
         4590
       ],
       "VJMToken": [
-        12262
+        12261
       ]
     },
     "id": 5349,
@@ -2172,7 +2169,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 5349,
-        "sourceUnit": 7044,
+        "sourceUnit": 7043,
         "src": "86:29:26",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2204,7 +2201,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+              "typeIdentifier": "t_contract$_LiquidityPool_$7042",
               "typeString": "contract LiquidityPool"
             },
             "typeName": {
@@ -2217,13 +2214,13 @@
                   "142:13:26"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 7043,
+                "referencedDeclaration": 7042,
                 "src": "142:13:26"
               },
-              "referencedDeclaration": 7043,
+              "referencedDeclaration": 7042,
               "src": "142:13:26",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                 "typeString": "contract LiquidityPool"
               }
             },
@@ -2287,7 +2284,7 @@
                       "referencedDeclaration": 5194,
                       "src": "276:13:26",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                        "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                         "typeString": "contract LiquidityPool"
                       }
                     },
@@ -2301,13 +2298,13 @@
                       "referencedDeclaration": 5200,
                       "src": "292:14:26",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                        "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                         "typeString": "contract LiquidityPool"
                       }
                     },
                     "src": "276:30:26",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                      "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                       "typeString": "contract LiquidityPool"
                     }
                   },
@@ -2383,7 +2380,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                    "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                     "typeString": "contract LiquidityPool"
                   },
                   "typeName": {
@@ -2396,13 +2393,13 @@
                         "211:13:26"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 7043,
+                      "referencedDeclaration": 7042,
                       "src": "211:13:26"
                     },
-                    "referencedDeclaration": 7043,
+                    "referencedDeclaration": 7042,
                     "src": "211:13:26",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                      "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                       "typeString": "contract LiquidityPool"
                     }
                   },
@@ -2479,7 +2476,7 @@
                             "referencedDeclaration": 5194,
                             "src": "438:13:26",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                               "typeString": "contract LiquidityPool"
                             }
                           }
@@ -2487,7 +2484,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                               "typeString": "contract LiquidityPool"
                             }
                           ],
@@ -3163,7 +3160,7 @@
                             "referencedDeclaration": 5194,
                             "src": "900:13:26",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                               "typeString": "contract LiquidityPool"
                             }
                           }
@@ -3171,7 +3168,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                               "typeString": "contract LiquidityPool"
                             }
                           ],
@@ -3358,7 +3355,7 @@
                           "referencedDeclaration": 5194,
                           "src": "938:13:26",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                            "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                             "typeString": "contract LiquidityPool"
                           }
                         },
@@ -3549,7 +3546,7 @@
                         "referencedDeclaration": 5194,
                         "src": "1086:13:26",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                          "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                           "typeString": "contract LiquidityPool"
                         }
                       },
@@ -3561,7 +3558,7 @@
                       "memberLocation": "1100:8:26",
                       "memberName": "withdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6878,
+                      "referencedDeclaration": 6877,
                       "src": "1086:22:26",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -3913,7 +3910,7 @@
                             "referencedDeclaration": 5194,
                             "src": "1481:13:26",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                               "typeString": "contract LiquidityPool"
                             }
                           }
@@ -3921,7 +3918,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                              "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                               "typeString": "contract LiquidityPool"
                             }
                           ],
@@ -4108,7 +4105,7 @@
                           "referencedDeclaration": 5194,
                           "src": "1518:13:26",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_LiquidityPool_$7043",
+                            "typeIdentifier": "t_contract$_LiquidityPool_$7042",
                             "typeString": "contract LiquidityPool"
                           }
                         },
@@ -4268,8 +4265,7 @@
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-09-28T03:11:18.261Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-09-29T02:55:23.374Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
