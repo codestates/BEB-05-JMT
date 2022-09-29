@@ -48,8 +48,8 @@ contract MapleNFT is Ownable, ERC721Enumerable {
     function mintMapleNFT() public payable returns (uint256)  {
         require(token.balanceOf(msg.sender) >= mintPrice, "ERC721: recipient lack of erc20 balance");
         require(maxTokenNum >= totalSupply(), "ERC721: all nfts are minted");
-
-        _shuffleMintArray();
+        // waitForMint는 0~4999까지 준비된 tokenId가 들어있는 배열
+        _shuffleMintArray(); // waitForMint[-1]과 waitForMint[랜덤인덱스]의 위치를 바꾼다.
         uint256 minted = waitForMint[waitForMint.length - 1];
         waitForMint.pop();
 
